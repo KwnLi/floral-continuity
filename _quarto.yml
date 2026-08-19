@@ -1,5 +1,9 @@
 project:
   type: website
+  output-dir: docs
+  render:
+  - "*.qmd"
+  - "!data-raw/"
 
 website:
   title: "Floral continuity"
@@ -9,8 +13,8 @@ website:
         text: Home
       - href: firstlook.qmd
         text: First Look
-      - href: Landscape projection.qmd
-        text: project-flowers.qmd
+      - href: project-flowers.qmd
+        text: Landscape projection
 
 format:
   html:

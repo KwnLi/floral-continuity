@@ -75,8 +75,8 @@ ggplot(florlc.raw$florlc_hemetal2023,
 #| message: false
 
 ggplot(florlc.raw$florlc_hw2025, 
-       aes(period, mn.flwr.den)) + 
-  geom_point(aes(color = plant.type)) + geom_smooth()
+       aes(period, flowerdens)) + 
+  geom_jitter(aes(color = plant.type)) + geom_smooth()
 
 
 ```
