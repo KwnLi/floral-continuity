@@ -1,0 +1,799 @@
+﻿datePeriod,date,site,transect,time,Family,Genus,Species,flower,visits
+2,2016-06-22,1,1.1,14:33-15:03,Andrenidae,Andrena,Andrena miserabilis miserabilis,Vicia cracca,1
+2,2016-06-22,1,1.1,14:33-15:03,NA,NA,Unknown,Vicia cracca,2
+2,2016-06-22,1,1.1,14:33-15:03,NA,NA,Unknown,Vicia cracca,3
+2,2016-06-22,1,1.1,14:33-15:03,Megachilidae,Hoplitis,Hoplitis pilosifrons,Vicia cracca,3
+2,2016-06-22,1,1.1,14:33-15:03,Megachilidae,Hoplitis,Hoplitis pilosifrons,Trifolium repens,4
+2,2016-06-22,1,1.1,14:33-15:03,Megachilidae,Megachile,Megachile,Vicia cracca,4
+2,2016-06-22,1,1.1,14:33-15:03,Andrenidae,Andrena,Andrena miserabilis miserabilis,Vicia cracca,5
+2,2016-06-22,1,1.1,14:33-15:03,Apidae,Bombus,Bombus rufocinctus,Vicia cracca,11
+3,2016-07-16,1,1.2,8:50-9:20,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+3,2016-07-16,1,1.2,8:50-9:20,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+3,2016-07-16,1,1.2,8:50-9:20,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Cucurbita spp.,1
+3,2016-07-16,1,1.2,8:50-9:20,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,2
+4,2016-08-17,1,1.3,8:51-9:21,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+4,2016-08-17,1,1.3,8:51-9:21,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,14
+1,2016-06-01,1,1.4,9:30-10:00,NA,NA,NA,NA,0
+4,2016-08-07,2,2.1,9:52-10:07,Halictidae,Lasioglossum,Lasioglossum,Cucumis sativus,1
+4,2016-08-07,2,2.1,9:52-10:07,Halictidae,Augochlorella,Augochlorella,Cucumis sativus,2
+4,2016-08-07,2,2.1,9:52-10:07,Apidae,Peponapis,Peponapis pruinosa,Cucumis sativus,5
+4,2016-08-07,2,2.1,9:52-10:07,Apidae,Apis,Apis mellifera,Cucumis sativus,29
+3,2016-05-21,2,2.2,12:16-12:46,Andrenidae,Andrena,Andrena,Leucanthemum vulgare,4
+3,2016-06-15,2,2.2,12:16-12:46,Andrenidae,Andrena,Andrena,Erigeron canadensis ,1
+3,2016-07-11,2,2.2,12:16-12:46,Andrenidae,Andrena,Andrena,Potentilla argentea,1
+3,2016-07-11,2,2.2,12:16-12:46,NA,NA,Unknown,Potentilla argentea,1
+3,2016-07-11,2,2.2,12:16-12:46,NA,NA,Unknown,Potentilla argentea,1
+3,2016-07-11,2,2.2,12:16-12:46,Halictidae,Halictus,Halictus ligatus,Potentilla argentea,1
+3,2016-07-11,2,2.2,12:16-12:46,Halictidae,Lasioglossum,Lasioglossum,Silene noctiflora,1
+3,2016-07-11,2,2.2,12:16-12:46,Andrenidae,Andrena,Andrena perplexa,Potentilla argentea,2
+3,2016-07-11,2,2.2,12:16-12:46,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,2
+3,2016-07-11,2,2.2,12:16-12:46,Megachilidae,Megachile,Megachile,Potentilla argentea,2
+3,2016-07-11,2,2.2,12:16-12:46,Megachilidae,Megachile,Megachile rotundata,Erysimum cheiranthoides,2
+3,2016-07-11,2,2.2,12:16-12:46,Apidae,Apis,Apis mellifera,Erigeron sp.,6
+3,2016-07-11,2,2.2,12:16-12:46,Megachilidae,Megachile,Megachile,Erigeron canadensis ,7
+3,2016-07-11,2,2.2,12:16-12:46,Megachilidae,Megachile,Megachile,Leucanthemum vulgare,8
+3,2016-07-11,2,2.2,12:16-12:46,Apidae,Apis,Apis mellifera,Potentilla argentea,11
+3,2016-07-11,2,2.2,12:16-12:46,Apidae,Apis,Apis mellifera,Trifolium repens,19
+1,2016-05-22,2,2.3,13:30-14:00,Halictidae,Lasioglossum,Lasioglossum (Dialictus) taylorae,Polygonatum pubescens,4
+2,2016-06-16,2,2.4,11:44-12:14,NA,NA,Unknown,Erigeron canadensis ,1
+2,2016-06-16,2,2.4,11:44-12:14,NA,NA,Unknown,Silene vulgaris,1
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Ceratina,Ceratina,Rubus sp. (raspberry),1
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Apis,Apis mellifera,Erigeron canadensis ,2
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Augochlora,Augochlora,Silene vulgaris,2
+2,2016-06-16,2,2.4,11:44-12:14,NA,NA,Unknown,Glechoma hederacea,2
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Bombus,Bombus impatiens,Erigeron canadensis ,2
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron canadensis ,3
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Silene vulgaris,3
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,NA,Unknown,Vicia cracca,4
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Apis,Apis mellifera,Glechoma hederacea,5
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Bombus,Bombus impatiens,Rubus sp. (raspberry),6
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,8
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Rubus sp. (raspberry),9
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Apis,Apis mellifera,Silene vulgaris,10
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Halictus,Halictus ligatus,Silene vulgaris,10
+2,2016-06-16,2,2.4,11:44-12:14,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Trifolium repens,10
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Apis,Apis mellifera,Trifolium repens,12
+2,2016-06-16,2,2.4,11:44-12:14,Apidae,Apis,Apis mellifera,Rubus sp. (raspberry),82
+3,2016-07-12,2,2.5,7:02-7:32,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,11
+3,2016-07-12,2,2.5,7:02-7:32,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,33
+3,2016-07-12,2,2.5,7:02-7:32,Apidae,Apis,Apis mellifera,Cucurbita spp.,37
+4,2016-08-07,2,2.6,9:20-9:35,Halictidae,Augochlorella,Augochlorella,Cucurbita spp.,1
+4,2016-08-07,2,2.6,9:20-9:35,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Cucurbita spp.,1
+4,2016-08-07,2,2.6,9:20-9:35,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,60
+1,2016-06-10,3,3.1,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,1
+1,2016-06-10,3,3.1,9:42-10:12,NA,NA,Unknown,Hieracium pilosella,2
+3,2016-07-12,3,3.2,12:51-13:21,Andrenidae,Andrena,Andrena,Erigeron philadelphicus,1
+3,2016-07-12,3,3.2,12:51-13:21,Andrenidae,Andrena,Andrena,Echium vulgare,4
+3,2016-07-29,3,3.2,12:51-13:21,Andrenidae,Andrena,Andrena,Trifolium repens,1
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus ternarius,Trifolium pratense,1
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus ternarius,Trifolium repens,1
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus vagans,Vicia cracca,1
+3,2016-07-29,3,3.2,12:51-13:21,Halictidae,Lasioglossum,Lasioglossum,Erigeron philadelphicus,1
+3,2016-07-29,3,3.2,12:51-13:21,Andrenidae,Andrena,Andrena,Potentilla argentea,2
+3,2016-07-29,3,3.2,12:51-13:21,Andrenidae,Andrena,Andrena,Trifolium pratense,2
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus impatiens,Echium vulgare,2
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus vagans,Potentilla argentea,3
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus terricola,Echium vulgare,4
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus vagans,Trifolium pratense,4
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus impatiens,Trifolium repens,5
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus vagans,Trifolium repens,6
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus impatiens,Echium vulgare,8
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus impatiens,Trifolium pratense,8
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus ternarius,Potentilla argentea,10
+3,2016-07-29,3,3.2,12:51-13:21,Apidae,Bombus,Bombus vagans,Linaria vulgaris,10
+3,2016-07-29,3,3.2,12:51-13:21,Halictidae,Lasioglossum,Lasioglossum,Potentilla argentea,11
+4,2016-08-30,3,3.3,9:40-10:10,Apidae,Bombus,Bombus,Medicago sativa,1
+4,2016-08-30,3,3.3,9:40-10:10,Apidae,Bombus,Bombus,Vicia cracca,1
+4,2016-08-30,3,3.3,9:40-10:10,Apidae,Ceratina,Ceratina calcarata,Medicago sativa,1
+4,2016-08-30,3,3.3,9:40-10:10,Apidae,Bombus,Bombus impatiens,Medicago sativa,3
+4,2016-08-30,3,3.3,9:40-10:10,Apidae,Bombus,Bombus impatiens,Vicia cracca,4
+1,2016-06-10,3,3.4,10:20-10:50,Apidae,Bombus,Bombus ternarius,Rubus allegheniensis,28
+1,2016-06-10,3,3.4,10:20-10:50,Apidae,Bombus,Bombus impatiens,Rubus allegheniensis,48
+3,2016-07-29,3,3.5,9:36-10:06,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,3
+3,2016-07-29,3,3.5,9:36-10:06,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,10
+4,2016-08-30,3,3.6,8:51-9:06,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,1
+4,2016-08-30,3,3.6,8:51-9:06,Apidae,Bombus,Bombus impatiens,Vicia cracca,5
+4,2016-08-30,3,3.6,8:51-9:06,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,49
+1,2016-05-22,4,4.1,10:50-11:20,Halictidae,Lasioglossum,Lasioglossum,Malus pumila,1
+1,2016-05-22,4,4.1,10:50-11:20,NA,NA,Unknown,Malus pumila,2
+1,2016-05-22,4,4.1,10:50-11:20,Andrenidae,Andrena,Andrena,Taraxacum agg.,4
+1,2016-05-22,4,4.1,10:50-11:20,Apidae,Apis,Apis mellifera,Taraxacum agg.,4
+1,2016-05-22,4,4.1,10:50-11:20,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Malus pumila,9
+1,2016-05-22,4,4.1,10:50-11:20,Apidae,Apis,Apis mellifera,Malus pumila,162
+1,2016-06-01,4,4.1,10:50-11:20,Andrenidae,Andrena,Andrena,Malus pumila,6
+1,2016-06-03,4,4.1,10:50-11:20,Andrenidae,Andrena,Andrena,Malus pumila,3
+4,2016-08-03,4,4.2,10:24-10:54,NA,NA,Unknown,Trifolium pratense,1
+4,2016-08-03,4,4.2,10:24-10:54,Apidae,Apis,Apis mellifera,Medicago sativa,8
+1,2016-05-21,4,4.3,12:00-12:30,Halictidae,Lasioglossum,Lasioglossum,Fragaria virginiana,1
+4,2016-08-03,4,4.4,9:21-9:51,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,79
+2,2016-06-10,4,4.5,14:55-15:05,Apidae,Apis,Apis mellifera,Fragaria × ananassa,4
+2,2016-06-22,4,4.5,14:55-15:05,Andrenidae,Andrena,Andrena,Fragaria × ananassa,1
+1,2016-05-27,5,5.1,9:53-10:23,Andrenidae,Andrena,Andrena carlini,Taraxacum agg.,2
+1,2016-05-27,5,5.1,9:53-10:23,Apidae,Bombus,Bombus impatiens,Taraxacum agg.,31
+1,2016-05-27,5,5.1,9:53-10:23,Apidae,Apis,Apis mellifera,Taraxacum agg.,66
+2,2016-06-21,5,5.1,12:34-13:04,Halictidae,Halictus,Halictus ligatus,Vicia cracca,5
+4,2016-08-09,5,5.1,12:00-12:30,NA,NA,NA,NA,0
+3,2016-07-19,5,5.2,9:21-9:51,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Citrullus lanatus,1
+3,2016-07-19,5,5.2,9:21-9:51,Halictidae,Augochlorella,Augochlorella,Citrullus lanatus,3
+3,2016-07-19,5,5.2,9:21-9:51,Apidae,Apis,Apis mellifera,Citrullus lanatus,47
+3,2016-07-13,5,5.3,7:20-7:50,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+4,2016-08-09,5,5.4,9:29-9:44,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+4,2016-08-09,5,5.4,9:29-9:44,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,22
+1,2016-05-23,6,6.1,10:15-10:45,NA,NA,Unknown,Taraxacum agg.,1
+1,2016-05-23,6,6.1,10:15-10:45,Halictidae,Augochlora,Augochlora pura,Taraxacum agg.,2
+1,2016-05-23,6,6.1,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,2
+1,2016-05-23,6,6.1,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Veronica serpyllifolia,4
+1,2016-05-23,6,6.1,10:15-10:45,Andrenidae,Andrena,Andrena imitatrix,Taraxacum agg.,5
+1,2016-05-23,6,6.1,10:15-10:45,Apidae,Apis,Apis mellifera,Taraxacum agg.,83
+4,2016-05-27,6,6.1,12:40-13:10,Andrenidae,Andrena,Andrena,Lotus corniculatus,2
+2,2016-06-14,6,6.1,10:46-11:16,Apidae,Ceratina,Ceratina calcarata,Trifolium repens,1
+2,2016-06-14,6,6.1,10:46-11:16,Halictidae,Halictus,Halictus ligatus,Lotus corniculatus,1
+2,2016-06-14,6,6.1,10:46-11:16,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,1
+2,2016-06-14,6,6.1,10:46-11:16,Halictidae,Halictus,Halictus ligatus,Hieracium caespitosum,2
+2,2016-06-14,6,6.1,10:46-11:16,Halictidae,Halictus,Halictus ligatus,Trifolium repens,2
+2,2016-06-14,6,6.1,10:46-11:16,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,2
+2,2016-06-14,6,6.1,10:46-11:16,Apidae,Ceratina,Ceratina calcarata,Hieracium caespitosum,6
+4,2016-08-03,6,6.1,12:40-13:10,Andrenidae,Andrena,Andrena,Trifolium pratense,1
+4,2016-08-03,6,6.1,12:40-13:10,Andrenidae,Andrena,Andrena,Trifolium repens,1
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Apis,Apis mellifera,Trifolium pratense,1
+4,2016-08-03,6,6.1,12:40-13:10,NA,NA,Unknown,Lotus corniculatus,1
+4,2016-08-03,6,6.1,12:40-13:10,NA,NA,Unknown,Medicago sativa,1
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Bombus,Bombus,Lotus corniculatus,1
+4,2016-08-03,6,6.1,12:40-13:10,Halictidae,Lasioglossum,Lasioglossum,Medicago sativa,1
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Bombus,Bombus ternarius,Medicago sativa,2
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Apis,Apis mellifera,Lotus corniculatus,3
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Apis,Apis mellifera,Trifolium repens,3
+4,2016-08-03,6,6.1,12:40-13:10,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,3
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Bombus,Bombus vagans,Trifolium pratense,4
+4,2016-08-03,6,6.1,12:40-13:10,Apidae,Apis,Apis mellifera,Medicago sativa,48
+1,2016-05-22,6,6.2,15:30-16:00,NA,NA,Unknown,Viola pubescens,1
+1,2016-05-22,6,6.2,15:30-16:00,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Viola pubescens,1
+1,2016-05-22,6,6.2,15:30-16:00,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Viola sororia,2
+1,2016-05-22,6,6.2,15:30-16:00,Apidae,Bombus,Bombus impatiens,Viola sororia,19
+2,2016-06-14,6,6.3,9:52-10:22,Andrenidae,Andrena,Andrena,Taraxacum agg.,1
+2,2016-06-14,6,6.3,9:52-10:22,Andrenidae,Andrena,Andrena,Rubus sp. (raspberry),2
+2,2016-06-14,6,6.3,9:52-10:22,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,2
+2,2016-06-14,6,6.3,9:52-10:22,Apidae,Apis,Apis mellifera,Trifolium repens,5
+2,2016-06-14,6,6.3,9:52-10:22,Apidae,Bombus,Bombus ternarius,Rubus sp. (raspberry),5
+2,2016-06-14,6,6.3,9:52-10:22,Halictidae,Augochlora,Augochlora,Rubus sp. (raspberry),6
+2,2016-06-14,6,6.3,9:52-10:22,Apidae,Ceratina,Ceratina calcarata,Trifolium repens,8
+2,2016-06-14,6,6.3,9:52-10:22,Apidae,Bombus,Bombus impatiens,Rubus sp. (raspberry),25
+2,2016-06-14,6,6.3,9:52-10:22,Apidae,Apis,Apis mellifera,Rubus sp. (raspberry),216
+4,2016-08-03,6,6.4,7:43-8:13,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,4
+4,2016-08-03,6,6.4,7:43-8:13,Apidae,Apis,Apis mellifera,Cucurbita spp.,34
+2,2016-06-29,7,7.1,13:26-13:56,Andrenidae,Andrena,Andrena miserabilis miserabilis,Trifolium repens,2
+2,2016-06-29,7,7.1,13:26-13:56,Apidae,Bombus,Bombus,Vicia cracca,4
+2,2016-06-29,7,7.1,13:26-13:56,Andrenidae,Andrena,Andrena miserabilis miserabilis,Vicia cracca,15
+2,2016-07-06,7,7.1,13:26-13:56,Andrenidae,Andrena,Andrena miserabilis miserabilis,Medicago sativa,4
+4,2016-08-22,7,7.2,13:27-13:57,Halictidae,Halictus,Halictus confusus,Medicago sativa,1
+4,2016-08-22,7,7.2,13:27-13:57,Apidae,Bombus,Bombus impatiens,Medicago sativa,212
+1,2016-06-04,7,7.3,9:42-10:12,NA,NA,Unknown,Erigeron philadelphicus,1
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,1
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Halictus,Halictus,Taraxacum agg.,2
+1,2016-06-04,7,7.3,9:42-10:12,Apidae,Bombus,Bombus impatiens,Vicia cracca,3
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum,Erigeron philadelphicus,3
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,3
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Halictus,Halictus,Erigeron philadelphicus,6
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,6
+1,2016-06-04,7,7.3,9:42-10:12,Halictidae,Lasioglossum,Lasioglossum leucozonium,Erigeron philadelphicus,12
+2,2016-06-30,7,7.4,7:54-8:09,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,2
+3,2016-07-27,7,7.4,9:38-10:02,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,147
+1,2016-05-31,8,8.1,13:59-14:29,Apidae,Apis,Apis mellifera,Erigeron philadelphicus,1
+1,2016-05-31,8,8.1,13:59-14:29,Halictidae,Halictus,Halictus confusus,Ranunculus acris,2
+2,2016-06-23,8,8.1,10:58-11:28,Apidae,Bombus,Bombus rufocinctus,Trifolium pratense,1
+2,2016-06-23,8,8.1,10:58-11:28,Megachilidae,Megachile,Megachile,Vicia cracca,1
+2,2016-06-23,8,8.1,10:58-11:28,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,2
+2,2016-06-23,8,8.1,10:58-11:28,NA,NA,Unknown,Ranunculus acris,3
+2,2016-06-23,8,8.1,10:58-11:28,Halictidae,Halictus,Halictus ligatus,Vicia cracca,4
+2,2016-06-23,8,8.1,10:58-11:28,Apidae,Bombus,Bombus terricola,Vicia cracca,8
+2,2016-06-23,8,8.1,10:58-11:28,Apidae,Bombus,Bombus impatiens,Vicia cracca,15
+2,2016-06-23,8,8.1,10:58-11:28,Apidae,Bombus,Bombus impatiens,Vicia cracca,49
+3,2016-07-20,8,8.1,13:16-13:46,Apidae,Bombus,Bombus borealis,Trifolium repens,1
+3,2016-07-20,8,8.1,13:16-13:46,Halictidae,Halictus,Halictus ligatus,Trifolium repens,1
+3,2016-07-20,8,8.1,13:16-13:46,Halictidae,Halictus,Halictus ligatus,Vicia cracca,1
+3,2016-07-20,8,8.1,13:16-13:46,Andrenidae,Andrena,Andrena,Vicia cracca,2
+3,2016-07-20,8,8.1,13:16-13:46,Apidae,Bombus,Bombus,Vicia cracca,2
+3,2016-07-20,8,8.1,13:16-13:46,Andrenidae,Andrena,Andrena,Trifolium repens,7
+3,2016-07-20,8,8.1,13:16-13:46,Apidae,Bombus,Bombus borealis,Vicia cracca,11
+3,2016-07-20,8,8.1,13:16-13:46,Apidae,Bombus,Bombus impatiens,Vicia cracca,18
+4,2016-08-26,8,8.1,9:29-9:59,Halictidae,Lasioglossum,Lasioglossum,Trifolium pratense,1
+4,2016-08-26,8,8.1,9:29-9:59,Apidae,Bombus,Bombus impatiens,Trifolium pratense,4
+1,2016-05-23,9,9.1,12:14-12:44,NA,NA,NA,NA,0
+2,2016-06-15,9,9.1,13:28-13:58,NA,NA,NA,NA,0
+3,2016-05-22,9,9.2,10:18-10:48,Andrenidae,Andrena,Andrena,Leucanthemum vulgare,1
+3,2016-05-26,9,9.2,10:18-10:48,Andrenidae,Andrena,Andrena cressonii,Leucanthemum vulgare,3
+2,2016-06-15,9,9.2,14:58-15:28,NA,NA,Unknown,Cerastium fontanum,1
+2,2016-06-15,9,9.2,14:58-15:28,NA,NA,Unknown,Trifolium repens,1
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,1
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Lasioglossum,Lasioglossum,Cerastium fontanum,1
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Leucanthemum vulgare,1
+2,2016-06-15,9,9.2,14:58-15:28,NA,NA,Unknown,Vicia cracca,2
+2,2016-06-15,9,9.2,14:58-15:28,Apidae,Bombus,Bombus impatiens,Leucanthemum vulgare,2
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Lasioglossum,Lasioglossum,Cerastium fontanum,2
+2,2016-06-15,9,9.2,14:58-15:28,Apidae,Bombus,Bombus impatiens,Trifolium repens,4
+2,2016-06-15,9,9.2,14:58-15:28,Apidae,Ceratina,Ceratina,Cerastium fontanum,7
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,7
+2,2016-06-15,9,9.2,14:58-15:28,Halictidae,Halictus,Halictus ligatus,Trifolium repens,21
+2,2016-06-15,9,9.2,14:58-15:28,Apidae,Apis,Apis mellifera,Trifolium repens,46
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Apis,Apis mellifera,Leucanthemum vulgare,1
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Apis,Apis mellifera,Vicia cracca,1
+3,2016-07-06,9,9.2,10:18-10:48,NA,NA,Unknown,Leucanthemum vulgare,1
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Bombus,Bombus impatiens,Leucanthemum vulgare,1
+3,2016-07-06,9,9.2,10:18-10:48,Halictidae,Halictus,Halictus,Trifolium repens,1
+3,2016-07-06,9,9.2,10:18-10:48,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,1
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Bombus,Bombus,Vicia cracca,2
+3,2016-07-06,9,9.2,10:18-10:48,Halictidae,Halictus,Halictus ligatus,Vicia cracca,2
+3,2016-07-06,9,9.2,10:18-10:48,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,3
+3,2016-07-06,9,9.2,10:18-10:48,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Leucanthemum vulgare,3
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Bombus,Bombus ternarius,Trifolium repens,4
+3,2016-07-06,9,9.2,10:18-10:48,Megachilidae,Osmia,Osmia,Trifolium repens,4
+3,2016-07-06,9,9.2,10:18-10:48,Megachilidae,Megachile,Megachile,Leucanthemum vulgare,7
+3,2016-07-06,9,9.2,10:18-10:48,Andrenidae,Andrena,Andrena,Trifolium repens,11
+3,2016-07-06,9,9.2,10:18-10:48,Andrenidae,Andrena,Andrena cressonii,Trifolium repens,11
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Bombus,Bombus impatiens,Trifolium repens,11
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Bombus,Bombus,Trifolium repens,17
+3,2016-07-06,9,9.2,10:18-10:48,Apidae,Apis,Apis mellifera,Trifolium repens,88
+4,2016-08-04,9,9.2,12:08-12:38,Andrenidae,Andrena,Andrena,Solidago canadensis,1
+4,2016-08-04,9,9.2,12:08-12:38,NA,NA,Unknown,Solidago canadensis,1
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus impatiens,Solidago canadensis,1
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus impatiens,Vicia cracca,1
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus rufocinctus,Solidago canadensis,1
+4,2016-08-04,9,9.2,12:08-12:38,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Solidago canadensis,1
+4,2016-08-04,9,9.2,12:08-12:38,Colletidae,Colletes,Colletes simulans armatus,Solidago canadensis,2
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus ternarius,Solidago canadensis,3
+4,2016-08-04,9,9.2,12:08-12:38,Halictidae,Lasioglossum,Lasioglossum,Solidago canadensis,3
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus,Solidago canadensis,4
+4,2016-08-04,9,9.2,12:08-12:38,Megachilidae,Megachile,Megachile latimanus,Vicia cracca,4
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus,Solidago canadensis,5
+4,2016-08-04,9,9.2,12:08-12:38,Apidae,Bombus,Bombus rufocinctus,Solidago canadensis,5
+4,2016-08-19,9,9.2,12:08-12:38,Andrenidae,Andrena,Andrena,Achillea millefolium,2
+3,2016-07-11,9,9.3,8:20-8:50,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,1
+3,2016-07-11,9,9.3,8:20-8:50,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,24
+4,2016-08-05,9,9.4,7:58-8:28,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,343
+1,2016-06-04,10,10.1,15:40-16:10,Halictidae,Halictus,Halictus,Ranunculus acris,1
+1,2016-06-04,10,10.1,15:40-16:10,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,1
+1,2016-06-04,10,10.1,15:40-16:10,Apidae,Bombus,Bombus ternarius,Ranunculus acris,2
+1,2016-06-04,10,10.1,15:40-16:10,Megachilidae,Osmia,Osmia  ,Ranunculus acris,3
+3,2016-07-26,10,10.1,9:44-10:14,Andrenidae,Andrena,Andrena,Solidago canadensis,1
+3,2016-07-26,10,10.1,9:44-10:14,Apidae,Bombus,Bombus,Ranunculus acris,1
+3,2016-07-26,10,10.1,9:44-10:14,Halictidae,Lasioglossum,Lasioglossum,Ranunculus acris,1
+3,2016-07-26,10,10.1,9:44-10:14,Apidae,Bombus,Bombus impatiens,Vicia cracca,2
+3,2016-07-26,10,10.1,9:44-10:14,Andrenidae,Andrena,Andrena,Verbena hastata,3
+3,2016-07-26,10,10.1,9:44-10:14,Halictidae,Lasioglossum,Lasioglossum,Solidago canadensis,3
+3,2016-07-26,10,10.1,9:44-10:14,Andrenidae,Andrena,Andrena,Ranunculus acris,9
+3,2016-07-26,10,10.1,9:44-10:14,Apidae,Bombus,Bombus ternarius,Solidago canadensis,10
+4,2016-08-29,10,10.1,13:24-13:54,NA,NA,Unknown,Solidago spp.,1
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus,Symphotrichum lanceolatum,1
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus,Symphotrichum lanceolatum,1
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Ceratina,Ceratina calcarata,Symphotrichum lanceolatum,1
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Ceratina,Ceratina calcarata,Solidago spp.,2
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus borealis,Solidago spp.,4
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus ternarius,Solidago spp.,5
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus impatiens,Symphotrichum lanceolatum,8
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus sandersoni,Solidago spp.,8
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus,Solidago spp.,10
+4,2016-08-29,10,10.1,13:24-13:54,Apidae,Bombus,Bombus impatiens,Solidago spp.,55
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Augochlora,Augochlora,Ranunculus acris,1
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus confusus,Ranunculus acris,1
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,1
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Leucanthemum vulgare,1
+2,2016-07-03,10,10.2,12:04-12:34,Andrenidae,Andrena,Andrena,Ranunculus acris,2
+2,2016-07-03,10,10.2,12:04-12:34,Andrenidae,Andrena,Andrena,Vicia cracca,2
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus ligatus,Vicia cracca,2
+2,2016-07-03,10,10.2,12:04-12:34,Megachilidae,Hoplitis,Hoplitis pilosifrons,Ranunculus acris,2
+2,2016-07-03,10,10.2,12:04-12:34,Megachilidae,Hoplitis,Hoplitis pilosifrons,Leucanthemum vulgare,3
+2,2016-07-03,10,10.2,12:04-12:34,NA,NA,Unknown,Galium mollugo,5
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus confusus,Galium mollugo,5
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,5
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Lasioglossum,Lasioglossum,Galium mollugo,6
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Lasioglossum,Lasioglossum,Ranunculus acris,6
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus ligatus,Galium mollugo,7
+2,2016-07-03,10,10.2,12:04-12:34,NA,NA,Unknown,Ranunculus acris,10
+2,2016-07-03,10,10.2,12:04-12:34,Halictidae,Halictus,Halictus ligatus,Ranunculus acris,12
+3,2016-07-26,10,10.3,8:27-8:52,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,3
+3,2016-07-26,10,10.3,8:27-8:52,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,16
+4,2016-08-29,10,10.4,9:07-9:31,Apidae,Bombus,Bombus impatiens,Solanum lycopersicum,1
+4,2016-08-29,10,10.4,9:07-9:31,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,16
+4,2016-08-29,10,10.4,9:07-9:31,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,84
+2,2016-06-17,11,11.1,13:06-13:36,Megachilidae,Megachile,Megachile,Trifolium repens,2
+2,2016-06-17,11,11.1,13:06-13:36,Apidae,Bombus,Bombus borealis,Trifolium repens,3
+2,2016-06-17,11,11.1,13:06-13:36,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,3
+2,2016-06-17,11,11.1,13:06-13:36,Andrenidae,Andrena,Andrena,Trifolium repens,7
+2,2016-06-17,11,11.1,13:06-13:36,Megachilidae,Osmia,Osmia,Trifolium repens,10
+2,2016-06-17,11,11.1,13:06-13:36,Halictidae,Halictus,Halictus ligatus,Trifolium repens,13
+2,2016-06-17,11,11.1,13:06-13:36,Megachilidae,Megachile,Megachile,Trifolium repens,16
+2,2016-06-17,11,11.1,13:06-13:36,Apidae,Bombus,Bombus vagans,Trifolium repens,34
+2,2016-06-17,11,11.1,13:06-13:36,Apidae,Bombus,Bombus impatiens,Trifolium repens,37
+2,2016-06-17,11,11.1,13:06-13:36,Apidae,Bombus,Bombus terricola,Trifolium repens,46
+2,2016-06-17,11,11.1,13:06-13:36,Apidae,Bombus,Bombus ternarius,Trifolium repens,56
+3,2016-07-12,11,11.1,11:48-12:18,NA,NA,Unknown,Trifolium repens,1
+3,2016-07-12,11,11.1,11:48-12:18,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Trifolium repens,1
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Bombus,Bombus terricola,Trifolium repens,2
+3,2016-07-12,11,11.1,11:48-12:18,Halictidae,Halictus,Halictus ligatus,Cerastium fontanum,2
+3,2016-07-12,11,11.1,11:48-12:18,Halictidae,Augochlorella,Augochlorella aurata,Trifolium repens,3
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Bombus,Bombus,Trifolium repens,4
+3,2016-07-12,11,11.1,11:48-12:18,Andrenidae,Andrena,Andrena,Trifolium repens,5
+3,2016-07-12,11,11.1,11:48-12:18,NA,NA,Unknown,Trifolium repens,5
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Apis,Apis mellifera,Trifolium repens,9
+3,2016-07-12,11,11.1,11:48-12:18,Andrenidae,Andrena,Andrena,Trifolium repens,10
+3,2016-07-12,11,11.1,11:48-12:18,Halictidae,Halictus,Halictus confusus,Trifolium repens,10
+3,2016-07-12,11,11.1,11:48-12:18,Megachilidae,Megachile,Megachile melanophaea,Trifolium repens,10
+3,2016-07-12,11,11.1,11:48-12:18,Halictidae,Halictus,Halictus ligatus,Trifolium repens,14
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Bombus,Bombus impatiens,Trifolium repens,35
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Bombus,Bombus ternarius,Trifolium repens,37
+3,2016-07-12,11,11.1,11:48-12:18,Apidae,Bombus,Bombus borealis,Trifolium repens,41
+2,2016-05-23,11,11.2,11:38-12:08,Andrenidae,Andrena,Andrena,Leucanthemum vulgare,4
+1,2016-05-26,11,11.2,10:43-11:13,Halictidae,NA,Unknown,Taraxacum agg.,1
+1,2016-05-26,11,11.2,10:43-11:13,Megachilidae,Osmia,Osmia distincta,Fragaria virginiana,3
+1,2016-05-26,11,11.2,10:43-11:13,Halictidae,Augochlorella,Augochlorella,Fragaria virginiana,5
+1,2016-05-26,11,11.2,10:43-11:13,Halictidae,Halictus,Halictus confusus,Fragaria virginiana,5
+1,2016-05-26,11,11.2,10:43-11:13,Megachilidae,Osmia,Osmia  ,Fragaria virginiana,12
+1,2016-05-26,11,11.2,10:43-11:13,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Fragaria virginiana,30
+2,2016-06-17,11,11.2,11:38-12:08,Halictidae,Augochlorella,Augochlorella,Hieracium caespitosum,2
+2,2016-06-17,11,11.2,11:38-12:08,Halictidae,Augochlorella,Augochlorella,Geum aleppicum,4
+3,2016-07-12,11,11.2,10:48-11:18,Halictidae,Lasioglossum,Lasioglossum,Asclepias sp.,3
+4,2016-08-08,11,11.2,12:32-13:02,Apidae,Bombus,Bombus,Solidago canadensis,1
+4,2016-08-08,11,11.2,12:32-13:02,Apidae,Bombus,Bombus vagans,Potentilla recta,2
+4,2016-08-08,11,11.2,12:32-13:02,Apidae,Bombus,Bombus vagans,Vicia cracca,2
+4,2016-08-08,11,11.2,12:32-13:02,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Silene vulgaris,2
+4,2016-08-08,11,11.2,12:32-13:02,Megachilidae,Megachile,Megachile,Solidago canadensis,3
+4,2016-08-08,11,11.2,12:32-13:02,Apidae,Bombus,Bombus vagans,Agrimonia gryposepala,6
+1,2016-05-26,11,11.3,9:45-10:15,NA,NA,NA,NA,0
+4,2016-08-08,11,11.4,9:06-9:36,Apidae,Apis,Apis mellifera,Fagopyrum esculentum,1
+4,2016-08-08,11,11.4,9:06-9:36,Apidae,Bombus,Bombus ternarius,Fagopyrum esculentum,1
+4,2016-08-08,11,11.4,9:06-9:36,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,287
+2,2016-06-15,12,12.1,10:10-10:40,Andrenidae,Andrena,Andrena,Trifolium repens,1
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Augochlorella,Augochlorella,Erigeron philadelphicus,1
+2,2016-06-15,12,12.1,10:10-10:40,NA,NA,Unknown,Medicago lupulina,1
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum,Medicago lupulina,1
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,1
+2,2016-06-15,12,12.1,10:10-10:40,Apidae,Bombus,Bombus vagans,Trifolium repens,2
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Halictus,Halictus ligatus,Trifolium repens,2
+2,2016-06-15,12,12.1,10:10-10:40,Colletidae,Hylaeus,Hylaeus,Erigeron philadelphicus,2
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Medicago lupulina,2
+2,2016-06-15,12,12.1,10:10-10:40,Andrenidae,Andrena,Andrena,Erigeron philadelphicus,3
+2,2016-06-15,12,12.1,10:10-10:40,Andrenidae,Andrena,Andrena,Medicago lupulina,3
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum,Erigeron philadelphicus,3
+2,2016-06-15,12,12.1,10:10-10:40,Apidae,Apis,Apis mellifera,Trifolium repens,8
+2,2016-06-15,12,12.1,10:10-10:40,Colletidae,Hylaeus,Hylaeus,Geum aleppicum,8
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Trifolium repens,11
+2,2016-06-15,12,12.1,10:10-10:40,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,12
+4,2016-06-16,12,12.1,12:35-13:05,Andrenidae,Andrena,Andrena,Hieracium pilosella,2
+3,2016-07-05,12,12.1,14:03-14:33,Andrenidae,Andrena,Andrena,Trifolium repens,1
+3,2016-07-05,12,12.1,14:03-14:33,Andrenidae,Andrena,Andrena perplexa,Trifolium repens,1
+3,2016-07-05,12,12.1,14:03-14:33,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,2
+3,2016-07-05,12,12.1,14:03-14:33,Apidae,Ceratina,Ceratina calcarata,Trifolium repens,31
+3,2016-07-05,12,12.1,14:03-14:33,Andrenidae,Andrena,Andrena perplexa,Trifolium repens,33
+4,2016-08-01,12,12.1,12:35-13:05,NA,NA,Unknown,Trifolium repens,1
+4,2016-08-01,12,12.1,12:35-13:05,Halictidae,Lasioglossum,Lasioglossum,Hieracium pilosella,2
+4,2016-08-01,12,12.1,12:35-13:05,Halictidae,Augochlorella,Augochlorella,Trifolium repens,3
+4,2016-08-01,12,12.1,12:35-13:05,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,3
+4,2016-08-01,12,12.1,12:35-13:05,Apidae,Apis,Apis mellifera,Hieracium pilosella,5
+3,2016-08-09,12,12.1,14:03-14:33,Andrenidae,Andrena,Andrena perplexa,Melilotus alba,17
+1,2016-05-20,12,12.2,15:11-15:41,Apidae,Ceratina,Ceratina,Fragaria virginiana,1
+1,2016-05-20,12,12.2,15:11-15:41,Halictidae,Lasioglossum,Lasioglossum,Taraxacum agg.,1
+1,2016-05-20,12,12.2,15:11-15:41,Apidae,Apis,Apis mellifera,Fragaria virginiana,3
+1,2016-05-20,12,12.2,15:11-15:41,Apidae,Ceratina,Ceratina,Glechoma hederacea,3
+1,2016-05-20,12,12.2,15:11-15:41,Apidae,Ceratina,Ceratina,Taraxacum agg.,3
+1,2016-05-20,12,12.2,15:11-15:41,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,3
+1,2016-05-20,12,12.2,15:11-15:41,Halictidae,Halictus,Halictus confusus,Fragaria virginiana,5
+1,2016-05-20,12,12.2,15:11-15:41,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Fragaria virginiana,6
+2,2016-06-15,12,12.2,11:00-11:30,Apidae,Ceratina,Ceratina,Rubus sp. (raspberry),1
+2,2016-06-15,12,12.2,11:00-11:30,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Hieracium pilosella,1
+2,2016-06-15,12,12.2,11:00-11:30,Halictidae,Lasioglossum,Lasioglossum,Rubus sp. (raspberry),2
+2,2016-06-15,12,12.2,11:00-11:30,Andrenidae,Andrena,Andrena,Rubus sp. (raspberry),3
+2,2016-06-15,12,12.2,11:00-11:30,NA,NA,Unknown,Rubus sp. (raspberry),3
+2,2016-06-15,12,12.2,11:00-11:30,Apidae,Bombus,Bombus impatiens,Rubus sp. (raspberry),4
+2,2016-06-15,12,12.2,11:00-11:30,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Rubus sp. (raspberry),4
+2,2016-06-15,12,12.2,11:00-11:30,Andrenidae,Andrena,Andrena integra,Rubus sp. (raspberry),5
+2,2016-06-15,12,12.2,11:00-11:30,Colletidae,Hylaeus,Hylaeus,Rubus sp. (raspberry),17
+2,2016-06-15,12,12.2,11:00-11:30,Apidae,Apis,Apis mellifera,Rubus sp. (raspberry),39
+3,2016-07-06,12,12.3,8:26-8:56,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,4
+3,2016-07-06,12,12.3,8:26-8:56,Apidae,Apis,Apis mellifera,Cucurbita spp.,22
+1,2016-05-20,13,13.1,12:15-12:45,Andrenidae,Andrena,Andrena carlini,Taraxacum agg.,1
+1,2016-05-20,13,13.1,12:15-12:45,Andrenidae,Andrena,Andrena wilkella,Taraxacum agg.,1
+1,2016-05-20,13,13.1,12:15-12:45,Apidae,Apis,Apis mellifera,Taraxacum agg.,1
+1,2016-05-20,13,13.1,12:15-12:45,Halictidae,Augochlorella,Augochlorella,Taraxacum agg.,1
+1,2016-05-20,13,13.1,12:15-12:45,Megachilidae,Osmia,Osmia,Taraxacum agg.,2
+1,2016-05-20,13,13.1,12:15-12:45,Halictidae,Halictus,Halictus,Taraxacum agg.,3
+1,2016-05-20,13,13.1,12:15-12:45,Megachilidae,Osmia,Osmia lignaria,Taraxacum agg.,3
+1,2016-05-20,13,13.1,12:15-12:45,Andrenidae,Andrena,Andrena,Taraxacum agg.,4
+1,2016-05-20,13,13.1,12:15-12:45,Andrenidae,Andrena,Andrena wilkella,Taraxacum agg.,5
+2,2016-05-26,13,13.1,13:22-13:52,Andrenidae,Andrena,Andrena,Cerastium fontanum,1
+2,2016-06-14,13,13.1,13:22-13:52,NA,NA,Unknown,Erigeron philadelphicus,1
+2,2016-06-14,13,13.1,13:22-13:52,Halictidae,Augochlorella,Augochlorella,Sisyrinchium montanum,2
+2,2016-06-14,13,13.1,13:22-13:52,Apidae,Ceratina,Ceratina calcarata,Erigeron philadelphicus,2
+2,2016-06-14,13,13.1,13:22-13:52,Halictidae,Halictus,Halictus ligatus,Trifolium pratense,2
+2,2016-06-14,13,13.1,13:22-13:52,Apidae,Bombus,Bombus borealis,Vicia cracca,4
+2,2016-06-14,13,13.1,13:22-13:52,Megachilidae,Megachile,Megachile relativa,Erigeron philadelphicus,5
+2,2016-06-14,13,13.1,13:22-13:52,Halictidae,Halictus,Halictus ligatus,Erigeron philadelphicus,7
+2,2016-08-01,13,13.1,13:22-13:52,Andrenidae,Andrena,Andrena,Erigeron philadelphicus,2
+4,2016-08-04,13,13.1,9:07-9:37,Halictidae,Lasioglossum,Lasioglossum,Taraxacum agg.,1
+4,2016-08-04,13,13.1,9:07-9:37,Apidae,Bombus,Bombus sandersoni,Trifolium pratense,4
+4,2016-08-04,13,13.1,9:07-9:37,Apidae,Bombus,Bombus vagans,Lotus corniculatus,4
+4,2016-08-04,13,13.1,9:07-9:37,Apidae,Bombus,Bombus vagans,Trifolium pratense,11
+1,2016-05-20,13,13.2,11:00-11:30,Halictidae,Augochlorella,Augochlorella,Trillium grandiflorum,1
+1,2016-05-20,13,13.2,11:00-11:30,Apidae,Bombus,Bombus vagans,Actaea pachypoda,1
+1,2016-05-20,13,13.2,11:00-11:30,Apidae,Bombus,Bombus vagans,Polygonatum pubescens,1
+4,2016-08-04,13,13.3,8:12-8:42,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,1
+4,2016-08-04,13,13.3,8:12-8:42,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,86
+3,2016-07-06,14,14.1,13:16-13:46,NA,NA,NA,NA,0
+1,2016-05-23,14,14.2,14:38-15:08,NA,NA,NA,NA,0
+2,2016-06-16,14,14.3,9:34-10:04,Andrenidae,Andrena,Andrena,Rubus sp. (raspberry),1
+2,2016-06-16,14,14.3,9:34-10:04,Andrenidae,Andrena,Andrena,Rubus sp. (raspberry),1
+2,2016-06-16,14,14.3,9:34-10:04,NA,NA,Unknown,Trifolium repens,1
+2,2016-06-16,14,14.3,9:34-10:04,Apidae,Bombus,Bombus impatiens,Trifolium repens,1
+2,2016-06-16,14,14.3,9:34-10:04,Apidae,Bombus,Bombus ternarius,Rubus sp. (raspberry),3
+2,2016-06-16,14,14.3,9:34-10:04,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Rubus sp. (raspberry),5
+2,2016-06-16,14,14.3,9:34-10:04,Halictidae,Halictus,Halictus ligatus,Trifolium repens,6
+2,2016-06-16,14,14.3,9:34-10:04,Apidae,Bombus,Bombus ternarius,Rubus sp. (raspberry),9
+2,2016-06-16,14,14.3,9:34-10:04,Apidae,Apis,Apis mellifera,Trifolium repens,10
+2,2016-06-16,14,14.3,9:34-10:04,Apidae,Apis,Apis mellifera,Rubus sp. (raspberry),126
+4,2016-08-07,14,14.4,7:56-8:26,Apidae,Bombus,Bombus,Cucurbita spp.,1
+4,2016-08-07,14,14.4,7:56-8:26,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,7
+4,2016-08-07,14,14.4,7:56-8:26,Apidae,Apis,Apis mellifera,Cucurbita spp.,11
+4,2016-08-07,14,14.4,7:56-8:26,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,41
+2,2016-06-30,15,15.1,10:11-10:35,Halictidae,Halictus,Halictus ligatus,Ranunculus acris,2
+2,2016-06-30,15,15.1,10:11-10:35,Megachilidae,Megachile,Megachile,Asparagus officinalis,2
+2,2016-06-30,15,15.1,10:11-10:35,Apidae,Bombus,Bombus,Asparagus officinalis,3
+2,2016-06-30,15,15.1,10:11-10:35,Halictidae,Halictus,Halictus,Asparagus officinalis,3
+2,2016-06-30,15,15.1,10:11-10:35,Andrenidae,Andrena,Andrena,Ranunculus acris,6
+2,2016-06-30,15,15.1,10:11-10:35,Apidae,Bombus,Bombus impatiens,Asparagus officinalis,10
+2,2016-06-30,15,15.1,10:11-10:35,Halictidae,Halictus,Halictus ligatus,Asparagus officinalis,12
+2,2016-06-30,15,15.1,10:11-10:35,Apidae,Apis,Apis mellifera,Asparagus officinalis,26
+2,2016-06-30,15,15.1,10:11-10:35,Halictidae,Lasioglossum,Lasioglossum,Asparagus officinalis,45
+1,2016-06-03,15,15.2,12:33-13:03,Halictidae,Augochlorella,Augochlorella,Ranunculus acris,1
+1,2016-06-03,15,15.2,12:33-13:03,Colletidae,Hylaeus,Hylaeus modestus,Ranunculus acris,1
+1,2016-06-03,15,15.2,12:33-13:03,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,6
+1,2016-06-03,15,15.2,12:33-13:03,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Fragaria virginiana,17
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Halictus,Halictus ligatus,Ranunculus acris,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum,Lotus corniculatus,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum,Plantago lanceolata,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum,Veronica sp.,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Leucanthemum vulgare,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Plantago lanceolata,1
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Ranunculus acris,2
+2,2016-06-30,15,15.2,11:53-12:23,Colletidae,Colletes,Colletes willistoni,Physalis heterophylla,6
+2,2016-06-30,15,15.2,11:53-12:23,Halictidae,Halictus,Halictus ligatus,Lotus corniculatus,6
+3,2016-07-21,15,15.2,11:14-11:44,NA,NA,Unknown,Vicia cracca,1
+3,2016-07-21,15,15.2,11:14-11:44,Halictidae,Lasioglossum,Lasioglossum,Lotus corniculatus,1
+3,2016-07-21,15,15.2,11:14-11:44,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,2
+3,2016-07-21,15,15.2,11:14-11:44,Apidae,Bombus,Bombus borealis,Vicia cracca,3
+3,2016-07-21,15,15.2,11:14-11:44,Megachilidae,Heriades,Heriades carinata,Physalis heterophylla,3
+3,2016-07-21,15,15.2,11:14-11:44,Halictidae,Lasioglossum,Lasioglossum leucozonium,Physalis heterophylla,7
+1,2016-06-03,15,15.3,11:30-12:00,NA,NA,NA,NA,0
+3,2016-06-16,15,15.4,10:15-10:45,Andrenidae,Andrena,Andrena,Echium vulgare,4
+3,2016-07-21,15,15.4,10:15-10:45,Apidae,Bombus,Bombus,Echium vulgare,1
+3,2016-07-21,15,15.4,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum,Ranunculus acris,1
+3,2016-07-21,15,15.4,10:15-10:45,Colletidae,Colletes,Colletes willistoni,Nepeta cataria,2
+3,2016-07-21,15,15.4,10:15-10:45,NA,NA,Unknown,Echium vulgare,3
+3,2016-07-21,15,15.4,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum leucozonium,Cichorium intybus,3
+3,2016-07-21,15,15.4,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum,Echium vulgare,8
+3,2016-07-21,15,15.4,10:15-10:45,Apidae,Bombus,Bombus bimaculatus,Echium vulgare,19
+3,2016-07-21,15,15.4,10:15-10:45,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Echium vulgare,22
+3,2016-07-21,15,15.4,10:15-10:45,Apidae,Bombus,Bombus impatiens,Echium vulgare,38
+3,2016-08-03,15,15.4,10:15-10:45,Andrenidae,Andrena,Andrena,Cichorium intybus,16
+4,2016-08-23,15,15.5,12:56-13:26,Halictidae,Lasioglossum,Lasioglossum (Dialictus) versatum,Centaurea sp.,1
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Melissodes,Melissodes,Cirsium sp.,1
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus,Cirsium sp.,2
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus vagans,Centaurea sp.,2
+4,2016-08-23,15,15.5,12:56-13:26,Halictidae,Halictus,Halictus ligatus,Centaurea sp.,5
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus impatiens,Cirsium sp.,8
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus vagans,Cirsium sp.,8
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus impatiens,Echium vulgare,15
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Apis,Apis mellifera,Daucus carota,26
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus vagans,Echium vulgare,32
+4,2016-08-23,15,15.5,12:56-13:26,Apidae,Bombus,Bombus impatiens,Centaurea sp.,33
+3,2016-07-27,15,15.6,7:45-8:15,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+3,2016-07-27,15,15.6,7:45-8:15,NA,NA,Unknown,Cucurbita spp.,1
+3,2016-07-27,15,15.6,7:45-8:15,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,18
+3,2016-07-27,15,15.6,7:45-8:15,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,29
+4,2016-08-23,15,15.7,8:23-8:38,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,33
+1,2016-06-04,16,16.1,14:38-15:08,Halictidae,Augochlorella,Augochlorella,Sisyrinchium montanum,11
+2,2016-07-03,16,16.1,9:58-10:28,Halictidae,Augochlorella,Augochlorella,Asclepias sp.,1
+2,2016-07-03,16,16.1,9:58-10:28,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Achillea millefolium,1
+2,2016-07-03,16,16.1,9:58-10:28,Megachilidae,Megachile,Megachile latimanus,Achillea millefolium,1
+2,2016-07-03,16,16.1,9:58-10:28,Apidae,Bombus,Bombus,Vicia cracca,4
+2,2016-07-03,16,16.1,9:58-10:28,Megachilidae,Megachile,Megachile latimanus,Asclepias sp.,5
+2,2016-07-03,16,16.1,9:58-10:28,Halictidae,Augochlorella,Augochlorella,Silene vulgaris,7
+2,2016-07-03,16,16.1,9:58-10:28,Apidae,Bombus,Bombus impatiens,Silene vulgaris,7
+2,2016-07-03,16,16.1,9:58-10:28,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Silene vulgaris,22
+1,2016-06-07,17,17.1,10:53-11:23,Halictidae,Halictus,Halictus,Rubus allegheniensis,1
+1,2016-06-07,17,17.1,10:53-11:23,Halictidae,Lasioglossum,Lasioglossum coriaceum,Rubus allegheniensis,1
+1,2016-06-07,17,17.1,10:53-11:23,NA,NA,Unknown,picture 1 jun 7,2
+1,2016-06-07,17,17.1,10:53-11:23,Apidae,Bombus,Bombus impatiens,picture 1 jun 7,4
+1,2016-06-07,17,17.1,10:53-11:23,Halictidae,Lasioglossum,Lasioglossum,Rubus allegheniensis,5
+1,2016-06-07,17,17.1,10:53-11:23,Apidae,Apis,Apis mellifera,picture 1 jun 7,6
+1,2016-06-07,17,17.1,10:53-11:23,NA,NA,Unknown,Rubus allegheniensis,9
+1,2016-06-07,17,17.1,10:53-11:23,Apidae,Apis,Apis mellifera,Rubus allegheniensis,10
+1,2016-06-07,17,17.1,10:53-11:23,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Rubus allegheniensis,17
+1,2016-06-07,17,17.1,10:53-11:23,Apidae,Bombus,Bombus impatiens,Rubus allegheniensis,27
+3,2016-08-01,17,17.2,9:44-10:14,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+3,2016-08-01,17,17.2,9:44-10:14,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Cucumis melo,2
+3,2016-08-01,17,17.2,9:44-10:14,Apidae,Apis,Apis mellifera,Cucumis melo,25
+3,2016-08-01,17,17.3,8:54-9:24,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+3,2016-08-01,17,17.3,8:54-9:24,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,5
+3,2016-08-01,17,17.3,8:54-9:24,Apidae,Apis,Apis mellifera,Cucurbita spp.,36
+4,2016-09-01,17,17.4,8:21-8:51,Apidae,Apis,Apis mellifera,Cucurbita spp.,4
+4,2016-09-01,17,17.4,8:21-8:51,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,6
+4,2016-09-01,17,17.4,8:21-8:51,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,38
+1,2016-06-07,17,17.5,10:17-10:47,Halictidae,Lasioglossum,Lasioglossum,Fragaria × ananassa,2
+1,2016-06-07,17,17.5,10:17-10:47,NA,NA,Unknown,Fragaria × ananassa,3
+1,2016-06-07,17,17.5,10:17-10:47,Halictidae,Halictus,Halictus,Fragaria × ananassa,63
+1,2016-06-07,17,17.5,10:17-10:47,Apidae,Apis,Apis mellifera,Fragaria × ananassa,86
+2,2016-07-04,17,17.6,13:40-14:10,Colletidae,Colletes,Colletes,Helianthus annuus,1
+2,2016-07-04,17,17.6,13:40-14:10,Halictidae,Halictus,Halictus ligatus,Helianthus annuus,1
+2,2016-07-04,17,17.6,13:40-14:10,Halictidae,Lasioglossum,Lasioglossum,Erysimum cheiranthoides,1
+2,2016-07-04,17,17.6,13:40-14:10,Halictidae,Lasioglossum,Lasioglossum,Helianthus annuus,1
+2,2016-07-04,17,17.6,13:40-14:10,Andrenidae,Andrena,Andrena wilkella,Vicia cracca,2
+2,2016-07-04,17,17.6,13:40-14:10,Apidae,Bombus,Bombus impatiens,Helianthus annuus,2
+2,2016-07-04,17,17.6,13:40-14:10,Apidae,Melissodes,Melissodes subillata,Helianthus annuus,2
+2,2016-07-04,17,17.6,13:40-14:10,Apidae,Bombus,Bombus impatiens,Vicia cracca,3
+2,2016-07-04,17,17.6,13:40-14:10,NA,NA,Unknown,Helianthus annuus,4
+2,2016-07-21,17,17.6,13:40-14:10,Andrenidae,Andrena,Andrena male,Helianthus annuus,2
+1,2016-05-21,18,18.1,14:20-14:50,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,1
+1,2016-05-21,18,18.1,14:20-14:50,Halictidae,Lasioglossum,Lasioglossum zonulum,Taraxacum agg.,1
+1,2016-05-21,18,18.1,14:20-14:50,Apidae,Bombus,Bombus impatiens,Taraxacum agg.,3
+1,2016-05-21,18,18.1,14:20-14:50,Apidae,Apis,Apis mellifera,Taraxacum agg.,5
+1,2016-05-21,18,18.2,15:25-15:55,NA,NA,NA,NA,0
+2,2016-06-16,19,19.1,13:48-14:18,NA,NA,Unknown,Leucanthemum vulgare,1
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Halictus,Halictus ligatus,Vicia cracca,1
+2,2016-06-16,19,19.1,13:48-14:18,Colletidae,Hylaeus,Hylaeus,Leucanthemum vulgare,1
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Lasioglossum,Lasioglossum,Hieracium caespitosum,1
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Hieracium aurantiacum,1
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Sphecodes,Sphecodes,Leucanthemum vulgare,1
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Halictus,Halictus ligatus,Hieracium aurantiacum,2
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Halictus,Halictus ligatus,Hieracium caespitosum,2
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Leucanthemum vulgare,2
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,9
+2,2016-06-16,19,19.1,13:48-14:18,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,41
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus,Erigeron sp.,1
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Halictus,Halictus,Vicia cracca,1
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Oenothera biennis,1
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Apis,Apis mellifera,Oenothera biennis,2
+3,2016-07-11,19,19.2,9:49-10:19,NA,NA,Unknown,Leucanthemum vulgare,2
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Lasioglossum,Lasioglossum,Cerastium fontanum,2
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron canadensis ,2
+3,2016-07-11,19,19.2,9:49-10:19,NA,NA,Unknown,Erigeron canadensis ,2
+3,2016-07-11,19,19.2,9:49-10:19,NA,NA,Unknown,Leucanthemum vulgare,2
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus,Oenothera biennis,3
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus,Vicia cracca,3
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus ternarius,Leucanthemum vulgare,3
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Halictus,Halictus,Leucanthemum vulgare,3
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,3
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus impatiens,Oenothera biennis,5
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus vagans,Vicia cracca,6
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus borealis,Vicia cracca,7
+3,2016-07-11,19,19.2,9:49-10:19,Apidae,Bombus,Bombus,Leucanthemum vulgare,8
+3,2016-07-11,19,19.2,9:49-10:19,Halictidae,Halictus,Halictus ligatus,Leucanthemum vulgare,23
+4,2016-08-04,19,19.2,13:16-13:46,NA,NA,Unknown,Erigeron sp.,1
+4,2016-08-04,19,19.2,13:16-13:46,Apidae,Bombus,Bombus,Erigeron sp.,1
+4,2016-08-04,19,19.2,13:16-13:46,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,1
+4,2016-08-04,19,19.2,13:16-13:46,Apidae,Bombus,Bombus impatiens,Potentilla argentea,2
+4,2016-08-04,19,19.2,13:16-13:46,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Solidago canadensis,3
+4,2016-08-04,19,19.2,13:16-13:46,Halictidae,Sphecodes,Sphecodes,Erigeron sp.,3
+1,2016-05-27,19,19.3,11:50-12:20,Apidae,Ceratina,Ceratina calcarata,Taraxacum agg.,1
+1,2016-05-27,19,19.3,11:50-12:20,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,16
+1,2016-05-27,20,20.1,13:35-14:05,NA,NA,NA,NA,0
+2,2016-06-19,20,20.1,11:33-12:03,Halictidae,Halictus,Halictus ligatus,Vicia cracca,4
+2,2016-06-19,20,20.1,11:33-12:03,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Galium mollugo,13
+3,2016-07-19,20,20.1,11:18-11:48,Apidae,Bombus,Bombus ternarius,Cirsium sp.,1
+3,2016-07-19,20,20.1,11:18-11:48,Andrenidae,Andrena,Andrena,Vicia cracca,8
+3,2016-07-17,20,20.2,7:21-7:51,Apidae,Apis,Apis mellifera,Cucurbita spp.,13
+3,2016-07-17,20,20.2,7:21-7:51,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,33
+3,2016-07-17,20,20.2,7:21-7:51,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,85
+4,2016-08-17,20,20.3,7:27-7:57,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,18
+4,2016-08-17,20,20.3,7:27-7:57,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,26
+4,2016-08-17,20,20.4,14:18-14:32,Apidae,Bombus,Bombus vagans,Helianthus annuus,2
+4,2016-08-17,20,20.4,14:18-14:32,Apidae,Melissodes,Melissodes,Helianthus annuus,23
+4,2016-08-17,20,20.4,14:18-14:32,Apidae,Bombus,Bombus impatiens,Helianthus annuus,30
+1,2016-05-23,21,21.1,12:06-12:36,Andrenidae,Andrena,Andrena carlini,Barbarea vulgaris,3
+1,2016-05-26,21,21.1,12:06-12:36,Andrenidae,Andrena,Andrena,Taraxacum agg.,3
+1,2016-05-26,21,21.1,12:06-12:36,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,3
+1,2016-05-26,21,21.1,12:06-12:36,Andrenidae,Andrena,Andrena,Taraxacum agg.,5
+1,2016-05-26,21,21.1,12:06-12:36,Apidae,Apis,Apis mellifera,Taraxacum agg.,6
+1,2016-05-26,21,21.1,12:06-12:36,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Barbarea vulgaris,6
+1,2016-05-26,21,21.1,12:06-12:36,Apidae,Apis,Apis mellifera,Barbarea vulgaris,7
+1,2016-05-26,21,21.1,12:06-12:36,Halictidae,Halictus,Halictus,Barbarea vulgaris,12
+1,2016-05-26,21,21.1,12:06-12:36,Halictidae,Augochlorella,Augochlorella,Barbarea vulgaris,15
+1,2016-08-29,21,21.1,12:06-12:36,Andrenidae,Andrena,Andrena,Barbarea vulgaris,12
+2,2016-06-17,21,21.2,9:57-10:27,Apidae,Bombus,Bombus ternarius,Trifolium pratense,2
+2,2016-06-17,21,21.2,9:57-10:27,Halictidae,Halictus,Halictus ligatus,Lotus corniculatus,2
+2,2016-06-17,21,21.2,9:57-10:27,Apidae,Apis,Apis mellifera,Vicia cracca,3
+2,2016-06-17,21,21.2,9:57-10:27,Apidae,Apis,Apis mellifera,Lotus corniculatus,32
+4,2016-08-08,21,21.2,10:44-11:14,Apidae,Bombus,Bombus impatiens,Lotus corniculatus,6
+4,2016-08-08,21,21.2,10:44-11:14,Apidae,Apis,Apis mellifera,Trifolium pratense,11
+4,2016-08-08,21,21.2,10:44-11:14,Apidae,Bombus,Bombus vagans,Trifolium pratense,12
+4,2016-08-08,21,21.2,10:44-11:14,Apidae,Apis,Apis mellifera,Lotus corniculatus,130
+3,2016-07-12,21,21.3,13:45-14:15,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Achillea millefolium,1
+3,2016-07-12,21,21.3,13:45-14:15,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Anthemis arvensis,1
+3,2016-07-12,21,21.3,13:45-14:15,Halictidae,Lasioglossum,Lasioglossum,Anthemis arvensis,15
+3,2016-07-12,21,21.3,13:45-14:15,Halictidae,Halictus,Halictus ligatus,Anthemis arvensis,95
+3,2016-07-12,21,21.4,9:20-9:50,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+3,2016-07-12,21,21.4,9:20-9:50,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,3
+3,2016-07-12,21,21.4,9:20-9:50,Apidae,Apis,Apis mellifera,Cucurbita spp.,9
+4,2016-08-08,21,21.5,7:45-8:15,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,7
+4,2016-08-08,21,21.5,7:45-8:15,Apidae,Apis,Apis mellifera,Cucurbita spp.,27
+2,2016-06-23,22,22.1,13:25-13:55,Apidae,Apis,Apis mellifera,Vicia cracca,2
+2,2016-06-23,22,22.1,13:25-13:55,Halictidae,Halictus,Halictus ligatus,Vicia cracca,4
+2,2016-06-23,22,22.1,13:25-13:55,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Cerastium fontanum,4
+2,2016-06-23,22,22.1,13:25-13:55,Andrenidae,Andrena,Andrena,Vicia cracca,7
+2,2016-06-23,22,22.1,13:25-13:55,Halictidae,Halictus,Halictus ligatus,Cerastium fontanum,7
+2,2016-06-23,22,22.1,13:25-13:55,Apidae,Bombus,Bombus impatiens,Vicia cracca,9
+3,2016-07-20,22,22.1,9:06-9:36,Apidae,Bombus,Bombus impatiens,Vicia cracca,5
+3,2016-07-20,22,22.1,9:06-9:36,Apidae,Bombus,Bombus borealis,Vicia cracca,6
+3,2016-07-20,22,22.1,9:06-9:36,Apidae,Apis,Apis mellifera,Asclepias sp.,12
+4,2016-08-26,22,22.2,12:50-1:20,NA,NA,Unknown,Euthamia graminifolia,1
+4,2016-08-26,22,22.2,12:50-1:20,Halictidae,Lasioglossum,Lasioglossum,Solidago spp.,1
+4,2016-08-26,22,22.2,12:50-1:20,Apidae,Bombus,Bombus,Solidago spp.,4
+4,2016-08-26,22,22.2,12:50-1:20,Apidae,Bombus,Bombus ternarius,Solidago spp.,4
+4,2016-08-26,22,22.2,12:50-1:20,Andrenidae,Andrena,Andrena canadensis,Solidago spp.,7
+4,2016-08-26,22,22.2,12:50-1:20,Apidae,Ceratina,Ceratina calcarata,Solidago spp.,8
+4,2016-08-26,22,22.2,12:50-1:20,Apidae,Apis,Apis mellifera,Euthamia graminifolia,10
+4,2016-08-26,22,22.2,12:50-1:20,Andrenidae,Perdita,Perdita octomaculata,Solidago spp.,12
+4,2016-08-26,22,22.2,12:50-1:20,Apidae,Apis,Apis mellifera,Solidago spp.,101
+1,2016-05-31,22,22.3,11:58-12:28,NA,NA,NA,NA,0
+1,2016-05-31,22,22.4,10:48-11:18,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Amelanchier sp.,1
+1,2016-05-31,22,22.4,10:48-11:18,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erysimum cheiranthoides,1
+1,2016-05-31,22,22.4,10:48-11:18,Apidae,Ceratina,Ceratina calcarata,Vicia cracca,3
+1,2016-05-31,22,22.4,10:48-11:18,Halictidae,Lasioglossum,Lasioglossum,Amelanchier sp.,3
+1,2016-05-31,22,22.4,10:48-11:18,Megachilidae,Osmia,Osmia,Rubus allegheniensis,3
+1,2016-05-31,22,22.4,10:48-11:18,Halictidae,Augochlorella,Augochlorella,Rubus allegheniensis,5
+1,2016-05-31,22,22.4,10:48-11:18,Andrenidae,Andrena,Andrena carlini,Rubus allegheniensis,6
+1,2016-05-31,22,22.4,10:48-11:18,Halictidae,Halictus,Halictus,Rubus allegheniensis,7
+1,2016-05-31,22,22.4,10:48-11:18,Apidae,Ceratina,Ceratina calcarata,Rubus allegheniensis,29
+2,2016-06-24,22,22.5,8:35-9:05,Apidae,Apis,Apis mellifera,Cucurbita spp.,19
+3,2016-07-20,22,22.6,7:53-8:23,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,1
+3,2016-07-20,22,22.6,7:53-8:23,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,4
+3,2016-07-20,22,22.6,7:53-8:23,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,52
+3,2016-07-20,23,23.1,14:32-15:02,NA,NA,Unknown,Daucus carota,1
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Bombus,Bombus vagans,Echium vulgare,1
+3,2016-07-20,23,23.1,14:32-15:02,Megachilidae,Hoplitis,Hoplitis pilosifrons,Daucus carota,1
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Bombus,Bombus vagans,Echium vulgare,2
+3,2016-07-20,23,23.1,14:32-15:02,Halictidae,Lasioglossum,Lasioglossum,Echium vulgare,2
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Ceratina,Ceratina calcarata,Echium vulgare,3
+3,2016-07-20,23,23.1,14:32-15:02,Megachilidae,Hoplitis,Hoplitis pilosifrons,Echium vulgare,6
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Bombus,Bombus vagans,Echium vulgare,13
+3,2016-07-20,23,23.1,14:32-15:02,Megachilidae,Megachile,Megachile,Echium vulgare,15
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Apis,Apis mellifera,Daucus carota,18
+3,2016-07-20,23,23.1,14:32-15:02,Apidae,Bombus,Bombus borealis,Echium vulgare,21
+4,2016-08-19,23,23.1,11:24-11:54,NA,NA,Unknown,Apocynum androsaemifolium,1
+4,2016-08-19,23,23.1,11:24-11:54,NA,NA,Unknown,Rudbeckia hirta,1
+4,2016-08-19,23,23.1,11:24-11:54,NA,NA,Unknown,Solidago canadensis,1
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Achillea millefolium,1
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Euthamia graminifolia,1
+4,2016-08-19,23,23.1,11:24-11:54,Megachilidae,Megachile,Megachile,Lotus corniculatus,1
+4,2016-08-19,23,23.1,11:24-11:54,Megachilidae,Megachile,Megachile ,Cirsium vulgare,1
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Melissodes,Melissodes druriella,Solidago canadensis,1
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Apis,Apis mellifera,Echium vulgare,2
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Bombus,Bombus,Echium vulgare,2
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Bombus,Bombus impatiens,Daucus carota,2
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Bombus,Bombus impatiens,Rudbeckia hirta,2
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Erigeron philadelphicus,2
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Rudbeckia hirta,2
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Solidago canadensis,2
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Halictus,Halictus ligatus,Solidago canadensis,2
+4,2016-08-19,23,23.1,11:24-11:54,Megachilidae,Megachile,Megachile,Echium vulgare,2
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Apis,Apis mellifera,Cirsium vulgare,3
+4,2016-08-19,23,23.1,11:24-11:54,Halictidae,Lasioglossum,Lasioglossum,Solidago canadensis,3
+4,2016-08-19,23,23.1,11:24-11:54,Apidae,Bombus,Bombus impatiens,Echium vulgare,8
+4,2016-08-19,23,23.1,11:24-11:54,Megachilidae,Megachile,Megachile,Lotus corniculatus,8
+1,2016-05-31,23,23.2,15:30-16:00,Halictidae,Lasioglossum,Lasioglossum,Trifolium repens,2
+1,2016-05-31,23,23.2,15:30-16:00,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,3
+2,2016-06-23,23,23.2,9:50-10:20,NA,NA,Unknown,Leucanthemum vulgare,1
+2,2016-06-23,23,23.2,9:50-10:20,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Lotus corniculatus,1
+1,2016-05-30,24,24.1,9:39-10:09,Halictidae,Augochlorella,Augochlorella,Erysimum cheiranthoides,1
+1,2016-05-30,24,24.1,9:39-10:09,NA,NA,Unknown,Taraxacum agg.,1
+1,2016-05-30,24,24.1,9:39-10:09,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Lotus corniculatus,1
+1,2016-05-30,24,24.1,9:39-10:09,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,1
+1,2016-05-30,24,24.1,9:39-10:09,Halictidae,Halictus,Halictus ligatus,Taraxacum agg.,4
+4,2016-08-17,24,24.1,12:21-12:52,Apidae,Bombus,Bombus impatiens,Erigeron philadelphicus,1
+4,2016-08-17,24,24.1,12:21-12:52,Halictidae,Halictus,Halictus ligatus,Erigeron philadelphicus,2
+4,2016-08-17,24,24.1,12:21-12:52,Halictidae,Lasioglossum,Lasioglossum,Erigeron philadelphicus,2
+4,2016-08-17,24,24.1,12:21-12:52,Apidae,Bombus,Bombus rufocinctus,Trifolium pratense,9
+4,2016-08-17,24,24.1,12:21-12:52,Apidae,Bombus,Bombus impatiens,Trifolium pratense,33
+2,2016-06-22,24,24.2,12:17-12:47,Halictidae,Halictus,Halictus ligatus,Vicia cracca,1
+2,2016-06-22,24,24.2,12:17-12:47,Halictidae,Halictus,Halictus ligatus,Trifolium pratense,3
+3,2016-05-23,24,24.3,10:38-11:08,Andrenidae,Andrena,Andrena,Leucanthemum vulgare,49
+3,2016-06-22,24,24.3,10:38-11:08,Andrenidae,Andrena,Andrena,Erigeron sp.,19
+3,2016-07-17,24,24.3,10:38-11:08,NA,NA,Unknown,Erigeron sp.,1
+3,2016-07-17,24,24.3,10:38-11:08,Apidae,Bombus,Bombus borealis,Asclepias sp.,1
+3,2016-07-17,24,24.3,10:38-11:08,Apidae,Bombus,Bombus pensylvanicus,Asclepias sp.,1
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Daucus carota,1
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,1
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Asclepias sp.,1
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erigeron philadelphicus,1
+3,2016-07-17,24,24.3,10:38-11:08,Megachilidae,Megachile,Megachile relativa,Vicia cracca,1
+3,2016-07-17,24,24.3,10:38-11:08,NA,NA,Unknown,Cerastium fontanum,2
+3,2016-07-17,24,24.3,10:38-11:08,Megachilidae,Hoplitis,Hoplitis,Leucanthemum vulgare,2
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Asclepias sp.,2
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Erysimum cheiranthoides,2
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Potentilla argentea,3
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Leucanthemum vulgare,4
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Daucus carota,6
+3,2016-07-17,24,24.3,10:38-11:08,Apidae,Apis,Apis mellifera,Asclepias sp.,7
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Erigeron sp.,7
+3,2016-07-17,24,24.3,10:38-11:08,Halictidae,Lasioglossum,Lasioglossum,Cerastium fontanum,24
+4,2016-08-17,24,24.4,10:26-10:56,Apidae,Apis,Apis mellifera,Cucurbita spp.,1
+4,2016-08-17,24,24.4,10:26-10:56,Apidae,Bombus,Bombus,Cucurbita spp.,1
+4,2016-08-17,24,24.4,10:26-10:56,Apidae,Bombus,Bombus impatiens,Erysimum cheiranthoides,1
+4,2016-08-17,24,24.4,10:26-10:56,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,8
+4,2016-08-17,24,24.4,10:26-10:56,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,21
+2,2016-06-29,25,25.1,11:09-11:39,Halictidae,Halictus,Halictus ligatus,Trifolium aureum,2
+2,2016-06-29,25,25.1,11:09-11:39,Halictidae,Halictus,Halictus ligatus,Medicago sativa,6
+4,2016-08-23,25,25.2,10:49-11:19,Halictidae,Augochlorella,Augochlorella,Medicago sativa,2
+4,2016-08-23,25,25.2,10:49-11:19,Apidae,Bombus,Bombus impatiens,Medicago sativa,3
+1,2016-06-03,25,25.3,15:00-15:30,Apidae,Bombus,Bombus impatiens,Rubus allegheniensis,1
+1,2016-06-03,25,25.3,15:00-15:30,Apidae,Bombus,Bombus impatiens,Acer spicatum,3
+1,2016-06-03,25,25.3,15:00-15:30,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Acer spicatum,6
+1,2016-06-03,25,25.3,15:00-15:30,Apidae,Bombus,Bombus ternarius,Acer spicatum,14
+1,2016-06-16,25,25.3,15:00-15:30,Andrenidae,Andrena,Andrena,Acer spicatum,27
+1,2016-08-04,25,25.3,15:00-15:30,Andrenidae,Andrena,Andrena nigrihirta,Acer spicatum,36
+2,2016-06-29,25,25.4,10:11-10:41,Halictidae,Lasioglossum,Lasioglossum,Fagopyrum esculentum,1
+2,2016-06-29,25,25.4,10:11-10:41,Halictidae,Halictus,Halictus ligatus,Solanum tuberosum,2
+2,2016-06-29,25,25.4,10:11-10:41,Halictidae,Lasioglossum,Lasioglossum,Solanum tuberosum,7
+3,2016-07-21,25,25.5,13:32-14:02,Halictidae,Augochlorella,Augochlorella,Solanum tuberosum,2
+3,2016-07-21,25,25.6,8:11-8:41,Apidae,Bombus,Bombus impatiens,Cucumis melo,2
+4,2016-08-23,25,25.7,9:48-10:18,Apidae,Bombus,Bombus vagans,Cucurbita spp.,1
+4,2016-08-23,25,25.7,9:48-10:18,Apidae,Bombus,Bombus,Cucurbita spp.,9
+4,2016-08-23,25,25.7,9:48-10:18,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,32
+1,2016-05-24,26,26.1,11:20-11:50,Apidae,Apis,Apis mellifera,Taraxacum agg.,1
+1,2016-05-24,26,26.1,11:20-11:50,Apidae,Bombus,Bombus ternarius,Malus pumila,1
+1,2016-05-24,26,26.1,11:20-11:50,Andrenidae,Andrena,Andrena,Taraxacum agg.,3
+1,2016-05-24,26,26.1,11:20-11:50,NA,NA,Unknown,Malus pumila,3
+1,2016-05-24,26,26.1,11:20-11:50,Apidae,Bombus,Bombus vagans,Malus pumila,4
+1,2016-05-24,26,26.1,11:20-11:50,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Malus pumila,6
+1,2016-05-24,26,26.1,11:20-11:50,Apidae,Bombus,Bombus impatiens,Malus pumila,61
+1,2016-05-24,26,26.1,11:20-11:50,Apidae,Apis,Apis mellifera,Malus pumila,239
+1,2016-05-31,26,26.1,11:20-11:50,Andrenidae,Andrena,Andrena imitatrix,Malus pumila,4
+1,2016-05-24,26,26.2,14:42-15:12,Halictidae,Lasioglossum,Lasioglossum (Dialictus),Taraxacum agg.,3
+1,2016-05-24,26,26.2,14:42-15:12,Apidae,Apis,Apis mellifera,Taraxacum agg.,102
+1,2016-05-24,26,26.3,13:45-14:15,Apidae,Bombus,Bombus impatiens,Actaea pachypoda,1
+2,2016-06-18,26,26.4,12:03-12:33,NA,NA,Unknown,Oxalis stricta,1
+2,2016-06-18,26,26.4,12:03-12:33,NA,NA,Unknown,Trifolium pratense,1
+2,2016-06-18,26,26.4,12:03-12:33,Andrenidae,Andrena,Andrena,Vicia cracca,1
+2,2016-06-18,26,26.4,12:03-12:33,Apidae,Apis,Apis mellifera,Trifolium pratense,1
+2,2016-06-18,26,26.4,12:03-12:33,Andrenidae,Andrena,Andrena,Cerastium fontanum,2
+2,2016-06-18,26,26.4,12:03-12:33,Halictidae,Halictus,Halictus ligatus,Trifolium pratense,2
+2,2016-06-18,26,26.4,12:03-12:33,Andrenidae,Andrena,Andrena,Trifolium pratense,3
+2,2016-06-18,26,26.4,12:03-12:33,Halictidae,Halictus,Halictus ligatus,Trifolium repens,3
+2,2016-06-18,26,26.4,12:03-12:33,Halictidae,Lasioglossum,Lasioglossum coriaceum,Plantago lanceolata,4
+2,2016-06-18,26,26.4,12:03-12:33,Apidae,Bombus,Bombus ternarius,Trifolium pratense,5
+2,2016-06-18,26,26.4,12:03-12:33,Halictidae,Augochlorella,Augochlorella,Plantago lanceolata,7
+2,2016-06-18,26,26.4,12:03-12:33,Andrenidae,Andrena,Andrena,Trifolium repens,28
+2,2016-06-18,26,26.4,12:03-12:33,Apidae,Apis,Apis mellifera,Trifolium repens,55
+3,2016-07-13,26,26.5,8:47-9:17,Halictidae,Lasioglossum,Lasioglossum,Cucurbita spp.,2
+3,2016-07-13,26,26.5,8:47-9:17,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,3
+3,2016-07-13,26,26.5,8:47-9:17,Apidae,Apis,Apis mellifera,Cucurbita spp.,9
+4,2016-08-09,26,26.6,8:05-8:35,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+4,2016-08-09,26,26.6,8:05-8:35,Apidae,Apis,Apis mellifera,Cucurbita spp.,27
+4,2016-08-09,26,26.6,8:05-8:35,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,44
+1,2016-05-30,27,27.1,11:53-12:23,Andrenidae,Andrena,Andrena,Cerastium fontanum,21
+1,2016-06-10,27,27.1,11:53-12:23,Andrenidae,Andrena,Andrena,Trifolium repens,1
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Bombus,Bombus,Vicia cracca,1
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Bombus,Bombus ternarius,Trifolium repens,1
+1,2016-06-10,27,27.1,11:53-12:23,Andrenidae,Andrena,Andrena carlini,Trifolium repens,2
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Apis,Apis mellifera,Taraxacum agg.,2
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Bombus,Bombus impatiens,Trifolium pratense,3
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Bombus,Bombus ternarius,Trifolium pratense,3
+1,2016-06-10,27,27.1,11:53-12:23,Apidae,Apis,Apis mellifera,Trifolium repens,10
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Bombus,Bombus impatiens,Medicago sativa,1
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Bombus,Bombus impatiens,Trifolium repens,2
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Apis,Apis mellifera,Lotus corniculatus,7
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Apis,Apis mellifera,Trifolium repens,14
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Apis,Apis mellifera,Medicago sativa,16
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Bombus,Bombus vagans,Trifolium repens,19
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Apis,Apis mellifera,Trifolium pratense,20
+3,2016-07-29,27,27.1,14:41-15:11,Apidae,Bombus,Bombus vagans,Trifolium pratense,23
+2,2016-07-04,27,27.2,10:11-10:26,Halictidae,Augochlorella,Augochlorella,Vicia cracca,1
+2,2016-07-04,27,27.2,10:11-10:26,Apidae,Bombus,Bombus terricola,Vicia cracca,3
+2,2016-07-04,27,27.2,10:11-10:26,Apidae,Bombus,Bombus,Vicia cracca,4
+2,2016-07-04,27,27.2,10:11-10:26,Halictidae,Halictus,Halictus confusus,Cirsium arvense,4
+2,2016-07-04,27,27.2,10:11-10:26,Apidae,Bombus,Bombus impatiens,Vicia cracca,9
+2,2016-07-04,27,27.2,10:11-10:26,Apidae,Bombus,Bombus borealis,Vicia cracca,14
+2,2016-07-04,27,27.2,10:11-10:26,Halictidae,Halictus,Halictus ligatus,Vicia cracca,25
+2,2016-07-04,27,27.2,10:11-10:26,Apidae,Apis,Apis mellifera,Vicia cracca,39
+3,2016-07-29,27,27.3,8:07-8:37,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,1
+3,2016-07-29,27,27.3,8:07-8:37,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,150
+4,2016-08-30,27,27.4,7:31-7:46,Apidae,Peponapis,Peponapis pruinosa,Cucurbita spp.,1
+4,2016-08-30,27,27.4,7:31-7:46,Apidae,Bombus,Bombus impatiens,Cucurbita spp.,26

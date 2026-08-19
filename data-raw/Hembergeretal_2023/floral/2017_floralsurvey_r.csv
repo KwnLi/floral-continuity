@@ -1,0 +1,914 @@
+round,site.name,date,landcover,genus,species,common.name,sci.name,species.code,family,clump.even,n.quad
+5,Johnson,7/31/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,E,386
+4,Johnson,7/17/17,Field Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,,236
+6,Johnson,8/15/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,E,170
+5,Searles,7/31/17,Road Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,E,152
+4,Cranberry Creek,7/17/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,152
+6,Rezin,8/18/17,Grass/Pasture,Crepsis,tectorum,Hawksbeard,Crepsis tectorum,CRTE,Asteraceae,E,148
+2,Flying Dollar,6/21/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,145
+2,Rezin,6/21/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,141
+5,Cranberry Creek,7/31/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,124
+2,Cutler,6/21/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,113
+2,Cutler,6/21/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,112
+5,Glacial Lake,7/31/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,E,112
+1,Flying Dollar,6/9/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,106
+6,Searles,8/15/17,Road Edge,Trifolium,,Clover,Trifolium ,TR,Fabaceae,E,105
+6,Flying Dollar,8/18/17,Road Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,E,102
+2,Cutler,6/21/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,101
+5,Searles,7/31/17,Wood Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,E,100
+2,Brian Pederson,6/21/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,98
+3,Cranberry Creek,6/26/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,97
+2,Rezin,6/21/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,92
+3,Glacial Lake,6/26/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,89
+6,Flying Dollar,8/18/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,87
+2,Brian Pederson,6/21/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,86
+4,Glacier Lake,7/17/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,E,84
+3,Englehook,6/26/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,83
+5,Cranberry Creek,7/31/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,83
+5,Habelman,8/1/17,Road Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,83
+1,Cutler North,6/9/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,81
+4,Lynn Hill,7/17/17,Wood Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,,81
+3,Lynn Hill,6/26/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,80
+5,Brian P,8/1/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,80
+5,Salzwedel,8/1/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,80
+4,Cranberry Creek,7/17/17,Cranberry,Vacciunium,macrocarpon,Cranberry,Vacciunium macrocarpon,VAMA,Ericaceae,,78
+1,Flying Dollar,6/9/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,77
+1,Habel Rd,6/9/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,75
+1,Brian P,6/9/17,Field Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,72
+3,Cranberry Creek,6/26/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,72
+6,Flying Dollar,8/18/17,Grass/Pasture,Persicaria ,maculosa,Ladys Thumb,Persicaria  maculosa,PEMA,Polygonaceae,C,71
+4,Cranberry Creek,7/17/17,Field Edge,,,Thistle, ,,Asteraceae,E,70
+3,Johnson Cranberry,6/26/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,E,69
+4,Englehook,7/17/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,69
+5,Basswater,8/1/17,Field Edge,Trifolium,,Clover,Trifolium ,TR,Fabaceae,,69
+2,Flying Dollar,6/21/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,68
+3,Cranberry Creek,6/26/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,68
+1,Brian P,6/9/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,67
+1,Cutler North,6/9/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,67
+4,Searles,7/17/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,66
+3,Englehook,6/26/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,65
+2,Cutler,6/21/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,64
+1,Cutler North,6/9/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,63
+3,Gaynor,6/26/17,Wood Edge,Sambucus,,Elderberry,Sambucus ,SA,Adoxaceae,,63
+5,Cranberry Creek,7/31/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,E,63
+5,Flying Dollar,8/1/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,62
+3,Englehook,6/26/17,Field Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,61
+2,Cutler,6/21/17,Grass/Pasture,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,59
+2,Glacial Lake,6/22/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,59
+4,Searles,7/17/17,Wood Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,E,59
+5,Englenook,7/31/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,E,59
+1,Habel Rd,6/9/17,Road Edge,Lupinus,,Lupine,Lupinus ,LU,Fabaceae,,58
+2,Engelnook,6/22/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,58
+6,Brian Pederson,8/18/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,E,58
+6,Flying Dollar,8/18/17,Road Edge,Trifolium,aureum,Hop Clover,Trifolium aureum,TRAU,Fabaceae,C,58
+5,Rezin,8/1/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,55
+4,Searles,7/17/17,Road Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,E,54
+6,Rezin,8/18/17,Grass/Pasture,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,E,53
+2,Cutler,6/21/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,52
+4,Lynn Hill,7/17/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,52
+5,Englenook,7/31/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,52
+6,Lynn Hill,8/15/17,Cranberry,Sagittaria ,latifolia,Duck Potato,Sagittaria  latifolia,SALA,Alismataceae,C,52
+1,Cutler North,6/9/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,51
+2,Engelnook,6/22/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,51
+3,Searles,6/26/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,E,51
+4,Habelman Ebert,7/14/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,51
+5,Lynn Hill,7/31/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,50
+6,Cranberry Creek,8/15/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,49
+6,Lynn Hill,8/15/17,Cranberry,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,49
+2,Brian Pederson,6/21/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,48
+2,Rezin,6/21/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,48
+4,Searles,7/17/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,E,48
+3,Cranberry Creek,6/26/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,E,47
+4,Englehook,7/17/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,47
+1,Cutler North,6/9/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,46
+2,Brian Pederson,6/21/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,45
+3,Searles,6/26/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,45
+4,Cranberry Creek,7/17/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,45
+1,Cutler North,6/9/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,44
+3,Cranberry Creek,6/26/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,E,44
+3,Cranberry Creek,6/26/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,44
+6,Searles,8/15/17,Wood Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,44
+1,Salzwedel,6/9/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,43
+5,Lynn Hill,7/31/17,Wood Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,43
+2,Brian Pederson,6/21/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,42
+6,Lynn Hill,8/15/17,Cranberry,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,42
+2,Engelnook,6/22/17,Field Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,41
+2,Searles,6/22/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,41
+4,Cranberry Creek,7/17/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,41
+4,Searles,7/17/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,41
+5,Cranberry Creek,7/31/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,C,41
+1,Brian P,6/9/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,40
+6,Glacial Lake,8/15/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,E,40
+2,Glacial Lake,6/22/17,Road Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,39
+2,Rezin,6/21/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,39
+2,Glacial Lake,6/22/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,38
+4,Brian P,7/14/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,38
+4,Brian P,7/14/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,38
+4,Cutler,7/14/17,Road Edge,,,, ,,Fabaceae,,38
+4,Habelman Tunnel,7/14/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,38
+5,Lynn Hill,7/31/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,38
+6,Brian Pederson,8/18/17,Grass/Pasture,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,E,38
+1,Flying Dollar,6/9/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,37
+2,Salzwedle,6/21/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,37
+3,Glacial Lake,6/26/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,37
+4,Johnson,7/17/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,37
+1,Salzwedel,6/9/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,36
+3,Lynn Hill,6/26/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,36
+4,Lynn Hill,7/17/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,36
+3,Lynn Hill,6/26/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,E,35
+4,Habelman Tunnel,7/14/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,35
+4,Lynn Hill,7/17/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,35
+6,Englenook,8/15/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,35
+6,Rezin,8/18/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,35
+1,Brian P,6/9/17,Field Edge,Trifolium,pratense,Red Clover,Trifolium pratense,TRPR,Fabaceae,,34
+1,Cutler North,6/9/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,E,34
+2,Gaynor,6/22/17,Wood Edge,Sambucus,,Elderberry,Sambucus ,SA,Adoxaceae,,34
+2,Salzwedle,6/21/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,34
+4,Cranberry Creek,7/17/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,34
+4,Cutler,7/14/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,34
+5,Searles,7/31/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,34
+6,Brian Pederson,8/18/17,Field Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,E,34
+2,Flying Dollar,6/21/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,33
+3,Cranberry Creek,6/26/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,33
+3,Glacial Lake,6/26/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,33
+4,Johnson,7/17/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,33
+5,Rezin,8/1/17,Grass/Pasture,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,33
+5,Rezin,8/1/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,33
+5,Searles,7/31/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,33
+6,Englenook,8/15/17,Wood Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,33
+1,Habel Rd,6/9/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,32
+1,Rezin,6/9/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,32
+2,Flying Dollar,6/21/17,Grass/Pasture,,,,,,Lamiaceae,,32
+4,Basswater,7/14/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,32
+4,Cranberry Creek,7/17/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,32
+4,Cutler,7/14/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,32
+4,Rezin,7/14/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,32
+6,Cranberry Creek,8/15/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,32
+3,Englehook,6/26/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,31
+3,Searles,6/26/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,E,30
+5,Cranberry Creek,7/31/17,Road Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,30
+5,Gaynor,7/31/17,Road Edge,Spiraea,alba,Meadowsweet,Spiraea alba,SPAL,Rosaceae,C,30
+6,Cranberry Creek,8/15/17,Grass/Pasture,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,C,30
+1,Rezin,6/9/17,Road Edge,Dalea,candida,White Prairie Clover,Dalea candida,DACA,Fabaceae,,29
+2,Cranberry Creek,6/21/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,29
+2,Rezin,6/21/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,29
+2,Searles,6/22/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,29
+3,Searles,6/26/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,29
+4,Englehook,7/17/17,Field Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,29
+5,Rezin,8/1/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,29
+6,Flying Dollar,8/18/17,Grass/Pasture,Blephilia,hirsuta,Hairy Wood-mint,Blephilia hirsuta,BLHI,Lamiaceae,C,29
+5,Glacial Lake,7/31/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,28
+2,Bear Creek,6/21/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,28
+2,Glacial Lake,6/22/17,Field Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,28
+2,Searles,6/22/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,28
+3,Cranberry Creek,6/26/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,28
+3,Johnson Cranberry,6/26/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,C,28
+4,Cutler,7/14/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,28
+4,Cutler,7/14/17,Field Edge,,,Thistle, ,,Asteraceae,,28
+5,Cranberry Creek,7/31/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,28
+6,Glacial Lake,8/15/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,28
+1,Cutler North,6/9/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,27
+3,Cranberry Creek,6/26/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,E,27
+3,Lynn Hill,6/26/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,E,27
+4,Brian P,7/14/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,27
+5,Johnson,7/31/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,27
+1,Bear Creek,6/9/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,26
+1,Rezin,6/9/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,C,26
+3,Johnson Cranberry,6/26/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,26
+6,Brian Pederson,8/18/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,26
+6,Rezin,8/18/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,26
+3,Cranberry Creek,6/26/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,25
+4,Englehook,7/17/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,25
+4,Gaynor,7/17/17,Wood Edge,Sambucus,,Elderberry,Sambucus ,SA,Adoxaceae,E,25
+6,Rezin,8/18/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,25
+6,Rezin,8/18/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,25
+2,Brian Pederson,6/21/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,24
+2,Cutler,6/21/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,24
+3,Johnson Cranberry,6/26/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,24
+4,Glacial Lake ,7/17/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,24
+5,Brian P,8/1/17,Grass/Pasture,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,,24
+5,Cranberry Creek,7/31/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,,24
+5,Englenook,7/31/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,24
+6,Cranberry Creek,8/15/17,Grass/Pasture,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,24
+2,Cutler,6/21/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,23
+4,Cranberry Creek,7/17/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,23
+4,Cutler,7/14/17,Grass/Pasture,,,Thistle, ,,Asteraceae,,23
+4,Lynn Hill,7/17/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,23
+5,Lynn Hill,7/31/17,Cranberry,Sagittaria,latifolia,Broadleaf Arrowhead,Sagittaria latifolia,SALA,Alismataceae,E,23
+6,Johnson,8/15/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,23
+1,Rezin,6/9/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,22
+2,Cranberry Creek,6/21/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,22
+3,Cranberry Creek,6/26/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,E,22
+4,Englehook,7/17/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,22
+4,Habelman Ebert,7/14/17,Road Edge,,,Thistle, ,,Asteraceae,,22
+6,Rezin,8/18/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,22
+1,Brian P,6/9/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,21
+2,Cutler,6/21/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,21
+2,Cutler,6/21/17,Road Edge,Ranuculus ,septerrtrionalis,Swamp Buttercup,Ranuculus  septerrtrionalis,RASE,Ranunculaceae,,21
+4,Cranberry Creek,7/17/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,21
+4,Englehook,7/17/17,Field Edge,Persicaria ,maculosa,Ladys Thumb,Persicaria  maculosa,PEMA,Polygonaceae,,21
+4,Searles,7/17/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,E,21
+6,Englenook,8/15/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,21
+6,Searles,8/15/17,Road Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,E,21
+2,Engelnook,6/22/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,20
+2,Rezin,6/21/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,20
+4,Cranberry Creek,7/17/17,Road Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,,20
+5,Cutler,8/1/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,20
+5,Englenook,7/31/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,20
+5,Johnson,7/31/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,20
+6,Cranberry Creek,8/15/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,20
+1,Brian P,6/9/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,19
+2,Glacial Lake,6/22/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,19
+4,Brian P,7/14/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,19
+4,Brian P,7/14/17,Grass/Pasture,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,19
+4,Cutler,7/14/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,19
+4,Glacial Lake ,7/17/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,19
+5,Brian P,8/1/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,19
+5,Cranberry Creek,7/31/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,19
+5,Searles,7/31/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,19
+6,Flying Dollar,8/18/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,19
+6,Rezin,8/18/17,Grass/Pasture,Erigeron,canadensis,Horsetail,Erigeron canadensis,ERCA,Asteraceae,E,19
+6,Rezin,8/18/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,19
+1,Flying Dollar,6/9/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,18
+3,Searles,6/26/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,E,18
+4,Cutler,7/14/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,18
+5,Flying Dollar,8/1/17,Grass/Pasture,Dalea,candida,White Prairie Clover,Dalea candida,DACA,Fabaceae,,18
+5,Flying Dollar,8/1/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,18
+6,Lynn Hill,8/15/17,Cranberry,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,18
+2,Cranberry Creek,6/21/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,17
+2,Cutler,6/21/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,17
+2,Glacial Lake,6/22/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,17
+3,Englehook,6/26/17,Field Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,17
+4,Cutler,7/14/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,17
+4,Cutler,7/14/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,17
+4,Englenook,7/17/17,Cranberry,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,17
+5,Glacial Lake,7/31/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,17
+2,Cutler,6/21/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,16
+2,Salzwedle,6/21/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,16
+2,Searles,6/22/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,16
+4,Englehook,7/17/17,Field Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,C,16
+4,Johnson,7/17/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,16
+1,Rezin,6/9/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,15
+3,Cranberry Creek,6/26/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,15
+4,Basswater,7/14/17,Field Edge,Trifolium,pratense,Red Clover,Trifolium pratense,TRPR,Fabaceae,,15
+4,Englenook,7/17/17,Cranberry,Vacciunium,macrocarpon,Cranberry,Vacciunium macrocarpon,VAMA,Ericaceae,,15
+4,Lynn Hill,7/17/17,Cranberry,Sagittaria,latifolia,Broadleaf Arrowhead,Sagittaria latifolia,SALA,Alismataceae,C,15
+4,Salzwedel,7/14/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,15
+4,Searles,7/17/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,15
+5,Englenook,7/31/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,15
+6,Brian Pederson,8/18/17,Field Edge,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,C,15
+6,Cutler North,8/18/17,Road Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,15
+6,Flying Dollar,8/18/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,15
+6,Glacial Lake,8/15/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,15
+6,Habelman tunmel,8/18/17,Road Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,,15
+6,Rezin,8/18/17,Wood Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,15
+1,Cutler North,6/9/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,14
+1,Cutler North,6/9/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,14
+2,Bear Creek,6/21/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,14
+2,Glacial Lake,6/22/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,14
+2,Rezin,6/21/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,14
+2,Salzwedle,6/21/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,14
+2,Searles,6/22/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,14
+3,Glacial Lake,6/26/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,14
+4,Brian P,7/14/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,14
+4,Habelman Tunnel,7/14/17,Road Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,14
+4,Rezin ,7/14/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,14
+5,Brian P,8/1/17,Grass/Pasture,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,14
+5,Cranberry Creek,7/31/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,14
+5,Searles,7/31/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,14
+5,Searles,7/31/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,14
+5,Searles,7/31/17,Road Edge,Linaria,,Toadflax,Linaria ,LI,Plantaginaceae,C,14
+6,Gaynor,8/15/17,Road Edge,Spiraea,alba,Meadowsweet,Spiraea alba,SPAL,Rosaceae,C,14
+6,Habelman tunmel,8/18/17,Wood Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,,14
+5,Searles,7/31/17,Road Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,13
+1,Cutler North,6/9/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,13
+1,Rezin,6/9/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,13
+2,Cutler,6/21/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,13
+3,Cranberry Creek,6/26/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,13
+5,Brian P,8/1/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,13
+6,Cranberry Creek,8/15/17,Road Edge,Sagittaria ,latifolia,Duck Potato,Sagittaria  latifolia,SALA,Alismataceae,C,13
+6,Habelman tunmel,8/18/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,13
+6,Johnson,8/15/17,Wood Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,13
+2,Brian Pederson,6/21/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,12
+2,Brian Pederson,6/21/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,12
+2,Cutler,6/21/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,12
+3,Johnson Cranberry,6/26/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,12
+4,Glacier Lake,7/17/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,12
+5,Cranberry Creek,7/31/17,Grass/Pasture,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,,12
+5,Rezin,8/1/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,12
+5,Searles,7/31/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,12
+6,Brian Pederson,8/18/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,12
+6,Rezin,8/18/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,C,12
+1,Bear Creek,6/9/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,11
+1,Brian P,6/9/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,11
+1,Cutler North,6/9/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,11
+1,Habel Rd,6/9/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,11
+2,Cranberry Creek,6/21/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,11
+2,Cutler,6/21/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,11
+2,Flying Dollar,6/21/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,11
+2,Glacial Lake,6/22/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,11
+2,Rezin,6/21/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,11
+2,Searles,6/22/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,11
+3,Johnson Cranberry,6/26/17,Field Edge,Trifolium,pratense,Red Clover,Trifolium pratense,TRPR,Fabaceae,C,11
+3,Lynn Hill,6/26/17,Wood Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,11
+4,Basswater,7/14/17,Field Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,,11
+4,Brian P,7/14/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,11
+4,Cranberry Creek,7/17/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,11
+4,Englehook,7/17/17,Field Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,11
+4,Habelman Ebert,7/14/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,11
+4,Johnson,7/17/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,11
+5,Brian P,8/1/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,11
+5,Cranberry Creek,7/31/17,Grass/Pasture,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,11
+5,Flying Dollar,8/1/17,Grass/Pasture,Lythrum,salicaria,Purple Loosestrife ,Lythrum salicaria,LYSA,Lythraceae,,11
+6,Cranberry Creek,8/15/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,C,11
+6,Flying Dollar,8/18/17,Wood Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,11
+6,Johnson,8/15/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,11
+6,Lynn Hill,8/15/17,Cranberry,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,11
+6,Rezin,8/18/17,Grass/Pasture,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,11
+6,Searles,8/15/17,Wood Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,11
+1,Cutler North,6/9/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,10
+1,Habel Rd,6/9/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,10
+1,Rezin,6/9/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,10
+2,Brian Pederson,6/21/17,Field Edge,Ranuculus ,septerrtrionalis,Swamp Buttercup,Ranuculus  septerrtrionalis,RASE,Ranunculaceae,,10
+2,Cutler,6/21/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,10
+3,Cranberry Creek,6/26/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,10
+4,Brian P,7/14/17,Field Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,10
+4,Brian P,7/14/17,Field Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,10
+4,Cranberry Creek,7/17/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,10
+5,Englenook,7/31/17,Wood Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,10
+5,Glacial Lake,7/31/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,10
+5,Lynn Hill,7/31/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,10
+5,Lynn Hill,7/31/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,10
+5,Salzwedel,8/1/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,10
+6,Cutler North,8/18/17,Road Edge,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,C,10
+6,Glacial Lake,8/15/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,10
+6,Lynn Hill,8/15/17,Cranberry,Lespedeza,capitata,Round-Headed Bush Clover,Lespedeza capitata,LECA,Fabaceae,C,10
+1,Habel Rd,6/9/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,9
+2,Bear Creek,6/21/17,Road Edge,Securigera,varia,Crown Vetch,Securigera varia,SEVA,Fabaceae,,9
+2,Brian Pederson,6/21/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,9
+2,Flying Dollar,6/21/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,9
+2,Flying Dollar,6/21/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,9
+2,Glacial Lake,6/22/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,9
+3,Gaynor,6/26/17,Wood Edge,Solanum,dulcamara,Bittersweet Nightshade,Solanum dulcamara,SODU,Solanaceae,,9
+3,Lynn Hill,6/26/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,9
+4,Cranberry Creek,7/17/17,Field Edge,Dianthus,armeria,Grass Pink,Dianthus armeria,DIAR,Caryophyllaceae,C,9
+4,Cranberry Creek,7/17/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,9
+4,Cranberry Creek,7/17/17,Grass/Pasture,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygonaceae,C,9
+4,Englehook,7/17/17,Field Edge,Taraxacum ,officinale,Common Dandelion,Taraxacum  officinale,TAOF,Asteraceae,C,9
+4,Englehook,7/17/17,Field Edge,Teucrium ,canadense,Cananda Germander,Teucrium  canadense,TECA,Lamiaceae,,9
+4,Englehook,7/17/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,,9
+4,Salzwedel,7/14/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,9
+4,Searles,7/17/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,9
+5,Brian P,8/1/17,Grass/Pasture,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,9
+5,Cranberry Creek,7/31/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,9
+5,Englenook,7/31/17,Field Edge,Persicaria ,maculosa,Ladys Thumb,Persicaria  maculosa,PEMA,Polygonaceae,C,9
+5,Searles,7/31/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,9
+6,Brian Pederson,8/18/17,Field Edge,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,C,9
+6,Cranberry Creek,8/15/17,Road Edge,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,9
+6,Cranberry Creek,8/15/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,9
+6,Flying Dollar,8/18/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,9
+6,Lynn Hill,8/15/17,Cranberry,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,9
+6,Rezin,8/18/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,9
+6,Salzwedel,8/18/17,Road Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,9
+1,Cutler North,6/9/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,8
+1,Cutler North,6/9/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,8
+2,Brian Pederson,6/21/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,8
+2,Engelnook,6/22/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,8
+2,Glacial Lake,6/22/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,8
+2,Glacial Lake,6/22/17,Grass/Pasture,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,8
+2,Glacial Lake,6/22/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,8
+4,Brian P,7/14/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,8
+4,Cranberry Creek,7/17/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,8
+4,Cutler,7/14/17,Road Edge,Hieracium ,kalmii,Canada Hawkeed,Hieracium  kalmii,HIKA,Asteraceae,,8
+4,Cutler,7/14/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,8
+4,Glacial Lake ,7/17/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,8
+4,Glacier Lake,7/17/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,8
+4,Habelman Ebert,7/14/17,Road Edge,Hieracium ,kalmii,Canada Hawkeed,Hieracium  kalmii,HIKA,Asteraceae,,8
+4,Johnson,7/17/17,Wood Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,,8
+4,Johnson,7/17/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,8
+4,Lynn Hill,7/17/17,Cranberry,Lythrum,salicaria,Purple Loosestrife ,Lythrum salicaria,LYSA,Lythraceae,C,8
+4,Salzwedel,7/14/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,8
+5,Cutler,8/1/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,8
+5,Johnson,7/31/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,8
+6,Brian Pederson,8/18/17,Grass/Pasture,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,,8
+6,Brian Pederson,8/18/17,Field Edge,Symphyotrichum,,New England Aster,Symphyotrichum ,SY,Asteraceae,C,8
+6,Cranberry Creek,8/15/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,8
+6,Englenook,8/15/17,Wood Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,8
+6,Habelman tunmel,8/18/17,Wood Edge,Meliotus ,officinalis,Yellow Sweet Clover,Meliotus  officinalis,MEOF,Fabaceae,,8
+6,Salzwedel,8/18/17,Road Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,8
+1,Flying Dollar,6/9/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,7
+2,Bear Creek,6/21/17,Road Edge,Meliotus ,alba,White Sweet Clover,Meliotus  alba,MEAL,Fabaceae,,7
+2,Salzwedle,6/21/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,7
+3,Cranberry Creek,6/26/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,7
+3,Englehook,6/26/17,Field Edge,Taraxacum ,officinale,Common Dandelion,Taraxacum  officinale,TAOF,Asteraceae,,7
+3,Searles,6/26/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,7
+4,Cranberry Creek,7/17/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,7
+4,Cutler,7/14/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,7
+5,Basswater,8/1/17,Field Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,,7
+5,Cutler,8/1/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,7
+5,Englenook,7/31/17,Cranberry,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,7
+5,Johnson,7/31/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,7
+5,Johnson,7/31/17,Cranberry,Lysimachia,,Yellow loosestrife,Lysimachia ,LY,Priumulaceae,C,7
+5,Johnson,7/31/17,Field Edge,Medicago,sativa,Alfalfa,Medicago sativa,MESA,Lamiaceae,C,7
+5,Lynn Hill,7/31/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,7
+5,Searles,7/31/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,7
+5,Searles,7/31/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,7
+6,Brian Pederson,8/18/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,7
+6,Cranberry Creek,8/15/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,7
+6,Glacial Lake,8/15/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,7
+1,Habel Rd,6/9/17,Road Edge,Trifolium,pratense,Red Clover,Trifolium pratense,TRPR,Fabaceae,,6
+1,Salzwedel,6/9/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,6
+2,Engelnook,6/22/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,6
+2,Flying Dollar,6/21/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,6
+2,Flying Dollar,6/21/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,6
+2,Glacial Lake,6/22/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,6
+2,Searles,6/22/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,6
+3,Englehook,6/26/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,6
+3,Searles,6/26/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,C,6
+4,Brian P,7/14/17,Grass/Pasture,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,6
+4,Cranberry Creek,7/17/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,6
+4,Cranberry Creek,7/17/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,6
+4,Gaynor,7/17/17,Road Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,6
+4,Johnson,7/17/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,,6
+5,Englenook,7/31/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,6
+5,Flying Dollar,8/1/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,6
+5,Johnson,7/31/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,6
+5,Johnson,7/31/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,6
+6,Brian Pederson,8/18/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,6
+6,Cranberry Creek,8/15/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,6
+6,Cutler North,8/18/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,6
+6,Englenook,8/15/17,Field Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,6
+6,Flying Dollar,8/18/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,6
+6,Gaynor,8/15/17,Road Edge,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,6
+6,Glacial Lake,8/15/17,Field Edge,Asclepias,syricia,Milkweed,Asclepias syricia,ASSY,Asclepiadaceae,C,6
+6,Glacial Lake,8/15/17,Cranberry,Sagittaria ,latifolia,Duck Potato,Sagittaria  latifolia,SALA,Alismataceae,C,6
+6,Habelman tunmel,8/18/17,Road Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,6
+6,Johnson,8/15/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,6
+6,Johnson,8/15/17,Wood Edge,Symphyotrichum,,New England Aster,Symphyotrichum ,SY,Asteraceae,C,6
+6,Rezin,8/18/17,Grass/Pasture,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,6
+6,Searles,8/15/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,6
+1,Brian P,6/9/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,5
+2,Cranberry Creek,6/21/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,5
+2,Cutler,6/21/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,5
+2,Flying Dollar,6/21/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,5
+2,Gaynor,6/22/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,5
+2,Gaynor,6/22/17,Wood Edge,Silene ,latifolia,White Campion,Silene  latifolia,SILA,Caryophyllaceae,,5
+2,Glacial Lake,6/22/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,5
+3,Cranberry Creek,6/26/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,5
+3,Johnson Cranberry,6/26/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,5
+4,Basswater,7/14/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,5
+4,Basswater,7/14/17,Field Edge,,,Thistle, ,,Asteraceae,,5
+4,Brian P,7/14/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,5
+4,Cutler,7/14/17,Field Edge,Hieracium ,kalmii,Canada Hawkeed,Hieracium  kalmii,HIKA,Asteraceae,,5
+4,Gaynor,7/17/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,5
+4,Habelman Ebert,7/14/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,5
+4,Habelman Ebert,7/14/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,5
+4,Habelman Tunnel,7/14/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,5
+4,Johnson,7/17/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,5
+5,Basswater,8/1/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,5
+5,Brian P,8/1/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,5
+5,Brian P,8/1/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,5
+5,Brian P,8/1/17,Field Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,5
+5,Cranberry Creek,7/31/17,Cranberry,Spiraea,alba,Meadowsweet,Spiraea alba,SPAL,Rosaceae,,5
+5,Cutler,8/1/17,Road Edge,Solidago,speciosa,Showy Goldenrod,Solidago speciosa,SOSP,Asteraceae,,5
+5,Englenook,7/31/17,Field Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,5
+5,Flying Dollar,8/1/17,Grass/Pasture,Securigera,varia,Crown Vetch,Securigera varia,SEVA,Fabaceae,,5
+5,Glacial Lake,7/31/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,5
+5,Glacial Lake,7/31/17,Field Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,5
+5,Glacial Lake,7/31/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,5
+6,Cranberry Creek,8/15/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,5
+6,Cranberry Creek,8/15/17,Grass/Pasture,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,5
+6,Englenook,8/15/17,Cranberry,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,5
+6,Flying Dollar,8/18/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,5
+6,Flying Dollar,8/18/17,Grass/Pasture,Eupatorium ,perfoliatum,Common Bonneset,Eupatorium  perfoliatum,EUPE,Asteraceae,C,5
+6,Flying Dollar,8/18/17,Grass/Pasture,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,C,5
+6,Flying Dollar,8/18/17,Wood Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,5
+6,Gaynor,8/15/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,5
+6,Glacial Lake,8/15/17,Grass/Pasture,Eutrochium,,Joe Pye Weed,Eutrochium ,EU,Asteraceae,C,5
+6,Glacial Lake,8/15/17,Cranberry,Spiraea,alba,Meadowsweet,Spiraea alba,SPAL,Rosaceae,C,5
+6,Habelman tunmel,8/18/17,Road Edge,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,,5
+6,Johnson,8/15/17,Field Edge,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,C,5
+6,Rezin,8/18/17,Grass/Pasture,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,5
+6,Rezin,8/18/17,Grass/Pasture,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,5
+6,Salzwedel,8/18/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,5
+1,Cutler North,6/9/17,Grass/Pasture,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,4
+1,Salzwedel,6/9/17,Wood Edge,Lupinus,,Lupine,Lupinus ,LU,Fabaceae,,4
+2,Brian Pederson,6/21/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,4
+2,Cutler,6/21/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,4
+2,Engelnook,6/22/17,Field Edge,Taraxacum ,officinale,Common Dandelion,Taraxacum  officinale,TAOF,Asteraceae,,4
+2,Gaynor,6/22/17,Wood Edge,Solanum,dulcamara,Bittersweet Nightshade,Solanum dulcamara,SODU,Solanaceae,,4
+2,Rezin,6/21/17,Wood Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,4
+2,Rezin,6/21/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,4
+2,Rezin,6/21/17,Wood Edge,,,,,,Rosaceae,,4
+3,Cranberry Creek,6/26/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,4
+3,Cranberry Creek,6/26/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,4
+3,Englehook,6/26/17,Field Edge,Meliotus ,officinalis,Yellow Sweet Clover,Meliotus  officinalis,MEOF,Fabaceae,,4
+3,Glacial Lake,6/26/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,,4
+3,Johnson Cranberry,6/26/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,4
+3,Johnson Cranberry,6/26/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,4
+3,Searles,6/26/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,4
+4,Cranberry Creek,7/17/17,Road Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,,4
+4,Cranberry Creek,7/17/17,Grass/Pasture,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,4
+4,Cranberry Creek,7/17/17,Road Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,,4
+4,Cranberry Creek,7/17/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,4
+4,Cutler,7/14/17,Road Edge,,,Thistle, ,,Asteraceae,,4
+4,Englehook,7/17/17,Field Edge,Linaria,vulgaris,Butter and Eggs,Linaria vulgaris,LIVU,Plantaginaceae,,4
+4,Englehook,7/17/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,4
+4,Johnson,7/17/17,Field Edge,Medicago,sativa,Alfalfa,Medicago sativa,MESA,Fabaceae,,4
+4,Searles,7/17/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,4
+5,Brian P,8/1/17,Field Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,4
+5,Cranberry Creek,7/31/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,4
+5,Cranberry Creek,7/31/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,4
+5,Cranberry Creek,7/31/17,Cranberry,Sagittaria ,latifolia,Duck Potato,Sagittaria  latifolia,SALA,Alismataceae,,4
+5,Cutler,8/1/17,Road Edge,Lythrum,salicaria,Purple Loosestrife ,Lythrum salicaria,LYSA,Lythraceae,,4
+5,Glacial Lake,7/31/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,4
+5,Habelman,8/1/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,4
+6,Cranberry Creek,8/15/17,Road Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,4
+6,Cutler North,8/18/17,Road Edge,Pseudognaphalium,obtusifolium,Field Balsam,Pseudognaphalium obtusifolium,PSOB,Asteraceae,C,4
+6,Flying Dollar,8/18/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,4
+6,Flying Dollar,8/18/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,4
+6,Gaynor,8/15/17,Cranberry,Impatiens,capensis,Impatiens,Impatiens capensis,IMCA,Balsaminaceae,C,4
+6,Glacial Lake,8/15/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,4
+6,Glacial Lake,8/15/17,Grass/Pasture,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,4
+6,Glacial Lake,8/15/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,4
+6,Johnson,8/15/17,Field Edge,Erigeron,canadensis,Horsetail,Erigeron canadensis,ERCA,Asteraceae,C,4
+6,Lynn Hill,8/15/17,Cranberry,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,4
+6,Rezin,8/18/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,4
+1,Flying Dollar,6/9/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,3
+1,Rezin,6/9/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,3
+2,Cutler,6/21/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,3
+2,Engelnook,6/22/17,Field Edge,Meliotus ,officinalis,Yellow Sweet Clover,Meliotus  officinalis,MEOF,Fabaceae,,3
+2,Engelnook,6/22/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,3
+2,Flying Dollar,6/21/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,3
+2,Glacial Lake,6/22/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,3
+2,Glacial Lake,6/22/17,Road Edge,Rosa,,Wild Rose,Rosa ,RO,Rosaceae,,3
+2,Rezin,6/21/17,Grass/Pasture,Daucus,carota,Queen Anne's Lace,Daucus carota ,DA,Apiaceae,,3
+3,Cranberry Creek,6/26/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,3
+3,Englehook,6/26/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,3
+3,Gaynor,6/26/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,3
+3,Glacial Lake,6/26/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,3
+3,Glacial Lake,6/26/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,3
+3,Johnson Cranberry,6/26/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+3,Johnson Cranberry,6/26/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+4,Basswater,7/14/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,3
+4,Brian P,7/14/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,3
+4,Cranberry Creek,7/17/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+4,Cranberry Creek,7/17/17,Grass/Pasture,Linaria,vulgaris,Butter and Eggs,Linaria vulgaris,LIVU,Plantaginaceae,C,3
+4,Cutler,7/14/17,Field Edge,Asclepias,,Milkweed,Asclepias ,AS,Apocynaceae,,3
+4,Cutler,7/14/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,3
+4,Englehook,7/17/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,3
+4,Englenook,7/17/17,Cranberry,Lythrum,salicaria,Purple Loosestrife ,Lythrum salicaria,LYSA,Lythraceae,,3
+4,Gaynor,7/17/17,Road Edge,Asclepias,incarnata,Swamp Milkweed,Asclepias incarnata,ASIN,Apocynaceae,C,3
+4,Gaynor,7/17/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,3
+4,Glacial Lake ,7/17/17,Field Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,3
+4,Glacier Lake,7/17/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,3
+4,Habelman Ebert,7/14/17,Road Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,3
+4,Searles,7/17/17,Road Edge,Asclepias,syriaca,Milkweed,Asclepias syriaca,ASSY,Apocynaceae,C,3
+4,Searles,7/17/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,3
+5,Brian P,8/1/17,Field Edge,Achillea ,millefolium,Yarrow,Achillea  millefolium,ACMI,Asteraceae,,3
+5,Cranberry Creek,7/31/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,3
+5,Cranberry Creek,7/31/17,Road Edge,Linaria,vulgaris,Butter and Eggs,Linaria vulgaris,LIVU,Plantaginaceae,C,3
+5,Cranberry Creek,7/31/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,3
+5,Cutler,8/1/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,3
+5,Cutler,8/1/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,3
+5,Englenook,7/31/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,3
+5,Englenook,7/31/17,Field Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,3
+5,Englenook,7/31/17,Field Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,3
+5,Englenook,7/31/17,Field Edge,Teucrium ,canadense,Cananda Germander,Teucrium  canadense,TECA,Lamiaceae,C,3
+5,Flying Dollar,8/1/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,3
+5,Glacial Lake,7/31/17,Road Edge,Echinocstystic ,lobata,Prickly Cucumber,Echinocstystic  lobata,ECLO,Cucurbitaceae,C,3
+5,Johnson,7/31/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+5,Lynn Hill,7/31/17,Wood Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,C,3
+5,Lynn Hill,7/31/17,Wood Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,3
+6,Brian Pederson,8/18/17,Grass/Pasture,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,3
+6,Cranberry Creek,8/15/17,Grass/Pasture,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,3
+6,Cranberry Creek,8/15/17,Grass/Pasture,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,3
+6,Cutler North,8/18/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,3
+6,Flying Dollar,8/18/17,Wood Edge,Trifolium,,Clover,Trifolium ,TR,Fabaceae,C,3
+6,Gaynor,8/15/17,Cranberry,Solanum,dulcamara,Bittersweet Nightshade,Solanum dulcamara,SODU,Solanaceae,C,3
+6,Glacial Lake,8/15/17,Field Edge,Erigeron,canadensis,Horsetail,Erigeron canadensis,ERCA,Asteraceae,C,3
+6,Glacial Lake,8/15/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,3
+6,Habelman tunmel,8/18/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,,3
+6,Habelman tunmel,8/18/17,Road Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,3
+6,Johnson,8/15/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,3
+6,Johnson,8/15/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+6,Lynn Hill,8/15/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,3
+6,Rezin,8/18/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,3
+6,Rezin,8/18/17,Grass/Pasture,Trifolium,,Clover,Trifolium ,TR,Fabaceae,C,3
+6,Salzwedel,8/18/17,Wood Edge,Lobelia,inflata,Indian Tobacco,Lobelia inflata,LOIN,Campanulaceae,C,3
+6,Searles,8/15/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,3
+1,Bear Creek,6/9/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+1,Brian P,6/9/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,2
+1,Cutler North,6/9/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,2
+1,Cutler North,6/9/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+1,Cutler North,6/9/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,2
+1,Salzwedel,6/9/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+1,Salzwedel,6/9/17,Road Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,2
+2,Brian Pederson,6/21/17,Grass/Pasture,Asclepias,tuberosa,Butterfly Milkweed,Asclepias tuberosa,ASTU,Apocynaceae,,2
+2,Brian Pederson,6/21/17,Field Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,2
+2,Cutler,6/21/17,Field Edge,Asclepias,,Milkweed,Asclepias ,AS,Apocynaceae,,2
+2,Cutler,6/21/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+2,Flying Dollar,6/21/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,2
+2,Glacial Lake,6/22/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+2,Glacial Lake,6/22/17,Grass/Pasture,Ruta,graveolens,Common Rue,Ruta graveolens,RUGR,Rutaceae,,2
+2,Searles,6/22/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,2
+3,Englehook,6/26/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,2
+3,Englehook,6/26/17,Field Edge,Meliotus ,alba,White Sweet Clover,Meliotus  alba,MEAL,Fabaceae,,2
+3,Gaynor,6/26/17,Wood Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,2
+3,Glacial Lake,6/26/17,Grass/Pasture,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,,2
+3,Johnson Cranberry,6/26/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,2
+3,Searles,6/26/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,2
+3,Searles,6/26/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,2
+4,Cranberry Creek,7/17/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,2
+4,Cranberry Creek,7/17/17,Field Edge,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,C,2
+4,Cutler,7/14/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,2
+4,Cutler,7/14/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+4,Cutler,7/14/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,2
+4,Englehook,7/17/17,Field Edge,Asclepias,syriaca,Milkweed,Asclepias syriaca,ASSY,Apocynaceae,,2
+4,Englehook,7/17/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,2
+4,Englehook,7/17/17,Field Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,,2
+4,Englehook,7/17/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,2
+4,Englehook,7/17/17,Field Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,2
+4,Englehook,7/17/17,Field Edge,Meliotus ,officinalis,Yellow Sweet Clover,Meliotus  officinalis,MEOF,Fabaceae,C,2
+4,Englehook,7/17/17,Field Edge,Trifolium,aureum,Hop Clover,Trifolium aureum,TRAU,Fabaceae,,2
+4,Glacial Lake ,7/17/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,2
+4,Glacial Lake ,7/17/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,2
+4,Glacial Lake ,7/17/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,2
+4,Glacial Lake ,7/17/17,Cranberry,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,2
+4,Glacier Lake,7/17/17,Road Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,C,2
+4,Habelman Ebert,7/14/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,,2
+4,Habelman Tunnel,7/14/17,Road Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,,2
+4,Habelman Tunnel,7/14/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,2
+4,Habelman Tunnel,7/14/17,Road Edge,Tradescantia ,,Spiderwort,Tradescantia  ,TR,Commelinaceae,,2
+4,Johnson,7/17/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,2
+4,Johnson,7/17/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,2
+4,Johnson,7/17/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,2
+4,Lynn Hill,7/17/17,Wood Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,,2
+4,Lynn Hill,7/17/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,2
+4,Rezin,7/14/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,2
+4,Salzwedel,7/14/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,2
+4,Salzwedel,7/14/17,Road Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,,2
+4,Salzwedel,7/14/17,Road Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,2
+4,Searles,7/17/17,Road Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,C,2
+4,Searles,7/17/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,2
+5,Brian P,8/1/17,Grass/Pasture,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,,2
+5,Cranberry Creek,7/31/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,2
+5,Cranberry Creek,7/31/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,2
+5,Cutler,8/1/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,2
+5,Cutler,8/1/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,2
+5,Cutler,8/1/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,2
+5,Cutler,8/1/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,,2
+5,Englenook,7/31/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,2
+5,Englenook,7/31/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,2
+5,Englenook,7/31/17,Field Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,C,2
+5,Englenook,7/31/17,Field Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,2
+5,Englenook,7/31/17,Wood Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,2
+5,Englenook,7/31/17,Field Edge,Taraxacum ,officinale,Common Dandelion,Taraxacum  officinale,TAOF,Asteraceae,C,2
+5,Flying Dollar,8/1/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,2
+5,Flying Dollar,8/1/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,2
+5,Gaynor,7/31/17,Wood Edge,Sambucus,,Elderberry,Sambucus ,SA,Adoxaceae,C,2
+5,Glacial Lake,7/31/17,Road Edge,Persicaria ,maculosa,Ladys Thumb,Persicaria  maculosa,PEMA,Polygonaceae,C,2
+5,Glacial Lake,7/31/17,Field Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,2
+5,Johnson,7/31/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,2
+5,Johnson,7/31/17,Cranberry,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,2
+5,Salzwedel,8/1/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chysanthemum vulgare,CHVU,Asteraceae,,2
+5,Searles,7/31/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,2
+6,Brian Pederson,8/18/17,Grass/Pasture,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,2
+6,Brian Pederson,8/18/17,Field Edge,Lysimachia,,Yellow loosestrife,Lysimachia ,LY,Primulaceae,C,2
+6,Brian Pederson,8/18/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,2
+6,Brian Pederson,8/18/17,Grass/Pasture,Symphyotrichum,,New England Aster,Symphyotrichum ,SY,Asteraceae,C,2
+6,Cranberry Creek,8/15/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,2
+6,Cranberry Creek,8/15/17,Road Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,2
+6,Cranberry Creek,8/15/17,Grass/Pasture,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,2
+6,Cranberry Creek,8/15/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,2
+6,Cutler North,8/18/17,Road Edge,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,2
+6,Englenook,8/15/17,Field Edge,Linaria,,Toadflax,Linaria ,LI,Plantaginaceae,C,2
+6,Englenook,8/15/17,Field Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,C,2
+6,Flying Dollar,8/18/17,Grass/Pasture,Agalinis,,False Fox Glove,Agalinis ,AG,Orobanchaceae,C,2
+6,Flying Dollar,8/18/17,Wood Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,2
+6,Glacial Lake,8/15/17,Cranberry,Eupatorium ,perfoliatum,Common Bonneset,Eupatorium  perfoliatum,EUPE,Asteraceae,C,2
+6,Glacial Lake,8/15/17,Road Edge,Persicaria ,maculosa,Spotted Ladysthumb,Persicaria  maculosa,PEMA,Polygonaceae,C,2
+6,Glacial Lake,8/15/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,2
+6,Habelman tunmel,8/18/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,,2
+6,Habelman tunmel,8/18/17,Wood Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,,2
+6,Habelman tunmel,8/18/17,Wood Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,2
+6,Habelman tunmel,8/18/17,Wood Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,,2
+6,Johnson,8/15/17,Field Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,2
+6,Lynn Hill,8/15/17,Cranberry,Erigeron,canadensis,Horsetail,Erigeron canadensis,ERCA,Asteraceae,C,2
+6,Lynn Hill,8/15/17,Cranberry,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,2
+6,Rezin,8/18/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,2
+6,Rezin,8/18/17,Wood Edge,Asclepias,verticillata,Milkweed,Asclepias verticillata,ASVE,Apocynaceae,C,2
+6,Rezin,8/18/17,Grass/Pasture,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,2
+6,Salzwedel,8/18/17,Road Edge,Lobelia,inflata,Indian Tobacco,Lobelia inflata,LOIN,Campanulaceae,C,2
+6,Searles,8/15/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,2
+6,Searles,8/15/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,2
+1,Brian P,6/9/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+1,Brian P,6/9/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+1,Flying Dollar,6/9/17,Woodland,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+1,Flying Dollar,6/9/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+1,Habel Rd,6/9/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+1,Rezin,6/9/17,Wood Edge,Lupinus,,Lupine,Lupinus ,LU,Fabaceae,,1
+1,Rezin,6/9/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+2,Bear Creek,6/21/17,Road Edge,Asclepias,syriaca,Common Milkweed,Asclepias syriaca,ASSY,Apocynaceae,,1
+2,Bear Creek,6/21/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,1
+2,Brian Pederson,6/21/17,Field Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,1
+2,Cutler,6/21/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+2,Cutler,6/21/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+2,Cutler,6/21/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,1
+2,Cutler,6/21/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,1
+2,Cutler,6/21/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,1
+2,Engelnook,6/22/17,Field Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,1
+2,Engelnook,6/22/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+2,Engelnook,6/22/17,Field Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,1
+2,Engelnook,6/22/17,Field Edge,Meliotus ,alba,White Sweet Clover,Meliotus  alba,MEAL,Fabaceae,,1
+2,Engelnook,6/22/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,1
+2,Glacial Lake,6/22/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+2,Rezin,6/21/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+2,Rezin,6/21/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,1
+2,Rezin,6/21/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+2,Salzwedle,6/21/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+2,Salzwedle,6/21/17,Road Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+2,Searles,6/22/17,Road Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,,1
+3,Cranberry Creek,6/26/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+3,Cranberry Creek,6/26/17,Field Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,C,1
+3,Cranberry Creek,6/26/17,Road Edge,Trifolium,aureum,Hop Clover,Trifolium aureum,TRAU,Fabaceae,,1
+3,Englehook,6/26/17,Field Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+3,Englehook,6/26/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+3,Englehook,6/26/17,Field Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,,1
+3,Englehook,6/26/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,,1
+3,Glacial Lake,6/26/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+3,Glacial Lake,6/26/17,Field Edge,Asclepias,,Milkweed,Asclepias ,AS,Apocynaceae,,1
+3,Glacial Lake,6/26/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,,1
+3,Glacial Lake,6/26/17,Grass/Pasture,Ruta,graveolens,Common Rue,Ruta graveolens,RUGR,Rutaceae,,1
+3,Glacial Lake,6/26/17,Road Edge,Taraxacum ,officinale,Common Dandelion,Taraxacum  officinale,TAOF,Asteraceae,,1
+3,Johnson Cranberry,6/26/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,1
+3,Johnson Cranberry,6/26/17,Field Edge,Rosa,,Wild Rose,Rosa ,RO,Rosaceae,C,1
+3,Lynn Hill,6/26/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+3,Searles,6/26/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,1
+3,Searles,6/26/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,1
+3,Searles,6/26/17,Wood Edge,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,C,1
+4,Basswater,7/14/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+4,Brian P,7/14/17,Grass/Pasture,Asclepias,tuberosa,Buttefly Milkweed,Asclepias tuberosa,ASTU,Apocynaceae,,1
+4,Brian P,7/14/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+4,Brian P,7/14/17,Field Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+4,Cranberry Creek,7/17/17,Grass/Pasture,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,1
+4,Cranberry Creek,7/17/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+4,Cranberry Creek,7/17/17,Grass/Pasture,Prunella,vulgaris,Heal-All,Prunella vulgaris,PRVU,Lamiaceae,C,1
+4,Cranberry Creek,7/17/17,Grass/Pasture,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,C,1
+4,Cranberry Creek,7/17/17,Grass/Pasture,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,C,1
+4,Cutler,7/14/17,Road Edge,Asclepias,,Milkweed,Asclepias ,AS,Apocynaceae,,1
+4,Englehook,7/17/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+4,Englehook,7/17/17,Field Edge,Asclepias,syriaca,Milkweed,Asclepias syriaca,ASSY,Apocynaceae,,1
+4,Englehook,7/17/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+4,Englehook,7/17/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+4,Englehook,7/17/17,Field Edge,Lythrum,salicaria,Purple Loosestrife ,Lythrum salicaria,LYSA,Lythraceae,,1
+4,Englehook,7/17/17,Field Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,1
+4,Englehook,7/17/17,Field Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,1
+4,Englehook,7/17/17,Field Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,,1
+4,Englehook,7/17/17,Field Edge,Tragopogon,,Goatsbeard,Tragopogon ,TR,Asteraceae,,1
+4,Englehook,7/17/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,1
+4,Glacial Lake ,7/17/17,Field Edge,Asclepias,syriaca,Milkweed,Asclepias syriaca,ASSY,Apocynaceae,C,1
+4,Glacier Lake,7/17/17,Grass/Pasture,Eutrochium,,Joe Pye Weed,Eutrochium ,EU,Asteraceae,,1
+4,Glacier Lake,7/17/17,Road Edge,Linaria,vulgaris,Butter and Eggs,Linaria vulgaris,LIVU,Plantaginaceae,C,1
+4,Habelman Ebert,7/14/17,Road Edge,Dalea,purpurea,Purple Prairie Clover,Dalea purpurea,DAPU,Fabaceae,,1
+4,Habelman Ebert,7/14/17,Road Edge,Trifolium,aureum,Hop Clover,Trifolium aureum,TRAU,Fabaceae,,1
+4,Habelman Tunnel,7/14/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+4,Habelman Tunnel,7/14/17,Road Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,1
+4,Habelman Tunnel,7/14/17,Road Edge,Phlox,,Phlox,Phlox ,PH,Polemoniaceae,,1
+4,Johnson,7/17/17,Field Edge,Dianthus ,armeria,Grass Pink,Dianthus armeria,DIAR,Caryophyllaceae,,1
+4,Lynn Hill,7/17/17,Wood Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,1
+4,Lynn Hill,7/17/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+4,Rezin,7/14/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,1
+4,Rezin ,7/15/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkeed,Hieracium  kalmii,HIKA,Asteraceae,,1
+4,Rezin ,7/16/17,Grass/Pasture,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,,1
+4,Salzwedel,7/14/17,Road Edge,Coreopsis ,palmata,Prairie Tickseed,Coreopsis  palmata,COPA,Asteraceae,,1
+4,Salzwedel,7/14/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+4,Salzwedel,7/14/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkeed,Hieracium  kalmii,HIKA,Asteraceae,,1
+4,Salzwedel,7/14/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+4,Salzwedel,7/14/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+4,Salzwedel,7/14/17,Road Edge,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,,1
+4,Searles,7/17/17,Wood Edge,Centauria,,Thistle,Centauria,CE,Asteraceae,C,1
+4,Searles,7/17/17,Road Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,1
+4,Searles,7/17/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,,1
+4,Searles,7/17/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,1
+4,Searles,7/17/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,1
+4,Searles,7/17/17,Road Edge,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,C,1
+5,Brian P,8/1/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chysanthemum vulgare,CHVU,Asteraceae,,1
+5,Brian P,8/1/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+5,Brian P,8/1/17,Field Edge,Solidago,speciosa,Goldenrod,Solidago speciosa,SOSP,Asteraceae,,1
+5,Cranberry Creek,7/31/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+5,Cranberry Creek,7/31/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+5,Cranberry Creek,7/31/17,Grass/Pasture,Prunella ,vulgaris,Heal-All,Prunella  vulgaris,PRVU,Lamiaceae,C,1
+5,Cranberry Creek,7/31/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,1
+5,Cutler,8/1/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,1
+5,Cutler,8/1/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+5,Cutler,8/1/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+5,Cutler,8/1/17,Field Edge,Solidago,speciosa,Showy Goldenrod,Solidago speciosa,SOSP,Asteraceae,,1
+5,Cutler,8/1/17,Field Edge,Trifolium,,Clover,Trifolium ,TR,Fabaceae,,1
+5,Cutler,8/1/17,Road Edge,,,Thistle, ,,Asteraceae,,1
+5,Englenook,7/31/17,Field Edge,Asclepias,syriaca,Milkweed,Asclepias syriaca,ASSY,Apocynaceae,C,1
+5,Englenook,7/31/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+5,Englenook,7/31/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+5,Englenook,7/31/17,Wood Edge,Linaria,,Toadflax,Linaria ,LI,Plantaginaceae,C,1
+5,Englenook,7/31/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,1
+5,Englenook,7/31/17,Field Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,1
+5,Flying Dollar,8/1/17,Grass/Pasture,,,Thistle, ,,Asteraceae,,1
+5,Gaynor,7/31/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,1
+5,Gaynor,7/31/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+5,Gaynor,7/31/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Road Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Road Edge,Eutrochium,,Joe Pye Weed,Eutrochium ,EU,Asteraceae,C,1
+5,Glacial Lake,7/31/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,1
+5,Glacial Lake,7/31/17,Road Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,1
+5,Habelman,8/1/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+5,Habelman,8/1/17,Road Edge,Mentha,canadensis,Wild Mint,Mentha canadensis,MECA,Lamiaceae,,1
+5,Habelman,8/1/17,Road Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,1
+5,Johnson,7/31/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+5,Johnson,7/31/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,1
+5,Johnson,7/31/17,Field Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,1
+5,Johnson,7/31/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,1
+5,Lynn Hill,7/31/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+5,Lynn Hill,7/31/17,Wood Edge,Solidago,,Goldenrod,Solidago ,SO,Asteraceae,C,1
+5,Lynn Hill,7/31/17,Wood Edge,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,,1
+5,Salzwedel,8/1/17,Road Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,,1
+5,Salzwedel,8/1/17,Road Edge,Coreopsis ,palmata,Prairie Tickseed,Coreopsis  palmata,COPA,Asteraceae,,1
+5,Salzwedel,8/1/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+5,Salzwedel,8/1/17,Wood Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,,1
+5,Salzwedel,8/1/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,,1
+5,Searles,7/31/17,Wood Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,1
+5,Searles,7/31/17,Road Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,1
+5,Searles,7/31/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,1
+5,Searles,7/31/17,Road Edge,Trifolium,aureum,Hop Clover,Trifolium aureum,TRAU,Fabaceae,C,1
+6,Brian Pederson,8/18/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+6,Brian Pederson,8/18/17,Field Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,1
+6,Brian Pederson,8/18/17,Field Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,1
+6,Brian Pederson,8/18/17,Grass/Pasture,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,1
+6,Brian Pederson,8/18/17,Grass/Pasture,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,C,1
+6,Brian Pederson,8/18/17,Grass/Pasture,Symphyotrichum,,New England Aster,Symphyotrichum ,SY,Asteraceae,C,1
+6,Cranberry Creek,8/15/17,Grass/Pasture,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+6,Cranberry Creek,8/15/17,Field Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+6,Cranberry Creek,8/15/17,Grass/Pasture,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,1
+6,Cranberry Creek,8/15/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,1
+6,Cranberry Creek,8/15/17,Field Edge,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,1
+6,Cranberry Creek,8/15/17,Road Edge,Spiraea,alba,Meadowsweet,Spiraea alba,SPAL,Rosaceae,C,1
+6,Cranberry Creek,8/15/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,1
+6,Cutler North,8/18/17,Road Edge,Agalinis,,False Fox Glove,Agalinis ,AG,Orobanchaceae,C,1
+6,Cutler North,8/18/17,Road Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,C,1
+6,Cutler North,8/18/17,Road Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+6,Cutler North,8/18/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,1
+6,Cutler North,8/18/17,Road Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,C,1
+6,Englenook,8/15/17,Wood Edge,Chrysanthemum ,vulgare,Ox-Eye Daisy,Chrysanthemum  vulgare,CHVU,Asteraceae,,1
+6,Englenook,8/15/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+6,Englenook,8/15/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+6,Englenook,8/15/17,Field Edge,Medicago,lupalina,Black Medic,Medicago lupalina,MELU,Lamiaceae,C,1
+6,Englenook,8/15/17,Field Edge,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,1
+6,Englenook,8/15/17,Field Edge,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,1
+6,Flying Dollar,8/18/17,Grass/Pasture,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+6,Flying Dollar,8/18/17,Wood Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+6,Flying Dollar,8/18/17,Road Edge,Polygala,sanguinea,Purple Milkwort,Polygala sanguinea,POSA,Polygalaceae,C,1
+6,Flying Dollar,8/18/17,Road Edge,Trifolium,pratense,Red Clover ,Trifolium pratense,TRPR,Fabaceae,C,1
+6,Flying Dollar,8/18/17,Grass/Pasture,Trifolium,arvense,Rabbit Foot Clover,Trifolium arvense,TRAR,Fabaceae,C,1
+6,Gaynor,8/15/17,Cranberry,Sagittaria ,latifolia,Duck Potato,Sagittaria  latifolia,SALA,Alismataceae,C,1
+6,Gaynor,8/15/17,Cranberry,Spiraea,tomentosa,Steeplebush,Spiraea tomentosa,SPTO,Rosaceae,,1
+6,Glacial Lake,8/15/17,Field Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+6,Glacial Lake,8/15/17,Grass/Pasture,Eupatorium ,perfoliatum,Common Bonneset,Eupatorium  perfoliatum,EUPE,Asteraceae,C,1
+6,Glacial Lake,8/15/17,Road Edge,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+6,Glacial Lake,8/15/17,Road Edge,Linaria,,Toadflax,Linaria ,LI,Plantaginaceae,C,1
+6,Glacial Lake,8/15/17,Road Edge,Silene,latifolia,White Campion,Silene latifolia,SILA,Caryophyllaceae,C,1
+6,Habelman tunmel,8/18/17,Wood Edge,Centaurea,maculosa,Knapweed,Centaurea maculosa,CEMA,Asteraceae,,1
+6,Habelman tunmel,8/18/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,1
+6,Habelman tunmel,8/18/17,Road Edge,Meliotus ,officinalis,Yellow Sweet Clover,Meliotus  officinalis,MEOF,Fabaceae,,1
+6,Habelman tunmel,8/18/17,Road Edge,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,,1
+6,Habelman tunmel,8/18/17,Wood Edge,Tradescantia ,ohiensii,Blue Jacket,Tradescantia  ohiensii,TROH,Commelinaceae,,1
+6,Habelman tunmel,8/18/17,Wood Edge,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,,1
+6,Johnson,8/15/17,Field Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,1
+6,Johnson,8/15/17,Field Edge,Euphorbia,corollata,Flowering Spurge,Euphorbia corollata,EUCO,Euphorbiaceae,C,1
+6,Johnson,8/15/17,Field Edge,Medicago,sativa,Alfalfa,Medicago sativa,MESA,Lamiaceae,C,1
+6,Johnson,8/15/17,Wood Edge,Potentilla,,Cinquefoil,Potentilla ,PO,Rosaceae,C,1
+6,Lynn Hill,8/15/17,Cranberry,Eutrochium,,Joe Pye Weed,Eutrochium ,EU,Asteraceae,C,1
+6,Lynn Hill,8/15/17,Cranberry,Monarada,fistulosa,Bee Balm,Monarada fistulosa,MOFI,Lamiaceae,C,1
+6,Lynn Hill,8/15/17,Cranberry,Solidago,canadensis,Goldenrod,Solidago canadensis,SOCA,Asteraceae,C,1
+6,Lynn Hill,8/15/17,Cranberry,Verbascum,,Mullein,Verbascum ,VE,Scrophuliaceae,C,1
+6,Rezin,8/18/17,Grass/Pasture,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,1
+6,Rezin,8/18/17,Wood Edge,Berteroa,incana,Hoary Alyssum,Berteroa incana,BEIN,Brassicaceae,C,1
+6,Rezin,8/18/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,C,1
+6,Rezin,8/18/17,Grass/Pasture,Hieracium ,kalmii,Canada Hawkweed,Hieracium  kalmii,HIKA,Asteraceae,C,1
+6,Rezin,8/18/17,Grass/Pasture,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,1
+6,Rezin,8/18/17,Road Edge,Hypericum,perforatum,St Johns Wort,Hypericum perforatum,HYPE,Hyperiaceae,C,1
+6,Rezin,8/18/17,Road Edge,Lotus,corniculatus,Birds Foot Trefoil,Lotus corniculatus,LOCO,Fabaceae,C,1
+6,Rezin,8/18/17,Road Edge,Meliotus ,albus,White Sweet Clover,Meliotus  albus,MEAL,Fabaceae,C,1
+6,Rezin,8/18/17,Grass/Pasture,Oxallis,,Wood Sorrel,Oxallis ,OX,Oxalidaceae,C,1
+6,Rezin,8/18/17,Wood Edge,Rudbeckia,,Black Eyed Susan,Rudbeckia ,RU,Asteraceae,C,1
+6,Rezin,8/18/17,Wood Edge,Solidagao,,Goldenrod,Solidagao ,SO,Asteraceae,C,1
+6,Rezin,8/18/17,Wood Edge,Tragopogon,,Goatsbeard,Tragopogon ,TR,Asteraceae,C,1
+6,Salzwedel,8/18/17,Wood Edge,Pilosella ,aurantiara,Orange Hawkweed,Pilosella  aurantiara,PIAU,Asteraceae,C,1
+6,Searles,8/15/17,Wood Edge,Achillea ,millefolium,Common Yarrow,Achillea  millefolium,ACMI,Asteraceae,C,1
+6,Searles,8/15/17,Cranberry,Eutrochium,,Joe Pye Weed,Eutrochium ,EU,Asteraceae,C,1
+6,Searles,8/15/17,Wood Edge,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,C,1
+1,Brian P,6/9/17,Grass/Pasture,Trifolium,pratense,Red Clover,Trifolium pratense,TRPR,Fabaceae,,0
+1,Brian P,6/9/17,Grass/Pasture,Trifolium,repens,White Clover,Trifolium repens,TRRE,Fabaceae,,0
+4,Brian P,7/14/17,Grass/Pasture,Rubus,,Wild Blackberry,Rubus ,RU,Rosaceae,,0
+5,Rezin,8/1/17,Wood Edge,Erigeron,canadensis,Fleabane,Erigeron canadensis,ERCA,Asteraceae,,0

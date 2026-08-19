@@ -1,0 +1,361 @@
+"Flower.species","landcover","period","abundance"
+"Alliaria petiolata (M.Bieb) Cavara & Grande","woodland",1,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","woodland",2,98
+"Alliaria petiolata (M.Bieb) Cavara & Grande","woodland",3,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","orchard",1,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","orchard",2,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","orchard",3,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","grassland",1,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","grassland",2,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","grassland",3,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","crop",1,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","crop",2,0
+"Alliaria petiolata (M.Bieb) Cavara & Grande","crop",3,0
+"Amelanchier spp. ","woodland",1,0
+"Amelanchier spp. ","woodland",2,2000
+"Amelanchier spp. ","woodland",3,0
+"Amelanchier spp. ","orchard",1,0
+"Amelanchier spp. ","orchard",2,0
+"Amelanchier spp. ","orchard",3,0
+"Amelanchier spp. ","grassland",1,0
+"Amelanchier spp. ","grassland",2,0
+"Amelanchier spp. ","grassland",3,0
+"Amelanchier spp. ","crop",1,0
+"Amelanchier spp. ","crop",2,0
+"Amelanchier spp. ","crop",3,0
+"Anemone nemorosa L. ","woodland",1,0
+"Anemone nemorosa L. ","woodland",2,39
+"Anemone nemorosa L. ","woodland",3,0
+"Anemone nemorosa L. ","orchard",1,0
+"Anemone nemorosa L. ","orchard",2,0
+"Anemone nemorosa L. ","orchard",3,0
+"Anemone nemorosa L. ","grassland",1,0
+"Anemone nemorosa L. ","grassland",2,0
+"Anemone nemorosa L. ","grassland",3,0
+"Anemone nemorosa L. ","crop",1,0
+"Anemone nemorosa L. ","crop",2,0
+"Anemone nemorosa L. ","crop",3,0
+"Barbarea vulgaris R.Br.","woodland",1,0
+"Barbarea vulgaris R.Br.","woodland",2,12
+"Barbarea vulgaris R.Br.","woodland",3,0
+"Barbarea vulgaris R.Br.","orchard",1,0
+"Barbarea vulgaris R.Br.","orchard",2,0
+"Barbarea vulgaris R.Br.","orchard",3,0
+"Barbarea vulgaris R.Br.","grassland",1,0
+"Barbarea vulgaris R.Br.","grassland",2,30
+"Barbarea vulgaris R.Br.","grassland",3,0
+"Barbarea vulgaris R.Br.","crop",1,0
+"Barbarea vulgaris R.Br.","crop",2,0
+"Barbarea vulgaris R.Br.","crop",3,0
+"Claytonia virginica L. ","woodland",1,0
+"Claytonia virginica L. ","woodland",2,34
+"Claytonia virginica L. ","woodland",3,0
+"Claytonia virginica L. ","orchard",1,0
+"Claytonia virginica L. ","orchard",2,0
+"Claytonia virginica L. ","orchard",3,0
+"Claytonia virginica L. ","grassland",1,0
+"Claytonia virginica L. ","grassland",2,0
+"Claytonia virginica L. ","grassland",3,0
+"Claytonia virginica L. ","crop",1,0
+"Claytonia virginica L. ","crop",2,0
+"Claytonia virginica L. ","crop",3,0
+"Daucus carota L. ","woodland",1,0
+"Daucus carota L. ","woodland",2,0
+"Daucus carota L. ","woodland",3,0
+"Daucus carota L. ","orchard",1,0
+"Daucus carota L. ","orchard",2,0
+"Daucus carota L. ","orchard",3,1
+"Daucus carota L. ","grassland",1,0
+"Daucus carota L. ","grassland",2,0
+"Daucus carota L. ","grassland",3,12
+"Daucus carota L. ","crop",1,0
+"Daucus carota L. ","crop",2,0
+"Daucus carota L. ","crop",3,0
+"Drymocallis arguta (Pursh) Rydb.","woodland",1,0
+"Drymocallis arguta (Pursh) Rydb.","woodland",2,0
+"Drymocallis arguta (Pursh) Rydb.","woodland",3,2
+"Drymocallis arguta (Pursh) Rydb.","orchard",1,0
+"Drymocallis arguta (Pursh) Rydb.","orchard",2,0
+"Drymocallis arguta (Pursh) Rydb.","orchard",3,0
+"Drymocallis arguta (Pursh) Rydb.","grassland",1,0
+"Drymocallis arguta (Pursh) Rydb.","grassland",2,0
+"Drymocallis arguta (Pursh) Rydb.","grassland",3,20
+"Drymocallis arguta (Pursh) Rydb.","crop",1,0
+"Drymocallis arguta (Pursh) Rydb.","crop",2,0
+"Drymocallis arguta (Pursh) Rydb.","crop",3,0
+"Galium aparine L. ","woodland",1,0
+"Galium aparine L. ","woodland",2,72
+"Galium aparine L. ","woodland",3,0
+"Galium aparine L. ","orchard",1,0
+"Galium aparine L. ","orchard",2,0
+"Galium aparine L. ","orchard",3,0
+"Galium aparine L. ","grassland",1,0
+"Galium aparine L. ","grassland",2,22
+"Galium aparine L. ","grassland",3,0
+"Galium aparine L. ","crop",1,0
+"Galium aparine L. ","crop",2,0
+"Galium aparine L. ","crop",3,0
+"Geranium maculatum L. ","woodland",1,0
+"Geranium maculatum L. ","woodland",2,3
+"Geranium maculatum L. ","woodland",3,2
+"Geranium maculatum L. ","orchard",1,0
+"Geranium maculatum L. ","orchard",2,0
+"Geranium maculatum L. ","orchard",3,0
+"Geranium maculatum L. ","grassland",1,0
+"Geranium maculatum L. ","grassland",2,0
+"Geranium maculatum L. ","grassland",3,0
+"Geranium maculatum L. ","crop",1,0
+"Geranium maculatum L. ","crop",2,0
+"Geranium maculatum L. ","crop",3,0
+"Hieracium spp. ","woodland",1,0
+"Hieracium spp. ","woodland",2,0
+"Hieracium spp. ","woodland",3,0
+"Hieracium spp. ","orchard",1,0
+"Hieracium spp. ","orchard",2,0
+"Hieracium spp. ","orchard",3,515
+"Hieracium spp. ","grassland",1,0
+"Hieracium spp. ","grassland",2,0
+"Hieracium spp. ","grassland",3,289
+"Hieracium spp. ","crop",1,0
+"Hieracium spp. ","crop",2,0
+"Hieracium spp. ","crop",3,0
+"Hydrophyllum virginianum L. ","woodland",1,0
+"Hydrophyllum virginianum L. ","woodland",2,0
+"Hydrophyllum virginianum L. ","woodland",3,15
+"Hydrophyllum virginianum L. ","orchard",1,0
+"Hydrophyllum virginianum L. ","orchard",2,0
+"Hydrophyllum virginianum L. ","orchard",3,0
+"Hydrophyllum virginianum L. ","grassland",1,0
+"Hydrophyllum virginianum L. ","grassland",2,0
+"Hydrophyllum virginianum L. ","grassland",3,0
+"Hydrophyllum virginianum L. ","crop",1,0
+"Hydrophyllum virginianum L. ","crop",2,0
+"Hydrophyllum virginianum L. ","crop",3,0
+"Leucanthemum vulgare Lam. ","woodland",1,0
+"Leucanthemum vulgare Lam. ","woodland",2,0
+"Leucanthemum vulgare Lam. ","woodland",3,0
+"Leucanthemum vulgare Lam. ","orchard",1,0
+"Leucanthemum vulgare Lam. ","orchard",2,0
+"Leucanthemum vulgare Lam. ","orchard",3,0
+"Leucanthemum vulgare Lam. ","grassland",1,0
+"Leucanthemum vulgare Lam. ","grassland",2,0
+"Leucanthemum vulgare Lam. ","grassland",3,3
+"Leucanthemum vulgare Lam. ","crop",1,0
+"Leucanthemum vulgare Lam. ","crop",2,0
+"Leucanthemum vulgare Lam. ","crop",3,0
+"Maianthemum racemosum (L.) Link","woodland",1,0
+"Maianthemum racemosum (L.) Link","woodland",2,3
+"Maianthemum racemosum (L.) Link","woodland",3,5
+"Maianthemum racemosum (L.) Link","orchard",1,0
+"Maianthemum racemosum (L.) Link","orchard",2,0
+"Maianthemum racemosum (L.) Link","orchard",3,0
+"Maianthemum racemosum (L.) Link","grassland",1,0
+"Maianthemum racemosum (L.) Link","grassland",2,0
+"Maianthemum racemosum (L.) Link","grassland",3,0
+"Maianthemum racemosum (L.) Link","crop",1,0
+"Maianthemum racemosum (L.) Link","crop",2,0
+"Maianthemum racemosum (L.) Link","crop",3,0
+"Malus domestica Borkh. ","woodland",1,0
+"Malus domestica Borkh. ","woodland",2,0
+"Malus domestica Borkh. ","woodland",3,0
+"Malus domestica Borkh. ","orchard",1,0
+"Malus domestica Borkh. ","orchard",2,7420
+"Malus domestica Borkh. ","orchard",3,0
+"Malus domestica Borkh. ","grassland",1,0
+"Malus domestica Borkh. ","grassland",2,0
+"Malus domestica Borkh. ","grassland",3,0
+"Malus domestica Borkh. ","crop",1,0
+"Malus domestica Borkh. ","crop",2,0
+"Malus domestica Borkh. ","crop",3,0
+"Myrrhis odorata (L.) Scop.","woodland",1,0
+"Myrrhis odorata (L.) Scop.","woodland",2,0
+"Myrrhis odorata (L.) Scop.","woodland",3,38
+"Myrrhis odorata (L.) Scop.","orchard",1,0
+"Myrrhis odorata (L.) Scop.","orchard",2,0
+"Myrrhis odorata (L.) Scop.","orchard",3,0
+"Myrrhis odorata (L.) Scop.","grassland",1,0
+"Myrrhis odorata (L.) Scop.","grassland",2,0
+"Myrrhis odorata (L.) Scop.","grassland",3,0
+"Myrrhis odorata (L.) Scop.","crop",1,0
+"Myrrhis odorata (L.) Scop.","crop",2,0
+"Myrrhis odorata (L.) Scop.","crop",3,0
+"Podophyllum peltatum L. ","woodland",1,0
+"Podophyllum peltatum L. ","woodland",2,14
+"Podophyllum peltatum L. ","woodland",3,0
+"Podophyllum peltatum L. ","orchard",1,0
+"Podophyllum peltatum L. ","orchard",2,0
+"Podophyllum peltatum L. ","orchard",3,0
+"Podophyllum peltatum L. ","grassland",1,0
+"Podophyllum peltatum L. ","grassland",2,0
+"Podophyllum peltatum L. ","grassland",3,0
+"Podophyllum peltatum L. ","crop",1,0
+"Podophyllum peltatum L. ","crop",2,0
+"Podophyllum peltatum L. ","crop",3,0
+"Ranunculus hispidus Michx. ","woodland",1,0
+"Ranunculus hispidus Michx. ","woodland",2,0
+"Ranunculus hispidus Michx. ","woodland",3,0
+"Ranunculus hispidus Michx. ","orchard",1,0
+"Ranunculus hispidus Michx. ","orchard",2,0
+"Ranunculus hispidus Michx. ","orchard",3,0
+"Ranunculus hispidus Michx. ","grassland",1,0
+"Ranunculus hispidus Michx. ","grassland",2,0
+"Ranunculus hispidus Michx. ","grassland",3,2
+"Ranunculus hispidus Michx. ","crop",1,0
+"Ranunculus hispidus Michx. ","crop",2,0
+"Ranunculus hispidus Michx. ","crop",3,0
+"Rhamnus cathartica L. ","woodland",1,0
+"Rhamnus cathartica L. ","woodland",2,1000
+"Rhamnus cathartica L. ","woodland",3,0
+"Rhamnus cathartica L. ","orchard",1,0
+"Rhamnus cathartica L. ","orchard",2,0
+"Rhamnus cathartica L. ","orchard",3,0
+"Rhamnus cathartica L. ","grassland",1,0
+"Rhamnus cathartica L. ","grassland",2,0
+"Rhamnus cathartica L. ","grassland",3,0
+"Rhamnus cathartica L. ","crop",1,0
+"Rhamnus cathartica L. ","crop",2,0
+"Rhamnus cathartica L. ","crop",3,0
+"Rubus idaeus L. ","woodland",1,0
+"Rubus idaeus L. ","woodland",2,0
+"Rubus idaeus L. ","woodland",3,0
+"Rubus idaeus L. ","orchard",1,0
+"Rubus idaeus L. ","orchard",2,0
+"Rubus idaeus L. ","orchard",3,15
+"Rubus idaeus L. ","grassland",1,0
+"Rubus idaeus L. ","grassland",2,0
+"Rubus idaeus L. ","grassland",3,0
+"Rubus idaeus L. ","crop",1,0
+"Rubus idaeus L. ","crop",2,0
+"Rubus idaeus L. ","crop",3,0
+"Sedum acre L. ","woodland",1,0
+"Sedum acre L. ","woodland",2,4
+"Sedum acre L. ","woodland",3,0
+"Sedum acre L. ","orchard",1,0
+"Sedum acre L. ","orchard",2,0
+"Sedum acre L. ","orchard",3,0
+"Sedum acre L. ","grassland",1,0
+"Sedum acre L. ","grassland",2,0
+"Sedum acre L. ","grassland",3,0
+"Sedum acre L. ","crop",1,0
+"Sedum acre L. ","crop",2,0
+"Sedum acre L. ","crop",3,0
+"Silene vulgaris (Moench) Garcke","woodland",1,0
+"Silene vulgaris (Moench) Garcke","woodland",2,0
+"Silene vulgaris (Moench) Garcke","woodland",3,7
+"Silene vulgaris (Moench) Garcke","orchard",1,0
+"Silene vulgaris (Moench) Garcke","orchard",2,0
+"Silene vulgaris (Moench) Garcke","orchard",3,0
+"Silene vulgaris (Moench) Garcke","grassland",1,0
+"Silene vulgaris (Moench) Garcke","grassland",2,0
+"Silene vulgaris (Moench) Garcke","grassland",3,14
+"Silene vulgaris (Moench) Garcke","crop",1,0
+"Silene vulgaris (Moench) Garcke","crop",2,0
+"Silene vulgaris (Moench) Garcke","crop",3,0
+"Smilax spp. ","woodland",1,0
+"Smilax spp. ","woodland",2,5
+"Smilax spp. ","woodland",3,0
+"Smilax spp. ","orchard",1,0
+"Smilax spp. ","orchard",2,0
+"Smilax spp. ","orchard",3,0
+"Smilax spp. ","grassland",1,0
+"Smilax spp. ","grassland",2,0
+"Smilax spp. ","grassland",3,0
+"Smilax spp. ","crop",1,0
+"Smilax spp. ","crop",2,0
+"Smilax spp. ","crop",3,0
+"Taraxacum officinale F.H. Wigg","woodland",1,0
+"Taraxacum officinale F.H. Wigg","woodland",2,34
+"Taraxacum officinale F.H. Wigg","woodland",3,0
+"Taraxacum officinale F.H. Wigg","orchard",1,0
+"Taraxacum officinale F.H. Wigg","orchard",2,1113
+"Taraxacum officinale F.H. Wigg","orchard",3,11
+"Taraxacum officinale F.H. Wigg","grassland",1,0
+"Taraxacum officinale F.H. Wigg","grassland",2,109
+"Taraxacum officinale F.H. Wigg","grassland",3,0
+"Taraxacum officinale F.H. Wigg","crop",1,0
+"Taraxacum officinale F.H. Wigg","crop",2,32
+"Taraxacum officinale F.H. Wigg","crop",3,0
+"Thaspium trifoliatum (L.)","woodland",1,0
+"Thaspium trifoliatum (L.)","woodland",2,0
+"Thaspium trifoliatum (L.)","woodland",3,35
+"Thaspium trifoliatum (L.)","orchard",1,0
+"Thaspium trifoliatum (L.)","orchard",2,0
+"Thaspium trifoliatum (L.)","orchard",3,0
+"Thaspium trifoliatum (L.)","grassland",1,0
+"Thaspium trifoliatum (L.)","grassland",2,0
+"Thaspium trifoliatum (L.)","grassland",3,0
+"Thaspium trifoliatum (L.)","crop",1,0
+"Thaspium trifoliatum (L.)","crop",2,0
+"Thaspium trifoliatum (L.)","crop",3,0
+"Trifolium dubium Sibth.","woodland",1,0
+"Trifolium dubium Sibth.","woodland",2,0
+"Trifolium dubium Sibth.","woodland",3,0
+"Trifolium dubium Sibth.","orchard",1,0
+"Trifolium dubium Sibth.","orchard",2,0
+"Trifolium dubium Sibth.","orchard",3,10
+"Trifolium dubium Sibth.","grassland",1,0
+"Trifolium dubium Sibth.","grassland",2,0
+"Trifolium dubium Sibth.","grassland",3,12
+"Trifolium dubium Sibth.","crop",1,0
+"Trifolium dubium Sibth.","crop",2,0
+"Trifolium dubium Sibth.","crop",3,0
+"Trifolium pratense L. ","woodland",1,0
+"Trifolium pratense L. ","woodland",2,0
+"Trifolium pratense L. ","woodland",3,0
+"Trifolium pratense L. ","orchard",1,0
+"Trifolium pratense L. ","orchard",2,0
+"Trifolium pratense L. ","orchard",3,39
+"Trifolium pratense L. ","grassland",1,0
+"Trifolium pratense L. ","grassland",2,0
+"Trifolium pratense L. ","grassland",3,0
+"Trifolium pratense L. ","crop",1,0
+"Trifolium pratense L. ","crop",2,0
+"Trifolium pratense L. ","crop",3,0
+"Trifolium repens L. ","woodland",1,0
+"Trifolium repens L. ","woodland",2,0
+"Trifolium repens L. ","woodland",3,0
+"Trifolium repens L. ","orchard",1,0
+"Trifolium repens L. ","orchard",2,0
+"Trifolium repens L. ","orchard",3,26
+"Trifolium repens L. ","grassland",1,0
+"Trifolium repens L. ","grassland",2,0
+"Trifolium repens L. ","grassland",3,0
+"Trifolium repens L. ","crop",1,0
+"Trifolium repens L. ","crop",2,0
+"Trifolium repens L. ","crop",3,0
+"Trillium grandiflorum Schreb. ","woodland",1,0
+"Trillium grandiflorum Schreb. ","woodland",2,5
+"Trillium grandiflorum Schreb. ","woodland",3,0
+"Trillium grandiflorum Schreb. ","orchard",1,0
+"Trillium grandiflorum Schreb. ","orchard",2,0
+"Trillium grandiflorum Schreb. ","orchard",3,0
+"Trillium grandiflorum Schreb. ","grassland",1,0
+"Trillium grandiflorum Schreb. ","grassland",2,0
+"Trillium grandiflorum Schreb. ","grassland",3,0
+"Trillium grandiflorum Schreb. ","crop",1,0
+"Trillium grandiflorum Schreb. ","crop",2,0
+"Trillium grandiflorum Schreb. ","crop",3,0
+"Viola sororia Wild. ","woodland",1,0
+"Viola sororia Wild. ","woodland",2,84
+"Viola sororia Wild. ","woodland",3,0
+"Viola sororia Wild. ","orchard",1,0
+"Viola sororia Wild. ","orchard",2,0
+"Viola sororia Wild. ","orchard",3,0
+"Viola sororia Wild. ","grassland",1,0
+"Viola sororia Wild. ","grassland",2,0
+"Viola sororia Wild. ","grassland",3,0
+"Viola sororia Wild. ","crop",1,0
+"Viola sororia Wild. ","crop",2,0
+"Viola sororia Wild. ","crop",3,0
+"Unknown species 1","woodland",1,0
+"Unknown species 1","woodland",2,1
+"Unknown species 1","woodland",3,0
+"Unknown species 1","orchard",1,0
+"Unknown species 1","orchard",2,0
+"Unknown species 1","orchard",3,0
+"Unknown species 1","grassland",1,0
+"Unknown species 1","grassland",2,0
+"Unknown species 1","grassland",3,0
+"Unknown species 1","crop",1,0
+"Unknown species 1","crop",2,0
+"Unknown species 1","crop",3,0

@@ -1,0 +1,945 @@
+"datePeriod","date","site","landtype","transect","quadrat","flower","count_per_m2"
+1,2016-05-20,12,"forest",12.2,"1","Fragaria virginiana",11.11111111
+1,2016-05-20,12,"forest",12.2,"1","Glechoma hederacea",46.22222222
+1,2016-05-20,12,"forest",12.2,"1","Taraxacum agg.",0.444444444
+1,2016-05-20,12,"forest",12.2,"2","Fragaria virginiana",2.222222222
+1,2016-05-20,12,"forest",12.2,"2","Glechoma hederacea",65.77777778
+1,2016-05-20,12,"forest",12.2,"3","Fragaria virginiana",1.777777778
+1,2016-05-20,12,"forest",12.2,"3","Glechoma hederacea",6.222222222
+1,2016-05-20,13,"forage",13.1,"1","Taraxacum agg.",5.333333333
+1,2016-05-20,13,"forage",13.1,"2","Taraxacum agg.",9.333333333
+1,2016-05-20,13,"forage",13.1,"3","Taraxacum agg.",2.222222222
+1,2016-05-20,13,"forest",13.2,"1","Trillium grandiflorum",1.777777778
+1,2016-05-20,13,"forest",13.2,"2","Trillium grandiflorum",2.666666667
+1,2016-05-20,13,"forest",13.2,"3","Mitella diphylla",5.333333333
+1,2016-05-21,4,"forest",4.3,"1",NA,0
+1,2016-05-21,4,"forest",4.3,"2","Taraxacum agg.",0.444444444
+1,2016-05-21,4,"forest",4.3,"3","Fragaria virginiana",1.777777778
+1,2016-05-21,18,"forage",18.1,"1","Taraxacum agg.",16.44444444
+1,2016-05-21,18,"forage",18.1,"2","Taraxacum agg.",8.888888889
+1,2016-05-21,18,"forage",18.1,"3","Taraxacum agg.",4.444444444
+1,2016-05-21,18,"forest",18.2,"1","Cardamine diphylla",2.666666667
+1,2016-05-21,18,"forest",18.2,"1","Erythronium americanum",0.444444444
+1,2016-05-21,18,"forest",18.2,"2",NA,0
+1,2016-05-21,18,"forest",18.2,"3","Trillium grandiflorum",0.888888889
+1,2016-05-22,2,"forest",2.3,"1","Trillium grandiflorum",0.444444444
+1,2016-05-22,2,"forest",2.3,"2","Trillium grandiflorum",0.444444444
+1,2016-05-22,2,"forest",2.3,"3","Viola pubescens",0.888888889
+1,2016-05-22,4,"apple",4.1,"1","Malus pumila",32.00494285
+1,2016-05-22,4,"apple",4.1,"2","Malus pumila",34.72350942
+1,2016-05-22,4,"apple",4.1,"3","Malus pumila",27.67995057
+1,2016-05-22,6,"forest",6.2,"1","Viola pubescens",8
+1,2016-05-22,6,"forest",6.2,"1","Viola sororia",7.555555556
+1,2016-05-22,6,"forest",6.2,"2","Arisaema triphyllum",0.444444444
+1,2016-05-22,6,"forest",6.2,"2","Viola pubescens",0.888888889
+1,2016-05-22,6,"forest",6.2,"2","Viola sororia",2.222222222
+1,2016-05-22,6,"forest",6.2,"3","Arisaema triphyllum",1.777777778
+1,2016-05-22,6,"forest",6.2,"3","Viola pubescens",8.888888889
+1,2016-05-22,6,"forest",6.2,"3","Viola sororia",22.22222222
+1,2016-05-23,6,"forage",6.1,"1","Taraxacum agg.",52
+1,2016-05-23,6,"forage",6.1,"2","Taraxacum agg.",31.55555556
+1,2016-05-23,6,"forage",6.1,"3","Taraxacum agg.",25.77777778
+1,2016-05-23,6,"forage",6.1,"3","Veronica serpyllifolia",4.444444444
+1,2016-05-23,9,"semi-natural",9.1,"1",NA,0
+1,2016-05-23,9,"semi-natural",9.1,"2",NA,0
+1,2016-05-23,9,"semi-natural",9.1,"3",NA,0
+1,2016-05-23,9,"semi-natural",9.1,"4","Taraxacum agg.",0.888888889
+1,2016-05-23,14,"forest",14.2,"1","Viola pubescens",7.555555556
+1,2016-05-23,14,"forest",14.2,"1","Viola sororia",16.44444444
+1,2016-05-23,14,"forest",14.2,"2",NA,0
+1,2016-05-23,14,"forest",14.2,"3","Viola pubescens",1.777777778
+1,2016-05-24,26,"apple",26.1,"1","Malus pumila",21.52380952
+1,2016-05-24,26,"apple",26.1,"2","Malus pumila",28.95238095
+1,2016-05-24,26,"apple",26.1,"3","Malus pumila",225.9047619
+1,2016-05-24,26,"forage",26.2,"1","Sisyrinchium montanum",0.888888889
+1,2016-05-24,26,"forage",26.2,"1","Taraxacum agg.",0.444444444
+1,2016-05-24,26,"forage",26.2,"2","Taraxacum agg.",4
+1,2016-05-24,26,"forage",26.2,"3","Taraxacum agg.",8
+1,2016-05-24,26,"forest",26.3,"1",NA,0
+1,2016-05-24,26,"forest",26.3,"2",NA,0
+1,2016-05-24,26,"forest",26.3,"3",NA,0
+1,2016-05-24,26,"forest",26.3,"4","Actaea pachypoda",0.888888889
+1,2016-05-24,26,"forest",26.3,"4","Viola pubescens",0.444444444
+1,2016-05-26,11,"semi-natural",11.2,"1","Fragaria virginiana",0.888888889
+1,2016-05-26,11,"semi-natural",11.2,"2","Fragaria virginiana",8
+1,2016-05-26,11,"semi-natural",11.2,"3","Fragaria virginiana",32
+1,2016-05-26,11,"forest",11.3,"1","Coptis trifolia",36
+1,2016-05-26,11,"forest",11.3,"2","Coptis trifolia",23.11111111
+1,2016-05-26,11,"forest",11.3,"3",NA,0
+1,2016-05-26,21,"forage",21.1,"1","Barbarea vulgaris",1.777777778
+1,2016-05-26,21,"forage",21.1,"1","Taraxacum agg.",3.555555556
+1,2016-05-26,21,"forage",21.1,"2","Capsella bursa-pastoris",1.777777778
+1,2016-05-26,21,"forage",21.1,"2","Taraxacum agg.",4
+1,2016-05-26,21,"forage",21.1,"3","Barbarea vulgaris",11.11111111
+1,2016-05-26,21,"forage",21.1,"3","Taraxacum agg.",4
+1,2016-05-27,5,"forage",5.1,"1","Taraxacum agg.",21.33333333
+1,2016-05-27,5,"forage",5.1,"2","Taraxacum agg.",34.66666667
+1,2016-05-27,5,"forage",5.1,"3","Taraxacum agg.",4
+1,2016-05-27,19,"forest",19.3,"1","Taraxacum agg.",1.777777778
+1,2016-05-27,19,"forest",19.3,"2","Taraxacum agg.",1.333333333
+1,2016-05-27,19,"forest",19.3,"3",NA,0
+1,2016-05-27,20,"forage",20.1,"1","Taraxacum agg.",0.888888889
+1,2016-05-27,20,"forage",20.1,"2",NA,0
+1,2016-05-27,20,"forage",20.1,"3","Taraxacum agg.",0.888888889
+1,2016-05-30,1,"strawberry",1.4,"1","Fragaria × ananassa",5.821431608
+1,2016-05-30,1,"strawberry",1.4,"1","Taraxacum agg.",1.455357902
+1,2016-05-30,1,"strawberry",1.4,"2","Fragaria × ananassa",4.851193007
+1,2016-05-30,1,"strawberry",1.4,"2","Taraxacum agg.",23.28572643
+1,2016-05-30,1,"strawberry",1.4,"3","Fragaria × ananassa",2.910715804
+1,2016-05-30,24,"forage",24.1,"1","Erigeron philadelphicus",0.444444444
+1,2016-05-30,24,"forage",24.1,"2",NA,0
+1,2016-05-30,24,"forage",24.1,"3","Cerastium fontanum",2.222222222
+1,2016-05-31,8,"forage",8.1,"1","Ranunculus acris",5.777777778
+1,2016-05-31,8,"forage",8.1,"1","Vicia cracca",3.111111111
+1,2016-05-31,8,"forage",8.1,"2","Ranunculus acris",4
+1,2016-05-31,8,"forage",8.1,"2","Vicia cracca",6.666666667
+1,2016-05-31,8,"forage",8.1,"3","Ranunculus acris",2.222222222
+1,2016-05-31,8,"forage",8.1,"3","Vicia cracca",0.888888889
+1,2016-05-31,22,"forest",22.3,"1","Maianthemum canadense",4.888888889
+1,2016-05-31,22,"forest",22.3,"2",NA,0
+1,2016-05-31,22,"forest",22.3,"3",NA,0
+1,2016-05-31,22,"semi-natural",22.4,"1",NA,0
+1,2016-05-31,22,"semi-natural",22.4,"2",NA,0
+1,2016-05-31,22,"semi-natural",22.4,"3",NA,0
+1,2016-05-31,22,"semi-natural",22.4,"4","Rubus allegheniensis",17.77777778
+1,2016-05-31,23,"forage",23.2,"1",NA,0
+1,2016-05-31,23,"forage",23.2,"2","Leucanthemum vulgare",2.222222222
+1,2016-05-31,23,"forage",23.2,"3",NA,0
+1,2016-06-01,21,"forest",21.6,"1","Trillium erectum",0.888888889
+1,2016-06-01,21,"forest",21.6,"1","Trillium grandiflorum",2.222222222
+1,2016-06-01,21,"forest",21.6,"2",NA,0
+1,2016-06-01,21,"forest",21.6,"3",NA,0
+1,2016-06-03,15,"semi-natural",15.2,"1","Fragaria virginiana",3.111111111
+1,2016-06-03,15,"semi-natural",15.2,"2","Fragaria virginiana",0.444444444
+1,2016-06-03,15,"semi-natural",15.2,"3",NA,0
+1,2016-06-03,15,"forest",15.3,"1","Ranunculus recurvatus",2.222222222
+1,2016-06-03,15,"forest",15.3,"2",NA,0
+1,2016-06-03,15,"forest",15.3,"3",NA,0
+1,2016-06-03,25,"forest",25.3,"1","Acer spicatum",4.444444444
+1,2016-06-03,25,"forest",25.3,"2","Acer spicatum",91.55555556
+1,2016-06-03,25,"forest",25.3,"3",NA,0
+1,2016-06-04,7,"forage",7.3,"1","Erigeron philadelphicus",5.777777778
+1,2016-06-04,7,"forage",7.3,"1","Taraxacum agg.",0.444444444
+1,2016-06-04,7,"forage",7.3,"2","Erigeron philadelphicus",12
+1,2016-06-04,7,"forage",7.3,"2","Taraxacum agg.",0.444444444
+1,2016-06-04,7,"forage",7.3,"3","Taraxacum agg.",1.777777778
+1,2016-06-04,10,"semi-natural",10.1,"1",NA,0
+1,2016-06-04,10,"semi-natural",10.1,"2","Ranunculus acris",0.444444444
+1,2016-06-04,10,"semi-natural",10.1,"3","Ranunculus acris",0.444444444
+1,2016-06-04,16,"semi-natural",16.1,"1",NA,0
+1,2016-06-04,16,"semi-natural",16.1,"2","Sisyrinchium montanum",0.444444444
+1,2016-06-04,16,"semi-natural",16.1,"3",NA,0
+1,2016-06-07,17,"forest",17.1,"1",NA,0
+1,2016-06-07,17,"forest",17.1,"2","Maianthemum canadense",1.333333333
+1,2016-06-07,17,"forest",17.1,"3",NA,0
+1,2016-06-07,17,"strawberry",17.5,"1","Fragaria × ananassa",45.11609496
+1,2016-06-07,17,"strawberry",17.5,"2","Fragaria × ananassa",37.35418615
+1,2016-06-07,17,"strawberry",17.5,"3","Fragaria × ananassa",32.98811245
+1,2016-06-09,3,"forage",3.1,"1","Erigeron philadelphicus",124
+1,2016-06-09,3,"forage",3.1,"1","Hieracium pilosella",1.333333333
+1,2016-06-09,3,"forage",3.1,"1","Leucanthemum vulgare",6.222222222
+1,2016-06-09,3,"forage",3.1,"1","Trifolium pratense",4.444444444
+1,2016-06-09,3,"forage",3.1,"2","Erigeron philadelphicus",37.77777778
+1,2016-06-09,3,"forage",3.1,"2","Hieracium pilosella",2.222222222
+1,2016-06-09,3,"forage",3.1,"2","Leucanthemum vulgare",20.44444444
+1,2016-06-09,3,"forage",3.1,"2","Trifolium pratense",1.333333333
+1,2016-06-09,3,"forage",3.1,"3","Erigeron philadelphicus",9.333333333
+1,2016-06-09,3,"forage",3.1,"3","Hieracium pilosella",0.444444444
+1,2016-06-09,3,"forage",3.1,"3","Leucanthemum vulgare",9.777777778
+1,2016-06-09,3,"forage",3.1,"3","Trifolium pratense",0.888888889
+1,2016-06-09,3,"forest",3.4,"1","Fragaria virginiana",3.555555556
+1,2016-06-09,3,"forest",3.4,"1","Rubus allegheniensis",0.888888889
+1,2016-06-09,3,"forest",3.4,"2","Fragaria virginiana",0.444444444
+1,2016-06-09,3,"forest",3.4,"2","Rubus allegheniensis",1.333333333
+1,2016-06-09,3,"forest",3.4,"3","Rubus allegheniensis",0.444444444
+2,2016-06-09,4,"strawberry",4.5,"1","Fragaria × ananassa",37.83930545
+2,2016-06-09,4,"strawberry",4.5,"2","Fragaria × ananassa",44.63097566
+2,2016-06-09,4,"strawberry",4.5,"3","Fragaria × ananassa",45.60121426
+1,2016-06-09,27,"forage",27.1,"1","Cerastium fontanum",8
+1,2016-06-09,27,"forage",27.1,"1","Erysimum cheiranthoides",11.11111111
+1,2016-06-09,27,"forage",27.1,"1","Ranunculus acris",8.444444444
+1,2016-06-09,27,"forage",27.1,"1","Taraxacum agg.",0.444444444
+1,2016-06-09,27,"forage",27.1,"1","Trifolium pratense",4.444444444
+1,2016-06-09,27,"forage",27.1,"1","Veronica serpyllifolia",1.333333333
+1,2016-06-09,27,"forage",27.1,"1","Vicia cracca",1.333333333
+1,2016-06-09,27,"forage",27.1,"2","Cardamine bulbosa",10.66666667
+1,2016-06-09,27,"forage",27.1,"2","Cerastium fontanum",17.33333333
+1,2016-06-09,27,"forage",27.1,"2","Taraxacum agg.",0.888888889
+1,2016-06-09,27,"forage",27.1,"2","Trifolium pratense",4
+1,2016-06-09,27,"forage",27.1,"3","Cerastium fontanum",4.444444444
+1,2016-06-09,27,"forage",27.1,"3","Erysimum cheiranthoides",6.222222222
+1,2016-06-09,27,"forage",27.1,"3","Taraxacum agg.",0.444444444
+1,2016-06-09,27,"forage",27.1,"3","Trifolium pratense",13.33333333
+1,2016-06-09,27,"forage",27.1,"3","Veronica serpyllifolia",4.444444444
+2,2016-06-13,6,"forage",6.1,"1","Erigeron philadelphicus",2.666666667
+2,2016-06-13,6,"forage",6.1,"1","Hieracium caespitosum",0.444444444
+2,2016-06-13,6,"forage",6.1,"1","Lotus corniculatus",18.22222222
+2,2016-06-13,6,"forage",6.1,"1","Ranunculus acris",0.888888889
+2,2016-06-13,6,"forage",6.1,"1","Trifolium pratense",1.777777778
+2,2016-06-13,6,"forage",6.1,"1","Trifolium repens",3.555555556
+2,2016-06-13,6,"forage",6.1,"2","Erigeron philadelphicus",4.888888889
+2,2016-06-13,6,"forage",6.1,"2","Lotus corniculatus",7.555555556
+2,2016-06-13,6,"forage",6.1,"2","Medicago sativa",0.444444444
+2,2016-06-13,6,"forage",6.1,"2","Trifolium repens",11.11111111
+2,2016-06-13,6,"forage",6.1,"2","Vicia cracca",4
+2,2016-06-13,6,"forage",6.1,"3","Erigeron philadelphicus",3.111111111
+2,2016-06-13,6,"forage",6.1,"3","Medicago sativa",0.444444444
+2,2016-06-13,6,"forage",6.1,"3","Trifolium repens",10.22222222
+2,2016-06-13,6,"forage",6.1,"3","Vicia cracca",1.777777778
+2,2016-06-13,6,"raspberry",6.3,"1","Rubus sp. (raspberry)",11.53525207
+2,2016-06-13,6,"raspberry",6.3,"2","Rubus sp. (raspberry)",13.94560325
+2,2016-06-13,6,"raspberry",6.3,"3","Cerastium fontanum",1.033007648
+2,2016-06-13,6,"raspberry",6.3,"3","Rubus sp. (raspberry)",31.67890121
+2,2016-06-13,6,"raspberry",6.3,"3","Trifolium repens",1.893847355
+2,2016-06-13,12,"forest",12.2,"1",NA,0
+2,2016-06-13,12,"forest",12.2,"2",NA,0
+2,2016-06-13,12,"forest",12.2,"3","Glechoma hederacea",1.777777778
+2,2016-06-13,12,"forest",12.2,"3","Rubus sp. (raspberry)",28
+2,2016-06-13,13,"forage",13.1,"1","Cerastium fontanum",4.444444444
+2,2016-06-13,13,"forage",13.1,"1","Erigeron philadelphicus",5.777777778
+2,2016-06-13,13,"forage",13.1,"1","Medicago lupulina",5.333333333
+2,2016-06-13,13,"forage",13.1,"2","Cerastium fontanum",0.888888889
+2,2016-06-13,13,"forage",13.1,"2","Medicago lupulina",0.888888889
+2,2016-06-13,13,"forage",13.1,"2","Vicia cracca",1.333333333
+2,2016-06-13,13,"forage",13.1,"3","Cerastium fontanum",0.888888889
+2,2016-06-13,13,"forage",13.1,"3","Erigeron philadelphicus",1.333333333
+2,2016-06-14,12,"semi-natural",12.1,"1","Erigeron sp.",0.444444444
+2,2016-06-14,12,"semi-natural",12.1,"2",NA,0
+2,2016-06-14,12,"semi-natural",12.1,"3",NA,0
+2,2016-06-14,12,"semi-natural",12.1,"4","Erigeron philadelphicus",66.22222222
+2,2016-06-15,9,"semi-natural",9.1,"1","Cerastium fontanum",3.111111111
+2,2016-06-15,9,"semi-natural",9.1,"1","Vicia cracca",1.777777778
+2,2016-06-15,9,"semi-natural",9.1,"2","Cerastium fontanum",2.222222222
+2,2016-06-15,9,"semi-natural",9.1,"2","Vicia cracca",1.333333333
+2,2016-06-15,9,"semi-natural",9.1,"3","Cerastium fontanum",1.333333333
+2,2016-06-15,9,"semi-natural",9.1,"3","Vicia cracca",2.222222222
+2,2016-06-15,9,"semi-natural",9.2,"1","Cerastium fontanum",188.4444444
+2,2016-06-15,9,"semi-natural",9.2,"1","Leucanthemum vulgare",15.11111111
+2,2016-06-15,9,"semi-natural",9.2,"1","Medicago lupulina",1.777777778
+2,2016-06-15,9,"semi-natural",9.2,"1","Trifolium repens",32.88888889
+2,2016-06-15,9,"semi-natural",9.2,"1","Vicia cracca",7.555555556
+2,2016-06-15,9,"semi-natural",9.2,"2","Cerastium fontanum",41.77777778
+2,2016-06-15,9,"semi-natural",9.2,"2","Leucanthemum vulgare",0.888888889
+2,2016-06-15,9,"semi-natural",9.2,"2","Medicago lupulina",5.777777778
+2,2016-06-15,9,"semi-natural",9.2,"2","Potentilla argentea",0.444444444
+2,2016-06-15,9,"semi-natural",9.2,"2","Trifolium repens",31.55555556
+2,2016-06-15,9,"semi-natural",9.2,"2","Vicia cracca",7.111111111
+2,2016-06-15,9,"semi-natural",9.2,"3","Cerastium fontanum",104.8888889
+2,2016-06-15,9,"semi-natural",9.2,"3","Leucanthemum vulgare",3.555555556
+2,2016-06-15,9,"semi-natural",9.2,"3","Medicago lupulina",10.22222222
+2,2016-06-15,9,"semi-natural",9.2,"3","Trifolium repens",20.44444444
+2,2016-06-15,9,"semi-natural",9.2,"3","Vicia cracca",7.111111111
+2,2016-06-16,2,"raspberry",2.4,"1","Erigeron canadensis ",1.721679414
+2,2016-06-16,2,"raspberry",2.4,"1","Rubus sp. (raspberry)",5.853710006
+2,2016-06-16,2,"raspberry",2.4,"1","Silene vulgaris",43.55848917
+2,2016-06-16,2,"raspberry",2.4,"2","Erigeron canadensis ",0.344335883
+2,2016-06-16,2,"raspberry",2.4,"2","Rubus sp. (raspberry)",22.72616826
+2,2016-06-16,2,"raspberry",2.4,"2","Silene vulgaris",10.67441236
+2,2016-06-16,2,"raspberry",2.4,"3","Leucanthemum vulgare",0.860839707
+2,2016-06-16,2,"raspberry",2.4,"3","Rubus sp. (raspberry)",12.74042766
+2,2016-06-16,2,"raspberry",2.4,"3","Silene vulgaris",17.56113002
+2,2016-06-16,14,"raspberry",14.3,"1","Rubus sp. (raspberry)",28.40771033
+2,2016-06-16,14,"raspberry",14.3,"1","Trifolium repens",4.304198534
+2,2016-06-16,14,"raspberry",14.3,"2","Rubus sp. (raspberry)",9.124900892
+2,2016-06-16,14,"raspberry",14.3,"2","Trifolium repens",9.297068834
+2,2016-06-16,14,"raspberry",14.3,"3","Rubus sp. (raspberry)",9.985740599
+2,2016-06-16,14,"raspberry",14.3,"3","Trifolium repens",1.033007648
+2,2016-06-16,19,"forage",19.1,"1","Leucanthemum vulgare",28
+2,2016-06-16,19,"forage",19.1,"1","Vicia cracca",1.777777778
+2,2016-06-16,19,"forage",19.1,"2","Leucanthemum vulgare",19.55555556
+2,2016-06-16,19,"forage",19.1,"2","Vicia cracca",1.333333333
+2,2016-06-16,19,"forage",19.1,"3",NA,0
+2,2016-06-17,11,"forage",11.1,"1","Trifolium repens",112.4444444
+2,2016-06-17,11,"forage",11.1,"2","Trifolium repens",117.3333333
+2,2016-06-17,11,"forage",11.1,"3","Trifolium repens",36.44444444
+2,2016-06-17,11,"semi-natural",11.2,"1","Silene vulgaris",0.444444444
+2,2016-06-17,11,"semi-natural",11.2,"2","Hieracium caespitosum",1.777777778
+2,2016-06-17,11,"semi-natural",11.2,"3","Hieracium caespitosum",1.333333333
+2,2016-06-17,11,"forest",11.3,"1","Maianthemum canadense",0.888888889
+2,2016-06-17,11,"forest",11.3,"2","Cornus canadensis",3.111111111
+2,2016-06-17,11,"forest",11.3,"2","Maianthemum canadense",4.444444444
+2,2016-06-17,11,"forest",11.3,"3","Cornus canadensis",0.888888889
+2,2016-06-17,11,"forest",11.3,"3","Maianthemum canadense",4.444444444
+2,2016-06-17,21,"forage",21.2,"1","Erigeron philadelphicus",4.888888889
+2,2016-06-17,21,"forage",21.2,"1","Leucanthemum vulgare",1.333333333
+2,2016-06-17,21,"forage",21.2,"1","Lotus corniculatus",62.66666667
+2,2016-06-17,21,"forage",21.2,"1","Trifolium pratense",0.444444444
+2,2016-06-17,21,"forage",21.2,"2","Lotus corniculatus",74.66666667
+2,2016-06-17,21,"forage",21.2,"2","Trifolium pratense",1.333333333
+2,2016-06-17,21,"forage",21.2,"2","Vicia cracca",0.888888889
+2,2016-06-17,21,"forage",21.2,"3","Erigeron philadelphicus",12
+2,2016-06-17,21,"forage",21.2,"3","Hieracium caespitosum",1.333333333
+2,2016-06-17,21,"forage",21.2,"3","Leucanthemum vulgare",0.888888889
+2,2016-06-17,21,"forage",21.2,"3","Lotus corniculatus",8
+2,2016-06-17,21,"forage",21.2,"3","Trifolium pratense",5.333333333
+2,2016-06-17,21,"forage",21.2,"3","Vicia cracca",1.333333333
+2,2016-06-18,26,"forage",26.4,"1","Cerastium fontanum",47.11111111
+2,2016-06-18,26,"forage",26.4,"1","Plantago lanceolata",28.88888889
+2,2016-06-18,26,"forage",26.4,"1","Trifolium pratense",10.22222222
+2,2016-06-18,26,"forage",26.4,"1","Trifolium repens",21.33333333
+2,2016-06-18,26,"forage",26.4,"2","Cerastium fontanum",37.77777778
+2,2016-06-18,26,"forage",26.4,"2","Plantago lanceolata",58.66666667
+2,2016-06-18,26,"forage",26.4,"2","Trifolium pratense",12.88888889
+2,2016-06-18,26,"forage",26.4,"2","Trifolium repens",31.11111111
+2,2016-06-18,26,"forage",26.4,"3","Cerastium fontanum",45.77777778
+2,2016-06-18,26,"forage",26.4,"3","Plantago lanceolata",46.66666667
+2,2016-06-18,26,"forage",26.4,"3","Trifolium pratense",7.555555556
+2,2016-06-18,26,"forage",26.4,"3","Trifolium repens",31.55555556
+2,2016-06-19,20,"forage",20.1,"1","Galium mollugo",168.8888889
+2,2016-06-19,20,"forage",20.1,"1","Vicia cracca",11.11111111
+2,2016-06-19,20,"forage",20.1,"2","Galium mollugo",254.2222222
+2,2016-06-19,20,"forage",20.1,"2","Vicia cracca",8
+2,2016-06-19,20,"forage",20.1,"3","Galium mollugo",91.55555556
+2,2016-06-19,20,"forage",20.1,"3","Vicia cracca",5.777777778
+2,2016-06-21,5,"forage",5.1,"1","Ranunculus acris",0.888888889
+2,2016-06-21,5,"forage",5.1,"2","Ranunculus acris",0.444444444
+2,2016-06-21,5,"forage",5.1,"3","Cerastium fontanum",2.222222222
+2,2016-06-21,5,"forage",5.1,"3","Ranunculus acris",3.111111111
+2,2016-06-21,5,"forage",5.1,"3","Vicia cracca",0.888888889
+2,2016-06-22,1,"semi-natural",1.1,"1","Trifolium repens",8.444444444
+2,2016-06-22,1,"semi-natural",1.1,"1","Vicia cracca",3.111111111
+2,2016-06-22,1,"semi-natural",1.1,"2","Vicia cracca",5.333333333
+2,2016-06-22,1,"semi-natural",1.1,"3","Vicia cracca",32.44444444
+2,2016-06-22,24,"forage",24.2,"1","Erigeron philadelphicus",0.444444444
+2,2016-06-22,24,"forage",24.2,"1","Leucanthemum vulgare",0.444444444
+2,2016-06-22,24,"forage",24.2,"1","Lotus corniculatus",53.77777778
+2,2016-06-22,24,"forage",24.2,"1","Oxalis stricta",0.888888889
+2,2016-06-22,24,"forage",24.2,"1","Prunella vulgaris",4
+2,2016-06-22,24,"forage",24.2,"1","Ranunculus acris",3.555555556
+2,2016-06-22,24,"forage",24.2,"1","Trifolium pratense",2.666666667
+2,2016-06-22,24,"forage",24.2,"2","Leucanthemum vulgare",1.777777778
+2,2016-06-22,24,"forage",24.2,"2","Lotus corniculatus",57.77777778
+2,2016-06-22,24,"forage",24.2,"2","Prunella vulgaris",7.111111111
+2,2016-06-22,24,"forage",24.2,"2","Ranunculus acris",0.888888889
+2,2016-06-22,24,"forage",24.2,"2","Trifolium pratense",0.888888889
+2,2016-06-22,24,"forage",24.2,"3","Leucanthemum vulgare",0.888888889
+2,2016-06-22,24,"forage",24.2,"3","Lotus corniculatus",56
+2,2016-06-22,24,"forage",24.2,"3","Oxalis stricta",5.333333333
+2,2016-06-22,24,"forage",24.2,"3","Prunella vulgaris",8.444444444
+2,2016-06-22,24,"forage",24.2,"3","Ranunculus acris",4
+2,2016-06-22,24,"forage",24.2,"3","Trifolium pratense",1.333333333
+2,2016-06-22,24,"forage",24.2,"3","Trifolium repens",0.444444444
+2,2016-06-22,24,"forage",24.2,"3","Vicia cracca",2.666666667
+2,2016-06-23,8,"forage",8.1,"1","Cerastium fontanum",4.444444444
+2,2016-06-23,8,"forage",8.1,"1","Ranunculus acris",13.33333333
+2,2016-06-23,8,"forage",8.1,"1","Vicia cracca",27.11111111
+2,2016-06-23,8,"forage",8.1,"2","Ranunculus acris",9.777777778
+2,2016-06-23,8,"forage",8.1,"2","Trifolium pratense",1.333333333
+2,2016-06-23,8,"forage",8.1,"2","Vicia cracca",23.11111111
+2,2016-06-23,8,"forage",8.1,"3","Ranunculus acris",7.111111111
+2,2016-06-23,8,"forage",8.1,"3","Vicia cracca",9.777777778
+2,2016-06-23,22,"semi-natural",22.1,"1","Vicia cracca",8.888888889
+2,2016-06-23,22,"semi-natural",22.1,"2","Vicia cracca",2.666666667
+2,2016-06-23,22,"semi-natural",22.1,"3",NA,0
+2,2016-06-23,23,"forage",23.2,"1","Leucanthemum vulgare",9.777777778
+2,2016-06-23,23,"forage",23.2,"1","Lotus corniculatus",7.111111111
+2,2016-06-23,23,"forage",23.2,"2","Leucanthemum vulgare",11.55555556
+2,2016-06-23,23,"forage",23.2,"3","Leucanthemum vulgare",8
+2,2016-06-24,22,"squash",22.5,"1","Cucurbita pepo (male/zucchini)",0.720720721
+2,2016-06-24,22,"squash",22.5,"1","Cucurbita pepo (male/zucchini)",0.720720721
+2,2016-06-24,22,"squash",22.5,"2","Cucurbita pepo (zucchini)",0.18018018
+2,2016-06-24,22,"squash",22.5,"2","Cucurbita pepo (zucchini)",0
+2,2016-06-24,22,"squash",22.5,"3","Cucurbita pepo (zucchini)",0.900900901
+2,2016-06-24,22,"squash",22.5,"3","Cucurbita pepo (zucchini)",0.720720721
+2,2016-06-29,7,"forage",7.1,"1","Medicago sativa",25.33333333
+2,2016-06-29,7,"forage",7.1,"1","Ranunculus acris",1.333333333
+2,2016-06-29,7,"forage",7.1,"1","Vicia cracca",10.22222222
+2,2016-06-29,7,"forage",7.1,"2","Medicago sativa",6.666666667
+2,2016-06-29,7,"forage",7.1,"2","Vicia cracca",57.33333333
+2,2016-06-29,7,"forage",7.1,"3","Medicago sativa",39.55555556
+2,2016-06-29,7,"forage",7.1,"3","Trifolium repens",1.333333333
+2,2016-06-29,7,"forage",7.1,"3","Vicia cracca",23.55555556
+2,2016-06-29,25,"forage",25.1,"1","Medicago sativa",5.333333333
+2,2016-06-29,25,"forage",25.1,"2","Medicago sativa",15.11111111
+2,2016-06-29,25,"forage",25.1,"3","Medicago sativa",4
+2,2016-06-29,25,"forage",25.1,"3","Vicia cracca",0.444444444
+2,2016-06-29,25,"potato",25.4,"1","Solanum tuberosum",0.444444444
+2,2016-06-29,25,"potato",25.4,"1","Solanum tuberosum",18.22222222
+2,2016-06-29,25,"potato",25.4,"2","Fagopyrum esculentum",0.888888889
+2,2016-06-29,25,"potato",25.4,"2","Solanum tuberosum",1.777777778
+2,2016-06-29,25,"potato",25.4,"2","Solanum tuberosum",16
+2,2016-06-29,25,"potato",25.4,"3","Fagopyrum esculentum",1.333333333
+2,2016-06-29,25,"potato",25.4,"3","Solanum tuberosum",4.888888889
+2,2016-06-29,25,"potato",25.4,"3","Solanum tuberosum",29.77777778
+2,2016-06-30,7,"squash",7.4,"1",NA,0
+2,2016-06-30,7,"squash",7.4,"2",NA,0
+2,2016-06-30,7,"squash",7.4,"3","Cucurbita spp.",0.36036036
+2,2016-06-30,15,"asparagus",15.1,"1","Asparagus officinalis",236.4444444
+2,2016-06-30,15,"asparagus",15.1,"1","Galium palustre",6.666666667
+2,2016-06-30,15,"asparagus",15.1,"1","Vicia cracca",0.888888889
+2,2016-06-30,15,"asparagus",15.1,"2","Asparagus officinalis",144
+2,2016-06-30,15,"asparagus",15.1,"2","Ranunculus acris",0.888888889
+2,2016-06-30,15,"asparagus",15.1,"3","Asparagus officinalis",144
+2,2016-06-30,15,"asparagus",15.1,"3","Ranunculus acris",0.888888889
+2,2016-06-30,15,"asparagus",15.1,"3","Trifolium repens",5.333333333
+2,2016-06-30,15,"asparagus",15.1,"3","Vicia cracca",1.333333333
+2,2016-06-30,15,"semi-natural",15.2,"1","Physalis heterophylla",12
+2,2016-06-30,15,"semi-natural",15.2,"2","Ranunculus acris",1.333333333
+2,2016-06-30,15,"semi-natural",15.2,"2","Veronica sp.",2.222222222
+2,2016-06-30,15,"semi-natural",15.2,"2","Vicia cracca",1.777777778
+2,2016-06-30,15,"semi-natural",15.2,"3","Oxalis stricta",0.444444444
+2,2016-06-30,15,"semi-natural",15.2,"3","Ranunculus acris",1.333333333
+2,2016-06-30,15,"semi-natural",15.2,"3","Veronica sp.",5.333333333
+2,2016-06-30,15,"semi-natural",15.2,"3","Vicia cracca",2.222222222
+2,2016-06-30,15,"semi-natural",15.2,"4","Plantago lanceolata",0.444444444
+2,2016-06-30,15,"semi-natural",15.2,"4","Trifolium repens",0.444444444
+2,2016-06-30,15,"semi-natural",15.2,"4","Vicia cracca",13.77777778
+2,2016-07-03,10,"semi-natural",10.2,"1","Cerastium fontanum",19.11111111
+2,2016-07-03,10,"semi-natural",10.2,"1","Galium mollugo",26.66666667
+2,2016-07-03,10,"semi-natural",10.2,"1","Ranunculus acris",52
+2,2016-07-03,10,"semi-natural",10.2,"1","Trifolium pratense",0.444444444
+2,2016-07-03,10,"semi-natural",10.2,"1","Vicia cracca",2.666666667
+2,2016-07-03,10,"semi-natural",10.2,"2","Cerastium fontanum",7.555555556
+2,2016-07-03,10,"semi-natural",10.2,"2","Galium mollugo",113.3333333
+2,2016-07-03,10,"semi-natural",10.2,"2","Leucanthemum vulgare",0.888888889
+2,2016-07-03,10,"semi-natural",10.2,"2","Ranunculus acris",34.66666667
+2,2016-07-03,10,"semi-natural",10.2,"2","Vicia cracca",1.333333333
+2,2016-07-03,10,"semi-natural",10.2,"3","Cerastium fontanum",4.888888889
+2,2016-07-03,10,"semi-natural",10.2,"3","Galium mollugo",4.444444444
+2,2016-07-03,10,"semi-natural",10.2,"3","Ranunculus acris",12
+2,2016-07-03,10,"semi-natural",10.2,"3","Vicia cracca",3.111111111
+2,2016-07-03,16,"semi-natural",16.1,"1","Silene vulgaris",17.77777778
+2,2016-07-03,16,"semi-natural",16.1,"2","Silene vulgaris",10.66666667
+2,2016-07-03,16,"semi-natural",16.1,"3","Silene vulgaris",27.55555556
+2,2016-07-04,17,"sunflower",17.6,"1","Helianthus annuus",1.777777778
+2,2016-07-04,17,"sunflower",17.6,"1","Helianthus annuus",1.955555556
+2,2016-07-04,17,"sunflower",17.6,"2","Helianthus annuus",0.355555556
+2,2016-07-04,17,"sunflower",17.6,"2","Helianthus annuus",1.244444444
+2,2016-07-04,17,"sunflower",17.6,"2","Helianthus annuus",1.244444444
+2,2016-07-04,17,"sunflower",17.6,"3","Erysimum cheiranthoides",1.244444444
+2,2016-07-04,17,"sunflower",17.6,"3","Helianthus annuus",0.533333333
+2,2016-07-04,17,"sunflower",17.6,"3","Helianthus annuus",1.244444444
+2,2016-07-04,27,"semi-natural",27.2,"1","Cerastium fontanum",14.66666667
+2,2016-07-04,27,"semi-natural",27.2,"1","Vicia cracca",81.33333333
+2,2016-07-04,27,"semi-natural",27.2,"2","Cerastium fontanum",10.22222222
+2,2016-07-04,27,"semi-natural",27.2,"2","Erysimum cheiranthoides",2.666666667
+2,2016-07-04,27,"semi-natural",27.2,"2","Trifolium repens",9.777777778
+2,2016-07-04,27,"semi-natural",27.2,"2","Vicia cracca",136.8888889
+2,2016-07-04,27,"semi-natural",27.2,"3","Cerastium fontanum",17.33333333
+2,2016-07-04,27,"semi-natural",27.2,"3","Trifolium pratense",1.333333333
+2,2016-07-04,27,"semi-natural",27.2,"3","Trifolium repens",7.111111111
+2,2016-07-04,27,"semi-natural",27.2,"3","Vicia cracca",148.8888889
+3,2016-07-05,12,"semi-natural",12.1,"1","Trifolium repens",1.333333333
+3,2016-07-05,12,"semi-natural",12.1,"2",NA,0
+3,2016-07-05,12,"semi-natural",12.1,"3","Trifolium repens",13.33333333
+3,2016-07-06,9,"semi-natural",9.2,"1","Cerastium fontanum",3.555555556
+3,2016-07-06,9,"semi-natural",9.2,"1","Leucanthemum vulgare",19.55555556
+3,2016-07-06,9,"semi-natural",9.2,"1","Potentilla argentea",0.888888889
+3,2016-07-06,9,"semi-natural",9.2,"1","Trifolium aureum",9.333333333
+3,2016-07-06,9,"semi-natural",9.2,"1","Trifolium repens",63.11111111
+3,2016-07-06,9,"semi-natural",9.2,"1","Vicia cracca",20.44444444
+3,2016-07-06,9,"semi-natural",9.2,"2","Cerastium fontanum",12
+3,2016-07-06,9,"semi-natural",9.2,"2","Leucanthemum vulgare",12.44444444
+3,2016-07-06,9,"semi-natural",9.2,"2","Oxalis stricta",0.444444444
+3,2016-07-06,9,"semi-natural",9.2,"2","Trifolium aureum",3.555555556
+3,2016-07-06,9,"semi-natural",9.2,"2","Trifolium repens",43.11111111
+3,2016-07-06,9,"semi-natural",9.2,"2","Vicia cracca",46.66666667
+3,2016-07-06,9,"semi-natural",9.2,"3","Cerastium fontanum",10.22222222
+3,2016-07-06,9,"semi-natural",9.2,"3","Leucanthemum vulgare",4
+3,2016-07-06,9,"semi-natural",9.2,"3","Oxalis stricta",0.444444444
+3,2016-07-06,9,"semi-natural",9.2,"3","Trifolium aureum",70.66666667
+3,2016-07-06,9,"semi-natural",9.2,"3","Trifolium repens",54.22222222
+3,2016-07-06,9,"semi-natural",9.2,"3","Verbena hastata",4
+3,2016-07-06,9,"semi-natural",9.2,"3","Vicia cracca",20.88888889
+3,2016-07-06,12,"squash",12.3,"1","Cucurbita spp.",0.18018018
+3,2016-07-06,12,"squash",12.3,"1","Cucurbita spp.",0.36036036
+3,2016-07-06,12,"squash",12.3,"2","Cucurbita spp.",0
+3,2016-07-06,12,"squash",12.3,"2","Cucurbita spp.",0.540540541
+3,2016-07-06,12,"squash",12.3,"3","Cucurbita spp.",0.36036036
+3,2016-07-06,12,"squash",12.3,"3","Cucurbita spp.",0.36036036
+3,2016-07-06,14,"bean",14.1,"1","Phaseolus vulgaris",0.888888889
+3,2016-07-06,14,"bean",14.1,"2","Phaseolus vulgaris",3.111111111
+3,2016-07-06,14,"bean",14.1,"3","Phaseolus vulgaris",0.888888889
+3,2016-07-11,2,"semi-natural",2.2,"1","Cerastium fontanum",10.22222222
+3,2016-07-11,2,"semi-natural",2.2,"1","Erigeron sp.",1.777777778
+3,2016-07-11,2,"semi-natural",2.2,"1","Erigeron sp.",9.333333333
+3,2016-07-11,2,"semi-natural",2.2,"1","Leucanthemum vulgare",1.333333333
+3,2016-07-11,2,"semi-natural",2.2,"1","Potentilla argentea",7.555555556
+3,2016-07-11,2,"semi-natural",2.2,"1","Silene vulgaris",7.111111111
+3,2016-07-11,2,"semi-natural",2.2,"1","Trifolium repens",1.333333333
+3,2016-07-11,2,"semi-natural",2.2,"2","Erysimum cheiranthoides",7.111111111
+3,2016-07-11,2,"semi-natural",2.2,"2","Medicago lupulina",4.888888889
+3,2016-07-11,2,"semi-natural",2.2,"2","Potentilla argentea",0.888888889
+3,2016-07-11,2,"semi-natural",2.2,"2","Silene vulgaris",3.555555556
+3,2016-07-11,2,"semi-natural",2.2,"2","Trifolium pratense",20.44444444
+3,2016-07-11,2,"semi-natural",2.2,"2","Trifolium repens",5.333333333
+3,2016-07-11,2,"semi-natural",2.2,"3","Chelidonium sp. (majus)",1.777777778
+3,2016-07-11,2,"semi-natural",2.2,"3","Erigeron sp.",1.777777778
+3,2016-07-11,2,"semi-natural",2.2,"3","Leucanthemum vulgare",0.888888889
+3,2016-07-11,2,"semi-natural",2.2,"3","Medicago lupulina",10.66666667
+3,2016-07-11,2,"semi-natural",2.2,"3","Potentilla argentea",0.444444444
+3,2016-07-11,2,"semi-natural",2.2,"3","Silene vulgaris",3.111111111
+3,2016-07-11,9,"squash",9.3,"1","Cucurbita pepo (zucchini)",0
+3,2016-07-11,9,"squash",9.3,"1","Cucurbita pepo (zucchini)",0.36036036
+3,2016-07-11,9,"squash",9.3,"2","Cucurbita pepo (zucchini)",0.18018018
+3,2016-07-11,9,"squash",9.3,"2","Cucurbita pepo (zucchini)",0.540540541
+3,2016-07-11,9,"squash",9.3,"3","Cucurbita pepo (zucchini)",0
+3,2016-07-11,9,"squash",9.3,"3","Cucurbita pepo (zucchini)",0.18018018
+3,2016-07-11,19,"forage",19.2,"1","Leucanthemum vulgare",34.66666667
+3,2016-07-11,19,"forage",19.2,"1","Lotus corniculatus",46.22222222
+3,2016-07-11,19,"forage",19.2,"1","Vicia cracca",6.222222222
+3,2016-07-11,19,"forage",19.2,"2","Leucanthemum vulgare",1.777777778
+3,2016-07-11,19,"forage",19.2,"2","Vicia cracca",4.444444444
+3,2016-07-11,19,"forage",19.2,"3","Erigeron canadensis ",62.66666667
+3,2016-07-11,19,"forage",19.2,"3","Erigeron sp.",27.11111111
+3,2016-07-11,19,"forage",19.2,"3","Hieracium caespitosum",1.777777778
+3,2016-07-11,19,"forage",19.2,"3","Vicia cracca",0.444444444
+3,2016-07-12,2,"squash",2.5,"1","Cucurbita spp.",3.333333333
+3,2016-07-12,2,"squash",2.5,"1","Cucurbita spp.",4
+3,2016-07-12,2,"squash",2.5,"2","Cucurbita spp.",4
+3,2016-07-12,2,"squash",2.5,"2","Cucurbita spp.",5.333333333
+3,2016-07-12,2,"squash",2.5,"3","Cucurbita spp.",2
+3,2016-07-12,2,"squash",2.5,"3","Cucurbita spp.",2.666666667
+3,2016-07-12,11,"forage",11.1,"1","Cerastium fontanum",0.888888889
+3,2016-07-12,11,"forage",11.1,"1","Trifolium repens",119.1111111
+3,2016-07-12,11,"forage",11.1,"2","Malva neglecta",0.444444444
+3,2016-07-12,11,"forage",11.1,"2","Trifolium repens",131.5555556
+3,2016-07-12,11,"forage",11.1,"3","Silene vulgaris",1.333333333
+3,2016-07-12,11,"forage",11.1,"3","Trifolium repens",60.44444444
+3,2016-07-12,11,"semi-natural",11.2,"1",NA,0
+3,2016-07-12,11,"semi-natural",11.2,"2","Asclepias syriaca",0.444444444
+3,2016-07-12,11,"semi-natural",11.2,"3",NA,0
+3,2016-07-12,21,"forage",21.3,"1","Anthemis arvensis",81.33333333
+3,2016-07-12,21,"forage",21.3,"2","Achillea millefolium",4.888888889
+3,2016-07-12,21,"forage",21.3,"2","Anthemis arvensis",9.333333333
+3,2016-07-12,21,"forage",21.3,"2","Cerastium fontanum",14.22222222
+3,2016-07-12,21,"forage",21.3,"3","Achillea millefolium",2.222222222
+3,2016-07-12,21,"forage",21.3,"3","Anthemis arvensis",20.88888889
+3,2016-07-12,21,"forage",21.3,"3","Chrysanthemum-hybrid",0.888888889
+3,2016-07-12,21,"squash",21.4,"1","Cucurbita spp.",0.36036036
+3,2016-07-12,21,"squash",21.4,"1","Cucurbita spp.",1.261261261
+3,2016-07-12,21,"squash",21.4,"2","Cucurbita spp.",0.540540541
+3,2016-07-12,21,"squash",21.4,"2","Cucurbita spp.",0.900900901
+3,2016-07-12,21,"squash",21.4,"3","Cucurbita spp.",0
+3,2016-07-12,21,"squash",21.4,"3","Cucurbita spp.",0.540540541
+3,2016-07-13,5,"squash",5.3,"1","Cucurbita spp.",0.900900901
+3,2016-07-13,5,"squash",5.3,"1","Cucurbita spp.",1.081081081
+3,2016-07-13,5,"squash",5.3,"2","Cucurbita spp.",0.720720721
+3,2016-07-13,5,"squash",5.3,"2","Cucurbita spp.",1.441441441
+3,2016-07-13,5,"squash",5.3,"3","Cucurbita spp.",0.18018018
+3,2016-07-13,5,"squash",5.3,"3","Cucurbita spp.",0.36036036
+3,2016-07-13,26,"squash",26.5,"1","Cucurbita pepo (zucchini)",0.18018018
+3,2016-07-13,26,"squash",26.5,"1","Cucurbita pepo (zucchini)",0.36036036
+3,2016-07-13,26,"squash",26.5,"2","Cucurbita pepo (zucchini)",0
+3,2016-07-13,26,"squash",26.5,"2","Cucurbita pepo (zucchini)",1.081081081
+3,2016-07-13,26,"squash",26.5,"3","Cucurbita pepo (zucchini)",0
+3,2016-07-13,26,"squash",26.5,"3","Cucurbita pepo (zucchini)",0.720720721
+3,2016-07-16,1,"squash",1.2,"1","Cucurbita spp.",0
+3,2016-07-16,1,"squash",1.2,"1","Cucurbita spp.",0.540540541
+3,2016-07-16,1,"squash",1.2,"2","Cucurbita spp.",0.18018018
+3,2016-07-16,1,"squash",1.2,"2","Cucurbita spp.",0.36036036
+3,2016-07-16,1,"squash",1.2,"3","Cucurbita spp.",0
+3,2016-07-16,1,"squash",1.2,"3","Cucurbita spp.",0.540540541
+3,2016-07-17,20,"squash",20.2,"1","Cucurbita spp.",1.441441441
+3,2016-07-17,20,"squash",20.2,"1","Galinsoga quadriradiata",10.09009009
+3,2016-07-17,20,"squash",20.2,"1","Lactuca sp.",0.18018018
+3,2016-07-17,20,"squash",20.2,"2","Cucurbita spp.",1.261261261
+3,2016-07-17,20,"squash",20.2,"2","Galinsoga quadriradiata",6.666666667
+3,2016-07-17,20,"squash",20.2,"3","Cucurbita spp.",0.18018018
+3,2016-07-17,24,"forage",24.3,"1","Asclepias syriaca",4
+3,2016-07-17,24,"forage",24.3,"1","Cerastium fontanum",5.333333333
+3,2016-07-17,24,"forage",24.3,"1","Daucus carota",2.666666667
+3,2016-07-17,24,"forage",24.3,"1","Erigeron sp.",62.22222222
+3,2016-07-17,24,"forage",24.3,"1","Leucanthemum vulgare",58.66666667
+3,2016-07-17,24,"forage",24.3,"1","Medicago lupulina",0.888888889
+3,2016-07-17,24,"forage",24.3,"1","Vicia cracca",1.777777778
+3,2016-07-17,24,"forage",24.3,"2","Asclepias syriaca",1.777777778
+3,2016-07-17,24,"forage",24.3,"2","Cerastium fontanum",0.444444444
+3,2016-07-17,24,"forage",24.3,"2","Erigeron sp.",75.55555556
+3,2016-07-17,24,"forage",24.3,"2","Leucanthemum vulgare",34.66666667
+3,2016-07-17,24,"forage",24.3,"2","Medicago lupulina",0.888888889
+3,2016-07-17,24,"forage",24.3,"3","Asclepias syriaca",0.888888889
+3,2016-07-17,24,"forage",24.3,"3","Cerastium fontanum",3.111111111
+3,2016-07-17,24,"forage",24.3,"3","Erigeron sp.",16
+3,2016-07-17,24,"forage",24.3,"3","Leucanthemum vulgare",24.44444444
+3,2016-07-17,24,"forage",24.3,"3","Potentilla argentea",1.777777778
+3,2016-07-17,24,"forage",24.3,"3","Silene noctiflora",6.666666667
+3,2016-07-17,24,"forage",24.3,"3","Vicia cracca",0.888888889
+3,2016-07-19,5,"watermelon",5.2,"1","Citrullus lanatus",0.36036036
+3,2016-07-19,5,"watermelon",5.2,"1","Citrullus lanatus",1.441441441
+3,2016-07-19,5,"watermelon",5.2,"2","Citrullus lanatus",0.540540541
+3,2016-07-19,5,"watermelon",5.2,"2","Citrullus lanatus",2.522522523
+3,2016-07-19,5,"watermelon",5.2,"3","Citrullus lanatus",0.36036036
+3,2016-07-19,5,"watermelon",5.2,"3","Citrullus lanatus",2.882882883
+3,2016-07-19,20,"forage",20.1,"1","Galium mollugo",9.777777778
+3,2016-07-19,20,"forage",20.1,"1","Vicia cracca",4
+3,2016-07-19,20,"forage",20.1,"2","Sonchus arvensis",0.444444444
+3,2016-07-19,20,"forage",20.1,"2","Vicia cracca",3.555555556
+3,2016-07-19,20,"forage",20.1,"3","Vicia cracca",1.777777778
+3,2016-07-20,8,"forage",8.1,"1","Trifolium pratense",0.444444444
+3,2016-07-20,8,"forage",8.1,"1","Vicia cracca",1.777777778
+3,2016-07-20,8,"forage",8.1,"2","Ranunculus acris",0.444444444
+3,2016-07-20,8,"forage",8.1,"3","Vicia cracca",5.777777778
+3,2016-07-20,8,"forage",8.1,"4","Vicia cracca",2.666666667
+3,2016-07-20,22,"semi-natural",22.1,"1","Asclepias syriaca",0.888888889
+3,2016-07-20,22,"semi-natural",22.1,"1","Vicia cracca",2.666666667
+3,2016-07-20,22,"semi-natural",22.1,"2","Vicia cracca",2.666666667
+3,2016-07-20,22,"semi-natural",22.1,"3","Vicia cracca",6.222222222
+3,2016-07-20,22,"squash",22.5,"1","Cucurbita spp.",0.36036036
+3,2016-07-20,22,"squash",22.5,"1","Cucurbita spp.",1.261261261
+3,2016-07-20,22,"squash",22.5,"2","Cucurbita spp.",0.720720721
+3,2016-07-20,22,"squash",22.5,"2","Cucurbita spp.",2.162162162
+3,2016-07-20,22,"squash",22.5,"3","Cucurbita spp.",0.540540541
+3,2016-07-20,22,"squash",22.5,"3","Cucurbita spp.",1.441441441
+3,2016-07-20,23,"semi-natural",23.1,"1","Daucus carota",4
+3,2016-07-20,23,"semi-natural",23.1,"1","Medicago lupulina",7.555555556
+3,2016-07-20,23,"semi-natural",23.1,"1","Prunella vulgaris",0.444444444
+3,2016-07-20,23,"semi-natural",23.1,"2","Daucus carota",5.777777778
+3,2016-07-20,23,"semi-natural",23.1,"2","Echium vulgare",8.444444444
+3,2016-07-20,23,"semi-natural",23.1,"2","Leucanthemum vulgare",0.444444444
+3,2016-07-20,23,"semi-natural",23.1,"2","Lotus corniculatus",1.777777778
+3,2016-07-20,23,"semi-natural",23.1,"2","Prunella vulgaris",2.666666667
+3,2016-07-20,23,"semi-natural",23.1,"2","Silene vulgaris",2.666666667
+3,2016-07-20,23,"semi-natural",23.1,"3","Daucus carota",1.777777778
+3,2016-07-20,23,"semi-natural",23.1,"3","Medicago lupulina",8
+3,2016-07-21,15,"semi-natural",15.2,"1","Oxalis stricta",0.444444444
+3,2016-07-21,15,"semi-natural",15.2,"1","Plantago lanceolata",1.333333333
+3,2016-07-21,15,"semi-natural",15.2,"1","Vicia cracca",0.444444444
+3,2016-07-21,15,"semi-natural",15.2,"2","Geum aleppicum",2.666666667
+3,2016-07-21,15,"semi-natural",15.2,"2","Lotus corniculatus",19.11111111
+3,2016-07-21,15,"semi-natural",15.2,"2","Plantago lanceolata",2.666666667
+3,2016-07-21,15,"semi-natural",15.2,"2","Trifolium pratense",0.444444444
+3,2016-07-21,15,"semi-natural",15.2,"3","Lotus corniculatus",8.444444444
+3,2016-07-21,15,"forage",15.4,"1",NA,0
+3,2016-07-21,15,"forage",15.4,"2",NA,0
+3,2016-07-21,15,"forage",15.4,"3",NA,0
+3,2016-07-21,15,"forage",15.4,"4",NA,0
+3,2016-07-21,15,"forage",15.4,"5",NA,0
+3,2016-07-21,15,"forage",15.4,"6","Cichorium intybus",10.22222222
+3,2016-07-21,15,"forage",15.4,"7","Cichorium intybus",23.55555556
+3,2016-07-21,15,"forage",15.4,"7","Echium vulgare",85.77777778
+3,2016-07-21,25,"forage",25.2,"1","Medicago sativa",93.77777778
+3,2016-07-21,25,"forage",25.2,"2","Medicago sativa",68.88888889
+3,2016-07-21,25,"potato",25.4,"1","Solanum tuberosum",15.11111111
+3,2016-07-21,25,"potato",25.4,"2","Solanum tuberosum",17.77777778
+3,2016-07-21,25,"potato",25.4,"3","Solanum tuberosum",13.33333333
+3,2016-07-21,25,"squash",25.6,"1","Cucurbita spp.",0
+3,2016-07-21,25,"squash",25.6,"1","Cucurbita spp.",0.18018018
+3,2016-07-21,25,"squash",25.6,"2","Cucurbita spp.",0.18018018
+3,2016-07-21,25,"squash",25.6,"2","Cucurbita spp.",0.540540541
+3,2016-07-21,25,"squash",25.6,"3","Cucurbita spp.",0.18018018
+3,2016-07-21,25,"squash",25.6,"3","Cucurbita spp.",0.18018018
+3,2016-07-26,10,"semi-natural",10.1,"1","Galium mollugo",21.33333333
+3,2016-07-26,10,"semi-natural",10.1,"1","Verbena hastata",4
+3,2016-07-26,10,"semi-natural",10.1,"1","Verbena hastata",9.333333333
+3,2016-07-26,10,"semi-natural",10.1,"1","Vicia cracca",0.888888889
+3,2016-07-26,10,"semi-natural",10.1,"2","Erigeron canadensis ",0.888888889
+3,2016-07-26,10,"semi-natural",10.1,"2","Solidago canadensis",2.222222222
+3,2016-07-26,10,"semi-natural",10.1,"3","Erigeron canadensis ",1.333333333
+3,2016-07-26,10,"semi-natural",10.1,"3","Galium mollugo",3.111111111
+3,2016-07-26,10,"semi-natural",10.1,"3","Solidago canadensis",1.777777778
+3,2016-07-26,10,"semi-natural",10.1,"3","Vicia cracca",1.333333333
+3,2016-07-26,10,"squash",10.3,"1","Cucurbita spp. (female)",0.666666667
+3,2016-07-26,10,"squash",10.3,"2","Cucurbita spp. (male)",0.666666667
+3,2016-07-26,10,"squash",10.3,"3",NA,0
+3,2016-07-27,7,"squash",7.4,"1","Cucurbita spp.",0.36036036
+3,2016-07-27,7,"squash",7.4,"1","Cucurbita spp.",2.882882883
+3,2016-07-27,7,"squash",7.4,"2","Cucurbita spp.",0.36036036
+3,2016-07-27,7,"squash",7.4,"2","Cucurbita spp.",1.261261261
+3,2016-07-27,7,"squash",7.4,"3","Cucurbita spp.",0.36036036
+3,2016-07-27,7,"squash",7.4,"3","Cucurbita spp.",1.981981982
+3,2016-07-27,15,"squash",15.6,"1",NA,0
+3,2016-07-27,15,"squash",15.6,"2","Cucurbita spp.",0.444444444
+3,2016-07-27,15,"squash",15.6,"3","Cucurbita spp.",0.888888889
+3,2016-07-29,3,"forage",3.2,"1","Erigeron philadelphicus",0.444444444
+3,2016-07-29,3,"forage",3.2,"1","Medicago lupulina",1.777777778
+3,2016-07-29,3,"forage",3.2,"1","Medicago sativa",3.555555556
+3,2016-07-29,3,"forage",3.2,"1","Potentilla argentea",1.777777778
+3,2016-07-29,3,"forage",3.2,"1","Trifolium pratense",21.33333333
+3,2016-07-29,3,"forage",3.2,"1","Trifolium repens",7.555555556
+3,2016-07-29,3,"forage",3.2,"2","Cerastium fontanum",1.777777778
+3,2016-07-29,3,"forage",3.2,"2","Erigeron philadelphicus",20.88888889
+3,2016-07-29,3,"forage",3.2,"2","Linaria vulgaris",2.666666667
+3,2016-07-29,3,"forage",3.2,"2","Medicago sativa",14.66666667
+3,2016-07-29,3,"forage",3.2,"2","Potentilla argentea",1.777777778
+3,2016-07-29,3,"forage",3.2,"2","Trifolium pratense",23.55555556
+3,2016-07-29,3,"forage",3.2,"2","Vicia cracca",0.444444444
+3,2016-07-29,3,"forage",3.2,"3","Erigeron philadelphicus",30.22222222
+3,2016-07-29,3,"forage",3.2,"3","Medicago sativa",4.444444444
+3,2016-07-29,3,"forage",3.2,"3","Potentilla argentea",7.111111111
+3,2016-07-29,3,"forage",3.2,"3","Prunella vulgaris",10.66666667
+3,2016-07-29,3,"forage",3.2,"3","Trifolium pratense",8
+3,2016-07-29,3,"forage",3.2,"3","Vicia cracca",1.777777778
+3,2016-07-29,3,"squash",3.5,"1","Cucurbita spp.",0
+3,2016-07-29,3,"squash",3.5,"1","Cucurbita spp. (female)",0.666666667
+3,2016-07-29,3,"squash",3.5,"1","Cucurbita spp. (male)",0.666666667
+3,2016-07-29,3,"squash",3.5,"2","Cucurbita spp. (male)",2
+3,2016-07-29,3,"squash",3.5,"2","Cucurbita spp. (male)",4
+3,2016-07-29,3,"squash",3.5,"3","Cucurbita spp.",0
+3,2016-07-29,3,"squash",3.5,"3","Cucurbita spp. (male)",1.333333333
+3,2016-07-29,27,"forage",27.1,"1","Medicago sativa",55.11111111
+3,2016-07-29,27,"forage",27.1,"1","Trifolium pratense",16.88888889
+3,2016-07-29,27,"forage",27.1,"1","Trifolium repens",0.444444444
+3,2016-07-29,27,"forage",27.1,"2","Cerastium fontanum",1.777777778
+3,2016-07-29,27,"forage",27.1,"2","Lotus corniculatus",8
+3,2016-07-29,27,"forage",27.1,"2","Medicago sativa",60.44444444
+3,2016-07-29,27,"forage",27.1,"2","Trifolium pratense",17.77777778
+3,2016-07-29,27,"forage",27.1,"2","Trifolium repens",1.777777778
+3,2016-07-29,27,"forage",27.1,"3","Medicago sativa",68
+3,2016-07-29,27,"forage",27.1,"3","Trifolium pratense",10.22222222
+3,2016-07-29,27,"squash",27.3,"1","Cucurbita spp. (male)",0.444444444
+3,2016-07-29,27,"squash",27.3,"2","Cucurbita spp. (male)",0.444444444
+3,2016-07-29,27,"squash",27.3,"3",NA,0
+4,2016-08-01,12,"semi-natural",12.1,"1","Hieracium pilosella",7.555555556
+4,2016-08-01,12,"semi-natural",12.1,"1","Oenothera biennis",4
+4,2016-08-01,12,"semi-natural",12.1,"2","Hieracium pilosella",4.888888889
+4,2016-08-01,12,"semi-natural",12.1,"2","Trifolium repens",1.777777778
+4,2016-08-01,12,"semi-natural",12.1,"3","Erigeron sp.",21.33333333
+4,2016-08-01,12,"semi-natural",12.1,"3","Hieracium pilosella",2.666666667
+4,2016-08-01,12,"semi-natural",12.1,"3","Trifolium repens",26.22222222
+4,2016-08-01,12,"semi-natural",12.1,"3","Unknown (multiplied by mean volume of all flowers)",1.777777778
+3,2016-08-01,17,"melon",17.2,"1","Cucumis melo",0.720720721
+3,2016-08-01,17,"melon",17.2,"1","Cucumis melo",1.621621622
+3,2016-08-01,17,"melon",17.2,"2","Cucumis melo",0.36036036
+3,2016-08-01,17,"melon",17.2,"2","Cucumis melo",2.702702703
+3,2016-08-01,17,"melon",17.2,"3","Cucumis melo",2.522522523
+3,2016-08-01,17,"melon",17.2,"3","Cucumis melo",0.18018018
+3,2016-08-01,17,"melon",17.2,"3",NA,0
+3,2016-08-01,17,"squash",17.3,"1","Cucurbita spp.",0.900900901
+3,2016-08-01,17,"squash",17.3,"1","Cucurbita spp.",1.261261261
+3,2016-08-01,17,"squash",17.3,"2","Cucurbita spp.",1.081081081
+3,2016-08-01,17,"squash",17.3,"2","Cucurbita spp.",1.801801802
+3,2016-08-01,17,"squash",17.3,"3","Cucurbita spp.",1.621621622
+3,2016-08-01,17,"squash",17.3,"3","Cucurbita spp.",1.621621622
+4,2016-08-03,4,"forage",4.2,"1","Medicago sativa",2.666666667
+4,2016-08-03,4,"forage",4.2,"2","Medicago sativa",5.777777778
+4,2016-08-03,4,"forage",4.2,"3","Medicago sativa",33.77777778
+4,2016-08-03,4,"forage",4.2,"3","Trifolium pratense",1.333333333
+4,2016-08-03,4,"squash",4.4,"1","Cucurbita sp. (squash)",0.36036036
+4,2016-08-03,4,"squash",4.4,"1",NA,0
+4,2016-08-03,4,"squash",4.4,"2","Cucurbita sp. (squash)",0.18018018
+4,2016-08-03,4,"squash",4.4,"2","Cucurbita sp. (squash)",0.540540541
+4,2016-08-03,4,"squash",4.4,"3","Cucurbita sp. (squash)",0.36036036
+4,2016-08-03,4,"squash",4.4,"3",NA,0
+4,2016-08-03,6,"forage",6.1,"1","Lotus corniculatus",34.22222222
+4,2016-08-03,6,"forage",6.1,"1","Medicago sativa",13.33333333
+4,2016-08-03,6,"forage",6.1,"1","Trifolium pratense",3.555555556
+4,2016-08-03,6,"forage",6.1,"1","Trifolium repens",3.555555556
+4,2016-08-03,6,"forage",6.1,"2","Lotus corniculatus",0.888888889
+4,2016-08-03,6,"forage",6.1,"2","Trifolium pratense",8.888888889
+4,2016-08-03,6,"forage",6.1,"2","Trifolium repens",10.22222222
+4,2016-08-03,6,"forage",6.1,"3","Lotus corniculatus",2.666666667
+4,2016-08-03,6,"forage",6.1,"3","Medicago sativa",60.44444444
+4,2016-08-03,6,"forage",6.1,"3","Trifolium repens",3.555555556
+4,2016-08-03,6,"squash",6.4,"1","Cucurbita sp. (squash)",1.261261261
+4,2016-08-03,6,"squash",6.4,"1",NA,0
+4,2016-08-03,6,"squash",6.4,"2","Cucurbita sp. (squash)",0.540540541
+4,2016-08-03,6,"squash",6.4,"2",NA,0
+4,2016-08-03,6,"squash",6.4,"3","Cucurbita sp. (squash)",0.18018018
+4,2016-08-03,6,"squash",6.4,"3","Cucurbita sp. (squash)",0.720720721
+4,2016-08-04,9,"semi-natural",9.2,"1","Cerastium fontanum",0.444444444
+4,2016-08-04,9,"semi-natural",9.2,"1","Potentilla argentea",0.444444444
+4,2016-08-04,9,"semi-natural",9.2,"1","Solidago canadensis",4
+4,2016-08-04,9,"semi-natural",9.2,"1","Vicia cracca",1.777777778
+4,2016-08-04,9,"semi-natural",9.2,"2","Solidago canadensis",56.44444444
+4,2016-08-04,9,"semi-natural",9.2,"2","Vicia cracca",3.111111111
+4,2016-08-04,9,"semi-natural",9.2,"3","Erigeron sp.",5.777777778
+4,2016-08-04,9,"semi-natural",9.2,"3","Solidago canadensis",2.222222222
+4,2016-08-04,9,"semi-natural",9.2,"3","Vicia cracca",0.888888889
+4,2016-08-04,13,"forage",13.1,"1","Lotus corniculatus",32.44444444
+4,2016-08-04,13,"forage",13.1,"1","Trifolium pratense",1.333333333
+4,2016-08-04,13,"forage",13.1,"2","Prunella vulgaris",3.555555556
+4,2016-08-04,13,"forage",13.1,"2","Trifolium pratense",3.111111111
+4,2016-08-04,13,"forage",13.1,"3","Trifolium pratense",1.333333333
+4,2016-08-04,13,"squash",13.3,"1",NA,0
+4,2016-08-04,13,"squash",13.3,"2","Cucurbita sp. (squash)",0.444444444
+4,2016-08-04,13,"squash",13.3,"3","Cucurbita sp. (squash)",2.222222222
+4,2016-08-04,19,"forage",19.2,"1","Solidago canadensis",2.222222222
+4,2016-08-04,19,"forage",19.2,"2","Erigeron sp.",112.8888889
+4,2016-08-04,19,"forage",19.2,"2","Potentilla argentea",1.333333333
+4,2016-08-04,19,"forage",19.2,"2","Solidago canadensis",0.888888889
+4,2016-08-04,19,"forage",19.2,"2","Vicia cracca",1.777777778
+4,2016-08-04,19,"forage",19.2,"3","Solidago canadensis",1.333333333
+4,2016-08-05,9,"squash",9.4,"1","Cucurbita spp. (female)",0.18018018
+4,2016-08-05,9,"squash",9.4,"1","Cucurbita spp. (female)",0.18018018
+4,2016-08-05,9,"squash",9.4,"1","Cucurbita spp. (male)",0.540540541
+4,2016-08-05,9,"squash",9.4,"2","Cucurbita spp. (male)",0.36036036
+4,2016-08-05,9,"squash",9.4,"2","Cucurbita spp. (male)",0.540540541
+4,2016-08-05,9,"squash",9.4,"3","Cucurbita spp. (female)",0.18018018
+4,2016-08-05,9,"squash",9.4,"3","Cucurbita spp. (female)",0.36036036
+4,2016-08-05,9,"squash",9.4,"3","Cucurbita spp. (male)",0.18018018
+4,2016-08-05,9,"squash",9.4,"3","Cucurbita spp. (male)",0.18018018
+4,2016-08-07,2,"cucumber",2.1,"1","Cucumis sativus",12.66666667
+4,2016-08-07,2,"cucumber",2.1,"2","Cucumis sativus",7.333333333
+4,2016-08-07,2,"cucumber",2.1,"3","Cucumis sativus",23.33333333
+4,2016-08-07,2,"squash",2.6,"1","Cucurbita pepo (male/zucchini)",3.333333333
+4,2016-08-07,2,"squash",2.6,"2","Cucurbita pepo (female/zucchini)",2
+4,2016-08-07,2,"squash",2.6,"3","Cucurbita pepo (female/zucchini)",0.666666667
+4,2016-08-07,2,"squash",2.6,"3","Cucurbita pepo (male/zucchini)",1.333333333
+4,2016-08-07,14,"squash",14.4,"1","Cucurbita sp. (male/squash)",2.222222222
+4,2016-08-07,14,"squash",14.4,"2","Cucurbita sp. (male/squash)",2.666666667
+4,2016-08-07,14,"squash",14.4,"3","Cucurbita sp. (male/squash)",1.777777778
+4,2016-08-08,11,"semi-natural",11.2,"1","Silene vulgaris",1.777777778
+4,2016-08-08,11,"semi-natural",11.2,"1","Vicia cracca",0.888888889
+4,2016-08-08,11,"semi-natural",11.2,"2","Vicia cracca",1.777777778
+4,2016-08-08,11,"semi-natural",11.2,"3","Agrimonia gryposepala",0.888888889
+4,2016-08-08,11,"semi-natural",11.2,"3","Solidago canadensis",17.33333333
+4,2016-08-08,11,"squash",11.4,"1","Cucurbita spp. (male)",0.18018018
+4,2016-08-08,11,"squash",11.4,"1","Cucurbita spp. (male)",1.621621622
+4,2016-08-08,11,"squash",11.4,"2","Cucurbita spp. (female)",0.18018018
+4,2016-08-08,11,"squash",11.4,"2","Cucurbita spp. (male)",1.261261261
+4,2016-08-08,11,"squash",11.4,"2","Cucurbita spp. (male)",1.261261261
+4,2016-08-08,11,"squash",11.4,"3","Cucurbita spp. (male)",0.36036036
+4,2016-08-08,11,"squash",11.4,"3","Cucurbita spp. (male)",0.36036036
+4,2016-08-08,11,"squash",11.4,"3","Fagopyrum esculentum",9.54954955
+4,2016-08-08,21,"forage",21.2,"1","Lotus corniculatus",264
+4,2016-08-08,21,"forage",21.2,"1","Potentilla argentea",1.333333333
+4,2016-08-08,21,"forage",21.2,"1","Trifolium pratense",6.666666667
+4,2016-08-08,21,"forage",21.2,"2","Erigeron sp.",0.444444444
+4,2016-08-08,21,"forage",21.2,"2","Lotus corniculatus",91.11111111
+4,2016-08-08,21,"forage",21.2,"2","Trifolium pratense",14.22222222
+4,2016-08-08,21,"forage",21.2,"3","Erigeron sp.",2.222222222
+4,2016-08-08,21,"forage",21.2,"3","Lotus corniculatus",68.88888889
+4,2016-08-08,21,"forage",21.2,"3","Trifolium pratense",8
+4,2016-08-08,21,"forage",21.2,"3","Trifolium repens",0.444444444
+4,2016-08-08,21,"squash",21.4,"1","Cucurbita spp. (female)",0.36036036
+4,2016-08-08,21,"squash",21.4,"1","Cucurbita spp. (female)",0.720720721
+4,2016-08-08,21,"squash",21.4,"1","Cucurbita spp. (male)",1.261261261
+4,2016-08-08,21,"squash",21.4,"2","Cucurbita spp. (female)",0.18018018
+4,2016-08-08,21,"squash",21.4,"2","Cucurbita spp. (female)",0.36036036
+4,2016-08-08,21,"squash",21.4,"2","Cucurbita spp. (male)",1.441441441
+4,2016-08-08,21,"squash",21.4,"3","Cucurbita spp. (female)",0.18018018
+4,2016-08-08,21,"squash",21.4,"3","Cucurbita spp. (female)",0.36036036
+4,2016-08-08,21,"squash",21.4,"3","Cucurbita spp. (male)",0.18018018
+4,2016-08-08,21,"squash",21.4,"3","Cucurbita spp. (male)",0.540540541
+4,2016-08-09,5,"forage",5.1,"1",NA,0
+4,2016-08-09,5,"forage",5.1,"2",NA,0
+4,2016-08-09,5,"forage",5.1,"3",NA,0
+4,2016-08-09,5,"forage",5.1,"4","Vicia cracca",2.666666667
+4,2016-08-09,5,"squash",5.4,"1","Cucurbita spp. (female)",0.36036036
+4,2016-08-09,5,"squash",5.4,"1","Cucurbita spp. (male)",0.900900901
+4,2016-08-09,5,"squash",5.4,"2","Cucurbita spp. (male)",1.801801802
+4,2016-08-09,5,"squash",5.4,"3","Cucurbita spp. (female)",0.36036036
+4,2016-08-09,5,"squash",5.4,"3","Cucurbita spp. (male)",0.900900901
+4,2016-08-09,26,"squash",26.6,"1","Cucurbita sp. (squash)",0.900900901
+4,2016-08-09,26,"squash",26.6,"1","Cucurbita sp. (squash)",0.900900901
+4,2016-08-09,26,"squash",26.6,"2","Cucurbita sp. (squash)",0.720720721
+4,2016-08-09,26,"squash",26.6,"2","Cucurbita sp. (squash)",1.261261261
+4,2016-08-09,26,"squash",26.6,"3","Cucurbita sp. (squash)",0.900900901
+4,2016-08-09,26,"squash",26.6,"3","Cucurbita sp. (squash)",1.621621622
+4,2016-08-17,1,"squash",1.3,"1","Cucurbita spp. (male)",1.081081081
+4,2016-08-17,1,"squash",1.3,"1","Cucurbita spp. (male)",1.081081081
+4,2016-08-17,1,"squash",1.3,"2","Cucurbita spp. (male)",1.081081081
+4,2016-08-17,1,"squash",1.3,"2","Cucurbita spp. (male)",1.261261261
+4,2016-08-17,1,"squash",1.3,"3","Cucurbita spp. (male)",0.900900901
+4,2016-08-17,1,"squash",1.3,"3","Cucurbita spp. (male)",0.900900901
+4,2016-08-17,20,"squash",20.3,"1","Cucurbita spp. (male)",0.18018018
+4,2016-08-17,20,"squash",20.3,"1","Cucurbita spp. (male)",0.36036036
+4,2016-08-17,20,"squash",20.3,"2","Cucurbita spp. (female)",0.18018018
+4,2016-08-17,20,"squash",20.3,"2","Cucurbita spp. (male)",0.720720721
+4,2016-08-17,20,"squash",20.3,"2","Cucurbita spp. (male)",1.621621622
+4,2016-08-17,20,"squash",20.3,"3","Cucurbita spp. (male)",0.36036036
+4,2016-08-17,20,"squash",20.3,"3","Cucurbita spp. (male)",0.900900901
+4,2016-08-17,20,"sunflower",20.4,"1",NA,0
+4,2016-08-17,20,"sunflower",20.4,"2","Helianthus annuus",1.464281979
+4,2016-08-17,20,"sunflower",20.4,"3","Helianthus annuus",2.510197678
+4,2016-08-17,24,"forage",24.1,"1","Erigeron philadelphicus",4
+4,2016-08-17,24,"forage",24.1,"1","Oxalis stricta",0.444444444
+4,2016-08-17,24,"forage",24.1,"1","picture 3 aug 17",1.333333333
+4,2016-08-17,24,"forage",24.1,"1","Trifolium pratense",0.444444444
+4,2016-08-17,24,"forage",24.1,"2","Erigeron philadelphicus",4.888888889
+4,2016-08-17,24,"forage",24.1,"2","Erigeron philadelphicus",6.222222222
+4,2016-08-17,24,"forage",24.1,"2","Medicago sativa",13.33333333
+4,2016-08-17,24,"forage",24.1,"2","Oxalis stricta",4
+4,2016-08-17,24,"forage",24.1,"2","Rudbeckia hirta",2.222222222
+4,2016-08-17,24,"forage",24.1,"2","Trifolium pratense",1.333333333
+4,2016-08-17,24,"forage",24.1,"3","Medicago sativa",2.666666667
+4,2016-08-17,24,"forage",24.1,"3","Oxalis stricta",2.666666667
+4,2016-08-17,24,"forage",24.1,"3","Trifolium pratense",1.333333333
+4,2016-08-17,24,"squash",24.4,"1","Cucurbita sp. (squash)",3.111111111
+4,2016-08-17,24,"squash",24.4,"2","Cucurbita sp. (squash)",0.888888889
+4,2016-08-17,24,"squash",24.4,"3","Cucurbita sp. (squash)",0.444444444
+4,2016-08-19,22,"squash",22.7,"whole row in transect (2 rows)","Cucurbita spp. (female)",0.18018018
+4,2016-08-19,22,"squash",22.7,"whole row in transect (2 rows)","Cucurbita spp. (female)",0.18018018
+4,2016-08-19,22,"squash",22.7,"whole row in transect (2 rows)","Cucurbita spp. (male)",0.540540541
+4,2016-08-19,22,"squash",22.7,"whole row in transect (2 rows)","Cucurbita spp. (male)",0.18018018
+4,2016-08-19,23,"semi-natural",23.1,"1","Daucus carota",4.444444444
+4,2016-08-19,23,"semi-natural",23.1,"1","Echium vulgare",12
+4,2016-08-19,23,"semi-natural",23.1,"1","Rudbeckia hirta",0.888888889
+4,2016-08-19,23,"semi-natural",23.1,"2","Daucus carota",5.333333333
+4,2016-08-19,23,"semi-natural",23.1,"2","Lotus corniculatus",7.555555556
+4,2016-08-19,23,"semi-natural",23.1,"2","Medicago lupulina",1.333333333
+4,2016-08-19,23,"semi-natural",23.1,"2","Prunella vulgaris",1.777777778
+4,2016-08-19,23,"semi-natural",23.1,"2","Solidago canadensis",10.66666667
+4,2016-08-19,23,"semi-natural",23.1,"3","Achillea millefolium",2.666666667
+4,2016-08-19,23,"semi-natural",23.1,"3","Daucus carota",5.777777778
+4,2016-08-19,23,"semi-natural",23.1,"3","Erigeron sp.",3.555555556
+4,2016-08-19,23,"semi-natural",23.1,"3","Lotus corniculatus",8
+4,2016-08-19,23,"semi-natural",23.1,"3","Prunella vulgaris",6.666666667
+4,2016-08-19,23,"semi-natural",23.1,"3","Silene vulgaris",1.777777778
+4,2016-08-19,23,"semi-natural",23.1,"3","Solidago canadensis",0.444444444
+4,2016-08-19,23,"semi-natural",23.1,"3","Trifolium pratense",0.444444444
+4,2016-08-22,7,"forage",7.2,"1","Medicago sativa",212
+4,2016-08-22,7,"forage",7.2,"2","Medicago sativa",160.8888889
+4,2016-08-22,7,"forage",7.2,"3","Medicago sativa",112
+4,2016-08-23,15,"forage",15.5,"1","Daucus carota",2.666666667
+4,2016-08-23,15,"forage",15.5,"1","Trifolium pratense",0.444444444
+4,2016-08-23,15,"forage",15.5,"2","Daucus carota",1.777777778
+4,2016-08-23,15,"forage",15.5,"3","Centaurea sp.",0.888888889
+4,2016-08-23,15,"forage",15.5,"3","Daucus carota",23.11111111
+4,2016-08-23,15,"forage",15.5,"3","Echium vulgare",3.555555556
+4,2016-08-23,15,"squash",15.7,"1","Cucurbita spp. (male)",0.888888889
+4,2016-08-23,15,"squash",15.7,"2","Cucurbita spp. (male)",2.222222222
+4,2016-08-23,15,"squash",15.7,"3","Cucurbita spp. (male)",0.444444444
+4,2016-08-23,25,"forage",25.2,"1","Medicago sativa",0.444444444
+4,2016-08-23,25,"forage",25.2,"2","Medicago sativa",2.666666667
+4,2016-08-23,25,"forage",25.2,"3","Medicago sativa",0.444444444
+4,2016-08-23,25,"squash",25.7,"1","Cucurbita spp. (male)",0.18018018
+4,2016-08-23,25,"squash",25.7,"1",NA,0
+4,2016-08-23,25,"squash",25.7,"2","Cucurbita spp. (male)",0.36036036
+4,2016-08-23,25,"squash",25.7,"2",NA,0
+4,2016-08-23,25,"squash",25.7,"3","Cucurbita spp. (male)",0.18018018
+4,2016-08-23,25,"squash",25.7,"3",NA,0
+4,2016-08-26,8,"forage",8.1,"1",NA,0
+4,2016-08-26,8,"forage",8.1,"2","Trifolium pratense",2.666666667
+4,2016-08-26,8,"forage",8.1,"3",NA,0
+4,2016-08-26,22,"semi-natural",22.2,"1",NA,0
+4,2016-08-26,22,"semi-natural",22.2,"2","Euthamia graminifolia",19.55555556
+4,2016-08-26,22,"semi-natural",22.2,"3",NA,0
+4,2016-08-26,22,"semi-natural",22.2,"4",NA,0
+4,2016-08-29,10,"semi-natural",10.1,"1","Galium mollugo",8
+4,2016-08-29,10,"semi-natural",10.1,"1","Solidago spp.",10.22222222
+4,2016-08-29,10,"semi-natural",10.1,"2","Galium mollugo",25.33333333
+4,2016-08-29,10,"semi-natural",10.1,"2","Solidago spp.",1.777777778
+4,2016-08-29,10,"semi-natural",10.1,"2","Symphotrichum lanceolatum",10.66666667
+4,2016-08-29,10,"semi-natural",10.1,"3","Galium mollugo",1.333333333
+4,2016-08-29,10,"semi-natural",10.1,"3","Solidago spp.",29.77777778
+4,2016-08-29,10,"squash",10.4,"1",NA,0
+4,2016-08-29,10,"squash",10.4,"1",NA,0
+4,2016-08-29,10,"squash",10.4,"2","Cucurbita spp. (female)",0.666666667
+4,2016-08-29,10,"squash",10.4,"2","Cucurbita spp. (male)",0.666666667
+4,2016-08-29,10,"squash",10.4,"2","Cucurbita spp. (male)",1.333333333
+4,2016-08-29,10,"squash",10.4,"3","Cucurbita spp. (male)",1.333333333
+4,2016-08-29,10,"squash",10.4,"3","Cucurbita spp. (male)",1.333333333
+4,2016-08-30,3,"forage",3.3,"1","Erigeron sp.",163.5555556
+4,2016-08-30,3,"forage",3.3,"1","Medicago sativa",9.333333333
+4,2016-08-30,3,"forage",3.3,"1","Vicia cracca",0.888888889
+4,2016-08-30,3,"forage",3.3,"2","Erigeron sp.",52.88888889
+4,2016-08-30,3,"forage",3.3,"2","Geum aleppicum",0.888888889
+4,2016-08-30,3,"forage",3.3,"2","Linaria vulgaris",3.111111111
+4,2016-08-30,3,"forage",3.3,"2","Medicago sativa",13.33333333
+4,2016-08-30,3,"forage",3.3,"2","Oxalis stricta",0.444444444
+4,2016-08-30,3,"forage",3.3,"2","Vicia cracca",1.333333333
+4,2016-08-30,3,"forage",3.3,"3","Erigeron sp.",47.55555556
+4,2016-08-30,3,"forage",3.3,"3","Geum aleppicum",0.888888889
+4,2016-08-30,3,"forage",3.3,"3","Linaria vulgaris",7.111111111
+4,2016-08-30,3,"forage",3.3,"3","Medicago sativa",7.555555556
+4,2016-08-30,3,"squash",3.6,"1","Cucurbita spp. (female)",0.666666667
+4,2016-08-30,3,"squash",3.6,"1","Cucurbita spp. (male)",0.666666667
+4,2016-08-30,3,"squash",3.6,"1","Erysimum cheiranthoides",0.666666667
+4,2016-08-30,3,"squash",3.6,"1",NA,0
+4,2016-08-30,3,"squash",3.6,"1","Phaseolus vulgaris",0.666666667
+4,2016-08-30,3,"squash",3.6,"2","Cucurbita spp. (male)",0.666666667
+4,2016-08-30,3,"squash",3.6,"2",NA,0
+4,2016-08-30,3,"squash",3.6,"2","Phaseolus vulgaris",1.333333333
+4,2016-08-30,3,"squash",3.6,"2","Vicia cracca",3.333333333
+4,2016-08-30,3,"squash",3.6,"3","Cucurbita spp. (female)",0.666666667
+4,2016-08-30,3,"squash",3.6,"3","Cucurbita spp. (male)",0.666666667
+4,2016-08-30,3,"squash",3.6,"3",NA,0
+4,2016-08-30,27,"squash",27.4,"1","Cucurbita spp. (female)",0.444444444
+4,2016-08-30,27,"squash",27.4,"1","Cucurbita spp. (male)",1.333333333
+4,2016-08-30,27,"squash",27.4,"2","Cucurbita spp.",4.444444444
+4,2016-08-30,27,"squash",27.4,"3","Cucurbita spp. (male)",4.444444444
+4,2016-09-01,17,"squash",17.4,"1","Cucurbita spp. (male)",4.864864865
+4,2016-09-01,17,"squash",17.4,"2","Cucurbita spp. (male)",4.324324324
+4,2016-09-01,17,"squash",17.4,"3","Cucurbita spp. (male)",2.522522523

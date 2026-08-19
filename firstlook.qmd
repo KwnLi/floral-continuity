@@ -1,0 +1,97 @@
+---
+title: "Look at floral continuity papers"
+format: html
+---
+
+```{r}
+library(tidyverse)
+
+florlc.files <- list.files("data", pattern = "florlc", full.names = TRUE)
+
+florlc.raw <- lapply(florlc.files, \(x){
+  thiscsv <- read.csv(x)
+}) |> setNames(basename(florlc.files) %>%
+                 gsub(pattern = "\\.csv$", "", .))
+
+florlc <- list()
+
+```
+
+## Bishop et al.
+
+```{r}
+#| warning: false
+#| message: false
+
+names(florlc.raw$florlc_bisetal2024)
+
+ggplot(florlc.raw$florlc_bisetal2024, aes(JulianDay, Flwr_cov_perc, color = HabitatType)) + geom_point() + facet_wrap(~Year) +
+  geom_smooth()
+```
+
+## Fijen et al.
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(florlc.raw$florlc_fijetal2025, aes(round, log.av.flow.cov)) + 
+  geom_point(aes(color = landscape)) +
+  geom_smooth()
+
+
+```
+
+## Guezen & Forrest 2021
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(florlc.raw$florlc_gf2021, aes(datePeriod, count_per_m2, color = landtype)) + 
+  geom_point() +
+  geom_smooth()
+
+names(florlc.raw$florlc_gf2021)
+```
+
+## Hemberger et al. 2023
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(florlc.raw$florlc_hemetal2023, 
+       aes(round, mn_prop_quads)) + 
+  geom_point(aes(color = family)) + facet_wrap(~land_cover) + geom_smooth()
+
+
+```
+
+## Hemberger & Williams 2025
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(florlc.raw$florlc_hw2025, 
+       aes(period, mn.flwr.den)) + 
+  geom_point(aes(color = plant.type)) + geom_smooth()
+
+
+```
+
+## Mallinger et al. 2016
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(florlc.raw$florlc_maletal2016, 
+       aes(period, abundance)) + 
+  geom_point(aes(color = Flower.species)) + geom_smooth(aes(period, abundance), inherit.aes = FALSE) + 
+  facet_wrap(~landcover) + theme(legend.position = "none") + 
+  scale_y_continuous(limits = c(0,100))
+
+
+```

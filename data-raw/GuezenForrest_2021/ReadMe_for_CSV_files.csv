@@ -1,0 +1,100 @@
+﻿File name,Column name,Description
+Full_dataset.csv,datePeriod,"Date ranges from column ""date"": 1 = 2016-05-20 to 2016-06-10; 2 = 2016-06-10 to 2016-07-04; 3 = 2016-07-05 to 2016-08-01; 4 = 2016-08-01 to 2016-09-01"
+Full_dataset.csv,date,YYYY-MM-DD
+Full_dataset.csv,site,Farm site ID
+Full_dataset.csv,transect,Transect ID
+Full_dataset.csv,length,length of observation period (1 minute per 4 meters squared of transect)
+Full_dataset.csv,average_wind_m_per_s,average wind speed in meters per second
+Full_dataset.csv,max_wind_m_per_s,maximum wind speed in meters per second
+Full_dataset.csv,temp_shaded_C,temperature in Celsius taken under shade
+Full_dataset.csv,temp_unshaded_C,temperature in Celsius not under shade
+Full_dataset.csv,All,Number of visits observed from all bees
+Full_dataset.csv,Unknown,Number of visits observed from unknown bees
+Full_dataset.csv,Andrena,Number of visits observed from Andrena
+Full_dataset.csv,Apis,Number of visits observed from Apis
+Full_dataset.csv,Augochlora,Number of visits observed from Augochlora
+Full_dataset.csv,Augochlorella,Number of visits observed from Augochlorella
+Full_dataset.csv,Bombus,Number of visits observed from Bombus
+Full_dataset.csv,Ceratina,Number of visits observed from Ceratina
+Full_dataset.csv,Colletes,Number of visits observed from Colletes
+Full_dataset.csv,Halictus,Number of visits observed from Halictus
+Full_dataset.csv,Heriades,Number of visits observed from Heriades
+Full_dataset.csv,Hoplitis,Number of visits observed from Hoplitis
+Full_dataset.csv,Hylaeus,Number of visits observed from Hylaeus
+Full_dataset.csv,Lasioglossum,Number of visits observed from Lasioglossum
+Full_dataset.csv,Megachile,Number of visits observed from Megachile
+Full_dataset.csv,Melissodes,Number of visits observed from Melissodes
+Full_dataset.csv,Osmia,Number of visits observed from Osmia
+Full_dataset.csv,Peponapis,Number of visits observed from Peponapis
+Full_dataset.csv,Perdita,Number of visits observed from Perdita
+Full_dataset.csv,Sphecodes,Number of visits observed from Sphecodes
+Full_dataset.csv,long,longitude of transect centroid
+Full_dataset.csv,lat,latitude of transect centroid
+Full_dataset.csv,local_Peponapis,Floral resource volume from Cucurbita or Cucumis flowers measured in transect (cube-root transformed)
+Full_dataset.csv,local_unweight,Floral resource volume measured in transect (cube-root transformed)
+Full_dataset.csv,1_Peponapis_250_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_250_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_250_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_250_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_250_med,Floral resource volume measured in a 250 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_250_med,Floral resource volume measured in a 250 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_250_med,Floral resource volume measured in a 250 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_250_med,Floral resource volume measured in a 250 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_Peponapis_500_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_500_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_500_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_500_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_500_med,Floral resource volume measured in a 500 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_500_med,Floral resource volume measured in a 500 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_500_med,Floral resource volume measured in a 500 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_500_med,Floral resource volume measured in a 500 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_Peponapis_750_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_750_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_750_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_750_med,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_750_med,Floral resource volume measured in a 750 m radius around transect when dateperiod = 1 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_750_med,Floral resource volume measured in a 750 m radius around transect when dateperiod = 2 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_750_med,Floral resource volume measured in a 750 m radius around transect when dateperiod = 3 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_750_med,Floral resource volume measured in a 750 m radius around transect when dateperiod = 4 and unknown areas were assigned the median volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_Peponapis_250_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_250_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_250_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_250_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 250 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_250_min,Floral resource volume measured in a 250 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_250_min,Floral resource volume measured in a 250 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_250_min,Floral resource volume measured in a 250 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_250_min,Floral resource volume measured in a 250 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_Peponapis_500_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_500_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_500_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_500_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 500 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_500_min,Floral resource volume measured in a 500 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_500_min,Floral resource volume measured in a 500 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_500_min,Floral resource volume measured in a 500 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_500_min,Floral resource volume measured in a 500 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_Peponapis_750_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_Peponapis_750_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_Peponapis_750_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_Peponapis_750_min,Floral resource volume from Cucurbita or Cucumis flowers measured in a 750 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,1_unweight_750_min,Floral resource volume measured in a 750 m radius around transect when dateperiod = 1 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,2_unweight_750_min,Floral resource volume measured in a 750 m radius around transect when dateperiod = 2 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,3_unweight_750_min,Floral resource volume measured in a 750 m radius around transect when dateperiod = 3 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Full_dataset.csv,4_unweight_750_min,Floral resource volume measured in a 750 m radius around transect when dateperiod = 4 and unknown areas were assigned the minimum volume of floral resources across all land types providing floral resources (cube-root transformed)
+Bee_visits.csv,datePeriod,"Date ranges from column ""date"": 1 = 2016-05-20 to 2016-06-10; 2 = 2016-06-10 to 2016-07-04; 3 = 2016-07-05 to 2016-08-01; 4 = 2016-08-01 to 2016-09-01"
+Bee_visits.csv,date,YYYY-MM-DD
+Bee_visits.csv,site,Farm site ID
+Bee_visits.csv,transect,Transect ID
+Bee_visits.csv,time,Time of observation period (hours:minutes)
+Bee_visits.csv,Family,Family of bee in observation
+Bee_visits.csv,Genus,Genus of bee in observation
+Bee_visits.csv,Species,Species of bee in observation
+Bee_visits.csv,flower,Flower that bee visited
+Bee_visits.csv,visits,Number of visits observed from a given bee to a given flower
+Floral_counts.csv,datePeriod,"Date ranges from column ""date"": 1 = 2016-05-20 to 2016-06-10; 2 = 2016-06-10 to 2016-07-04; 3 = 2016-07-05 to 2016-08-01; 4 = 2016-08-01 to 2016-09-01"
+Floral_counts.csv,date,YYYY-MM-DD
+Floral_counts.csv,site,Farm site ID
+Floral_counts.csv,landtype,Land type within which transect was located (see Appendix Table A1 for description of land type categories)
+Floral_counts.csv,transect,Transect ID
+Floral_counts.csv,quadrat,Quadrat ID (locations along transect were randomly selected)
+Floral_counts.csv,flower,Species of flower that was counted
+Floral_counts.csv,count_per_m2,The count of each flower encountered in a quadrat within a one meter squared area 

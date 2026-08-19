@@ -1,0 +1,126 @@
+"landcover","landcover.floral","raster.code","raster.code.floral","landcover.4cat","raster.code.4cat","raster.name"
+"Oak","Oak",1,1,"natural",1,"OAK"
+"Water","Water",2,2,"water",2,"WATER"
+"Cropland","Cropland",3,3,"crop",3,"CROPLA"
+"Mixedoak","Mixedoak",4,4,"natural",1,"MIXEDO"
+"Chaparral","Chaparral",5,5,"natural",1,"CHAPAR"
+"Rice","Rice",6,6,"crop",3,"RICE"
+"Fallow","Fallow",7,7,"crop",3,"FALLOW"
+"Bare","Bare",8,8,"natural",1,"BARE"
+"Cut","Cut",9,9,"crop",3,"CUT"
+"Grass","Grass",10,10,"natural",1,"GRASS"
+"Orchard","Orchard",11,11,"orchard",4,"ORCHAR"
+"Riparian","Riparian",12,12,"natural",1,"RIPARI"
+"Organic","Organic",13,13,"crop",3,"ORGANI"
+"Unclassified","Unclassified",99,99,"na",5,"UNCLAS"
+NA,"Prunus orchard understory",NA,14,"crop",3,"PRUNUS"
+NA,"fallow",NA,7,"crop",3,"FALLOW"
+NA,"fava/cover",NA,15,"crop",3,NA
+NA,"border",NA,16,"crop",3,NA
+NA,"herb garden",NA,17,"crop",3,NA
+NA,"Lavender/fallow",NA,18,"crop",3,NA
+NA,"strawberry",NA,19,"crop",3,NA
+NA,"native tree row (total)",NA,20,"crop",3,NA
+NA,"Poplar border",NA,21,"crop",3,NA
+NA,"grass",NA,10,"crop",3,"GRASS"
+NA,"orchard understory",NA,22,"crop",3,NA
+NA,"border (riparian)",NA,12,"natural",1,"RIPARI"
+NA,"cover crop",NA,23,"crop",3,NA
+NA,"Walnut orchard understory",NA,24,"crop",3,"WALNUT"
+NA,"Arugula",NA,25,"crop",3,NA
+NA,"Brassica",NA,26,"crop",3,NA
+NA,"beans (field 1)",NA,27,"crop",3,NA
+NA,"brocolli with rasa",NA,28,"crop",3,NA
+NA,"mix pea field",NA,29,"crop",3,NA
+NA,"onion",NA,30,"crop",3,"ONION"
+NA,"brocolli",NA,31,"crop",3,NA
+NA,"beans- weedy",NA,32,"crop",3,NA
+NA,"peas/fallow",NA,7,"crop",3,"FALLOW"
+NA,"mixed mustards",NA,34,"crop",3,NA
+NA,"wt. egg turnip",NA,35,"crop",3,NA
+NA,"tomato-y",NA,39,"crop",3,"TOMATO"
+NA,"fallow (= cut cover crop)",NA,7,"crop",3,"FALLOW"
+NA,"Sweet Peas",NA,37,"crop",3,NA
+NA,"Brass cult",NA,26,"crop",3,NA
+NA,"pasture",NA,10,"crop",3,"GRASS"
+NA,"squash",NA,38,"crop",3,NA
+NA,"tomato",NA,39,"crop",3,"TOMATO"
+NA,"Orchard understory(prunus & walnut mix)",NA,14,"crop",3,"PRUNUS"
+NA,"sugar snap pea",NA,40,"crop",3,NA
+NA,"uncultivated",NA,7,"crop",3,"FALLOW"
+NA,"plow",NA,8,"crop",3,"BARE"
+NA,"Bean",NA,41,"crop",3,"BEAN"
+NA,"lavender",NA,18,"crop",3,NA
+NA,"pea",NA,29,"crop",3,NA
+NA,"potato",NA,42,"crop",3,NA
+NA,"sage",NA,43,"crop",3,NA
+NA,"sc-cucumber",NA,44,"crop",3,NA
+NA,"sc-watermelon",NA,45,"crop",3,NA
+NA,"sunflower (organic)",NA,46,"crop",3,"SUNFLO"
+NA,"thyme",NA,47,"crop",3,NA
+NA,"tomato-m",NA,39,"crop",3,"TOMATO"
+NA,"yarrow",NA,48,"crop",3,NA
+NA,"melon",NA,45,"crop",3,NA
+NA,"watermelon",NA,45,"crop",3,NA
+NA,"Citrus understory",NA,49,"crop",3,NA
+NA,"cosmos",NA,50,"crop",3,NA
+NA,"pepper",NA,51,"crop",3,NA
+NA,"sc-melon",NA,45,"crop",3,NA
+NA,"eggplant",NA,52,"crop",3,NA
+NA,"green bean",NA,53,"crop",3,NA
+NA,"rasa",NA,54,"crop",3,NA
+NA,"safflower",NA,55,"crop",3,NA
+NA,"sunflower",NA,46,"crop",3,"SUNFLO"
+NA,"buckwheat (clumps per 4 by .25m)",NA,56,"crop",3,NA
+NA,"black-eyed susans",NA,57,"crop",3,NA
+NA,"zinnia",NA,58,"crop",3,NA
+NA,"calendula",NA,59,"crop",3,NA
+NA,"tomatillo",NA,60,"crop",3,NA
+NA,"basil",NA,61,"crop",3,NA
+NA,"sc",NA,62,"crop",3,NA
+NA,"tomatilllo",NA,60,"crop",3,NA
+NA,"Walnut understory",NA,24,"crop",3,"WALNUT"
+"FAL","fallow",111,7,"crop",3,"FALLOW"
+"PRU","Prunus orchard understory",125,14,"crop",3,"PRUNUS"
+"WH","Wheat",142,64,"crop",3,"WHEAT"
+"PAST","uncultivated grassland/pasture",124,10,"crop",3,"GRASS"
+"OLD SPLIT","not surveyed",121,99,"crop",3,"UNCLAS"
+"OAT","not surveyed",120,99,"crop",3,"UNCLAS"
+"SAF","not surveyed",130,99,"crop",3,"UNCLAS"
+"VEG","not surveyed",140,99,"crop",3,"UNCLAS"
+"BARE","uncultivated",104,7,"crop",3,"FALLOW"
+"GOO","not surveyed",114,99,"crop",3,"UNCLAS"
+"X","not surveyed",144,99,"crop",3,"UNCLAS"
+"RIP","Riparian",127,12,"natural",1,"RIPARI"
+"ALF","alfalfa",102,65,"crop",3,"ALFALF"
+"TOM","Tomato-m",137,39,"crop",3,"TOMATO"
+"SUN","sunflower",134,46,"crop",3,"SUNFLO"
+"HG","not surveyed",117,99,"crop",3,"UNCLAS"
+"WAL","Walnut understory",141,24,"crop",3,"WALNUT"
+"FAV","Wheat",112,64,"crop",3,"WHEAT"
+"ECK","not surveyed",109,99,"crop",3,"UNCLAS"
+"UNC","uncultivated",139,7,"crop",3,"FALLOW"
+"CORN","not surveyed",107,99,"crop",3,"UNCLAS"
+"GRS","uncultivated grassland/pasture",116,10,"crop",3,"GRASS"
+"RDSD","not surveyed",126,99,"crop",3,"UNCLAS"
+"GRP","vineyard",115,66,"crop",3,"VINEYA"
+"STRAW","not surveyed",133,99,"crop",3,"UNCLAS"
+"WILD","Mixedoak",143,4,"natural",1,"MIXEDO"
+"?","not surveyed",101,99,"crop",3,"UNCLAS"
+"TER 2","not surveyed",136,99,"crop",3,"UNCLAS"
+"SQU","uncultivated",132,7,"crop",3,"FALLOW"
+"PAC","not surveyed",123,99,"crop",3,"UNCLAS"
+"TP,","uncultivated",138,7,"crop",3,"FALLOW"
+"ASP","not surveyed",103,99,"crop",3,"UNCLAS"
+"LAV","not surveyed",119,99,"crop",3,"UNCLAS"
+"CAC","not surveyed",106,99,"crop",3,"UNCLAS"
+"FID","not surveyed",113,99,"crop",3,"UNCLAS"
+"ONION","Onion",122,30,"crop",3,"ONION"
+"TER 1","not surveyed",135,99,"crop",3,"UNCLAS"
+"RIV 63","not surveyed",128,99,"crop",3,"UNCLAS"
+"ROSE","not surveyed",129,99,"crop",3,"UNCLAS"
+"BEAN","bean",105,41,"crop",3,"BEAN"
+"JOH","not surveyed",118,99,"crop",3,"UNCLAS"
+"EVE","not surveyed",110,99,"crop",3,"UNCLAS"
+"SC","not surveyed",131,99,"crop",3,"UNCLAS"
+"EAT","not surveyed",108,99,"crop",3,"UNCLAS"
