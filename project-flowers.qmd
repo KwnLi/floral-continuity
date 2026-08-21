@@ -162,7 +162,7 @@ ggplot(croparea.hw, aes(month, total.flowers, group = SITE, color = pct.natural)
 
 ```
 
-### Crop diversity
+### Crop richness
 
 ```{r}
 
