@@ -107,7 +107,7 @@ lcflr.hw <- lcflr.hw0 |> group_by(period, site, landcover) |>
   summarize(flowerdens = mean(flowerdens), .groups = "drop")
 
 ```
-### Connect total flower densities to land cover classes
+### Floral density curves of individual land covers
 
 There are redundant codes in the landcover classes of `lcflr.hw`. Use the raster key to consolidate them into landcover classes only found in the landcover raster.
 
@@ -132,10 +132,15 @@ rastlcflr.hw <- lcflr.hw |>
 
 write.csv(rastlcflr.hw, "data/flowerdens_hw2025.csv", row.names = FALSE)
 
+
 ggplot(rastlcflr.hw,
        aes(month, flowerdens, color = raster.name)) + geom_point() + geom_line()
 
 ```
+
+### Compare landscape buffers
+
+Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 rastkey.hw <- lckey.hw |> filter(!is.na(raster.code) & landcover.4cat != "na") |>
@@ -206,7 +211,7 @@ ggplot(croparearich.hw, aes(crop.rich, pct.natural)) + geom_point()
 
 ```
 
-### crop richness vs % natural correlation
+### crop richness vs crop shannon diversity
 
 ```{r}
 
@@ -254,6 +259,11 @@ DT::datatable(lcflr.gf0 |> group_by(site, landtype) |>
             .groups = "drop")
 )
 
+```
+
+### Floral density curves of individual land covers
+
+```{r}
 
 lcflr.gf <- lcflr.gf0 |> group_by(datePeriod, landtype) |>
   summarize(flowerdens = mean(count_mn),
@@ -268,7 +278,9 @@ ggplot(lcflr.gf,
 
 ```
 
-### compare landscape buffers
+### Compare landscape buffers
+
+Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 
@@ -361,7 +373,26 @@ ggplot(cropdiv.gf |>
 
 Aaron took surveys of all vegetation within a larger area using a modified Whitaker plot. Herbaceous plants were measured by coverage and trees were counted. Flowers were not counted during the survey but instead counted at peak flowering density independently of the site. The average peak flower density (or per-individual count for trees) was used to define the flowering curve that was calculated for the site over the entire year. Aaron's workflow calculates total flower area per ha using floral dimensions from literature or field measurements, but I stop at flower counts to match the other studies.
 
-### compare landscape buffers
+### Floral density curves of individual land covers
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8.5
+
+ggplot(lcflr.iv |> 
+         pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_per_m2") |>
+         mutate(julianDay = as.numeric(gsub("d","",julianDay))),
+       aes(julianDay, flowers_per_m2,
+           group = Floral_resources_landcover, 
+           color = Floral_resources_landcover)) + geom_line() +
+  theme(legend.position = "bottom", 
+        legend.title=element_blank())
+
+```
+
+### Compare landscape buffers
+
+Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 
