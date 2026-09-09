@@ -1,0 +1,43 @@
+Floral_resources_landcover,Group,Code,site_habitat,Aarons_notes
+Alfalfa,Agriculture,101,Alf,
+Apples,Agriculture,102,Crop_apple,crop flowers - apple
+Apples,Agriculture,102,Apple,"The 'apple' category refers to the associated diversity in apple orchards, not the apple itself. All perennial crop habitats are assigned this value as the baseline (excluding crop flowers). I do add the apple flowers themselves separately for our resources paper."
+Cherries,Agriculture,103,Crop_apple,crop flowers - use apple for cherries
+Cherries,Agriculture,103,Apple,"The 'apple' category refers to the associated diversity in apple orchards, not the apple itself. All perennial crop habitats are assigned this value as the baseline (excluding crop flowers).  "
+Corn,Agriculture,104,Crop_corn,crop flowers - corn
+Corn,Agriculture,104,WinterFallow,WinterFallow' refers to the weeds within the rowcrop field when there wasn't a covercrop/overwintered crop covering the ground. I have a separate value for corn flowers in our resources paper.
+Grass_hay,Agriculture,105,GrassHay,
+Pasture,Agriculture,106,Pasture,
+Peaches,Agriculture,107,Crop_apple,crop flowers - use apple for peaches
+Peaches,Agriculture,107,Apple,"The 'apple' category refers to the associated diversity in apple orchards, not the apple itself. All perennial crop habitats are assigned this value as the baseline (excluding crop flowers).  "
+Perennial,Agriculture,108,Apple,"The 'apple' category refers to the associated diversity in apple orchards, not the apple itself. All perennial crop habitats are assigned this value as the baseline (excluding crop flowers).  "
+Plums,Agriculture,109,Crop_apple,crop flowers - use apple for plums
+Plums,Agriculture,109,Apple,"The 'apple' category refers to the associated diversity in apple orchards, not the apple itself. All perennial crop habitats are assigned this value as the baseline (excluding crop flowers).  "
+Non_resource_crop,Agriculture,110,WinterFallow,'WinterFallow' refers to the weeds within the rowcrop field when there wasn't a covercrop/overwintered crop covering the ground.
+Non_resource_crop_wintercover,Agriculture,111,Cover,Cover' refers to the weeds within the rowcrop field when there is a winter cover crop/overwintered crop covering the soil
+Soybeans,Agriculture,112,Crop_soybean,crop flowers - soybean
+Soybeans,Agriculture,112,WinterFallow,'WinterFallow' refers to the weeds within the rowcrop field when there wasn't a covercrop/overwintered crop covering the ground. I have a separate value for soybeans in our resources paper.
+Strawberries,Agriculture,113,Crop_strawberry,crop flowers - strawberry
+Strawberries,Agriculture,113,WinterFallow,"For strawberries, I have a separate value just for the crop flowers (habitat not sampled in Plots_Final_2016_27 file)"
+Insect_pollinated_crop,Agriculture,114,Veg,"Veg' is assigned to the insect-pollinated crops that bloom before harvest, so they have a relevant flower; otherwise they are assigned 'WinterFallow"" or ""Cover"""
+Apricots,Agriculture,115,Crop_apple,crop flowers - use apple for apricots
+Apricots,Agriculture,115,Apple,
+Developed_low_intensity,Developed,201,Developed_low_intensity,"For our habitat paper, I integrate various categories (developed, garden_flrs, MesicUp, shrubland, etc.) based on average coverof these habitats from urban surveys"
+Developed_med_intensity,Developed,202,Developed_med_intensity,"For our habitat paper, I integrate various categories (developed, garden_flrs, MesicUp, shrubland, etc.) based on average coverof these habitats from urban surveys"
+Lawn,Developed,203,Developed,
+Urban tree,Developed,204,Urban_tree,
+Conifer_mixed_forest,Forest,301,Conifer,
+Dry_oak_forest,Forest,302,DryOak,
+Mesic_upland_forest,Forest,303,MesicUp,Note that we don't differentiate between Remnant and Successional forest in 'Floral_resources_landcover' since there is no map layer that can differentiate. So this value is the average of all the MesicUpRem and MesicUpSuc values
+NA,Other,401,NA,
+No_resource,Other,402,NA,
+Old_field,Succesional,501,Field,
+Shrubland,Succesional,502,Shrubland,
+Floodplain,Wetland,601,Flood,
+Swamp,Wetland,602,Swamp,
+Wet_emergent,Wetland,603,Emer,
+Wet_shrub,Wetland,604,Shrub,
+Ditch,Ditch,701,Ditch,
+Water,Water,801,NA,
+,,,Edge,Treerow was not assigned to anything in 'floral_resources_landcover' because there is no GIS layer for treerow 
+,,,Treerow,Edge was not assigned to anything in 'floral_resources_landcover' because there is no GIS layer for edge (we didn't employ this at least). 

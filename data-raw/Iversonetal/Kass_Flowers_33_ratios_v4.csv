@@ -1,0 +1,180 @@
+yellow means missing values,blue is measurements taken from herbarium,green means estimated from pictures on internet,,,,,,,,,,,,
+Genus ,species,family,common,Avg_Flrs_Tree,Estmale  staminateprop,"Est
+female pistillate
+prop","Est
+perfect
+proportion","Plant OR
+ population
+level",Male and female flowers on same plant,Bees use both types of flower,Multiplication_factor,Mult_factor_final,notes_sex ratio,note: final list
+Abies,concolor,,,NA,NA,NA,NA,NA,1,0,1,1,NA,
+Acer,negundo,Sapindaceae,box elder maple,248240,0.5,0.5,0,pop,0,"Southwick & Southwick 1986 list it as a ""minor nectar and pollen producer""",0.5,0.5,"Dawson & Ehrlinger 2003: ""Although the overall sex ratio (male/female) does not deviate significantly from one, the sex ratio is
+ significantly male biased (1.62) in drought-prone habitats, while it is significantly female biased (0.65) in moist, streamside habitats""
+
+Kass: visitation only to pollen floewrs -- Williams 2011 ""Data for Acer represent visitation, but not pollination because no insects were observed or collected from female flowers of this dioecious species."" Aaron response: I think multiplication factor of 0.5 makes sense based on this study.
+
+Aaron's notes: From Sakai 1990. In a study of several wind-polli- nated species in northern Utah (including the strictly dioecious Acer negundo), Freeman et al. (1976) sug- gested that males were associated with more xeric con- ditions, either because of sex-related differential mor- tality or resource utilization. Acer negundo in the dry steppe of the Soviet Union also showed male-biased sex ratios and Lysova and Khizhnyak (1975) proposed that this skewed ratio might be a result of sex-related differential mortality. They found that males and fe- males began to differ in diameter growth when female growth slowed with fruit production. In contrast, Will- son (1986) found that fruit production in A. negundo had no measurable effect in reducing crown growth of females relative to males.",
+Acer,pensylvanicum,Sapindaceae,striped maple,2541.333333,0.81,0.15,0.04,plant,0,I might err on the side of yes? Aaron response: sounds good,1,1,"Renner 2007 summary: Labile Sex Expression ; from de Jong P. 61–67: Male, female, and protandrous inflorescences all on one tree; change of sex expression; Hibbs and Fisher 1979: Labile sex expression
+
+ratios from Hibbs & Fischer. they also note that repro was primarily vegetative, and female plants were less healthy
+
+Aaron's notes: Striped maple (Acer pensylvan- icum), a small temperate deciduous forest understory tree, also had male-biased (80%) sex ratios and sex switching (Hibbs and Fischer 1979), from Sakai 1990
+
+maybe ""expert opinion: I might guess all are used""",
+Acer,pseudoplatanus,,,1729728,NA,NA,NA,NA,1,confirmed nectar in Somme et al 2016 ; Dmitruk 2017,1,1,"monoecious, included all flowers
+
+ Somme et al 2016 include nectar compositions & volume for Acer pseudoplatanus. ",
+Acer,campestre,,,1258800,NA,NA,NA,NA,1,nectar listed in Grozeva 2011,1,1,"Renner et al 2007 ""Monoecious with heterodichogamous flowering""
+
+Grozeva, N. (2011). Possibilities for providing bee pasture from nectariferous plants in Sinite Kamani Natural Park-Sliven. Trakia J. Sci, 9, 15-21.",
+Acer,platanoides,Sapindaceae,Norway maple,1017472,NA,NA,NA,NA,1,"confirmed nectar in Haragsim, O. (1977)",1,1,"Renner et al 2007 ""Monoecious with heterodichogamous flowering""
+
+Haragsim, O. (1977)",
+Acer,saccharum,Sapindaceae,sugar maple,281287,NA,NA,NA,NA,1,how was this counted? Both flower sexes? Aaron response: Yes both counted. Does the mult factor of 1 mean nectar is produced? ,1,0.5,"Renner et al 2007 ""A. saccharum Marsh. subsp. Saccharum: Monoecious; insufficient information on phenology"" ; 
+
+Renner et al 2007: ""A. saccharum subsp. Grandidentatum: cites Baker et al. 1982: Labile sex expression""
+
+Gabriel: ""both protandry and protygyny in A saccharum and A platanoides"" protandry and protygyny in roughly equal numbers, greater overlap at cooler spring temps","no data on nectar use found, so changed to 0.5"
+Acer,nigrum,,,281287,NA,NA,NA,NA,1,confirm use (any nectar?),,0.5,(grouped as subspecies of A saccharum in most studies I found; I conservatively applied same sex ratio system). Aaron response: makes sense to group as same give subspecies status.,
+Acer,rubrum,Sapindaceae,red maple,229000,NA,NA,NA,NA,1,1,1,1,"take average of table 1 from Sakai 1990. Actually, both male and female flowers are pollinator resources, so no need to adjust based on sex ratios (see Batra 1985 J. Kansas Ent. Soc.)",
+Acer,palmatum,,,59220,NA,NA,NA,NA,1,confirm use (any nectar?),,0.5,"monoecious, included all flowers","no data on nectar use found, so changed to 0.5"
+Acer,saccharinum,Sapindaceae,Silver maple,274480.7422,,,,pop,,I might err on the side of yes? Aaron response: sounds good,1,1,"Renner et al 2007 summarizes the literature on saccharinum: labile! de Jong P. 78–86: Functionally male trees, functionally female trees, and bisexual trees; Semm 1966: Bisexual trees, rarely unisexual trees; Sakai 1978: 700 trees, five years, Sakai and Oden 1983: Inconstant females, inconstant males, variable sex expression ; from Gleiser & Verdu 2005 : Heterodichogamous trioecy
+
+Sakai & Oden 1983: "" In general, female-predominant ratios are more common than male- predominant ratios (Lloyd 1974) and males have been more commonly found on  harsh sites while females are more often associated with favorable sites (e.g., see
+ Freeman et al. 1980).  Opler and Bawa (1978) found pistillate-dominant, staminate-dominant, as well as equal sex ratios in 23 tropical tree species. While most ratios were constant between sites, a few varied with site""
+
+note that these are rarely if ever used due to phenology ; but I don't think we're letting that rule things out? (if so, very little evidence for use of Ostrya, Carpinus)",
+Ailanthus ,altissima,Simaroubaceae,tree of heaven,1600,NA,NA,NA,NA,1 Aaron: should this be 0 since mostly dioecious? I'm assuming the androdioecy is less common?,1,1,1,"J. Thompson 2008:  suggests nectar in both types of flowers & reports insects visiting both sexes of trees. ""Total amounts of sugar in male and female blossoms were not statistically different, however higher concentrations of sugar were found in males (40.7%) than in females (35.3%). ""  "" In a study by Davies (1943) the staminate flowers were found to bloom for an average of 27 days and the pistillate flowers were found to bloom for an average of 12 days"" 
+
+Brower 2011: ""We showed that in Western Michigan there is an androdioecious sexual expression. We also found that there were significant differences in gender between larger and smaller trees, and also between the different locations (rural and urban)."" - Brower 2011 thesis (full text inaccessible)
+
+from Silvics PDF: "" A dioecious species, it bears male and female flowers on different trees, with male trees producing three to four times more flowers than are usually found on female trees (11). Male flowers are more conspicuous than female ones, emitting a disagreeable odor that attracts numerous insects. The foul odor of the male flowers makes the tree less favored for ornamental plantings in cities. "" 
+(11) Hu, Shiu Ying. ""Ailanthus."" Arnoldia 39.2 (1979): 29-50.",
+Amelanchier,arborea,Rosaceae,serviceberry,2823.75,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Amelanchier,laevis,,,2823.75,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Betula,alleghaniensis,Betulaceae,yellow birch,20026.66667,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"silvics: https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf 
+
+Grewling 2021: some birch have male + female catkins. 
+""birch trees that grow in good light conditions produce more female catkins than shaded trees.""",
+Betula,papyrifera,,,19286.93333,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"silvics: https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf 
+
+Grewling 2021: some birch have male + female catkins. 
+""birch trees that grow in good light conditions produce more female catkins than shaded trees.""",
+Betula,lenta,Betulaceae,black birch,18547.2,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"silvics: https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf 
+
+Grewling 2021: some birch have male + female catkins. 
+""birch trees that grow in good light conditions produce more female catkins than shaded trees.""",
+Carpinus,caroliniana,Betulaceae,blue beech,4499.2,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"""The species is monoecious, with male and female catkins borne separately on the same tree and first appearing in the spring concurrently with leaf-out. Catkins are green to brown with red on the scales"" https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Carpinus,betulus,Betulaceae,,4499.2,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Carya,glabra,Juglandaceae,pignut hickory,154290,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"""Hickories are monoecious and flower in the spring"" https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Carya,ovata,Juglandaceae,shagbark hickory,97744,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"""Hickories are monoecious and flower in the spring"" https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Carya,cordiformis,Juglandaceae,bitternut hickory,36692,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"""Hickories are monoecious and flower in the spring"" https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Catalpa,speciosa,Bignoniaceae,catalpa,14017,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,perfect -- see Stephenson citations,
+Celtis,occidentalis,Cannabaceae,hackberry,843500,0,0,,plant,1,,"Aaron: 0.5 is tentative, need to confirm if bees use both sexes",0.5,"monoecious 
+
+Leme 2021 ""The studied species of Celtis are monoecious trees or shrubs, with staminate and pistillate flowers ...  The exception is C. occidentalis, which has a similar number of pistillate and staminate flowers. Additionally, pistillate flowers are generally located in the apical region of the inflorescence, while staminate flowers are basally located."" Aaron response: I counted all flowers (mostly were staminate with a few perfect, at least I thought they were perfect but maybe they were pistillate), so if bees don't visit pistillate, we can use 0.5 mult factor. ",
+Cornus,florida,Cornaceae,flowering dogwood,2256.666667,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Cornus,sericea,Cornaceae,red oiser dogwood,312.4,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Cornus,amomum,Cornaceae,silky dogwood,297.6,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Cornus,racemosa,Cornaceae,Gray dogwood,110.1428571,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Cornus,alternifolia,Cornaceae,alternate-leaved dogwood,66.6,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Corylus,sp.,Betulaceae,ornamental hazelnut,14171.81429,NA,NA,NA,NA,1,0,1 - aaron only counted males. ,1,Coder 2008,
+Cotinus,coggyria,,,,,,,,1,1,1,1,"dioecious but bees visit female flowers, so likely visit both. No need to adjust sex ratio.",
+Crataegus,sp.,Rosaceae,hawthorn,115960,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Elaeagnus,umbellata,Elaeaganus,autumn olive,4797.333333,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008 ; Soley & Sipes 2020,
+Fagus ,grandifolium,Fagaceae,american beech,103460,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Frangula,alnus,Rhamnaceae,glossy buckthorn,986.6666667,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers 
+ https://www.fs.fed.us/database/feis/plants/shrub/fraaln/all.html#75 ",
+Fraxinus,nigra,Oleaceae,black ash,2166.666667,0.5,0.5,0,pop,0,0,1 - aaron only counted males. Aaron: 0.5 I think,0.5,"Zhang et al 2014, Fraxinus mandshurica: ""The sex ratio in the 5.2-ha study area does not deviate significantly from the expected 1:1 ratio, except for trees in the large diameter classes. For dbh >40 cm, the sex ratio is male-biased. '
+
+Wright 1959, white ash: ""The ratio of male to female trees is probably 1:1. However in any given year more male than female trees bloom. In the vicinity of Philadelphia, Pa., some male trees flower heavily every year, but the most prolific female trees flower only 2 or 3 years out of 5.""
+
+Giovanetti et al 2011""On [Fraxinus ornus], bees (n = 74) collected only pollen on both male and hermaphrodite plants""",
+Fraxinus ,americana,Oleaceae,white ash,2580.428571,0.5,0.5,0,pop,0,0,1 - aaron only counted males. Aaron: 0.5 I think,0.5,"Zhang et al 2014, Fraxinus mandshurica: ""The sex ratio in the 5.2-ha study area does not deviate significantly from the expected 1:1 ratio, except for trees in the large diameter classes. For dbh >40 cm, the sex ratio is male-biased. '
+
+Wright 1959, white ash: ""The ratio of male to female trees is probably 1:1. However in any given year more male than female trees bloom. In the vicinity of Philadelphia, Pa., some male trees flower heavily every year, but the most prolific female trees flower only 2 or 3 years out of 5.""
+
+Giovanetti et al 2011""On [Fraxinus ornus], bees (n = 74) collected only pollen on both male and hermaphrodite plants""",
+Fraxinus ,pennsylvanica,Oleaceae,red ash,2560.880952,0.5,0.5,0,pop,0,0,1 - aaron only counted males. Aaron: 0.5 I think,0.5,"Zhang et al 2014, Fraxinus mandshurica: ""The sex ratio in the 5.2-ha study area does not deviate significantly from the expected 1:1 ratio, except for trees in the large diameter classes. For dbh >40 cm, the sex ratio is male-biased. '
+
+Wright 1959, white ash: ""The ratio of male to female trees is probably 1:1. However in any given year more male than female trees bloom. In the vicinity of Philadelphia, Pa., some male trees flower heavily every year, but the most prolific female trees flower only 2 or 3 years out of 5.""
+
+Giovanetti et al 2011""On [Fraxinus ornus], bees (n = 74) collected only pollen on both male and hermaphrodite plants""",
+Ginkgo,biloba,Ginkgoaceae,Ginkgo,449280,0.5,0.5,0,pop,0,,Aaron: 0.1 tentative,0.1,"STREET TREES MIGHT BE DIFFERENT. Aaron: Good point, there is very likely a bias towards male trees in urban areas. But how do we determine ratio? It would be arbitrary whatever we do, I think? But, we could use 10:1 or something and explicitly state that this is a best guess (based on personal observations). Do you have any thoughts on ratios based on personal observation?
+
+P D Tredici, Arnoldia: sex ratio is 1:1. https://arboretum.harvard.edu/stories/wake-up-and-smell-the-ginkgos/ (probably citing the 1929 study referenced here https://www.osgf.org/blog/2017/11/7/blandy-ginkgo)",
+Gleditsia ,triacanthos,Fabaceae,honey locust,8635944.8,0,0.6,0.4,pop,0,1,1 - use both,1,"""polygamous andro-dioecious, with a higher proportion of male individuals"" ""The proportion of individuals with male:perfect flowers is ca. 1.9:1 (161:86 individuals with male or perfect flowers respectively) at Vaquerías Natural Reserve and 1.1:1 (52:47 individuals respectively) in the surroundings of Villa Los Aromos. Pollen production was higher in male than perfect flowers. The average amount of pollen grains per male flower ranged from 10,616 to 13,304 (mean= 11,552) while in perfect flowers ranged from 400 to 864 (mean= 770). "" - Silvera Ruiz 2022 
+""Population sex-ratios ranged between 0.96 (at western site 1) and 4.67 (at southern site 3) (Table 4.3). Western population 1 was the only site having a marginally female biased sex-ratio. Sex-ratios at six sites (two northern, two central and two southern sites) deviated significantly from a 1:1 ratio (Table 4.3). No western sites had a population sex-ratio deviating significantly from 1:1. "" -- MacDonald 2004",
+Juglans ,cinerea,Juglandaceae,butternut,14535,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers ; https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Juglans ,nigra,Juglandaceae,black walnut,9709.5,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers ; https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Ligustrum,vulgare,Oleaceae,privet,309.6,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Lindera,benzoin,Lauraceae,spicebush,3842,0.5,0.5,0,pop,0,,0.5 since no data on collection of both,0.5,"DIOECIOUS POLYGAMOUS Coder 2008
+
+Neisenbaum 1992: "" Sex ratio was 1:1 in both the sun and shade.""
+
+Primack: ""in 1980 there was no evidence of an unequal sex ratio…no plant changed sex in 1982, 1983, or 1984"" Kass: no evidence for nectar production so  conservatively err on side of 0.5",THIS WAS THE ONLY CHANGE I MADE TO FINAL LIST FROM THE ONE I RAN IN JULY 2022
+Liquidambar,styraciflua,,,46800,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers ; https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Liriodendron,tulipifera,Magnoliaceae,tulip poplar,6391.714286,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers ; https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf",
+Lonicera ,morrowii,Caprifoliaceae,Morrow's honeysuckle,2855,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,?,
+Lonicera ,tatarica,Caprifoliaceae,tartarian honeysuckle,2855,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,?,
+Maclura ,pomifera,Moraceae,osage-orange,43200,0.5,0.5,0,plant,0,0,0.5,0.5,"DIOECIOUS, can't find literature  https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf
+assumed 0.5/0.5 since no literature
+unknown USE ; is it better to assume only use female, or both? AARON: I WAS THINKING ASSUME USE JUST MALE SINCE WIND-POLLINATED? OR ARE YOU THINKING MAYBE FEMALE IS USED? EITHER WAY, 0.5 I THINK IS BEST MULTIPLICATION...",
+Magnolia ,acuminata,Magnoliaceae,cucumber tree,973.3333333,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Malus,prunifolia,Rosaceae,crab apple,163502.6667,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Malus ,baccata,Rosaceae,crabapple,163502.6667,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Malus ,pumila,Rosaceae,apple,48868.5,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Morus,alba,Moraceae,white mulberry,169200,0.25,0.65,0.1,pop,0,,1--Aaron counted only males. Aaron: 0.25 is correct I think.,0.25,"Nepal et al 2015 "" This study presents findings on sex expression and sex ratio variation in two congen native Morus rubra and the exotic M. alba, in the Flint Hills region of the Great Plains in the United States. Both specie cious breeding system (with male, female and hermaphrodite individuals co-occurring within populations), and signifi sex ratios (i.e., males are more numerous than females). Cumulative sex ratio deviation was higher in the native M. rub in the exotic M. alba. Within-species sex ratio did not vary significantly among populations. In one focus study area su years, most individuals were consistent in sex expression, but approximately 10% switched their sex at least once; the va changes were between unisexual and hermaphrodite morphs""",
+Ostrya ,virginiana,Betulaceae,American hophornbeam,8937.5,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Picea,pungens,,,NA,NA,NA,NA,NA,1,NA,NA,NA,NA?,
+Platanus ,occidentalis,Platanaceae,American sycamore,7246.4,NA,NA,NA,NA,1,0,1 (tentative),0.5,"Aaron's note: trees 3-5 taken in Roanoke 20 April 2021---these include pistillate and staminate flowers. If were to exclude pistillate, would have to figure on removing certain percentage of flowers. AARON: I WILL SEE IF THERE'S ANY INFO ABOUT %STAMINATE VS. %PISTILLATE FLOWERS ON ANY GIVEN TREE. IF CANT FIND THIS, WILL DELETE ENTRIES WITH BOTH SEXES.
+Kass: only pollen record reported by Saunders et al 2018 is from Kraemer & Favi 2005 osmia study, and was <1% of all pollen (could be phenological legacy though?). UPDATE: IN FINAL TABLE, KASS HAS 0.5 FROM SILVICS MANUAL",
+Populus,deltoides,Salicaceae,cottonwood,5940,0.5,0.5,0,pop,0,0,1 - ASSUMING aaron only counted males. Aaron: 0.5 is correct I think.,0.5,"this was divided in half because plant is dioecious (only male useful) Aaron: updated datasheet not divided in half yet ; The sex ratio is about 1 to 1 https://www.srs.fs.usda.gov/pubs/misc/ag_654/volume_2/populus/deltoides.htm. 
+Farmer, Robert E., Jr. 1964. Sex ratios and sex-related characteristics in eastern cottonwood. Silvae Genetica 13:116-118.",
+Populus,tremuloides,Salicaceae,quaking aspen,4604,0.5,0.5,0,pop,0,0,1 - ASSUMING aaron only counted males. Aaron: 0.5 is correct I think.,0.5,this was divided in half because plant is dioecious (only male useful). Aaron: updated datasheet not divided in half yet.,
+Populus,grandidentata,Salicaceae,big tooth aspen,2723,0.5,0.5,0,pop,0,0,1 - ASSUMING aaron only counted males. Aaron: 0.5 is correct I think.,0.5,this was divided in half because plant is dioecious (only male useful). this was divided in half because plant is dioecious (only male useful). Aaron: updated datasheet not divided in half yet.,
+Prunus,cerasifera,Rosaceae,cherry plum,17483.33333,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Prunus ,serotina,Rosaceae,black cherry,336599.1429,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Prunus ,avium,Rosaceae,Sweet cherry,17483.33333,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Prunus ,pensylvanica,Rosaceae,pin cherry,17483.33,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Prunus ,virginiana,Rosaceae,choke cherry,2367.714286,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Pyrus,calleryana,Rosaceae,Callery pear,167086.625,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Pyrus,communis,Rosaceae,common pear,44100,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,Coder 2008,
+Quercus,rubra,Fagaceae,Red Oak,210721.25,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Quercus,macrocarpa,Fagaceae,Bur oak,160693.3333,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Quercus,imbricaria ,Fagaceae,shingle oak,113888.9583,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Quercus,montana,Fagaceae,Chestnut oak,113888.9583,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Quercus,velutina,Fagaceae,black oak,43855,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Quercus,alba,Fagaceae,white oak,40286.25,NA,NA,NA,NA,1,0,1 - aaron only counted males,1,"monoecious, include all flowers",
+Rhamnus ,cathartica,Rhamnaceae,European buckthorn,3120.5,0.14,0.86,0,pop,0,1 - there are pollen and nectar records,1,1,"Coder 2008: PERFECT DIOECIOUS POLYGAMOUS Coder 2008
+
+Knight et al 2007: ""R. cathartica is generally dioecious (Darwin 1877), and exhibited sex ratios of six to seven female trees per male tree at one European site (Godwin 1943). Sex ratios in its invaded range have not been studied.""",
+Rhus ,hirta,Anacardiaceae,staghorn sumac,51,0.37,0.29,0,pop,0,1,1,1,"DIOECIOUS POLYGAMOUS Coder 2008
+R hirta = R typhina
+
+Doust & Doust 1988 RHUS TYPHINA: ""The population of flowering trunks was male—biased, though male and female clones proved to be of similar ages...The average (±SE) male inflorescence had 4099 ± 312 flowers, whereas the average female inflorescence bore 1575 ± 67.2 fruits."" ""There were 1516 trunks in the transect, with an average density of 1.3 trunks per 1 x 2 m plot. Of these, 563 were male, 442 female, 3 monoecious, 313 vege tative, and 195 were dead""
+
+visitation citation: Greco et al 1996  ""Female inflorescences secreted great amounts of nectar during the afternoon, but in male inflorescences there was little secretion. ... Most of their activity concentrated on male inflorescences in the morning and on female ones during the afternoon. .... Most of the bees with pollen loads were observed during the morning and the longest visits to any inflorescences were registered on female ones during the afternoon (by bees foraging for nectar)""",
+Robinia,pseudoacacia,Fabaceae,black locust,159627.5,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,perfect flowers ; include all flowers; https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Rosa,multiflora,Rosaceae,multiflora rose,830.5,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,perfect flowers ; include all flowers,
+Salix,fragilis,Salicaceae,crack willow,24916,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,nigra,Salicaceae,black willow,24916,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,babylonica,Salicaceae,weeping willow,24916,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,eriocephala,Salicaceae,Missouri River willow,617.5,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,exigua,Salicaceae,sandbar willow,617.5,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,myricoides,Salicaceae,bayberry willow,617.5,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Salix,sericea,Salicaceae,silky willow,617.5,NA,NA,NA,NA,NA,1,1,1,Aaron: many salix are dioecious but I didn't cut in half because female catkins produce nectar,
+Styphnolobium,japonicum,Fabaceae,pagoda tree,630000,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,perfect flowers ; include all flowers,
+Syringa,reticulata,,,2304000,0,0,1,plant,1,NA - perfect,1 - if perfect can assume 1 ,1,perfect flowers ; include all flowers,
+Thuja,occidentalis,,,NA,NA,NA,NA,NA,1,NA,NA,NA,NA?,
+Tilia,americana,Malvaceae,basswood,67774,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Tilia,tomentosa,Malvaceae,,67774,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Ulmus,pumila,Ulmaceae,siberian elm,2592324,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Ulmus,americana,Ulmaceae,american elm,302697.04,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Ulmus,rubra,Ulmaceae,slippery elm,106211.3,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,https://www-srs-fs-usda-gov.proxy.library.cornell.edu/pubs/misc/ag_654/volume_2/silvics_v2.pdf,
+Vaccinium ,corymbosum,Ericaceae,highbush blueberry,147,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers",
+Viburnum,opulus,Adoxaceae,guelder-rose,72,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers (careful in viburnum! True flowers only)
+
+Englund, R. (1993). Movement patterns of Cetonia beetles (Scarabaeidae) among flowering Viburnum opulus (Caprifoliaceae). Oecologia, 94(2), 295-302.",
+Viburnum,acerifolium,Adoxaceae,maple-leaved viburnum,20,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers (careful in viburnum! True flowers only)",
+Viburnum,dentatum,Adoxaceae,southern arrowwood,17,0,0,1,both,1,NA - perfect,1 - if perfect can assume 1 ,1,"perfect flowers, include all flowers (careful in viburnum! True flowers only)",
+Zelkova,serrata,Ulmaceae,Japanese Zelkova,7425000,0.117437722,0.804270463,0.078291815,plant ,0,,0.195729537,0.195729537,"AARON: THE VALUE OF 0.196 IS JUST MALE AND PERFECT FLOWERS SINCE LIKELY ONLY POLLEN USED. DOES THIS SEEM CORRECT, KASS?""Zelkova serrata is trimonoecious with male flowers, bisexual flowers and female flowers in regular sequence on a short shoot. The number of male, bisexual and female flowers on each short shoot was 22.6, 2.2 and 3.3 flowers on average, respectively. The number of flowers per short shoot and the sex ratio differed according to individual trees and to the positions of the tree crown. The number of stamens and the number of pollen grains contained in each anther were greater in male flowers than in bisexual flowers. It was estimated that the number of pollengrains per short shoot was 746,900 grains."" --Suo et al 1995",

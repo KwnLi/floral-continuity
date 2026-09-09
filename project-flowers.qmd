@@ -10,12 +10,13 @@ library(tidyverse)
 
 lc.gf <- read.csv("data/lcareas_gf2021.csv")
 lc.hw <- read.csv("data/lcareas_hw2025.csv")
-
-site.gf <- read.csv("data/site_gf2021.csv")
-site.hw <- read.csv("data/site_hw2025.csv")
+lc.iv <- read.csv("data/lcareas_iverson.csv")
 
 flr.gf <- read.csv("data/florlc_gf2021.csv")
 flr.hw <- read.csv("data/florlc_hw2025.csv")
+lcflr.iv <- read.csv("data/flowerdens_iverson.csv")
+
+key.iv <- read.csv("data-raw/Iversonetal/iverson_landcover_codes.csv")
 
 ```
 
@@ -351,5 +352,122 @@ Guezen & Forrest points are transects clustered by sites. At 750 m, some buffers
 ggplot(cropdiv.gf |> 
          separate_wider_delim(transect, delim = ".", names = c("site"), too_many = "drop", cols_remove = FALSE),
        aes(crop.rich, crop.shandiv, color = site)) + geom_point()
+
+```
+
+## Iverson data
+
+Aaron took surveys of all vegetation within a larger area using a modified Whitaker plot. Herbaceous plants were measured by coverage and trees were counted. Flowers were not counted during the survey but instead counted at peak flowering density independently of the site. The average peak flower density (or per-individual count for trees) was used to define the flowering curve that was calculated for the site over the entire year. Aaron's workflow calculates total flower area per ha using floral dimensions from literature or field measurements, but I stop at flower counts to match the other studies.
+
+### compare landscape buffers
+
+```{r}
+
+buf.iv <- lc.iv |> filter(buffer == "buf750")
+
+cropbuf.iv <- buf.iv |>
+  pivot_longer(cols = Alfalfa:Plums,
+               names_to = "Floral_resources_landcover",
+               values_to = "area") |> 
+  mutate(Floral_resources_landcover = 
+           replace_values(Floral_resources_landcover,
+                          "Urban.tree" ~ "Urban tree")) |>
+  left_join(lcflr.iv, by = "Floral_resources_landcover") |>
+  filter(!is.na(area)) |> 
+  pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
+  mutate(
+    total.flowers = area * flowers_m2,
+    julianDay = as.numeric(gsub("d","",julianDay))
+    )
+
+
+croparea.iv <- cropbuf.iv |>
+  group_by(site, Group, julianDay) |>
+  summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
+  pivot_wider(id_cols = c(julianDay, site), 
+              names_from = Group, values_from = c(area, total.flowers)) |>
+  mutate(
+    total.flowers = rowSums(across(total.flowers_Agriculture:total.flowers_Wetland)),
+    total.area = rowSums(across(area_Agriculture:area_Wetland)),
+    area_natural = area_Forest + area_Wetland + area_Succesional,
+    pct.natural = 100*area_natural/(750*750*pi),
+    pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
+  )
+
+croparea.iv.sum <- croparea.iv |> select(site, pct.natural, pct.nat.intv) |> distinct()
+
+ggplot(croparea.iv, aes(julianDay, total.flowers, group = site, color = pct.natural)) +
+  geom_line() + scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
+
+
+```
+
+### Crop richness
+
+```{r}
+
+croprich.iv <- cropbuf.iv |> rowwise() |>
+  mutate(crop = Group=="Agriculture" & area > 0) |>
+  group_by(julianDay, site) |>
+  summarize(area = sum(area), total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
+
+croparearich.iv <- croparea.iv |> select(julianDay, site, pct.natural, total.flowers) |>
+  left_join(croprich.iv |> select(julianDay, site, crop.rich), by = c("julianDay", "site"))
+
+ggplot(croparearich.iv, aes(julianDay, total.flowers, group = site, color = pct.natural)) + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+
+```
+
+### Crop diversity
+
+```{r}
+
+cropdiv.iv <- croparea.iv |> select(site, area_Agriculture) |> distinct() |>
+  right_join(cropbuf.iv, by = "site") |> filter(Group == "Agriculture") |> 
+  mutate(P_i = area/area_Agriculture, P_i2 = P_i * log(P_i)) |>
+  group_by(julianDay, site) |>
+  summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
+  right_join(croparearich.iv, by = c("julianDay", "site"))
+
+ggplot(cropdiv.iv, aes(julianDay, total.flowers, group = site, color = crop.shandiv)) + 
+  geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+
+```
+
+### crop richness vs % natural correlation
+
+Iverson points are sites clustered by farm. At 750 m, some buffers are overlapping.
+
+Color + shape combinations represent shared farms in these plots.
+
+```{r}
+
+cropdiv.iv.sum <- cropdiv.iv |> select(site, pct.natural, crop.rich, crop.shandiv) |> 
+  distinct() |> 
+  separate_wider_delim(site, delim = " ", names = c("farmsite", "farm"),
+                       too_many = "merge", cols_remove = FALSE)
+
+# Source - https://stackoverflow.com/q/76810554
+# Posted by Lucile Mo', modified by community. See post 'Timeline' for change history
+# Retrieved 2026-09-09, License - CC BY-SA 4.0
+
+shapes <- c(0,2, 4, 7, 10, 15, 17, 18)
+col_vibrant <- c("#0077BB","#33BBEE","#009988","#EE7733","#CC3311","#EE3377",  "#BBBBBB")
+
+ggplot(cropdiv.iv.sum, aes(crop.rich, pct.natural, color = farm, pch = farm)) + geom_point() +
+  scale_colour_manual(values = sample(col_vibrant, 81, replace = TRUE)) +
+  scale_shape_manual(values = sample(shapes, 81, replace = TRUE)) +
+  theme(legend.position = "none")
+
+```
+
+### crop richness vs crop shannon diversity
+
+```{r}
+
+ggplot(cropdiv.iv.sum, aes(crop.rich, crop.shandiv, color = farm, pch = farm)) + geom_point() +
+  scale_colour_manual(values = sample(col_vibrant, 81, replace = TRUE)) +
+  scale_shape_manual(values = sample(shapes, 81, replace = TRUE)) +
+  theme(legend.position = "none")
 
 ```
