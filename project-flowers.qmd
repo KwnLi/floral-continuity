@@ -165,8 +165,13 @@ croparea.hw <- cropbuf.hw |>
     pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
   )
 
-ggplot(croparea.hw, aes(month, total.flowers, group = SITE, color = pct.natural)) +
-  geom_point() + geom_line() + scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
+croparea.hw.mn <- croparea.hw |> group_by(month, pct.nat.intv) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparea.hw, aes(month, total.flowers)) +
+  geom_point(aes(group = SITE, color = pct.natural)) + geom_line(aes(group = SITE, color = pct.natural)) + 
+  geom_line(data = croparea.hw.mn, color = "red", lwd = 1, lty = 5) +
+  scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
 
 ```
 
@@ -183,8 +188,13 @@ croprich.hw <- cropbuf.hw |> rowwise() |>
 croparearich.hw <- croparea.hw |> select(month, period, SITE, pct.natural, total.flowers) |>
   left_join(croprich.hw |> select(month, period, SITE, crop.rich), by = c("month", "period", "SITE"))
 
-ggplot(croparearich.hw, aes(month, total.flowers, group = SITE, color = pct.natural)) + 
-  geom_point() + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+croparearich.hw.mn <- croparearich.hw |> group_by(month, crop.rich) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparearich.hw, aes(month, total.flowers)) + 
+  geom_point(aes(group = SITE, color = pct.natural)) + geom_line(aes(group = SITE, color = pct.natural)) + 
+  geom_line(data = croparearich.hw.mn, color = "red", lwd = 1, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 ```
 
 ### Crop diversity
@@ -198,8 +208,10 @@ cropdiv.hw <- croparea.hw |> select(SITE, area_crop) |> distinct() |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
   right_join(croprich.hw, by = c("period", "month", "SITE"))
 
-ggplot(cropdiv.hw, aes(month, total.flowers, group = SITE, color = crop.shandiv)) + 
-  geom_point() + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+ggplot(cropdiv.hw, aes(month, total.flowers)) + 
+  geom_point(aes(group = SITE, color = crop.shandiv)) + geom_line(aes(group = SITE, color = crop.shandiv)) +
+  geom_line(data = croparearich.hw.mn, color = "red", lwd = 1, lty = 5) + facet_wrap(~crop.rich) +
+  scale_color_viridis_c(option = "viridis")
 
 ```
 
@@ -305,8 +317,13 @@ croparea.gf <- cropbuf.gf |>
     pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
   )
 
-ggplot(croparea.gf, aes(datePeriod, total.flowers, group = transect, color = pct.natural)) +
-  geom_point() + geom_line() + scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
+croparea.gf.mn <- croparea.gf |> group_by(datePeriod, pct.nat.intv) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparea.gf, aes(datePeriod, total.flowers)) +
+  geom_point(aes(group = transect, color = pct.natural)) + geom_line(aes(group = transect, color = pct.natural)) + 
+  geom_line(data = croparea.gf.mn, color = "red", lwd = 1, lty = 5) +
+  scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
 
 
 ```
@@ -324,8 +341,13 @@ croprich.gf <- cropbuf.gf |> rowwise() |>
 croparearich.gf <- croparea.gf |> select(datePeriod, transect, pct.natural, total.flowers) |>
   left_join(croprich.gf |> select(datePeriod, transect, crop.rich), by = c("datePeriod", "transect"))
 
-ggplot(croparearich.gf, aes(datePeriod, total.flowers, group = transect, color = pct.natural)) + 
-  geom_point() + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+croparearich.gf.mn <- croparearich.gf |> group_by(datePeriod, crop.rich) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparearich.gf, aes(datePeriod, total.flowers)) + 
+  geom_point(aes(group = transect, color = pct.natural)) + geom_line(aes(group = transect, color = pct.natural)) + 
+  geom_line(data = croparearich.gf.mn, color = "red", lwd = 1, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
 
@@ -340,8 +362,10 @@ cropdiv.gf <- croparea.gf |> select(transect, area_crop) |> distinct() |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
   right_join(croprich.gf, by = c("datePeriod", "transect"))
 
-ggplot(cropdiv.gf, aes(datePeriod, total.flowers, group = transect, color = crop.shandiv)) + 
-  geom_point() + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+ggplot(cropdiv.gf, aes(datePeriod, total.flowers)) + 
+  geom_point(aes(group = transect, color = crop.shandiv)) + geom_line(aes(group = transect, color = crop.shandiv)) + 
+  geom_line(data = croparearich.gf.mn, color = "red", lwd = 1, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
 
@@ -429,8 +453,13 @@ croparea.iv <- cropbuf.iv |>
 
 croparea.iv.sum <- croparea.iv |> select(site, pct.natural, pct.nat.intv) |> distinct()
 
-ggplot(croparea.iv, aes(julianDay, total.flowers, group = site, color = pct.natural)) +
-  geom_line() + scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
+croparea.iv.mn <- croparea.iv |> group_by(julianDay, pct.nat.intv) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparea.iv, aes(julianDay, total.flowers)) +
+  geom_line(aes(group = site, color = pct.natural)) + 
+  geom_line(data = croparea.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 1) +
+  scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
 
 
 ```
@@ -447,7 +476,13 @@ croprich.iv <- cropbuf.iv |> rowwise() |>
 croparearich.iv <- croparea.iv |> select(julianDay, site, pct.natural, total.flowers) |>
   left_join(croprich.iv |> select(julianDay, site, crop.rich), by = c("julianDay", "site"))
 
-ggplot(croparearich.iv, aes(julianDay, total.flowers, group = site, color = pct.natural)) + geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+croparearich.iv.mn <- croparearich.iv |> group_by(julianDay, crop.rich) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparearich.iv, aes(julianDay, total.flowers)) + 
+  geom_line(aes(group = site, color = pct.natural)) +
+  geom_line(data = croparearich.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
 
@@ -462,8 +497,10 @@ cropdiv.iv <- croparea.iv |> select(site, area_Agriculture) |> distinct() |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
   right_join(croparearich.iv, by = c("julianDay", "site"))
 
-ggplot(cropdiv.iv, aes(julianDay, total.flowers, group = site, color = crop.shandiv)) + 
-  geom_line() + facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+ggplot(cropdiv.iv, aes(julianDay, total.flowers)) + 
+  geom_line(aes(group = site, color = crop.shandiv)) +
+  geom_line(data = croparearich.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
 
