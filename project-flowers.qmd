@@ -3,6 +3,7 @@ title: "Project flowers"
 format: html
 execute: 
   warning: false
+  echo: false
 ---
 
 ```{r}
@@ -27,8 +28,9 @@ Data is available as floral density for transects of different land cover types 
 However, there are some duplicates of the period, site, land cover, and species combinations.
 
 ```{r}
-nrow(flr.hw)
-nrow(distinct(flr.hw, period, site, landcover, species))
+
+cat("Duplicate rows: \n")
+nrow(flr.hw) - nrow(distinct(flr.hw, period, site, landcover, species))
 
 examine.dupes <- janitor::get_dupes(flr.hw, period, site, landcover, species)
 
@@ -40,7 +42,7 @@ Some of these look like samples taken within the same site and period, but actua
 
 ```{r}
 
-nrow(distinct(flr.hw, period, date, site, landcover, species))
+# nrow(distinct(flr.hw, period, date, site, landcover, species))
 
 examine.dupes2 <- janitor::get_dupes(flr.hw, date, period, site, landcover, species)
 
@@ -220,8 +222,8 @@ Duplicates - some species are reported twice within the same transect and quadra
 
 ```{r}
 
-nrow(flr.gf)
-nrow(distinct(flr.gf))
+cat("Duplicate rows: \n")
+nrow(flr.gf) - nrow(distinct(flr.gf))
 
 examine.dupes.gf <- janitor::get_dupes(flr.gf, -count_per_m2)
 
