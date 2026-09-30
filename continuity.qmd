@@ -301,7 +301,9 @@ cat("AIC: ")
 cat(AIC(stabsxlm),"\n","\n")
 ```
 
-These changes seem to be mainly driven by a strong interaction between % natural and crop richness for the Guezen & Forrest (2021) study. Slopes mostly aren't significantly different from zero across these variables' interactions for the other two studies.
+### Three-way interactio model predictions
+
+Significant interactions between the variables seem to be mainly driven by a strong interaction between % natural and crop richness for the Guezen & Forrest (2021) study. Slopes mostly aren't significantly different from zero across these variables' interactions for the other two studies.
 
 ```{r}
 
