@@ -301,24 +301,25 @@ cat("AIC: ")
 cat(AIC(stabsxlm),"\n","\n")
 ```
 
-### Three-way interactio model predictions
+### Three-way interaction model predictions
 
 Significant interactions between the variables seem to be mainly driven by a strong interaction between % natural and crop richness for the Guezen & Forrest (2021) study. Slopes mostly aren't significantly different from zero across these variables' interactions for the other two studies.
 
 ```{r}
+#| fig-cap: Estimated slope for % natural area conditional on crop richness and study identity
 
 plot_slopes(stabxlm, variable = "pct.natural", 
             condition = list("study", "crop.rich" = "minmax")) +
-  labs(title="Conditional % Natural slope")
+  labs(title="Conditional slope for % Natural area")
 
 ```
 
-Here's the predicted stability values across the crop richness range at min and max % natural (panels)
-
 ```{r}
+#| fig-cap: Estimated slope for crop richness conditional on % natural area and study identity
 
 plot_slopes(stabxlm, variable = "crop.rich",
-            condition = list("study", "pct.natural" = "minmax"))
+            condition = list("study", "pct.natural" = "minmax")) +
+  labs(title="Conditional slope for crop richness")
 
 ```
 
