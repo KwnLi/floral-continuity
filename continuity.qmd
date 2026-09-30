@@ -336,13 +336,14 @@ ggplot(allcv, aes(mean)) + geom_histogram() + facet_wrap(~study, scales = "free_
 
 ```
 
-Here's the relationship between the CV and mean total flowers
+Here's the relationship between the stability and mean total flowers
 
 ```{r}
-#| fig-cap: Mean total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.
+#| fig-cap: Mean total flowers (x-axis) against stability (y-axis). Note different x-axis scales.
 #| message: false
 
-ggplot(allcv, aes(mean, cv)) + geom_point() + facet_wrap(~study, scales = "free_x")
+ggplot(allcv, aes(mean, stability)) + geom_point() + facet_wrap(~study, scales = "free_x") +
+  labs(x="Mean total flowers")
 
 ```
 
@@ -352,7 +353,8 @@ Here's the distributions of maximum total flowers
 #| fig-cap: Max total flowers histograms. Note different x-axis scales.
 #| message: false
 
-ggplot(allcv, aes(max)) + geom_histogram() + facet_wrap(~study, scales="free_x")
+ggplot(allcv, aes(max)) + geom_histogram() + facet_wrap(~study, scales="free_x") +
+  labs(x="Max total flowers")
 
 ```
 
@@ -375,11 +377,12 @@ ggplot(ivcv, aes(max_day)) + geom_histogram(bins=30)
 
 ```
 
-Is there a relationship between CV and max? Yes, looks similar to the relationship between CV and mean.
+Is there a relationship between stability and max? Yes, looks similar to the relationship between stability and mean.
 
 ```{r}
-#| fig-cap: Max total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.
+#| fig-cap: Max total flowers (x-axis) against stability (y-axis). Note different x-axis scales.
 
-ggplot(allcv, aes(max, cv)) + geom_point() + facet_wrap(~study, scale = "free_x")
+ggplot(allcv, aes(max, stability)) + geom_point() + facet_wrap(~study, scale = "free_x") +
+  labs(x = "Max total flowers")
 
 ```
