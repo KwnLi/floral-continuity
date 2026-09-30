@@ -15,126 +15,22 @@ lc.iv <- read.csv("data/lcareas_iverson.csv")
 
 flr.gf <- read.csv("data/florlc_gf2021.csv")
 flr.hw <- read.csv("data/florlc_hw2025.csv")
+
+lcflr.gf <- read.csv("data/flowerdens_gf2021.csv")
 lcflr.iv <- read.csv("data/flowerdens_iverson.csv")
+lcflr.hw <- read.csv("data/flowerdens_hw2025.csv")
 
 key.iv <- read.csv("data-raw/Iversonetal/iverson_landcover_codes.csv")
+lckey.hw <- read.csv("data/spatial/hw2025_lc_key.csv")
 
 ```
 
 ## Hemberger & Williams 2025
 
-Data is available as floral density for transects of different land cover types at the different sampling periods.
-
-However, there are some duplicates of the period, site, land cover, and species combinations.
-
 ```{r}
 
-cat("Duplicate rows: \n")
-nrow(flr.hw) - nrow(distinct(flr.hw, period, site, landcover, species))
-
-examine.dupes <- janitor::get_dupes(flr.hw, period, site, landcover, species)
-
-head(examine.dupes)
-
-```
-
-Some of these look like samples taken within the same site and period, but actually on different dates. There are still some duplicates within the same date, site, period, land cover, and species (41), meaning species counts taken at the same site, land cover, and day, or the same species. The floral density estimates are different within these duplicates, which suggests these are different measurements, not accidental duplications.
-
-```{r}
-
-# nrow(distinct(flr.hw, period, date, site, landcover, species))
-
-examine.dupes2 <- janitor::get_dupes(flr.hw, date, period, site, landcover, species)
-
-head(examine.dupes2)
-
-```
-
-Looking back into more base data, there aren't columns that differentiate these duplicates, so I will average them.
-
-```{r}
-#| eval: false
-
-hw.dir <- "data-raw/HembergerWilliams_2025"
-
-snflwr.df <- read_csv(file.path(hw.dir,"data/floral_survey_sn.csv")) %>%
-  janitor::get_dupes(site, date, period, landcover, species, plant.type)
-
-cropflwr.df <- read_csv(file.path(hw.dir,"data/floral_survey_conv.csv")) %>% rename(landcover = field.type) %>%
-  janitor::get_dupes(site, date, period, landcover, species, plant.type)
-
-orgflwr.df <- read_csv(file.path(hw.dir,"data/floral_survey_org.csv")) %>% rename(landcover = field.type) %>%
-  janitor::get_dupes(site, date, period, landcover, species, plant.type)
-
-# the dataset I have doesn't filter by Bombus sp.
-bombus.flwr.df <- read_csv(file.path(hw.dir,"data/neal_data-confirmation/floral_bombus_visited.csv")) %>%
-  filter(bombus_collected == "yes")
-
-floral.df <- snflwr.df %>%
-  bind_rows(orgflwr.df) %>%
-  bind_rows(cropflwr.df) #%>%
-  #filter(species %in% bombus.flwr.df$code)
-
-```
-
-### Get total flower density by date and land cover type
-
-Steps:
-
-1. Average duplicated species estimates within the same date (period), site, landcover
-
-2. Sum floral densities across the same site, date, and landcover
-
-Alternative: just do step 2.
-
-It also looks like some "periods" include multiple sampling dates. I will average those too.
-
-** Looking back at the original manuscript for this data (Williams et al. 2012), the data were collected every three weeks, which is why the periods aren't monthly.
-
-```{r}
-
-lcflr.hw0 <- flr.hw |> group_by(date, period, site, landcover, species) |> 
-  summarize(flowerdens = mean(flowerdens, na.rm = TRUE), .groups = "drop") |>
-  group_by(date, period, site, landcover) |> 
-  summarize(flowerdens = sum(flowerdens, na.rm = TRUE), .groups = "drop")
-
-DT::datatable(lcflr.hw0 |> group_by(site, landcover) |>
-  summarize(periods = length(unique(period)), dates = length(unique(date)),.groups = "drop")
-)
-
-# average total flower density when taken there are two sampling dates in one period
-lcflr.hw <- lcflr.hw0 |> group_by(period, site, landcover) |> 
-  summarize(flowerdens = mean(flowerdens), .groups = "drop")
-
-```
-### Floral density curves of individual land covers
-
-There are redundant codes in the landcover classes of `lcflr.hw`. Use the raster key to consolidate them into landcover classes only found in the landcover raster.
-
-```{r}
-lckey.hw <- read.csv("data/spatial/hw2025_lc_key.csv")
-
-rastlcflr.hw <- lcflr.hw |> 
-  left_join(lckey.hw |> 
-              distinct(landcover.floral, raster.name, raster.code.floral, landcover.4cat, raster.code.4cat),
-            by = c("landcover" = "landcover.floral")) |>
-  filter(!is.na(raster.name) & period != ".") |>
-  group_by(period, raster.name, raster.code.floral, landcover.4cat, raster.code.4cat) |>
-  summarize(flowerdens = mean(flowerdens),
-            flowerdens.sd = sd(flowerdens), .groups = "drop") |>
-  select(period, raster.name, flowerdens) |>
-  complete(period,raster.name, fill = list(flowerdens=0)) |>
-  mutate(period = factor(period, levels = c("MAR","APR","MAY","JUN","JUL","AUG"))) |>
-  left_join(lckey.hw |> filter(!is.na(raster.code) & landcover.4cat != "na") |>
-              distinct(raster.name, .keep_all = TRUE), 
-            by = "raster.name") |> 
-         mutate(month = recode_values(period, "MAR"~ 3,"APR"~ 4, "MAY"~5, "JUN" ~ 6, "JUL"~7))
-
-write.csv(rastlcflr.hw, "data/flowerdens_hw2025.csv", row.names = FALSE)
-
-
-ggplot(rastlcflr.hw,
-       aes(month, flowerdens, color = raster.name)) + geom_point() + geom_line()
+ggplot(lcflr.hw, aes(month, flowerdens, color = raster.name)) +
+  geom_point() + geom_line()
 
 ```
 
@@ -143,13 +39,12 @@ ggplot(rastlcflr.hw,
 Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
-rastkey.hw <- lckey.hw |> filter(!is.na(raster.code) & landcover.4cat != "na") |>
-              distinct(raster.name, .keep_all = TRUE)
+
 buf.hw <- lc.hw |> filter(buffer == 750)
 
 cropbuf.hw <- buf.hw |>
   pivot_longer(cols = CROPLA:RICE, names_to = "raster.name", values_to = "area") |>
-  left_join(rastlcflr.hw, by = "raster.name", relationship = "many-to-many") |>
+  left_join(lcflr.hw, by = "raster.name", relationship = "many-to-many") |>
   filter(!is.na(period) & !is.na(area)) |>
   mutate(total.flowers = area*flowerdens)
 
@@ -182,10 +77,10 @@ ggplot(croparea.hw, aes(month, total.flowers)) +
 croprich.hw <- cropbuf.hw |> rowwise() |>
   mutate(crop = landcover.4cat=="crop" & area > 0) |>
   group_by(period, month, SITE) |>
-  summarize(area = sum(area), total.flowers = sum(total.flowers), crop.rich = sum(crop), 
+  summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), 
             .groups = "drop")
 
-croparearich.hw <- croparea.hw |> select(month, period, SITE, pct.natural, total.flowers) |>
+croparearich.hw <- croparea.hw |> select(month, period, SITE, area_crop, area_natural, pct.natural, total.flowers) |>
   left_join(croprich.hw |> select(month, period, SITE, crop.rich), by = c("month", "period", "SITE"))
 
 croparearich.hw.mn <- croparearich.hw |> group_by(month, crop.rich) |>
@@ -206,7 +101,7 @@ cropdiv.hw <- croparea.hw |> select(SITE, area_crop) |> distinct() |>
   mutate(P_i = area/area_crop, P_i2 = P_i * log(P_i)) |>
   group_by(period, month, SITE) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
-  right_join(croprich.hw, by = c("period", "month", "SITE"))
+  right_join(croparearich.hw, by = c("period", "month", "SITE"))
 
 ggplot(cropdiv.hw, aes(month, total.flowers)) + 
   geom_point(aes(group = SITE, color = crop.shandiv)) + geom_line(aes(group = SITE, color = crop.shandiv)) +
@@ -233,57 +128,7 @@ ggplot(cropdiv.hw, aes(crop.rich, crop.shandiv)) + geom_point()
 
 ## Guezen and Forrest 2021
 
-Data is available for flower density within quadrats. Each row is a separate species count, maybe for same quadrat. Quadrats are organized within transects of land cover types. Multiple transects fall within the same site. There aren't transects for each land cover type at every single datepoint because: “If sampling locations contained open flowers during more  than one sampling period, the same location was sampled in multiple time periods” (pg 3133).
-
-Duplicates - some species are reported twice within the same transect and quadrat. In some cases, it's with the same density, in others, they are different.
-
 ```{r}
-
-cat("Duplicate rows: \n")
-nrow(flr.gf) - nrow(distinct(flr.gf))
-
-examine.dupes.gf <- janitor::get_dupes(flr.gf, -count_per_m2)
-
-head(examine.dupes.gf, 7)
-
-```
-
-Like Hemberger & Williams 2025, I'll average same species within a quadrat.
-
-```{r}
-
-lcflr.gf0 <- flr.gf |> group_by(date, datePeriod, site, landtype, transect, quadrat, flower) |> 
-  summarize(count_per_m2 = mean(count_per_m2, na.rm = TRUE),   # takes average over same species in same quadrat
-            .groups = "drop") |> 
-  group_by(date, datePeriod, site, landtype, transect, quadrat) |> 
-  summarize(count_per_m2 = sum(count_per_m2, na.rm = TRUE),       # total flower count (density) per quadrat
-            .groups = "drop")  |>
-  group_by(date, datePeriod, site, landtype, transect) |>
-  summarize(count_mn = mean(count_per_m2),                 # mean quadrat floral density
-            count_sd = sd(count_per_m2),                # sd of floral counts in transect
-            count_n = n(),
-            .groups = "drop")
-
-DT::datatable(lcflr.gf0 |> group_by(site, landtype) |>
-  summarize(periods = length(unique(datePeriod)), 
-            dates = length(unique(date)),
-            transects = length(unique(transect)),
-            .groups = "drop")
-)
-
-```
-
-### Floral density curves of individual land covers
-
-```{r}
-
-lcflr.gf <- lcflr.gf0 |> group_by(datePeriod, landtype) |>
-  summarize(flowerdens = mean(count_mn),
-            .groups = "drop") |>
-  complete(datePeriod, landtype, fill = list(flowerdens = 0)) |>
-  mutate(crop = ifelse(landtype %in% c("forest", "semi-natural"), "natural", "crop"))
-
-write.csv(lcflr.gf, "data/flowerdens_gf2021.csv", row.names = FALSE)
 
 ggplot(lcflr.gf,
        aes(datePeriod, flowerdens, color = landtype)) + geom_point() + geom_line()
@@ -335,10 +180,10 @@ ggplot(croparea.gf, aes(datePeriod, total.flowers)) +
 croprich.gf <- cropbuf.gf |> rowwise() |>
   mutate(crop = crop=="crop" & area > 0) |>
   group_by(datePeriod, transect) |>
-  summarize(area = sum(area), total.flowers = sum(total.flowers), crop.rich = sum(crop), 
+  summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), 
             .groups = "drop")
 
-croparearich.gf <- croparea.gf |> select(datePeriod, transect, pct.natural, total.flowers) |>
+croparearich.gf <- croparea.gf |> select(datePeriod, transect, area_crop, area_natural, pct.natural, total.flowers) |>
   left_join(croprich.gf |> select(datePeriod, transect, crop.rich), by = c("datePeriod", "transect"))
 
 croparearich.gf.mn <- croparearich.gf |> group_by(datePeriod, crop.rich) |>
@@ -360,7 +205,7 @@ cropdiv.gf <- croparea.gf |> select(transect, area_crop) |> distinct() |>
   mutate(P_i = area/area_crop, P_i2 = P_i * log(P_i)) |>
   group_by(datePeriod, transect) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
-  right_join(croprich.gf, by = c("datePeriod", "transect"))
+  right_join(croparearich.gf, by = c("datePeriod", "transect"))
 
 ggplot(cropdiv.gf, aes(datePeriod, total.flowers)) + 
   geom_point(aes(group = transect, color = crop.shandiv)) + geom_line(aes(group = transect, color = crop.shandiv)) + 
@@ -471,9 +316,10 @@ ggplot(croparea.iv, aes(julianDay, total.flowers)) +
 croprich.iv <- cropbuf.iv |> rowwise() |>
   mutate(crop = Group=="Agriculture" & area > 0) |>
   group_by(julianDay, site) |>
-  summarize(area = sum(area), total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
+  summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
 
-croparearich.iv <- croparea.iv |> select(julianDay, site, pct.natural, total.flowers) |>
+croparearich.iv <- croparea.iv |> select(julianDay, site, area_Agriculture, area_natural, pct.natural, total.flowers) |>
+  rename(area_crop = area_Agriculture) |>
   left_join(croprich.iv |> select(julianDay, site, crop.rich), by = c("julianDay", "site"))
 
 croparearich.iv.mn <- croparearich.iv |> group_by(julianDay, crop.rich) |>
@@ -539,5 +385,14 @@ ggplot(cropdiv.iv.sum, aes(crop.rich, crop.shandiv, color = farm, pch = farm)) +
   scale_colour_manual(values = sample(col_vibrant, 81, replace = TRUE)) +
   scale_shape_manual(values = sample(shapes, 81, replace = TRUE)) +
   theme(legend.position = "none")
+
+```
+
+```{r}
+#| include: false
+
+write.csv(cropdiv.gf, "data/cropdiv_gf2021.csv", row.names = FALSE)
+write.csv(cropdiv.hw, "data/cropdiv_hw2025.csv", row.names = FALSE)
+write.csv(cropdiv.iv, "data/cropdiv_iverson.csv", row.names = FALSE)
 
 ```

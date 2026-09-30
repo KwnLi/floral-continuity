@@ -15,7 +15,49 @@ date.check <- guezen.fr |>
             by = c("datePeriod", "site", "transect"))
 all.equal(as.character(date.check$date.x), date.check$date.y)  # some NAs where transects not present in guezen.data
 
-# spatial
+write.csv(guezen.fr, "data/florlc_gf2021.csv", row.names = FALSE)
+
+# Data is available for flower density within quadrats. Each row is a separate
+# species count, maybe for same quadrat. Quadrats are organized within transects
+# of land cover types. Multiple transects fall within the same site. There
+# aren't transects for each land cover type at every single datepoint because:
+# “If sampling locations contained open flowers during more  than one sampling
+# period, the same location was sampled in multiple time periods” (pg 3133).
+
+# Duplicates - some species are reported twice within the same transect and
+# quadrat. In some cases, it's with the same density, in others, they are
+# different.
+
+nrow(guezen.fr) - nrow(distinct(guezen.fr))
+
+examine.dupes.gf <- janitor::get_dupes(guezen.fr, -count_per_m2)
+
+
+# Like Hemberger & Williams 2025, I'll average same species within a quadrat.
+
+lcflr.gf0 <- guezen.fr |> group_by(date, datePeriod, site, landtype, transect, quadrat, flower) |>
+  summarize(count_per_m2 = mean(count_per_m2, na.rm = TRUE),   # takes average over same species in same quadrat
+            .groups = "drop") |>
+  group_by(date, datePeriod, site, landtype, transect, quadrat) |>
+  summarize(count_per_m2 = sum(count_per_m2, na.rm = TRUE),       # total flower count (density) per quadrat
+            .groups = "drop")  |>
+  group_by(date, datePeriod, site, landtype, transect) |>
+  summarize(count_mn = mean(count_per_m2),                 # mean quadrat floral density
+            count_sd = sd(count_per_m2),                # sd of floral counts in transect
+            count_n = n(),
+            .groups = "drop")
+
+### Floral density curves of individual land covers
+
+lcflr.gf <- lcflr.gf0 |> group_by(datePeriod, landtype) |>
+  summarize(flowerdens = mean(count_mn),
+            .groups = "drop") |>
+  complete(datePeriod, landtype, fill = list(flowerdens = 0)) |>
+  mutate(crop = ifelse(landtype %in% c("forest", "semi-natural"), "natural", "crop"))
+
+write.csv(lcflr.gf, "data/flowerdens_gf2021.csv", row.names = FALSE)
+
+d# ------ spatial
 spfiles <- list.files(file.path(msdir,"Guezen_Forrest_shapefiles_2021"),pattern="*.shp", full.names = TRUE)
 
 lcfiles <- spfiles[!grepl("Transect",spfiles)]
@@ -110,4 +152,3 @@ bufdf <- lapply(list(guezen_buf250,guezen_buf500,guezen_buf750),
 
 write.csv(guezen.data, "data/site_gf2021.csv", row.names = FALSE)
 write.csv(bufdf, "data/lcareas_gf2021.csv", row.names = FALSE)
-write.csv(guezen.fr, "data/florlc_gf2021.csv", row.names = FALSE)

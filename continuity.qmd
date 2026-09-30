@@ -1,0 +1,383 @@
+---
+title: "Continuity"
+format: html
+execute: 
+  warning: false
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+
+hw <- read.csv("data/cropdiv_hw2025.csv")
+gf <- read.csv("data/cropdiv_gf2021.csv")
+iv <- read.csv("data/cropdiv_iverson.csv") |> 
+  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31")))
+
+fl.hw <- read.csv("data/florlc_hw2025.csv") |> mutate(date = as.Date(date, "%m/%d/%y"))
+fl.gf <- read.csv("data/florlc_gf2021.csv") |> mutate(date = as.Date(date, "%Y-%m-%d"))
+fl.iv <- read.csv("data/flowerdens_iverson.csv") |> 
+         pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_per_m2") |>
+         mutate(julianDay = as.numeric(gsub("d","",julianDay))) |> 
+  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31")))
+
+daterange.hw <- range(fl.hw$date)
+daterange.gf <- range(fl.gf$date)
+
+```
+
+## Data ranges
+
+Date ranges of datasets differ. Hemberger & Williams (2025) collected data at 5 timepoints from `{r} daterange.hw[1]` to `{r} daterange.hw[2]`. Guezen and Forrest (2021) collected data from 4 timepoints from `{r} daterange.gf[1]` to `{r} daterange.gf[2]`.
+
+Since Iverson has estimates for every day, I limit continuity calculation from 2016-03-01 to 2016-09-30, which is when there are significant flowers predicted. As an alternative, to see if it matters, I also tried sampling midway through each month in the full range (7 months), and for a truncated range of 2016-04-15 to 2016-08-15 (5 months) that matches the other studies' dates better.
+
+```{r}
+#| fig-cap: Flowering curves from Iverson data. Solid vertical lines show extent used for calculating coefficient of variation for entire season; black dotted lines show sampled time points across the full range; orange dashed lines show the truncated points of sampling.
+#| fig-width: 6
+#| fig-height: 2.5
+
+ggplot(fl.iv,
+       aes(date, flowers_per_m2,
+           group = Floral_resources_landcover, 
+           color = Floral_resources_landcover)) + geom_line() +
+  geom_vline(xintercept = as.Date(c("2016-03-01","2016-09-30"))) +
+  geom_vline(xintercept =
+               as.Date(c("2016-03-15", "2016-04-15", "2016-05-15", "2016-06-15"," 2016-07-15", "2016-08-15", "2016-09-15")),
+             linetype=2
+             ) +
+  geom_vline(xintercept = 
+               as.Date(c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")),
+             linetype=5, color="orange") +
+  theme(legend.position = "none")
+
+```
+
+## Continuity distributions
+
+```{r}
+
+hwcv <- hw |>
+  group_by(SITE, crop.shandiv, pct.natural, crop.rich, area_crop) |>
+  summarize(
+    n = n(),
+    mean = mean(total.flowers),
+    max = max(total.flowers),
+    max_month = month[which.max(total.flowers)],
+    sd = sd(total.flowers),
+    cv = sd/mean,
+    stability = 1/cv,
+    .groups = "drop"
+  )
+
+gfcv <- gf |>
+  mutate(month = recode_values(datePeriod, 1~5, 2~6, 3~7, 4~8)) |>
+  group_by(transect, crop.shandiv, pct.natural, crop.rich, area_crop) |>
+  summarize(
+    n = n(),
+    mean = mean(total.flowers),
+    max = max(total.flowers),
+    max_month = month[which.max(total.flowers)],
+    sd = sd(total.flowers),
+    cv = sd/mean,
+    stability = 1/cv,
+    .groups = "drop"
+  )
+
+ivcv <- iv |>
+  mutate(month = lubridate::month(date)) |>
+  group_by(site, crop.shandiv, pct.natural, crop.rich, area_crop) |>
+  filter(date >= "2016-03-01" & date <= "2016-09-30") |>
+  summarize(
+    n = n(),
+    mean = mean(total.flowers),
+    max = max(total.flowers),
+    max_month = month[which.max(total.flowers)],
+    max_day = julianDay[which.max(total.flowers)],
+    sd = sd(total.flowers),
+    cv = sd/mean,
+    stability = 1/cv,
+    .groups = "drop"
+  )
+
+ivcv2 <- iv |>
+  mutate(month = lubridate::month(date)) |>
+  group_by(site, crop.shandiv, pct.natural, crop.rich, area_crop) |>
+  filter(date %in% c("2016-03-15","2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15","2016-09-15")) |>
+  summarize(
+    n = n(),
+    mean = mean(total.flowers),
+    max = max(total.flowers),
+    max_month = month[which.max(total.flowers)],
+    sd = sd(total.flowers),
+    cv = sd/mean,
+    stability = 1/cv,
+    .groups = "drop"
+  )
+
+ivcv3 <- iv |>
+  mutate(month = lubridate::month(date)) |>
+  group_by(site, crop.shandiv, pct.natural, crop.rich, area_crop) |>
+  filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")) |>
+  summarize(
+    n = n(),
+    mean = mean(total.flowers),
+    max = max(total.flowers),
+    max_month = month[which.max(total.flowers)],
+    sd = sd(total.flowers),
+    cv = sd/mean,
+    stability = 1/cv,
+    .groups = "drop"
+  )
+
+```
+
+For **Aaron's data**, I wanted to compare differences in coefficient of variation between the full range of dates and the subsampled dates. There is significant correlation between the full range and sampled dates. If 7 sample dates are used, then the scatter of points in this comparison is around the 1:1 line (fig below). But if 5 sample dates are used to sample, the CV values estimated from 5 samples (orange points, below) are lower than the CV estimated from 7 samples.
+
+```{r}
+#| fig-cap: The coefficient of variation for the full set of data (daily floral counts) is shown on the x-axis. The y axis is for the sampled CV values. Black points compare the full dataset CV to CV of sampled data across 7 months. Orange points compare the full dataset CV to sampled data across 5 months. Red line is the 1:1 line.
+#| message: false
+
+ggplot(left_join(ivcv |> select(site,cv), ivcv2|>select(site,cv), by = "site",
+                 suffix = c("_full","_sampled7")),
+       aes(cv_full, cv_sampled7)) + geom_point() + 
+  geom_abline(intercept = 0, slope = 1, color = "red") +
+  # ggpmisc::stat_poly_line(data=rich_cdl, mapping=aes(richness_aaron, predicted), inherit.aes = FALSE) +
+  geom_point(
+    data = left_join(ivcv |> select(site,cv), ivcv3|>select(site,cv), by = "site",
+                 suffix = c("_full","_sampled5")),
+    mapping = aes(cv_full, cv_sampled5), color = "orange"
+  ) +
+  ggpmisc::stat_poly_eq(
+                        mapping=structure(
+                          c(aes(cv_full, cv_sampled7), ggpmisc::use_label(c("R2","P"))),
+                          class="uneval"
+                        )
+                        ) +
+  ggpmisc::stat_poly_eq(data = 
+                          left_join(ivcv |> select(site,cv), ivcv3|>select(site,cv), 
+                                    by = "site",
+                 suffix = c("_full","_sampled5")),
+                        mapping=structure(
+                          c(aes(cv_full, cv_sampled5), ggpmisc::use_label(c("R2","P"))),
+                          class="uneval"
+                        ),
+  label.x = "right",
+  label.y = "bottom",
+  color = "orange"
+                        ) + labs(x="full range CV", y="sampled CV") +
+  egg::theme_article()
+
+```
+
+
+```{r}
+## combine
+allcv <- list(HemWil = hwcv |> rename(site = SITE),
+              GuezFor = gfcv |> rename(site = transect) |>
+                mutate(site = as.character(site)),
+              Iverson_full = ivcv,
+              Iverson_7samp = ivcv2,
+              Iverson_5samp = ivcv3) |>  bind_rows(.id = "study")
+
+```
+
+### Comparison of distributions
+
+Site continuity values by study. Hemberger & Williams (2025) has 5 timepoints, Guezen & Forrest (2021) has 4 timepoints, and three versions of CV calculated for Aaron's data using 5 timepoints, 7 timepoints, and 214 timepoints (daily values).
+
+```{r}
+
+ggplot(allcv, aes(cv)) + geom_histogram(bins=20) + facet_wrap(~study, scales = "free_y")
+
+```
+
+Another way to measure continuity is **stability**, which is 1/cv. This feels a little more intuitive to me because higher values correspond to higher stability, which I'm interpreting as continuity.
+
+```{r}
+
+ggplot(allcv, aes(stability)) + geom_histogram(bins=20) + facet_wrap(~study, scales = "free_y")
+
+```
+
+It seems like the data would be more comparable if we limited Aaron's data to 5 samples. The CV values and stability values are in a similar range to the other datasets.
+
+```{r}
+
+sampcv <- allcv |> filter(study %in% c("GuezFor","HemWil","Iverson_5samp"))
+
+```
+
+## Comparing stability with other variables
+
+### Comparing stablity and % natural area.
+
+With studies plotted together, and then separately. Second plot is colored by crop richness.
+
+```{r}
+
+ggplot(sampcv, aes(pct.natural, stability, color = study)) + geom_point()
+
+ggplot(sampcv, aes(pct.natural, stability, color = crop.rich)) +
+  geom_point() + facet_wrap(~study) + scale_color_viridis_c()
+
+```
+
+### Comparing stability and crop richness.
+
+With studies plotted together, and then separately. Second plot is colored by % natural area.
+
+```{r}
+
+ggplot(sampcv, aes(crop.rich, stability, color = study)) + geom_point()
+ggplot(sampcv, aes(crop.rich, stability, color = pct.natural)) + 
+  geom_point() + facet_wrap(~study) + scale_color_viridis_c()
+
+```
+
+### Comparing stability and Shannon diversity.
+
+With studies plotted together, and then separately. Second plot is colored by % natural area.
+
+```{r}
+
+ggplot(sampcv, aes(crop.shandiv, stability, color = study)) + geom_point() 
+
+ggplot(sampcv, aes(crop.shandiv, stability, color = pct.natural)) +
+  geom_point() + facet_wrap(~study) + scale_color_viridis_c()
+
+```
+
+### The relationship between % natural and crop shannon diversity / crop richness
+
+There's an upper limit to crop diversity/richness in the plots below, which decreases as % natural reaches 100%. I believe this is determined in part by field size. You can only have one crop per field, and you can only have so many fields as crop area decreases. So I think that's what's determining the upper limit to Aaron's data in the diversity and richness plots below.
+
+```{r}
+#| fig-cap: Relationship between % natural and crop shannon diversity
+
+ggplot(sampcv, aes(pct.natural, crop.shandiv, color=study)) + geom_point()
+
+```
+
+
+```{r}
+#| fig-cap: Relationship between % natural and crop richness
+
+ggplot(sampcv, aes(pct.natural, crop.rich, color=study)) + geom_point()
+
+```
+
+Here's crop Shannon diversity against crop richness:
+
+```{r}
+#| fig-cap: Comparing crop Shannon diversity against richness
+
+ggplot(sampcv, aes(crop.shandiv, crop.rich, color=study)) + geom_point()
+
+```
+
+## Exploratory models
+
+I fit the following models and then compare their AIC. A three-way interaction is most supported, which suggests the slopes between % natural and crop richness interact, and the relationships change between studies.
+
+```{r}
+
+library(marginaleffects)
+
+stablm <- lm(stability ~ pct.natural + crop.rich + study, data = sampcv)
+stabxlm <- lm(stability ~ pct.natural * crop.rich * study, data = sampcv)
+stabsxlm <- lm(stability ~ (pct.natural + crop.rich) * study, data = sampcv)
+
+cat("stability ~ pct.natural + crop.rich + study \n")
+cat("AIC: ")
+cat(AIC(stablm),"\n","\n")
+
+cat("stability ~ pct.natural * crop.rich * study \n")
+cat("AIC: ")
+cat(AIC(stabxlm),"\n","\n")
+
+cat("stability ~ (pct.natural + crop.rich) * study \n")
+cat("AIC: ")
+cat(AIC(stabsxlm),"\n","\n")
+```
+
+These changes seem to be mainly driven by a strong interaction between % natural and crop richness for the Guezen & Forrest (2021) study. Slopes mostly aren't significantly different from zero across these variables' interactions for the other two studies.
+
+```{r}
+
+plot_slopes(stabxlm, variable = "pct.natural", 
+            condition = list("study", "crop.rich" = "minmax")) +
+  labs(title="Conditional % Natural slope")
+
+```
+
+Here's the predicted stability values across the crop richness range at min and max % natural (panels)
+
+```{r}
+
+plot_slopes(stabxlm, variable = "crop.rich",
+            condition = list("study", "pct.natural" = "minmax"))
+
+```
+
+## Other stats
+
+### Mean total flowers
+
+I was thinking about the "area under the curve". To make this value comparable between studies, we would need to look at the same window of time and standardize the time step. I think this would be similar to just taking the mean total flowers across all time points, so I'm doing that.
+
+```{r}
+#| fig-cap: Histograms of mean total flowers. Note the different x-axis scales.
+#| message: false
+
+ggplot(allcv, aes(mean)) + geom_histogram() + facet_wrap(~study, scales = "free_x")
+
+```
+
+Here's the relationship between the CV and mean total flowers
+
+```{r}
+#| fig-cap: Mean total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.
+#| message: false
+
+ggplot(allcv, aes(mean, cv)) + geom_point() + facet_wrap(~study, scales = "free_x")
+
+```
+
+Here's the distributions of maximum total flowers
+
+```{r}
+#| fig-cap: Max total flowers histograms. Note different x-axis scales.
+#| message: false
+
+ggplot(allcv, aes(max)) + geom_histogram() + facet_wrap(~study, scales="free_x")
+
+```
+
+Distribution of maximum flower **month**
+
+```{r}
+#| fig-cap: Month of max total flowers histograms.
+#| message: false
+
+ggplot(allcv, aes(max_month)) + geom_histogram() + facet_wrap(~study)
+
+```
+
+Distribution of max **julian day** is only possible for Aaron's data
+
+```{r}
+#| fig-cap: Day of max total flowers for Aaron's data.
+
+ggplot(ivcv, aes(max_day)) + geom_histogram(bins=30)
+
+```
+
+Is there a relationship between CV and max? Yes, looks similar to the relationship between CV and mean.
+
+```{r}
+#| fig-cap: Max total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.
+
+ggplot(allcv, aes(max, cv)) + geom_point() + facet_wrap(~study, scale = "free_x")
+
+```

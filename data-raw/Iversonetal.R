@@ -229,6 +229,15 @@ urb_sp_flrs <- urb_sp_peaks |> rowwise() |>
   unnest_wider(flrs) |>
   select(habitat, Genus, species, d1:d365)
 
+urb_sp_area <- urb_sp_peaks |> rowwise() |>
+  mutate(
+    areas = make_jday(peakjday = peakjday, periodsd = periodsd, multi = multi.area,
+                     start_jday = Start_final, end_jday = End_final)
+  ) |>
+  ungroup() |>
+  unnest_wider(areas) |>
+  select(habitat, Genus, species, d1:d365)
+
 write.csv(urb_sp_flrs, "data/florlc_urban_iverson.csv", row.names = FALSE)
 
 # Make land cover averages

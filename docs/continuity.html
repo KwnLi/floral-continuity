@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Home – Floral continuity</title>
+<title>Continuity – Floral continuity</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -118,15 +118,37 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-ranges" id="toc-data-ranges" class="nav-link active" data-scroll-target="#data-ranges">Data ranges</a></li>
+  <li><a href="#continuity-distributions" id="toc-continuity-distributions" class="nav-link" data-scroll-target="#continuity-distributions">Continuity distributions</a>
+  <ul class="collapse">
+  <li><a href="#comparison-of-distributions" id="toc-comparison-of-distributions" class="nav-link" data-scroll-target="#comparison-of-distributions">Comparison of distributions</a></li>
+  </ul></li>
+  <li><a href="#comparing-stability-with-other-variables" id="toc-comparing-stability-with-other-variables" class="nav-link" data-scroll-target="#comparing-stability-with-other-variables">Comparing stability with other variables</a>
+  <ul class="collapse">
+  <li><a href="#comparing-stablity-and-natural-area." id="toc-comparing-stablity-and-natural-area." class="nav-link" data-scroll-target="#comparing-stablity-and-natural-area.">Comparing stablity and % natural area.</a></li>
+  <li><a href="#comparing-stability-and-crop-richness." id="toc-comparing-stability-and-crop-richness." class="nav-link" data-scroll-target="#comparing-stability-and-crop-richness.">Comparing stability and crop richness.</a></li>
+  <li><a href="#comparing-stability-and-shannon-diversity." id="toc-comparing-stability-and-shannon-diversity." class="nav-link" data-scroll-target="#comparing-stability-and-shannon-diversity.">Comparing stability and Shannon diversity.</a></li>
+  <li><a href="#the-relationship-between-natural-and-crop-shannon-diversity-crop-richness" id="toc-the-relationship-between-natural-and-crop-shannon-diversity-crop-richness" class="nav-link" data-scroll-target="#the-relationship-between-natural-and-crop-shannon-diversity-crop-richness">The relationship between % natural and crop shannon diversity / crop richness</a></li>
+  </ul></li>
+  <li><a href="#exploratory-models" id="toc-exploratory-models" class="nav-link" data-scroll-target="#exploratory-models">Exploratory models</a></li>
+  <li><a href="#other-stats" id="toc-other-stats" class="nav-link" data-scroll-target="#other-stats">Other stats</a>
+  <ul class="collapse">
+  <li><a href="#mean-total-flowers" id="toc-mean-total-flowers" class="nav-link" data-scroll-target="#mean-total-flowers">Mean total flowers</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
+<h1 class="title">Continuity</h1>
 </div>
 
 
@@ -143,9 +165,287 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a placeholder!</p>
+<section id="data-ranges" class="level2">
+<h2 class="anchored" data-anchor-id="data-ranges">Data ranges</h2>
+<p>Date ranges of datasets differ. Hemberger &amp; Williams (2025) collected data at 5 timepoints from 2003-02-20 to 2003-07-30. Guezen and Forrest (2021) collected data from 4 timepoints from 2016-05-20 to 2016-09-01.</p>
+<p>Since Iverson has estimates for every day, I limit continuity calculation from 2016-03-01 to 2016-09-30, which is when there are significant flowers predicted. As an alternative, to see if it matters, I also tried sampling midway through each month in the full range (7 months), and for a truncated range of 2016-04-15 to 2016-08-15 (5 months) that matches the other studies’ dates better.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="576"></p>
+<figcaption>Flowering curves from Iverson data. Solid vertical lines show extent used for calculating coefficient of variation for entire season; black dotted lines show sampled time points across the full range; orange dashed lines show the truncated points of sampling.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="continuity-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="continuity-distributions">Continuity distributions</h2>
+<p>For <strong>Aaron’s data</strong>, I wanted to compare differences in coefficient of variation between the full range of dates and the subsampled dates. There is significant correlation between the full range and sampled dates. If 7 sample dates are used, then the scatter of points in this comparison is around the 1:1 line (fig below). But if 5 sample dates are used to sample, the CV values estimated from 5 samples (orange points, below) are lower than the CV estimated from 7 samples.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>The coefficient of variation for the full set of data (daily floral counts) is shown on the x-axis. The y axis is for the sampled CV values. Black points compare the full dataset CV to CV of sampled data across 7 months. Orange points compare the full dataset CV to sampled data across 5 months. Red line is the 1:1 line.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="comparison-of-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-of-distributions">Comparison of distributions</h3>
+<p>Site continuity values by study. Hemberger &amp; Williams (2025) has 5 timepoints, Guezen &amp; Forrest (2021) has 4 timepoints, and three versions of CV calculated for Aaron’s data using 5 timepoints, 7 timepoints, and 214 timepoints (daily values).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Another way to measure continuity is <strong>stability</strong>, which is 1/cv. This feels a little more intuitive to me because higher values correspond to higher stability, which I’m interpreting as continuity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It seems like the data would be more comparable if we limited Aaron’s data to 5 samples. The CV values and stability values are in a similar range to the other datasets.</p>
+</section>
+</section>
+<section id="comparing-stability-with-other-variables" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-stability-with-other-variables">Comparing stability with other variables</h2>
+<section id="comparing-stablity-and-natural-area." class="level3">
+<h3 class="anchored" data-anchor-id="comparing-stablity-and-natural-area.">Comparing stablity and % natural area.</h3>
+<p>With studies plotted together, and then separately. Second plot is colored by crop richness.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-stability-and-crop-richness." class="level3">
+<h3 class="anchored" data-anchor-id="comparing-stability-and-crop-richness.">Comparing stability and crop richness.</h3>
+<p>With studies plotted together, and then separately. Second plot is colored by % natural area.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-stability-and-shannon-diversity." class="level3">
+<h3 class="anchored" data-anchor-id="comparing-stability-and-shannon-diversity.">Comparing stability and Shannon diversity.</h3>
+<p>With studies plotted together, and then separately. Second plot is colored by % natural area.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-relationship-between-natural-and-crop-shannon-diversity-crop-richness" class="level3">
+<h3 class="anchored" data-anchor-id="the-relationship-between-natural-and-crop-shannon-diversity-crop-richness">The relationship between % natural and crop shannon diversity / crop richness</h3>
+<p>There’s an upper limit to crop diversity/richness in the plots below, which decreases as % natural reaches 100%. I believe this is determined in part by field size. You can only have one crop per field, and you can only have so many fields as crop area decreases. So I think that’s what’s determining the upper limit to Aaron’s data in the diversity and richness plots below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Relationship between % natural and crop shannon diversity</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Relationship between % natural and crop richness</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s crop Shannon diversity against crop richness:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Comparing crop Shannon diversity against richness</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exploratory-models" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-models">Exploratory models</h2>
+<p>I fit the following models and then compare their AIC. A three-way interaction is most supported, which suggests the slopes between % natural and crop richness interact, and the relationships change between studies.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>stability ~ pct.natural + crop.rich + study </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AIC: </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>508.1707 
+ </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>stability ~ pct.natural * crop.rich * study </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AIC: </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>506.2563 
+ </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>stability ~ (pct.natural + crop.rich) * study </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AIC: </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>513.6499 
+ </code></pre>
+</div>
+</div>
+<p>These changes seem to be mainly driven by a strong interaction between % natural and crop richness for the Guezen &amp; Forrest (2021) study. Slopes mostly aren’t significantly different from zero across these variables’ interactions for the other two studies.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s the predicted stability values across the crop richness range at min and max % natural (panels)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="other-stats" class="level2">
+<h2 class="anchored" data-anchor-id="other-stats">Other stats</h2>
+<section id="mean-total-flowers" class="level3">
+<h3 class="anchored" data-anchor-id="mean-total-flowers">Mean total flowers</h3>
+<p>I was thinking about the “area under the curve”. To make this value comparable between studies, we would need to look at the same window of time and standardize the time step. I think this would be similar to just taking the mean total flowers across all time points, so I’m doing that.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Histograms of mean total flowers. Note the different x-axis scales.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s the relationship between the CV and mean total flowers</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Mean total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s the distributions of maximum total flowers</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Max total flowers histograms. Note different x-axis scales.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Distribution of maximum flower <strong>month</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Month of max total flowers histograms.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Distribution of max <strong>julian day</strong> is only possible for Aaron’s data</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Day of max total flowers for Aaron’s data.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Is there a relationship between CV and max? Yes, looks similar to the relationship between CV and mean.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="continuity_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Max total flowers (x-axis) against coefficient of variation (y-axis). Note different x-axis scales.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
