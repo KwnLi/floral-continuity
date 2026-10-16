@@ -17,6 +17,8 @@ website:
         text: Landscape projection
       - href: continuity.qmd
         text: Continuity
+      - href: continuity2.qmd
+        text: Continuity analysis
 
 format:
   html:
