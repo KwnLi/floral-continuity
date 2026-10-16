@@ -111,6 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./continuity.html"> 
 <span class="menu-text">Continuity</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./continuity2.html" aria-current="page"> 
+<span class="menu-text">Continuity analysis</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -134,17 +138,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#mean-floral-resources-over-the-season" id="toc-mean-floral-resources-over-the-season" class="nav-link" data-scroll-target="#mean-floral-resources-over-the-season">Mean floral resources over the season</a>
   <ul class="collapse">
   <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
-  <li><a href="#mean-floral-resources-models" id="toc-mean-floral-resources-models" class="nav-link" data-scroll-target="#mean-floral-resources-models">Mean floral resources models</a></li>
+  <li><a href="#model-comparisons" id="toc-model-comparisons" class="nav-link" data-scroll-target="#model-comparisons">Model comparisons</a></li>
+  <li><a href="#selected-model-coefficients" id="toc-selected-model-coefficients" class="nav-link" data-scroll-target="#selected-model-coefficients">Selected model coefficients</a></li>
   </ul></li>
   <li><a href="#coefficient-of-variance" id="toc-coefficient-of-variance" class="nav-link" data-scroll-target="#coefficient-of-variance">Coefficient of variance</a>
   <ul class="collapse">
   <li><a href="#plots-1" id="toc-plots-1" class="nav-link" data-scroll-target="#plots-1">Plots</a></li>
-  <li><a href="#coefficient-of-variance-models" id="toc-coefficient-of-variance-models" class="nav-link" data-scroll-target="#coefficient-of-variance-models">Coefficient of variance models</a></li>
+  <li><a href="#model-comparisons-1" id="toc-model-comparisons-1" class="nav-link" data-scroll-target="#model-comparisons-1">Model comparisons</a></li>
+  <li><a href="#selected-model-coefficients-1" id="toc-selected-model-coefficients-1" class="nav-link" data-scroll-target="#selected-model-coefficients-1">Selected model coefficients</a></li>
   </ul></li>
   <li><a href="#peak-flowering-time" id="toc-peak-flowering-time" class="nav-link" data-scroll-target="#peak-flowering-time">Peak flowering time</a>
   <ul class="collapse">
   <li><a href="#plots-2" id="toc-plots-2" class="nav-link" data-scroll-target="#plots-2">Plots</a></li>
-  <li><a href="#peak-flowering-time-models" id="toc-peak-flowering-time-models" class="nav-link" data-scroll-target="#peak-flowering-time-models">Peak flowering time models</a></li>
+  <li><a href="#model-comparisons-2" id="toc-model-comparisons-2" class="nav-link" data-scroll-target="#model-comparisons-2">Model comparisons</a></li>
+  <li><a href="#selected-model-coefficients-2" id="toc-selected-model-coefficients-2" class="nav-link" data-scroll-target="#selected-model-coefficients-2">Selected model coefficients</a></li>
   </ul></li>
   <li><a href="#land-cover-floral-density-comparisons" id="toc-land-cover-floral-density-comparisons" class="nav-link" data-scroll-target="#land-cover-floral-density-comparisons">Land cover floral density comparisons</a></li>
   </ul>
@@ -190,8 +197,9 @@ ul.task-list li input[type="checkbox"] {
 <p>I’m focusing on three statistics summarizing temporal change in floral resources:</p>
 <ul>
 <li>The <strong>mean</strong> floral resources across time points</li>
-<li>The <strong>coefficient of variation</strong> across time points - I’ve switched back to CV because the behavior of “stability” (1/CV) seems funny to me because as differences between time points approach perfect equality, the smaller CV gets and so stability approaches infinity. This results in over-weighting sites where floral resources almost didn’t change at all, which seems more likely to happen in practice at sites with low values.</li>
-<li>The <strong>scaled peak time</strong> represents the weighted mean flowering time on a unit scale that represents the entire “season” of each study. For Aaron’s study, I used the 5-timepoint subset. To calculate, I took the average of the time points weighted by their flower counts and then scaled by the number of timepoints used in the study, so max flowering time across all studies was one. This is a method that performed well in a comparison of peak flowring estimates by <a href="http://dx.doi.org/10.7717/peerj.7720">Taylor (2019)</a>.</li>
+<li>The <strong>coefficient of variation</strong> across time points - I’ve switched back to CV because the behavior of “stability” (1/CV) seems funny to me. As differences between time points approach perfect equality, CV gets smaller, so the stability value approaches infinity. This results in a heavy emphasis on sites where floral resources almost didn’t change at all, which creates outliers.</li>
+<li>The <strong>scaled peak time</strong> represents the weighted mean flowering time on a unit scale that represents the entire “season” of each study. To calculate, I took the average of the time points weighted by their flower counts and then scaled by the number of timepoints used in the study, so max flowering time across all studies was one. This is a method that performed well in a comparison of peak flowring estimates by <a href="http://dx.doi.org/10.7717/peerj.7720">Taylor (2019)</a>.</li>
+<li>For Aaron’s data, I used the 5-timepoint subset.</li>
 </ul>
 <p>For each of the stats I fit generalized linear models with % natural area and crop shannon diversity as predictors. I used likelihood ratio tests to compare models with linear relationships to quadratic ones, and with interactions.</p>
 </section>
@@ -221,8 +229,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="mean-floral-resources-models" class="level3">
-<h3 class="anchored" data-anchor-id="mean-floral-resources-models">Mean floral resources models</h3>
+<section id="model-comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="model-comparisons">Model comparisons</h3>
 <p>I use a gamma family GLM because floral resource means are non-negative. I also fit a dispersion parameter that varies by study, since the plots suggest that each study’s values are differently dispersed.</p>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
 <div class="cell">
@@ -259,7 +267,11 @@ glm.flrmn1  8 5475.2 5499.2 -2729.6   5459.2
 glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pre>
 </div>
 </div>
-<p><strong>Fitted model coefficients.</strong> Crop shannon diversity is significant in the all linear model but is not significant when a quadratic term for % natural area is added.</p>
+</section>
+<section id="selected-model-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="selected-model-coefficients">Selected model coefficients</h3>
+<p>This is a look at some of the models from the comparisons above.</p>
+<p><strong>Fitted model coefficients.</strong> Crop shannon diversity is significant in the all linear models but is not significant when a quadratic term for % natural area is added.</p>
 <section id="linear-model" class="level4">
 <h4 class="anchored" data-anchor-id="linear-model">Linear model</h4>
 <div class="cell">
@@ -551,8 +563,8 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 </div>
 </div>
 </section>
-<section id="coefficient-of-variance-models" class="level3">
-<h3 class="anchored" data-anchor-id="coefficient-of-variance-models">Coefficient of variance models</h3>
+<section id="model-comparisons-1" class="level3">
+<h3 class="anchored" data-anchor-id="model-comparisons-1">Model comparisons</h3>
 <p>I fit gaussian distribution regression models. I also fit a dispersion parameter that varies by study.</p>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
 <div class="cell">
@@ -591,6 +603,9 @@ glm.flrcv3  9 23.759 50.795 -2.8797   5.7594 8.2838      1      0.004 **
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
+</section>
+<section id="selected-model-coefficients-1" class="level3">
+<h3 class="anchored" data-anchor-id="selected-model-coefficients-1">Selected model coefficients</h3>
 <section id="linear-model-coefficients" class="level4">
 <h4 class="anchored" data-anchor-id="linear-model-coefficients">Linear model coefficients</h4>
 <p>Neither % natural area nor crop shannon diversity are significant in the linear model.</p>
@@ -1027,8 +1042,8 @@ natural</td>
 </div>
 </div>
 </section>
-<section id="peak-flowering-time-models" class="level3">
-<h3 class="anchored" data-anchor-id="peak-flowering-time-models">Peak flowering time models</h3>
+<section id="model-comparisons-2" class="level3">
+<h3 class="anchored" data-anchor-id="model-comparisons-2">Model comparisons</h3>
 <p>I use a gamma regression to model peak flowering time. I also fit a dispersion parameter that varies by study.</p>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Both quadratic terms are supported.</p>
 <div class="cell">
@@ -1100,6 +1115,9 @@ glm.pktime4  14 -480.99 -438.94 254.50  -508.99 31.505      3  6.655e-07 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
+</section>
+<section id="selected-model-coefficients-2" class="level3">
+<h3 class="anchored" data-anchor-id="selected-model-coefficients-2">Selected model coefficients</h3>
 <section id="linear-model-coefficients-1" class="level4">
 <h4 class="anchored" data-anchor-id="linear-model-coefficients-1">Linear model coefficients</h4>
 <p>Percent natural area is significant in the linear model.</p>
