@@ -49,13 +49,25 @@ lcflr.gf0 <- guezen.fr |> group_by(date, datePeriod, site, landtype, transect, q
 
 ### Floral density curves of individual land covers
 
-lcflr.gf <- lcflr.gf0 |> group_by(datePeriod, landtype) |>
+# lcflr.gf_old <- lcflr.gf0 |>
+#   group_by(datePeriod, landtype) |>
+#   summarize(flowerdens = mean(count_mn),
+#             .groups = "drop") |>
+#   complete(datePeriod, landtype, fill = list(flowerdens = 0)) |>
+#   mutate(crop = ifelse(landtype %in% c("forest", "semi-natural"), "natural", "crop"))
+
+lcflr.gf.site <- lcflr.gf0 |>
+  complete(datePeriod, nesting(site, transect, landtype), fill = list(count_mn = 0))
+
+write.csv(lcflr.gf.site, "data/flowerdens_site_gf2021.csv", row.names = FALSE)
+
+lcflr.gf <- lcflr.gf.site |>
+  group_by(datePeriod, landtype) |>
   summarize(flowerdens = mean(count_mn),
             .groups = "drop") |>
-  complete(datePeriod, landtype, fill = list(flowerdens = 0)) |>
   mutate(crop = ifelse(landtype %in% c("forest", "semi-natural"), "natural", "crop"))
 
-write.csv(lcflr.gf, "data/flowerdens_gf2021.csv", row.names = FALSE)
+write.csv(lcflr.gf, "data/flowerdens_gf2021_v2.csv", row.names = FALSE)
 
 d# ------ spatial
 spfiles <- list.files(file.path(msdir,"Guezen_Forrest_shapefiles_2021"),pattern="*.shp", full.names = TRUE)

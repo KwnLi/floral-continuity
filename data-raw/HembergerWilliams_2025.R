@@ -93,42 +93,111 @@ examine.dupes2 <- janitor::get_dupes(floral.df, date, period, site, landcover, s
 # ggplot(test, aes(week, group = period, fill = period)) +
 #   geom_histogram(binwidth = 1)
 
+# standardize site names (de-duplicate)
+library(refinr)
+
+floral.df.sites <- floral.df %>%
+  mutate(site_clean = site %>%
+           str_to_lower() %>%
+           str_replace_all("&", " and ") %>%
+           str_replace_all("@", " and ") %>%
+           str_replace_all("at mile", " and ") %>%
+           str_replace_all("southof", " s of ") %>%
+           str_replace_all("'", " ") %>%
+           str_replace_all("rd", " ") %>%
+           str_replace_all("[^a-z0-9]+", " ") %>%    # strip punctuation
+           str_squish()                              # collapse whitespace, trim
+  ) %>%
+  mutate(site_cluster = key_collision_merge(site_clean)) %>%
+  mutate(site_cluster = n_gram_merge(site_cluster, numgram = 2))
+
+review <- floral.df.sites %>%
+  distinct(site, site_cluster) %>%
+  arrange(site_cluster)
+
+
+# average floral density by de-duplicated site (site_cluster)
+
 lcflr.hw0 <- floral.df |>
+  left_join(review, by = "site") |>
   mutate(
     date = as.Date(date, format = "%m/%d/%y"),
     period = toupper(period)
     ) |>
-  group_by(date, period, site, landcover, species) |>
+  group_by(date, period, site_cluster, landcover, species) |>
   summarize(flowerdens = mean(flowerdens, na.rm = TRUE), .groups = "drop") |>
-  group_by(date, period, site, landcover) |>
+  group_by(date, period, site_cluster, landcover) |>
   summarize(flowerdens = sum(flowerdens, na.rm = TRUE), .groups = "drop") |>
   mutate(period = ifelse(period ==".", toupper(format(date, "%B")), period))
 
-# examine.dupes3 <- janitor::get_dupes(lcflr.hw0, period, site, landcover)
+# Backwards-engineer original 5 sampling periods reported in the original Williams et al. 2012 pub.
+# AI disclosure - I used AI to identify the 5 periods. This section contains AI-generated code.
+
+ggplot(lcflr.hw0, aes(x = date, y = 0, color = period)) +
+  geom_jitter(height = 0.1, alpha = 0.4) +
+  theme_minimal() +
+  labs(title = "Sampling dates (jittered)", y = NULL)
+
+# ---- Gap-based breakpoints ----
+# Pool unique dates across ALL sites, sort, find largest gaps
+dates_all <- lcflr.hw0 %>% distinct(date) %>% arrange(date) %>% pull(date)
+
+gap_df <- tibble(
+  date_before = dates_all[-length(dates_all)],
+  date_after  = dates_all[-1],
+  gap_days    = as.numeric(dates_all[-1] - dates_all[-length(dates_all)])
+)
+
+# Inspect the largest gaps - these are your candidate period boundaries
+gap_df %>% arrange(desc(gap_days)) %>%
+  print(n = 10)
+
+# Take the top (n_periods - 1) gaps as breakpoints
+# ALWAYS eyeball the printed table above first - make sure you're not
+# splitting on a single straggler date that should belong to a bout
+
+n_periods <- 5
+top_gaps <- gap_df %>%
+  arrange(desc(gap_days)) %>%
+  filter(
+    date_before != "2003-02-20",    # separating a single sampling date in Feb.
+    date_before != "2003-04-04",    # too early cutoff
+    date_before != "2003-05-20"     # too late cutoff
+  )  %>%
+  slice(1:(n_periods - 1)) %>%
+  mutate(cutpoint = date_before + gap_days / 2) %>%
+  arrange(cutpoint)
+
+breakpoints_gap <- top_gaps$cutpoint
+breakpoints_gap
+
+lcflr.hw <- lcflr.hw0 |>
+  mutate(period_3wk = findInterval(date, breakpoints_gap) + 1)
+
+# visualize
+ggplot(lcflr.hw, aes(x = date, y = 0, color = as.factor(period_3wk))) +
+  geom_jitter(height = 0.1, alpha = 0.4) +
+  theme_minimal() +
+  labs(title = "Sampling dates (jittered)", y = NULL)
+
+# test duplication
+testdupe <- lcflr.hw %>% janitor::get_dupes(site_cluster, period_3wk, landcover)  # 6 duplicates!
+testdupe2 <- lcflr.hw %>% janitor::get_dupes(site_cluster, period, landcover)     # 84 duplicates!
 
 # average total flower density when taken there are two sampling dates in one period
-lcflr.hw <- lcflr.hw0 |> group_by(period, site, landcover) |>
-  summarize(flowerdens = mean(flowerdens), .groups = "drop")
+# then expand the sampling dates to all periods to include 0s
+lcflr.hw.mn <- lcflr.hw |> group_by(period_3wk, site_cluster, landcover) |>
+  summarize(flowerdens = mean(flowerdens), .groups = "drop",
+            date = min(date)) |>
+  complete(period_3wk, nesting(site_cluster, landcover), fill = list(flowerdens=0))
 
+write.csv(lcflr.hw.mn, "data/flowerdens_site_hw2025.csv", row.names = FALSE)
 
-# List of data frames for each month
-# floral.values.list <- floral.values.df %>%
-#   left_join(raster.key.df %>%
-#               dplyr::select(raster.code.floral, landcover.floral),
-#             by = c("landcover" = "landcover.floral")) %>%
-#   group_by(period) %>%
-#   group_split()
+# ---- land cover raster key
 
-# land cover raster
 raster.key.df <- read_csv(file.path(msdir,"raster_key_all2.csv")) |>
   mutate(raster.code.floral = ifelse(landcover.floral == "tomatilllo", 60, raster.code.floral)) |>
   mutate(raster.code.floral = ifelse(landcover.floral == "tomato-y", 39, raster.code.floral))
-
-yolo.lc.raster <- terra::rast(file.path(msdir,"parcel_data/yolo_lc_raster.tif"))
-yolo.floral.raster <- terra::classify(yolo.lc.raster,
-                                 rcl = raster.key.df %>%
-                                   dplyr::select(raster.code, raster.code.floral) %>%
-                                   dplyr::mutate(raster.code.floral = ifelse(raster.code==99,NA,raster.code.floral)))
 
 floralraster.key <- raster.key.df |> filter(!is.na(raster.code)) |>
   select(raster.code.floral, landcover.floral) |> distinct(raster.code.floral, .keep_all = TRUE) |>
@@ -137,11 +206,20 @@ floralraster.key <- raster.key.df |> filter(!is.na(raster.code)) |>
            toupper() |>
            abbreviate(method = "both.sides", minlength = 6)) |> select(raster.code.floral, raster.name)
 
-levels(yolo.floral.raster) <- floralraster.key
+lckey.hw <- raster.key.df |>
+  left_join(floralraster.key, by = "raster.code.floral")
 
-write.csv(raster.key.df |>
-            left_join(floralraster.key, by = "raster.code.floral"),
-          "data/spatial/hw2025_lc_key.csv", row.names = FALSE)
+write.csv(lckey.hw, "data/spatial/hw2025_lc_key.csv", row.names = FALSE)
+
+# land cover raster
+
+yolo.lc.raster <- terra::rast(file.path(msdir,"parcel_data/yolo_lc_raster.tif"))
+yolo.floral.raster <- terra::classify(yolo.lc.raster,
+                                 rcl = raster.key.df %>%
+                                   dplyr::select(raster.code, raster.code.floral) %>%
+                                   dplyr::mutate(raster.code.floral = ifelse(raster.code==99,NA,raster.code.floral)))
+
+levels(yolo.floral.raster) <- floralraster.key
 
 writeRaster(yolo.floral.raster, "data/spatial/hw2025_lc.tif", overwrite = TRUE)
 
@@ -152,24 +230,22 @@ writeRaster(yolo.floral.raster, "data/spatial/hw2025_lc.tif", overwrite = TRUE)
 # landcover raster.
 
 lckey.hw <- read.csv("data/spatial/hw2025_lc_key.csv")
+lcflr.hw.mn <- read.csv("data/flowerdens_site_hw2025.csv")
 
-rastlcflr.hw <- lcflr.hw |>
+rastlcflr.hw <- lcflr.hw.mn |>
   left_join(lckey.hw |>
               distinct(landcover.floral, raster.name, raster.code.floral, landcover.4cat, raster.code.4cat),
             by = c("landcover" = "landcover.floral")) |>
-  filter(!is.na(raster.name)) |>
-  group_by(period, raster.name, raster.code.floral, landcover.4cat, raster.code.4cat) |>
+  filter(!is.na(raster.name)) |>   # remove land covers not in raster
+  group_by(period_3wk, raster.name, raster.code.floral, landcover.4cat, raster.code.4cat) |>
   summarize(flowerdens = mean(flowerdens),
             flowerdens.sd = sd(flowerdens), .groups = "drop") |>
-  select(period, raster.name, flowerdens) |>
-  complete(period,raster.name, fill = list(flowerdens=0)) |>
-  mutate(period = factor(period, levels = c("MAR","APR","MAY","JUN","JUL","AUG"))) |>
+  select(period_3wk, raster.name, flowerdens) |>
   left_join(lckey.hw |> filter(!is.na(raster.code) & landcover.4cat != "na") |>
               distinct(raster.name, .keep_all = TRUE),
-            by = "raster.name") |>
-  mutate(month = recode_values(period, "MAR"~ 3,"APR"~ 4, "MAY"~5, "JUN" ~ 6, "JUL"~7))
+            by = "raster.name")
 
-write.csv(rastlcflr.hw, "data/flowerdens_hw2025.csv", row.names = FALSE)
+write.csv(rastlcflr.hw, "data/flowerdens_hw2025_v2.csv", row.names = FALSE)
 
 
 # points

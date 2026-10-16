@@ -1,0 +1,841 @@
+---
+title: "Continuity - continued"
+format: html
+execute: 
+  message: false
+  warning: false
+  echo: false
+---
+
+## Methods
+
+```{r}
+#| message: false
+
+library(tidyverse)
+
+lcflr.gf <- read.csv("data/flowerdens_gf2021_v2.csv")
+
+lcflr.iv <- read.csv("data/flowerdens_iverson.csv") |> 
+  pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
+  mutate(
+    julianDay = as.numeric(gsub("d","",julianDay))
+    ) |> 
+  mutate(date = as.character(as.Date(julianDay, origin=as.Date("2015-12-31")))) |>
+  filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")) |> 
+  mutate(
+    datePeriod =
+      recode_values(date,
+                    "2016-04-15"~1,
+                    "2016-05-15"~2,
+                    "2016-06-15"~3,
+                    "2016-07-15"~4,
+                    "2016-08-15"~5)) |>
+  mutate(crop = recode_values(Group,
+    c("Agriculture") ~ "crop",
+    c("Forest","Ditch","Wetland","Successional") ~ "natural",
+    default = "other"
+  )) |> rename(landtype = Floral_resources_landcover, flowerdens = flowers_m2)
+
+lcflr.hw <- read.csv("data/flowerdens_hw2025_v2.csv") |>
+  rename(crop=landcover.4cat, landtype=landcover.floral, datePeriod=period_3wk)
+
+lcflr <- list(gf=lcflr.gf |> select(landtype, crop, flowerdens, datePeriod),
+              iv=lcflr.iv |> select(landtype, crop, flowerdens, datePeriod),
+              hw=lcflr.hw |> select(landtype, crop, flowerdens, datePeriod)) |>
+  bind_rows(.id = "study")
+
+lcflrcv <- lcflr |>
+  group_by(study) |>
+  mutate(
+    flr.max = max(flowerdens),
+    flr.scale = flowerdens/max(flr.max)) |> ungroup() |>
+  group_by(study, landtype, crop) |>
+  mutate(
+    flrtime = flowerdens*datePeriod
+    ) |>
+  summarize(
+    flr.sum = sum(flowerdens),
+    flr.mn = mean(flowerdens), 
+    flr.sd = sd(flowerdens),
+    flr.cv = flr.sd/flr.mn, 
+    flr.stbl = 1/flr.cv, 
+    pktime = sum(flrtime)/flr.sum,
+    pktime.scale = pktime/max(datePeriod),
+    flr.mn.scale = mean(flr.scale),
+    .groups = "drop")
+
+# ----- Spatial clustering of Iverson data
+ 
+library(sf)
+
+iv.sp <- st_read("data/spatial/iverson_pts.geojson", quiet = TRUE) |> st_transform(crs="epsg:5070")
+iv.sp.dist <- dist(st_coordinates(iv.sp))
+
+iv.hc <- hclust(iv.sp.dist, method = "single")
+
+iv.clust <- cutree(iv.hc, h = 1000)
+
+iv.sp.clust <- iv.sp |> mutate(farm = as.character(iv.clust))  |>
+  mutate(
+    site = replace_values(
+      site,
+      "Conifer_For34a Danby" ~ "Conifer_For34 Danby",
+      "MesicUpRem_For34b Arnot"~ "MesicUpRem_For34 Arnot"
+    )
+  )
+
+# st_write(iv.sp.clust, "data/spatial/iverson_pts_clust1km.geojson")
+
+# ----- buffer data
+  
+gf <- read.csv("data/cropdiv_gf2021.csv") |> 
+  mutate(site=as.character(transect)) |>
+  mutate(farm = stringr::str_split_i(site, "\\.", 1))
+hw <- read.csv("data/cropdiv_hw2025.csv") |> 
+  rename(datePeriod=period_3wk, site=SITE) |>
+  mutate(farm = site)
+iv <- read.csv("data/cropdiv5_iverson.csv") |> 
+  mutate(
+    datePeriod =
+      recode_values(date,
+                    "2016-04-15"~1,
+                    "2016-05-15"~2,
+                    "2016-06-15"~3,
+                    "2016-07-15"~4,
+                    "2016-08-15"~5)) |>
+  # separate_wider_delim(site,delim = " ", names = c(NA, "farm"), 
+  #                      too_many = "merge", cols_remove = FALSE) |>
+  # mutate(farm = farm |> str_to_upper() |>
+  #          str_replace_all("[^A-Z0-9]+", "") |> str_squish() |>
+  #          str_trunc(11,ellipsis = "")) |> 
+  left_join(iv.sp.clust |> st_drop_geometry() |> select(site, farm))
+
+alldf <- list(gf=gf,hw=hw,iv=iv) |> bind_rows(.id = "study")
+
+all.mn <- alldf |> 
+  group_by(study) |>
+  mutate(
+    # stdy.max = max(total.flowers),
+    stdy.sd = sd(total.flowers),
+    stdy.mn = mean(total.flowers),
+    # flr.1scale = total.flowers/max(stdy.max),
+    flr.zscale = (total.flowers-stdy.mn)/stdy.sd) |> 
+  ungroup() |>
+  group_by(study, site, farm, crop.rich, crop.shandiv, pct.natural) |>
+  mutate(flrtime = total.flowers*datePeriod) |>
+  summarize(flr.sum = sum(total.flowers),
+            flr.mn = mean(total.flowers),
+            flr.sd = sd(total.flowers),
+            flr.cv = flr.sd/flr.mn,
+            # flr.mn.1scale = mean(flr.1scale),
+            flr.mn.zscale = mean(flr.zscale),
+            pktime = sum(flrtime)/flr.sum,
+            pktime.scale = pktime/max(datePeriod),
+            .groups = "drop") |> 
+  group_by(study, farm) |>
+  summarize(
+    flr.mn = mean(flr.mn),
+    flr.mn.zscale = mean(flr.mn.zscale),
+    flr.cv = mean(flr.cv),
+    pktime.scale = mean(pktime.scale),
+    crop.shandiv = mean(crop.shandiv),
+    pct.natural = mean(pct.natural),
+    .groups = "drop"
+  )
+
+```
+
+### Data
+
+I aggregated buffer data by their spatial clustering because otherwise there would be pseudoreplications due to closely spaced points. This meant averaging calculated continuity statistics for Guezen and Forrest's data by the "site" identity since their points were transects that were closely spaced (within ~ 1km) inside site groups. Aaron's data had "farm" groupings but these didn't always mean they were closely spaced. Instead, I grouped points that were 1km within each other and averaged them. Hemberger and Williams's sites were selected to be more than 1km apart so I didn't have to do this for their data. Instead of averaging, I could also have randomly selected one point in each group and used that to calculate continuity statistics, but I think the results will be similar.
+
+The aggregation process resulted in 149 total points (27 Guezen & Forrest, 35 Hemberger & Williams, and 87 Iverson). The % natural area vs crop shannon diversity is shown below.
+
+```{r}
+
+ggplot(all.mn, aes(pct.natural, crop.shandiv, color = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_discrete() + egg::theme_article()
+
+```
+
+I'm focusing on three statistics summarizing temporal change in floral resources:
+
+- The **mean** floral resources across time points
+- The **coefficient of variation** across time points - I've switched back to CV because the behavior of "stability" (1/CV) seems funny to me because as differences between time points approach perfect equality, the smaller CV gets and so stability approaches infinity. This results in over-weighting sites where floral resources almost didn't change at all, which seems more likely to happen in practice at sites with low values.
+- The **scaled peak time** represents the weighted mean flowering time on a unit scale that represents the entire "season" of each study. For Aaron's study, I used the 5-timepoint subset. To calculate, I took the average of the time points weighted by their flower counts and then scaled by the number of timepoints used in the study, so max flowering time across all studies was one. This is a method that performed well in a comparison of peak flowring estimates by [Taylor (2019)](http://dx.doi.org/10.7717/peerj.7720).
+
+For each of the stats I fit generalized linear models with % natural area and crop shannon diversity as predictors. I used likelihood ratio tests to compare models with linear relationships to quadratic ones, and with interactions.
+
+## Mean floral resources over the season
+
+### Plots
+
+```{r}
+#| fig-cap: Percent natural area against mean floral resources over time. Floral resource means have been z-scaled based on their associated study's distribution. Points are colored by location shannon diversity and shape is study.
+
+ggplot(all.mn, aes(pct.natural, flr.mn.zscale, color = crop.shandiv, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "turbo", direction = -1)
+
+```
+
+
+```{r}
+#| fig-cap: Crop shannon diversity against mean floral resources over time. Floral resource means have been z-scaled based on their associated study's distribution. Points are colored by location % natural area and shape is study.
+
+ggplot(all.mn, aes(crop.shandiv, flr.mn.zscale, color = pct.natural, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "mako", direction = -1)
+
+```
+
+### Mean floral resources models
+
+I use a gamma family GLM because floral resource means are non-negative. I also fit a dispersion parameter that varies by study, since the plots suggest that each study's values are differently dispersed.
+
+```{r}
+library(glmmTMB)
+library(lmerTest)
+library(DHARMa)
+
+glm.flrmn1 <- glmmTMB(flr.mn ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+glm.flrmn2a <- glmmTMB(flr.mn ~ crop.shandiv + poly(pct.natural,2) + study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+glm.flrmn2b <- glmmTMB(flr.mn ~ poly(crop.shandiv,2) + pct.natural + study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+glm.flrmn3 <- glmmTMB(flr.mn ~ crop.shandiv *pct.natural + study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+# glm.flrmn4a <- glmmTMB(flr.mn ~ crop.shandiv * poly(pct.natural,2) + study, 
+#                       dispformula = ~ study,
+#                       family = Gamma(link = "log"),
+#                       data = all.mn)
+# 
+# glm.flrmn4b <- glmmTMB(flr.mn ~ poly(crop.shandiv,2) * pct.natural + study, 
+#                       dispformula = ~ study,
+#                       family = Gamma(link = "log"),
+#                       data = all.mn)
+# 
+# glm.flrmn4c <- glmmTMB(flr.mn ~ poly(crop.shandiv,2) * poly(pct.natural,2) + study, 
+#                       dispformula = ~ study,
+#                       family = Gamma(link = "log"),
+#                       data = all.mn)
+
+
+
+```
+
+Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
+
+```{r}
+
+anova(glm.flrmn1, glm.flrmn2a)
+anova(glm.flrmn1, glm.flrmn2b)
+
+```
+
+Likelihood ratio tests comparing linear model linear interaction model. The interaction model isn't supported.
+
+```{r}
+
+anova(glm.flrmn1, glm.flrmn3)
+
+```
+
+**Fitted model coefficients.** Crop shannon diversity is significant in the all linear model but is not significant when a quadratic term for % natural area is added.
+
+#### Linear model
+
+```{r}
+
+sjPlot::tab_model(glm.flrmn1)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Linear model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrmn1)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.flrmn1)
+
+```
+
+:::
+
+#### Quadratic % natural area model
+
+```{r}
+
+sjPlot::tab_model(glm.flrmn2a)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Quadratic % natural area model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrmn2a)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.flrmn2a)
+
+```
+
+:::
+
+## Coefficient of variance
+
+### Plots
+
+```{r}
+#| fig-cap: Percent natural area against coefficient of variance of floral resources over time. Points are colored by crop shannon diversity and shape is study.
+
+ggplot(all.mn, aes(pct.natural, flr.cv, color = crop.shandiv, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "turbo", direction = -1)
+
+```
+
+```{r}
+#| fig-cap: Crop shannon diversity against coefficient of variance of floral resources over time. Points are colored by percent natural area and shape is study.
+
+ggplot(all.mn, aes(crop.shandiv, flr.cv, color = pct.natural, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "mako", direction = -1)
+
+```
+
+### Coefficient of variance models
+
+I fit gaussian distribution regression models. I also fit a dispersion parameter that varies by study.
+
+```{r}
+
+glm.flrcv1 <- glmmTMB(flr.cv ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+glm.flrcv2a <- glmmTMB(flr.cv ~ crop.shandiv + poly(pct.natural,2) + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+glm.flrcv2b <- glmmTMB(flr.cv ~ poly(crop.shandiv,2) + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+glm.flrcv3 <- glmmTMB(flr.cv ~ crop.shandiv * pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+```
+
+Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
+
+```{r}
+
+anova(glm.flrcv1, glm.flrcv2a)
+
+anova(glm.flrcv1, glm.flrcv2b)
+
+```
+
+Likelihood ratio tests comparing linear model linear interaction model. The interaction model is supported over the no-interaction model, but AIC and BIC are not as good as the quadratic % natural area model.
+
+```{r}
+
+anova(glm.flrcv1, glm.flrcv3)
+
+```
+
+#### Linear model coefficients
+
+Neither % natural area nor crop shannon diversity are significant in the linear model.
+
+```{r}
+
+sjPlot::tab_model(glm.flrcv1)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Linear model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv1)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.flrmn1)
+
+```
+
+:::
+
+#### Quadratic % natural area model coefficients
+
+Percent natural area is significant when quadratic. Crop shannon diversity is not significant.
+
+```{r}
+
+sjPlot::tab_model(glm.flrcv2a)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Quadratic % natural area model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv2a)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.flrmn2a)
+
+```
+
+:::
+
+#### Interaction model coefficients
+
+Interaction is significant.
+
+```{r}
+
+sjPlot::tab_model(glm.flrcv3)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Interaction model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv3)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.flrmn2a)
+
+```
+
+:::
+
+## Peak flowering time
+
+### Plots
+
+```{r}
+#| fig-cap: Percent natural area against scaled peak flowering time. Points are colored by location shannon diversity and shape is study.
+
+ggplot(all.mn, aes(pct.natural, pktime.scale, color = crop.shandiv, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "turbo", direction = -1)
+
+```
+
+```{r}
+#| fig-cap: Crop shannon diversity against scaled peak flowering time. Points are colored by location % natural area and shape is study.
+
+ggplot(all.mn, aes(crop.shandiv, pktime.scale, color = pct.natural, shape = study)) +
+  geom_point() + scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "mako", direction = -1)
+
+```
+
+### Peak flowering time models
+
+I use a gamma regression to model peak flowering time. I also fit a dispersion parameter that varies by study.
+
+```{r}
+
+glm.pktime1 <- glmmTMB(pktime.scale ~ crop.shandiv + pct.natural + study, 
+                       family = Gamma(link = "log"),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime2a <- glmmTMB(pktime.scale ~ crop.shandiv + poly(pct.natural,2) + study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime2b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) + pct.natural + study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime3 <- glmmTMB(pktime.scale ~ crop.shandiv * pct.natural + study, 
+                       family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime3a <- glmmTMB(pktime.scale ~ crop.shandiv * poly(pct.natural,2) + study,
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime3b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * pct.natural + study,
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime4 <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * poly(pct.natural,2) + study,
+                       family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+```
+
+Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Both quadratic terms are supported.
+
+```{r}
+
+anova(glm.pktime1, glm.pktime2a)
+anova(glm.pktime1, glm.pktime2b)
+
+```
+
+Interaction term is also supported.
+
+```{r}
+
+anova(glm.pktime1, glm.pktime3)
+
+```
+
+Interacting quadratic percent natural area and crop shannon diversity is the most supported, based on likelihood ratio test, AIC, and BIC.
+
+```{r}
+
+anova(glm.pktime3, glm.pktime3a, glm.pktime4)
+anova(glm.pktime3, glm.pktime3b, glm.pktime4)
+
+```
+
+#### Linear model coefficients
+
+Percent natural area is significant in the linear model.
+
+```{r}
+
+sjPlot::tab_model(glm.pktime1)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Linear model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime1)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.pktime1)
+
+```
+
+:::
+
+#### Interaction model coefficients
+
+Adding an interaction makes everything significant.
+
+```{r}
+
+sjPlot::tab_model(glm.pktime3)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Interaction model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime3)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.pktime3)
+
+```
+
+:::
+
+#### Interaction of quadratic percent natural area and crop shannon diversity model coefficients
+
+Adding interacting quadratic terms are significant.
+
+```{r}
+
+sjPlot::tab_model(glm.pktime4)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Quadratic interaction model diagnostics
+
+```{r}
+
+glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime4)
+
+plot(glm.flrmn.sim)
+
+plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
+plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
+plotResiduals(glm.flrmn.sim, all.mn$study)
+
+performance::check_model(glm.pktime4)
+
+```
+
+:::
+
+## Land cover floral density comparisons
+
+We can also make a comparison between crop and % natural area land covers. I haven't done this yet, but based on the patterns in the following plots, it seems like the trends are that natural land covers have more floral resources on average, while having lower CV (more continuous). Crop land covers have a later peak time.
+
+```{r}
+#| fig-cap: Mean floral resources comparison by land cover group and study.
+
+ggplot(lcflrcv, aes(crop, flr.mn.scale, fill=crop)) + 
+  geom_jitter(aes(color = crop)) +
+  geom_boxplot(alpha=0.3) + facet_wrap(~study)
+
+```
+
+```{r}
+#| fig-cap: Coefficient of variation in floral resources over time by land cover group and study.
+
+ggplot(lcflrcv, aes(crop, flr.cv, fill=crop)) + 
+  geom_jitter(aes(color = crop)) +
+  geom_boxplot(alpha=0.3) + facet_wrap(~study)
+
+```
+
+
+```{r}
+#| fig-cap: Scaled time of peak floral resources by land cover group and study.
+
+ggplot(lcflrcv, aes(crop, pktime.scale, fill=crop)) + 
+  geom_jitter(aes(color = crop)) +
+  geom_boxplot(alpha=0.3) + facet_wrap(~study)
+
+```
+
+
+
+```{r}
+
+# site-level data
+
+# lcflr_site.gf <- read.csv("data/flowerdens_site_gf2021.csv") |>
+#   left_join(lcflr.gf |> select(landtype,crop)|>distinct()) |> 
+#   select(-site) |> 
+#   rename(site=transect, flowerdens=count_mn) |>
+#   mutate(site=as.character(site))
+# 
+# rast_crosstab_iv <- read.csv("data-raw/Iversonetal/Habitat_category_cross-reference20260907.csv") |>
+#   select("site_habitat","Group") |> distinct()
+# 
+# lcflr_site.iv <- read.csv("data/flowerdens_site_iverson.csv") |> 
+#   pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
+#   mutate(
+#     julianDay = as.numeric(gsub("d","",julianDay))
+#     ) |> 
+#   mutate(date = as.character(as.Date(julianDay, origin=as.Date("2015-12-31")))) |>
+#   filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")) |> 
+#   mutate(
+#     datePeriod =
+#       recode_values(date,
+#                     "2016-04-15"~1,
+#                     "2016-05-15"~2,
+#                     "2016-06-15"~3,
+#                     "2016-07-15"~4,
+#                     "2016-08-15"~5),
+#     habitat = replace_values(habitat, c("MesicUpRem","MesicUpSuc")~"MesicUp")) |>
+#   left_join(rast_crosstab_iv, by = c("habitat"="site_habitat")) |>
+#   mutate(crop = recode_values(Group,
+#     c("Agriculture") ~ "crop",
+#     c("Forest","Ditch","Wetland","Successional") ~ "natural",
+#     default = "other"
+#   )) |> rename(landtype = habitat, flowerdens = flowers_m2) |> 
+#   filter(crop=="natural" | (crop =="crop" & landtype %in% c("Alf","Veg")))
+# 
+# lcflr_site.hw <- read.csv("data/flowerdens_site_hw2025.csv") |>
+#   left_join(read.csv("data/spatial/hw2025_lc_key.csv") |>
+#               distinct(landcover.floral, raster.name, raster.code.floral,
+#                        landcover.4cat, raster.code.4cat),
+#             by = c("landcover" = "landcover.floral")) |>
+#   filter(raster.name %in% lcflr.hw$raster.name) |>
+#   rename(crop=landcover.4cat, landtype=landcover, 
+#          datePeriod=period_3wk, site=site_cluster)
+# 
+# lcflr_site <- list(
+#   gf=lcflr_site.gf |> select(site, landtype, crop, flowerdens, datePeriod),
+#   iv=lcflr_site.iv |> select(site, landtype, crop, flowerdens, datePeriod),
+#   hw=lcflr_site.hw |> select(site, landtype, crop, flowerdens, datePeriod)
+#   ) |>
+#   bind_rows(.id = "study")
+# 
+# lcflr_sitecv <- lcflr_site |> 
+#   group_by(study) |>
+#   mutate(
+#     flr.max = max(flowerdens),
+#     flr.scale = flowerdens/max(flr.max)) |> ungroup() |>
+#   group_by(site, study, landtype, crop) |>
+#   mutate(
+#     flrtime = flowerdens*datePeriod
+#     ) |>
+#   summarize(
+#     flr.sum = sum(flowerdens),
+#     flr.mn = mean(flowerdens), 
+#     flr.sd = sd(flowerdens),
+#     flr.cv = flr.sd/flr.mn, 
+#     flr.stbl = 1/flr.cv, 
+#     pktime = sum(flrtime)/flr.sum,
+#     pktime.scale = pktime/max(datePeriod),
+#     flr.mn.scale = mean(flr.scale),
+#     .groups = "drop")
+# 
+# ggplot(lcflr_sitecv, aes(crop, flr.mn.scale, fill=crop)) + 
+#   geom_jitter(aes(color = crop)) +
+#   geom_boxplot(alpha=0.3) + facet_wrap(~study, scales = "free_y")
+# 
+# ggplot(lcflr_sitecv, aes(crop, flr.cv, fill=crop)) + 
+#   geom_jitter(aes(color = crop)) +
+#   geom_boxplot(alpha=0.3) + facet_wrap(~study, scales = "free_y")
+# 
+# ggplot(lcflr_sitecv, aes(crop, pktime.scale, fill=crop)) + 
+#   geom_jitter(aes(color = crop)) +
+#   geom_boxplot(alpha=0.3) + facet_wrap(~study, scales = "free_y")
+
+```
+
+```{r}
+# library(vegan)
+# library(sf)
+# 
+# hw.sp <- st_read("data/spatial/hw2025_pts.geojson") |> st_transform(crs="epsg:5070")
+# iv.sp <- st_read("data/spatial/iverson_pts.geojson") |> st_transform(crs="epsg:5070")
+# gf.sp <- st_read("data/spatial/gf2021_pts.geojson") |> st_transform(crs="epsg:5070")
+# 
+# hw.sp.dist <- st_distance(hw.sp) |> units::drop_units()
+# iv.sp.dist <- st_distance(iv.sp) |> units::drop_units()
+# gf.sp.dist <- st_distance(gf.sp) |> units::drop_units()
+# 
+# hw.sp.flr <- left_join(hw.sp |> st_drop_geometry() |> select(SITE), all.mn |> rename(SITE=site))
+# iv.sp.flr <- left_join(iv.sp |> st_drop_geometry() |> select(site) |>
+#   mutate(
+#     site = replace_values(
+#       site,
+#       "Conifer_For34a Danby" ~ "Conifer_For34 Danby",
+#       "MesicUpRem_For34b Arnot"~ "MesicUpRem_For34 Arnot"
+#     )
+#   ), all.mn)
+# gf.sp.flr <- left_join(gf.sp |> st_drop_geometry() |> select(transect) |>
+#                          mutate(transect = as.character(transect)), 
+#                        all.mn |> rename(transect=site))
+# 
+# # flower mean distance mantel test
+# hw.flrmn.dist <- dist(hw.sp.flr$flr.mn)
+# hw.flrcv.dist <- dist(hw.sp.flr$flr.cv)
+# hw.pktime.dist <- dist(hw.sp.flr$pktime.scale)
+# mantel(hw.sp.dist,hw.flrmn.dist)
+# mantel(hw.sp.dist,hw.flrcv.dist)
+# mantel(hw.sp.dist,hw.pktime.dist)
+# 
+# iv.flrmn.dist <- dist(iv.sp.flr$flr.mn)
+# iv.flrcv.dist <- dist(iv.sp.flr$flr.cv)
+# iv.pktime.dist <- dist(iv.sp.flr$pktime.scale)
+# mantel(iv.sp.dist,iv.flrmn.dist)
+# mantel(iv.sp.dist,iv.flrcv.dist)
+# mantel(iv.sp.dist,iv.pktime.dist)
+# 
+# gf.flrmn.dist <- dist(gf.sp.flr$flr.mn)
+# gf.flrcv.dist <- dist(gf.sp.flr$flr.cv)
+# gf.pktime.dist <- dist(gf.sp.flr$pktime.scale)
+# mantel(gf.sp.dist,gf.flrmn.dist)
+# mantel(gf.sp.dist,gf.flrcv.dist)
+# mantel(gf.sp.dist,gf.pktime.dist)
+# 
+# mantel.df <- list(
+#   hw = data.frame(
+#     dist = rep(hw.sp.dist[lower.tri(hw.sp.dist)], times=3),
+#     stat = rep(c("floral.mn","floral.cv","peak.time"),
+#                each=length(as.vector(hw.flrmn.dist))),
+#     value = c(as.vector(hw.flrmn.dist), as.vector(hw.flrcv.dist), as.vector(hw.pktime.dist))),
+#   iv = data.frame(
+#     dist = rep(iv.sp.dist[lower.tri(iv.sp.dist)], times=3),
+#     stat = rep(c("floral.mn","floral.cv","peak.time"),
+#                each=length(as.vector(iv.flrmn.dist))),
+#     value = c(as.vector(iv.flrmn.dist), as.vector(iv.flrcv.dist), as.vector(iv.pktime.dist))),
+#   gf = data.frame(
+#     dist = rep(gf.sp.dist[lower.tri(gf.sp.dist)], times=3),
+#     stat = rep(c("floral.mn","floral.cv","peak.time"),
+#                each=length(as.vector(gf.flrmn.dist))),
+#     value = c(as.vector(gf.flrmn.dist), as.vector(gf.flrcv.dist), as.vector(gf.pktime.dist)))
+# ) |> bind_rows(.id="study")
+# 
+# ggplot(mantel.df, aes(dist, value)) +
+#   geom_point(alpha = 0.22, colour = "#275139", size = 1.2) +
+#   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, colour = "#b5534e", linewidth = 1) +
+#   facet_wrap(study ~ stat, scales = "free")
+
+```

@@ -202,6 +202,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: package 'tibble' was built under R version 4.5.2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
@@ -209,35 +218,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.6.0
-✔ ggplot2   4.0.2     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>florlc.files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"data"</span>, <span class="at">pattern =</span> <span class="st">"florlc"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>florlc.raw <span class="ot">&lt;-</span> <span class="fu">lapply</span>(florlc.files, \(x){</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  thiscsv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(x)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">setNames</span>(<span class="fu">basename</span>(florlc.files) <span class="sc">%&gt;%</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="st">""</span>, .))</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>florlc <span class="ot">&lt;-</span> <span class="fu">list</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>florlc.files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"data"</span>, <span class="at">pattern =</span> <span class="st">"florlc"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>florlc.raw <span class="ot">&lt;-</span> <span class="fu">lapply</span>(florlc.files, \(x){</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  thiscsv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(x)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">setNames</span>(<span class="fu">basename</span>(florlc.files) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="st">""</span>, .))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>florlc <span class="ot">&lt;-</span> <span class="fu">list</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="bishop-et-al." class="level2">
 <h2 class="anchored" data-anchor-id="bishop-et-al.">Bishop et al.</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(florlc.raw<span class="sc">$</span>florlc_bisetal2024)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(florlc.raw<span class="sc">$</span>florlc_bisetal2024)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Site"          "HabitatType"   "Flwr_cov_perc" "JulianDay"    
 [5] "Year"          "SumDD5"       </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_bisetal2024, <span class="fu">aes</span>(JulianDay, Flwr_cov_perc, <span class="at">color =</span> HabitatType)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_bisetal2024, <span class="fu">aes</span>(JulianDay, Flwr_cov_perc, <span class="at">color =</span> HabitatType)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -250,9 +259,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fijen-et-al." class="level2">
 <h2 class="anchored" data-anchor-id="fijen-et-al.">Fijen et al.</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_fijetal2025, <span class="fu">aes</span>(round, log.av.flow.cov)) <span class="sc">+</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> landscape)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_fijetal2025, <span class="fu">aes</span>(round, log.av.flow.cov)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> landscape)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -265,9 +274,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="guezen-forrest-2021" class="level2">
 <h2 class="anchored" data-anchor-id="guezen-forrest-2021">Guezen &amp; Forrest 2021</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_gf2021, <span class="fu">aes</span>(datePeriod, count_per_m2, <span class="at">color =</span> landtype)) <span class="sc">+</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_gf2021, <span class="fu">aes</span>(datePeriod, count_per_m2, <span class="at">color =</span> landtype)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -275,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(florlc.raw<span class="sc">$</span>florlc_gf2021)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(florlc.raw<span class="sc">$</span>florlc_gf2021)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "datePeriod"   "date"         "site"         "landtype"     "transect"    
 [6] "quadrat"      "flower"       "count_per_m2"</code></pre>
@@ -285,9 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="hemberger-et-al.-2023" class="level2">
 <h2 class="anchored" data-anchor-id="hemberger-et-al.-2023">Hemberger et al.&nbsp;2023</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_hemetal2023, </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(round, mn_prop_quads)) <span class="sc">+</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> family)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>land_cover) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_hemetal2023, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(round, mn_prop_quads)) <span class="sc">+</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> family)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>land_cover) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -300,9 +309,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="hemberger-williams-2025" class="level2">
 <h2 class="anchored" data-anchor-id="hemberger-williams-2025">Hemberger &amp; Williams 2025</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_hw2025, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(period, flowerdens)) <span class="sc">+</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">color =</span> plant.type)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_hw2025, </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(period, flowerdens)) <span class="sc">+</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">color =</span> plant.type)) <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -315,11 +324,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mallinger-et-al.-2016" class="level2">
 <h2 class="anchored" data-anchor-id="mallinger-et-al.-2016">Mallinger et al.&nbsp;2016</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_maletal2016, </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(period, abundance)) <span class="sc">+</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Flower.species)) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(period, abundance), <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>landcover) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(florlc.raw<span class="sc">$</span>florlc_maletal2016, </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(period, abundance)) <span class="sc">+</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> Flower.species)) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(period, abundance), <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>landcover) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

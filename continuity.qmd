@@ -12,7 +12,8 @@ library(tidyverse)
 hw <- read.csv("data/cropdiv_hw2025.csv")
 gf <- read.csv("data/cropdiv_gf2021.csv")
 iv <- read.csv("data/cropdiv_iverson.csv") |> 
-  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31")))
+  mutate(julianDay = as.numeric(format(as.Date(date), "%j")))
+  # mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31")))
 
 fl.hw <- read.csv("data/florlc_hw2025.csv") |> mutate(date = as.Date(date, "%m/%d/%y"))
 fl.gf <- read.csv("data/florlc_gf2021.csv") |> mutate(date = as.Date(date, "%Y-%m-%d"))
@@ -58,6 +59,7 @@ ggplot(fl.iv,
 ```{r}
 
 hwcv <- hw |>
+  mutate(month = recode_values(period_3wk, 1~4, 2~5, 3~6, 4~7, 5~8)) |>
   group_by(SITE, crop.shandiv, pct.natural, crop.rich, area_crop) |>
   summarize(
     n = n(),
@@ -244,7 +246,7 @@ With studies plotted together, and then separately. Second plot is colored by % 
 ggplot(sampcv, aes(crop.shandiv, stability, color = study)) + geom_point() 
 
 ggplot(sampcv, aes(crop.shandiv, stability, color = pct.natural)) +
-  geom_point() + facet_wrap(~study) + scale_color_viridis_c()
+  geom_point() + facet_wrap(~study, scales = "free_x") + scale_color_viridis_c()
 
 ```
 

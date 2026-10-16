@@ -16,9 +16,9 @@ lc.iv <- read.csv("data/lcareas_iverson.csv")
 flr.gf <- read.csv("data/florlc_gf2021.csv")
 flr.hw <- read.csv("data/florlc_hw2025.csv")
 
-lcflr.gf <- read.csv("data/flowerdens_gf2021.csv")
+lcflr.gf <- read.csv("data/flowerdens_gf2021_v2.csv")
 lcflr.iv <- read.csv("data/flowerdens_iverson.csv")
-lcflr.hw <- read.csv("data/flowerdens_hw2025.csv")
+lcflr.hw <- read.csv("data/flowerdens_hw2025_v2.csv")
 
 key.iv <- read.csv("data-raw/Iversonetal/iverson_landcover_codes.csv")
 lckey.hw <- read.csv("data/spatial/hw2025_lc_key.csv")
@@ -29,7 +29,7 @@ lckey.hw <- read.csv("data/spatial/hw2025_lc_key.csv")
 
 ```{r}
 
-ggplot(lcflr.hw, aes(month, flowerdens, color = raster.name)) +
+ggplot(lcflr.hw, aes(period_3wk, flowerdens, color = raster.name)) +
   geom_point() + geom_line()
 
 ```
@@ -45,13 +45,13 @@ buf.hw <- lc.hw |> filter(buffer == 750)
 cropbuf.hw <- buf.hw |>
   pivot_longer(cols = CROPLA:RICE, names_to = "raster.name", values_to = "area") |>
   left_join(lcflr.hw, by = "raster.name", relationship = "many-to-many") |>
-  filter(!is.na(period) & !is.na(area)) |>
+  filter(!is.na(period_3wk) & !is.na(area)) |>
   mutate(total.flowers = area*flowerdens)
 
 croparea.hw <- cropbuf.hw |>
-  group_by(period, month, SITE, landcover.4cat) |>
+  group_by(period_3wk, SITE, landcover.4cat) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
-  pivot_wider(id_cols = c(period, month, SITE), 
+  pivot_wider(id_cols = c(period_3wk, SITE), 
               names_from = landcover.4cat, values_from = c(area, total.flowers)) |>
   mutate(
     total.flowers = total.flowers_crop + total.flowers_natural,
@@ -60,10 +60,10 @@ croparea.hw <- cropbuf.hw |>
     pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
   )
 
-croparea.hw.mn <- croparea.hw |> group_by(month, pct.nat.intv) |>
+croparea.hw.mn <- croparea.hw |> group_by(period_3wk, pct.nat.intv) |>
   summarize(total.flowers = mean(total.flowers), .groups = "drop")
 
-ggplot(croparea.hw, aes(month, total.flowers)) +
+ggplot(croparea.hw, aes(period_3wk, total.flowers)) +
   geom_point(aes(group = SITE, color = pct.natural)) + geom_line(aes(group = SITE, color = pct.natural)) + 
   geom_line(data = croparea.hw.mn, color = "red", lwd = 1, lty = 5) +
   scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
@@ -76,17 +76,17 @@ ggplot(croparea.hw, aes(month, total.flowers)) +
 
 croprich.hw <- cropbuf.hw |> rowwise() |>
   mutate(crop = landcover.4cat=="crop" & area > 0) |>
-  group_by(period, month, SITE) |>
+  group_by(period_3wk, SITE) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), 
             .groups = "drop")
 
-croparearich.hw <- croparea.hw |> select(month, period, SITE, area_crop, area_natural, pct.natural, total.flowers) |>
-  left_join(croprich.hw |> select(month, period, SITE, crop.rich), by = c("month", "period", "SITE"))
+croparearich.hw <- croparea.hw |> select(period_3wk, SITE, area_crop, area_natural, pct.natural, total.flowers) |>
+  left_join(croprich.hw |> select(period_3wk, SITE, crop.rich), by = c("period_3wk", "SITE"))
 
-croparearich.hw.mn <- croparearich.hw |> group_by(month, crop.rich) |>
+croparearich.hw.mn <- croparearich.hw |> group_by(period_3wk, crop.rich) |>
   summarize(total.flowers = mean(total.flowers), .groups = "drop")
 
-ggplot(croparearich.hw, aes(month, total.flowers)) + 
+ggplot(croparearich.hw, aes(period_3wk, total.flowers)) + 
   geom_point(aes(group = SITE, color = pct.natural)) + geom_line(aes(group = SITE, color = pct.natural)) + 
   geom_line(data = croparearich.hw.mn, color = "red", lwd = 1, lty = 5) +
   facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
@@ -99,11 +99,11 @@ ggplot(croparearich.hw, aes(month, total.flowers)) +
 cropdiv.hw <- croparea.hw |> select(SITE, area_crop) |> distinct() |>
   right_join(cropbuf.hw, by = "SITE") |> filter(landcover.4cat == "crop") |> 
   mutate(P_i = area/area_crop, P_i2 = P_i * log(P_i)) |>
-  group_by(period, month, SITE) |>
+  group_by(period_3wk, SITE) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
-  right_join(croparearich.hw, by = c("period", "month", "SITE"))
+  right_join(croparearich.hw, by = c("period_3wk", "SITE"))
 
-ggplot(cropdiv.hw, aes(month, total.flowers)) + 
+ggplot(cropdiv.hw, aes(period_3wk, total.flowers)) + 
   geom_point(aes(group = SITE, color = crop.shandiv)) + geom_line(aes(group = SITE, color = crop.shandiv)) +
   geom_line(data = croparearich.hw.mn, color = "red", lwd = 1, lty = 5) + facet_wrap(~crop.rich) +
   scale_color_viridis_c(option = "viridis")
@@ -245,17 +245,32 @@ Aaron took surveys of all vegetation within a larger area using a modified Whita
 ### Floral density curves of individual land covers
 
 ```{r}
-#| fig-height: 6
-#| fig-width: 8.5
+#| fig-cap: Flowering curves from Iverson data. Solid vertical lines show extent used for calculating coefficient of variation for entire season; black dotted lines show sampled time points across the full range; orange dashed lines show the truncated points of sampling.
+#| fig-width: 6
+#| fig-height: 2.5
+
+# ggplot(lcflr.iv |> 
+#          pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_per_m2") |>
+#          mutate(julianDay = as.numeric(gsub("d","",julianDay))),
+#        aes(julianDay, flowers_per_m2,
+#            group = Floral_resources_landcover, 
+#            color = Floral_resources_landcover)) + geom_line() +
+#   theme(legend.position = "bottom", 
+#         legend.title=element_blank())
 
 ggplot(lcflr.iv |> 
-         pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_per_m2") |>
-         mutate(julianDay = as.numeric(gsub("d","",julianDay))),
-       aes(julianDay, flowers_per_m2,
+         pivot_longer(d1:d365, names_to = "julianDay", 
+                      values_to = "flowers_per_m2") |>
+         mutate(julianDay = as.numeric(gsub("d","",julianDay))) |> 
+  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31"))),
+       aes(date, flowers_per_m2,
            group = Floral_resources_landcover, 
            color = Floral_resources_landcover)) + geom_line() +
-  theme(legend.position = "bottom", 
-        legend.title=element_blank())
+  geom_vline(xintercept = as.Date(c("2016-03-01","2016-09-30"))) +
+  geom_vline(xintercept = 
+               as.Date(c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")),
+             linetype=5) +
+  theme(legend.position = "none")
 
 ```
 
@@ -280,30 +295,32 @@ cropbuf.iv <- buf.iv |>
   mutate(
     total.flowers = area * flowers_m2,
     julianDay = as.numeric(gsub("d","",julianDay))
-    )
+    ) |> 
+  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31"))) |>
+  filter(date >= "2016-03-01" & date <= "2016-09-30")
 
 
 croparea.iv <- cropbuf.iv |>
-  group_by(site, Group, julianDay) |>
+  group_by(site, Group, date) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
-  pivot_wider(id_cols = c(julianDay, site), 
+  pivot_wider(id_cols = c(date, site), 
               names_from = Group, values_from = c(area, total.flowers)) |>
   mutate(
     total.flowers = rowSums(across(total.flowers_Agriculture:total.flowers_Wetland)),
     total.area = rowSums(across(area_Agriculture:area_Wetland)),
-    area_natural = area_Forest + area_Wetland + area_Succesional,
+    area_natural = area_Forest + area_Wetland + area_Succesional + area_Ditch,
     pct.natural = 100*area_natural/(750*750*pi),
     pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
   )
 
 croparea.iv.sum <- croparea.iv |> select(site, pct.natural, pct.nat.intv) |> distinct()
 
-croparea.iv.mn <- croparea.iv |> group_by(julianDay, pct.nat.intv) |>
+croparea.iv.mn <- croparea.iv |> group_by(date, pct.nat.intv) |>
   summarize(total.flowers = mean(total.flowers), .groups = "drop")
 
-ggplot(croparea.iv, aes(julianDay, total.flowers)) +
+ggplot(croparea.iv, aes(date, total.flowers)) +
   geom_line(aes(group = site, color = pct.natural)) + 
-  geom_line(data = croparea.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 1) +
+  geom_line(data = croparea.iv.mn, mapping = aes(date, total.flowers), color = "red", lwd = 1) +
   scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
 
 
@@ -315,19 +332,19 @@ ggplot(croparea.iv, aes(julianDay, total.flowers)) +
 
 croprich.iv <- cropbuf.iv |> rowwise() |>
   mutate(crop = Group=="Agriculture" & area > 0) |>
-  group_by(julianDay, site) |>
+  group_by(date, site) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
 
-croparearich.iv <- croparea.iv |> select(julianDay, site, area_Agriculture, area_natural, pct.natural, total.flowers) |>
+croparearich.iv <- croparea.iv |> select(date, site, area_Agriculture, area_natural, pct.natural, total.flowers) |>
   rename(area_crop = area_Agriculture) |>
-  left_join(croprich.iv |> select(julianDay, site, crop.rich), by = c("julianDay", "site"))
+  left_join(croprich.iv |> select(date, site, crop.rich), by = c("date", "site"))
 
-croparearich.iv.mn <- croparearich.iv |> group_by(julianDay, crop.rich) |>
+croparearich.iv.mn <- croparearich.iv |> group_by(date, crop.rich) |>
   summarize(total.flowers = mean(total.flowers), .groups = "drop")
 
-ggplot(croparearich.iv, aes(julianDay, total.flowers)) + 
+ggplot(croparearich.iv, aes(date, total.flowers)) + 
   geom_line(aes(group = site, color = pct.natural)) +
-  geom_line(data = croparearich.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  geom_line(data = croparearich.iv.mn, mapping = aes(date, total.flowers), color = "red", lwd = 0.5, lty = 5) +
   facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
@@ -339,13 +356,102 @@ ggplot(croparearich.iv, aes(julianDay, total.flowers)) +
 cropdiv.iv <- croparea.iv |> select(site, area_Agriculture) |> distinct() |>
   right_join(cropbuf.iv, by = "site") |> filter(Group == "Agriculture") |> 
   mutate(P_i = area/area_Agriculture, P_i2 = P_i * log(P_i)) |>
-  group_by(julianDay, site) |>
+  group_by(date, site) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
-  right_join(croparearich.iv, by = c("julianDay", "site"))
+  right_join(croparearich.iv, by = c("date", "site"))
 
-ggplot(cropdiv.iv, aes(julianDay, total.flowers)) + 
+ggplot(cropdiv.iv, aes(date, total.flowers)) + 
   geom_line(aes(group = site, color = crop.shandiv)) +
-  geom_line(data = croparearich.iv.mn, mapping = aes(julianDay, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  geom_line(data = croparearich.iv.mn, mapping = aes(date, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+
+```
+
+### Aaron's data sampled at 5 timepoints
+
+```{r}
+
+cropbuf.iv_5 <- buf.iv |>
+  pivot_longer(cols = Alfalfa:Plums,
+               names_to = "Floral_resources_landcover",
+               values_to = "area") |> 
+  mutate(Floral_resources_landcover = 
+           replace_values(Floral_resources_landcover,
+                          "Urban.tree" ~ "Urban tree")) |>
+  left_join(lcflr.iv, by = "Floral_resources_landcover") |>
+  filter(!is.na(area)) |> 
+  pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
+  mutate(
+    total.flowers = area * flowers_m2,
+    julianDay = as.numeric(gsub("d","",julianDay))
+    ) |> 
+  mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31"))) |>
+  filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15"))
+
+
+croparea.iv_5 <- cropbuf.iv_5 |>
+  group_by(site, Group, date) |>
+  summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
+  pivot_wider(id_cols = c(date, site), 
+              names_from = Group, values_from = c(area, total.flowers)) |>
+  mutate(
+    total.flowers = rowSums(across(total.flowers_Agriculture:total.flowers_Wetland)),
+    total.area = rowSums(across(area_Agriculture:area_Wetland)),
+    area_natural = area_Forest + area_Wetland + area_Succesional,
+    pct.natural = 100*area_natural/(750*750*pi),
+    pct.nat.intv = cut_width(pct.natural, width = 25, boundary = 0)
+  )
+
+croparea.iv_5.sum <- croparea.iv_5 |> select(site, pct.natural, pct.nat.intv) |> distinct()
+
+croparea.iv_5.mn <- croparea.iv_5 |> group_by(date, pct.nat.intv) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparea.iv_5, aes(date, total.flowers)) +
+  geom_line(aes(group = site, color = pct.natural)) + 
+  geom_line(data = croparea.iv_5.mn, mapping = aes(date, total.flowers), color = "red", lwd = 1) +
+  scale_color_viridis_c(option = "viridis") + facet_wrap(~pct.nat.intv)
+
+
+```
+
+### Crop richness (5 timepoints)
+
+```{r}
+
+croprich.iv_5 <- cropbuf.iv_5 |> rowwise() |>
+  mutate(crop = Group=="Agriculture" & area > 0) |>
+  group_by(date, site) |>
+  summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
+
+croparearich.iv_5 <- croparea.iv_5 |> select(date, site, area_Agriculture, area_natural, pct.natural, total.flowers) |>
+  rename(area_crop = area_Agriculture) |>
+  left_join(croprich.iv |> select(date, site, crop.rich), by = c("date", "site"))
+
+croparearich.iv_5.mn <- croparearich.iv_5 |> group_by(date, crop.rich) |>
+  summarize(total.flowers = mean(total.flowers), .groups = "drop")
+
+ggplot(croparearich.iv_5, aes(date, total.flowers)) + 
+  geom_line(aes(group = site, color = pct.natural)) +
+  geom_line(data = croparearich.iv_5.mn, mapping = aes(date, total.flowers), color = "red", lwd = 0.5, lty = 5) +
+  facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
+
+```
+
+### Crop diversity (5 timepoints)
+
+```{r}
+
+cropdiv.iv_5 <- croparea.iv_5 |> select(site, area_Agriculture) |> distinct() |>
+  right_join(cropbuf.iv, by = "site") |> filter(Group == "Agriculture") |> 
+  mutate(P_i = area/area_Agriculture, P_i2 = P_i * log(P_i)) |>
+  group_by(date, site) |>
+  summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
+  right_join(croparearich.iv_5, by = c("date", "site"))
+
+ggplot(cropdiv.iv_5, aes(date, total.flowers)) + 
+  geom_line(aes(group = site, color = crop.shandiv)) +
+  geom_line(data = croparearich.iv_5.mn, mapping = aes(date, total.flowers), color = "red", lwd = 0.5, lty = 5) +
   facet_wrap(~crop.rich) + scale_color_viridis_c(option = "viridis")
 
 ```
@@ -394,5 +500,6 @@ ggplot(cropdiv.iv.sum, aes(crop.rich, crop.shandiv, color = farm, pch = farm)) +
 write.csv(cropdiv.gf, "data/cropdiv_gf2021.csv", row.names = FALSE)
 write.csv(cropdiv.hw, "data/cropdiv_hw2025.csv", row.names = FALSE)
 write.csv(cropdiv.iv, "data/cropdiv_iverson.csv", row.names = FALSE)
+write.csv(cropdiv.iv_5, "data/cropdiv5_iverson.csv", row.names = FALSE)
 
 ```

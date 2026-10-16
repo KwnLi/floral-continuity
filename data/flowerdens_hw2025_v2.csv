@@ -1,0 +1,81 @@
+"period_3wk","raster.name","flowerdens","landcover","landcover.floral","raster.code","raster.code.floral","landcover.4cat","raster.code.4cat"
+1,"ALFALF",2.138235294,"ALF","alfalfa",102,65,"crop",3
+1,"BARE",0,"Bare","Bare",8,8,"natural",1
+1,"BEAN",0,"BEAN","bean",105,41,"crop",3
+1,"CHAPAR",21.375115,"Chaparral","Chaparral",5,5,"natural",1
+1,"FALLOW",10.298382500075,"Fallow","Fallow",7,7,"crop",3
+1,"GRASS",6.10655555555556,"Grass","Grass",10,10,"natural",1
+1,"MIXEDO",11.022338765,"Mixedoak","Mixedoak",4,4,"natural",1
+1,"OAK",18.3296374608333,"Oak","Oak",1,1,"natural",1
+1,"ONION",61.8173333333333,"ONION","Onion",122,30,"crop",3
+1,"PRUNUS",5.988798295375,"PRU","Prunus orchard understory",125,14,"crop",3
+1,"RIPARI",24.8106694005,"Riparian","Riparian",12,12,"natural",1
+1,"SUNFLO",0,"SUN","sunflower",134,46,"crop",3
+1,"TOMATO",0,"TOM","Tomato-m",137,39,"crop",3
+1,"VINEYA",3.3,"GRP","vineyard",115,66,"crop",3
+1,"WALNUT",20.0143217924737,"WAL","Walnut understory",141,24,"crop",3
+1,"WHEAT",0,"WH","Wheat",142,64,"crop",3
+2,"ALFALF",0.961666666666667,"ALF","alfalfa",102,65,"crop",3
+2,"BARE",0,"Bare","Bare",8,8,"natural",1
+2,"BEAN",0,"BEAN","bean",105,41,"crop",3
+2,"CHAPAR",13.2852264445,"Chaparral","Chaparral",5,5,"natural",1
+2,"FALLOW",3.153490833325,"Fallow","Fallow",7,7,"crop",3
+2,"GRASS",0.111111111111111,"Grass","Grass",10,10,"natural",1
+2,"MIXEDO",21.71289424,"Mixedoak","Mixedoak",4,4,"natural",1
+2,"OAK",7.81785748566667,"Oak","Oak",1,1,"natural",1
+2,"ONION",0,"ONION","Onion",122,30,"crop",3
+2,"PRUNUS",1.0528125,"PRU","Prunus orchard understory",125,14,"crop",3
+2,"RIPARI",8.24841360052381,"Riparian","Riparian",12,12,"natural",1
+2,"SUNFLO",0,"SUN","sunflower",134,46,"crop",3
+2,"TOMATO",0.84501847735,"TOM","Tomato-m",137,39,"crop",3
+2,"VINEYA",0,"GRP","vineyard",115,66,"crop",3
+2,"WALNUT",3.75486842105263,"WAL","Walnut understory",141,24,"crop",3
+2,"WHEAT",0,"WH","Wheat",142,64,"crop",3
+3,"ALFALF",2.98333333333333,"ALF","alfalfa",102,65,"crop",3
+3,"BARE",0,"Bare","Bare",8,8,"natural",1
+3,"BEAN",0.9,"BEAN","bean",105,41,"crop",3
+3,"CHAPAR",33.991966,"Chaparral","Chaparral",5,5,"natural",1
+3,"FALLOW",2.6605545633,"Fallow","Fallow",7,7,"crop",3
+3,"GRASS",0.653333333333333,"Grass","Grass",10,10,"natural",1
+3,"MIXEDO",9.658208889,"Mixedoak","Mixedoak",4,4,"natural",1
+3,"OAK",6.00839472566667,"Oak","Oak",1,1,"natural",1
+3,"ONION",0,"ONION","Onion",122,30,"crop",3
+3,"PRUNUS",105.284151785687,"PRU","Prunus orchard understory",125,14,"crop",3
+3,"RIPARI",11.870117463,"Riparian","Riparian",12,12,"natural",1
+3,"SUNFLO",0.2625,"SUN","sunflower",134,46,"crop",3
+3,"TOMATO",8.00397435885,"TOM","Tomato-m",137,39,"crop",3
+3,"VINEYA",0,"GRP","vineyard",115,66,"crop",3
+3,"WALNUT",0.269590643263158,"WAL","Walnut understory",141,24,"crop",3
+3,"WHEAT",0,"WH","Wheat",142,64,"crop",3
+4,"ALFALF",0,"ALF","alfalfa",102,65,"crop",3
+4,"BARE",0,"Bare","Bare",8,8,"natural",1
+4,"BEAN",1.4,"BEAN","bean",105,41,"crop",3
+4,"CHAPAR",12.28992,"Chaparral","Chaparral",5,5,"natural",1
+4,"FALLOW",3.774436284125,"Fallow","Fallow",7,7,"crop",3
+4,"GRASS",0.233333333333333,"Grass","Grass",10,10,"natural",1
+4,"MIXEDO",0.0826666666666667,"Mixedoak","Mixedoak",4,4,"natural",1
+4,"OAK",0.916793650666667,"Oak","Oak",1,1,"natural",1
+4,"ONION",0,"ONION","Onion",122,30,"crop",3
+4,"PRUNUS",5.634239130625,"PRU","Prunus orchard understory",125,14,"crop",3
+4,"RIPARI",6.61095319728571,"Riparian","Riparian",12,12,"natural",1
+4,"SUNFLO",3.44375,"SUN","sunflower",134,46,"crop",3
+4,"TOMATO",0,"TOM","Tomato-m",137,39,"crop",3
+4,"VINEYA",0,"GRP","vineyard",115,66,"crop",3
+4,"WALNUT",1.67030075189474,"WAL","Walnut understory",141,24,"crop",3
+4,"WHEAT",0,"WH","Wheat",142,64,"crop",3
+5,"ALFALF",0,"ALF","alfalfa",102,65,"crop",3
+5,"BARE",0,"Bare","Bare",8,8,"natural",1
+5,"BEAN",0.933333333333333,"BEAN","bean",105,41,"crop",3
+5,"CHAPAR",3.65693,"Chaparral","Chaparral",5,5,"natural",1
+5,"FALLOW",4.629220355725,"Fallow","Fallow",7,7,"crop",3
+5,"GRASS",0,"Grass","Grass",10,10,"natural",1
+5,"MIXEDO",0.202666666666667,"Mixedoak","Mixedoak",4,4,"natural",1
+5,"OAK",0.057809524,"Oak","Oak",1,1,"natural",1
+5,"ONION",0,"ONION","Onion",122,30,"crop",3
+5,"PRUNUS",4.55353260875,"PRU","Prunus orchard understory",125,14,"crop",3
+5,"RIPARI",3.01440461871429,"Riparian","Riparian",12,12,"natural",1
+5,"SUNFLO",2.904166666625,"SUN","sunflower",134,46,"crop",3
+5,"TOMATO",0,"TOM","Tomato-m",137,39,"crop",3
+5,"VINEYA",0,"GRP","vineyard",115,66,"crop",3
+5,"WALNUT",0.276625387,"WAL","Walnut understory",141,24,"crop",3
+5,"WHEAT",0,"WH","Wheat",142,64,"crop",3
