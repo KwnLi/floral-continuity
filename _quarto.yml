@@ -19,7 +19,7 @@ website:
         text: Continuity
       - href: results.qmd
         text: Results
-      - href: continuity2.qmd
+      - href: supplement.qmd
         text: Results supplementary info
 
 format:
