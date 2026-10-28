@@ -1,0 +1,395 @@
+---
+title: "Results"
+format: html
+execute: 
+  message: false
+  warning: false
+  echo: false
+---
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(marginaleffects)
+library(sf)
+library(glmmTMB)
+
+lcflrcv <- read.csv("data/continuitystats_landcover.csv") |>
+  filter(crop != "other")
+alldf <- read.csv("data/continuitystats_data.csv")
+all.mn <- read.csv("data/continuitystats_finaldata.csv")
+
+# function for normalizing within study
+
+z.params.data <-  alldf |> 
+  group_by(study) |>
+  summarize(
+    # stdy.max = max(total.flowers),
+    stdy.sd = sd(total.flowers),
+    stdy.mn = mean(total.flowers),
+    .groups = "drop"
+  )
+
+apply.z <- function(x, stdy, z.params = z.params.data){
+  study.zprm = dplyr::filter(z.params, study == stdy)
+  
+  (x - study.zprm$stdy.mn)/study.zprm$stdy.sd
+}
+
+
+```
+
+## Floral resource abundance
+
+I fit a gamma distribution model with a dispersion formula to account for differences in data noisiness between studies.
+
+```{r}
+
+glm.flrmn4b <- glmmTMB(flr.mn ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+
+sjPlot::tab_model(glm.flrmn4b, transform = NULL)
+
+```
+
+### Visualization
+
+Here are model-estimated trends and data in their original scales, faceted by study.
+
+```{r}
+
+glm.flrmn.pred.nat <- plot_predictions(
+  glm.flrmn4b, 
+  condition = list(pct.natural=seq(0,100, by = 5),
+                   crop.shandiv=c(0,1,2),
+                   study=unique(all.mn$study)),
+  vcov = TRUE, type = "response", draw = FALSE) |> 
+  mutate(crop.shandiv = as.numeric(as.character(crop.shandiv)))
+
+
+ggplot(glm.flrmn.pred.nat, 
+       aes(pct.natural, estimate, group = crop.shandiv)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = crop.shandiv),
+              alpha = 0.2) +
+  geom_line(aes(color = crop.shandiv)) +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, flr.mn, color = crop.shandiv, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  labs(y="Total flowers", x = "% natural area") +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom")
+
+```
+
+
+
+```{r}
+
+glm.flrmn.pred.div <- plot_predictions(
+  glm.flrmn4b, 
+  condition = list(crop.shandiv=seq(0,2, by =0.2),
+                   pct.natural=c(0,50,100),
+                   study=unique(all.mn$study)),
+  vcov = TRUE, type = "response", draw = FALSE) |> 
+  mutate(pct.natural = as.numeric(as.character(pct.natural)))
+
+ggplot(glm.flrmn.pred.div, 
+       aes(crop.shandiv, estimate, group = pct.natural)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = pct.natural),
+              alpha = 0.2) +
+  geom_line(aes(color = pct.natural)) +
+  geom_point(data = all.mn, 
+             mapping = aes(crop.shandiv, flr.mn, color = pct.natural, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(direction = -1) + 
+  scale_fill_viridis_c(direction = -1) + 
+  egg::theme_article() +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom") +
+  labs(y="Total flowers", x = "Crop Shannon diversity")
+
+```
+
+## Floral resource continuity (coefficient of variance)
+
+The best-supported model for floral resource continuity suggests a quadratic response to % natural area and no significant effect of crop diversity.
+
+```{r}
+
+glm.flrcv4a <- glmmTMB(flr.cv ~ crop.shandiv + poly(pct.natural,2) * study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+sjPlot::tab_model(glm.flrcv4a, transform = NULL)
+
+```
+
+### Visualization
+
+The coefficient of variation can be visualized across studies. The best continuity is achieved at intermediate natural habitat. I think this is because intermediate natural habitat landscapes balance the size of the peak bloom against the spread of blooms over time.
+
+
+```{r}
+
+
+glm.flrcv2a.pred <- avg_predictions(
+  glm.flrcv4a,
+  newdata = datagrid(pct.natural = seq(0, 100, by=5), study = unique(all.mn$study)),
+  by = c("pct.natural", "study")
+)
+
+
+ggplot(glm.flrcv2a.pred, 
+       aes(pct.natural, estimate)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  group = study),
+              alpha = 0.2) +
+  geom_line(aes(linetype = study, group = study), color = "black") +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, flr.cv,
+                           color = crop.shandiv, 
+                           group = study, shape = study),
+             inherit.aes = FALSE) + 
+  scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  labs(y="Discontinuity (CV)", x = "% natural area")
+
+```
+
+Below the trends and data are faceted by study.
+
+```{r}
+
+glm.flrcv.pred.nat <- plot_predictions(
+  glm.flrcv4a, 
+  condition = list(pct.natural=seq(0,100, by = 5),
+                   # crop.shandiv=c(0,1,2),
+                   study=unique(all.mn$study)),
+  vcov = TRUE, type = "response", draw = FALSE) |> 
+  mutate(crop.shandiv = as.numeric(as.character(crop.shandiv)))
+
+
+ggplot(glm.flrcv.pred.nat, 
+       aes(pct.natural, estimate, group = crop.shandiv)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high),
+              alpha = 0.2) +
+  geom_line() +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, flr.cv, color = crop.shandiv, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom") +
+  labs(y="Discontinuity (CV)", x = "% natural area")
+
+```
+
+The diversity of crops didn't have a significant effect on continuity in the best-fit model.
+
+```{r}
+
+glm.flrcv.pred.div <- avg_predictions(
+  glm.flrcv4a,
+  newdata = datagrid(crop.shandiv = seq(0, 1.7, by=0.1),
+                     study = unique(all.mn$study)),
+  by = c("crop.shandiv", "study")
+)
+
+ggplot(glm.flrcv.pred.div, 
+       aes(crop.shandiv, estimate)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  group = study),
+              alpha = 0.2) +
+    geom_line(aes(linetype = study), color = "black") +
+  geom_point(data = all.mn, 
+             mapping = aes(crop.shandiv, flr.cv,
+                           color = pct.natural, 
+                           group = study, shape = study),
+             inherit.aes = FALSE) + 
+  scale_shape_manual(values = c(12,8,1)) +
+  scale_color_viridis_c(direction = -1) + 
+  egg::theme_article() +
+  labs(y="Discontinuity (CV)", x = "Crop Shannon diversity")
+
+```
+
+## Flowering peak
+
+I rescaled the main bloom season of each study to 0-1 to compare relative timing of bloom. Peak time is calculated as a weighted mean of the rescaled bloom survey times, using floral counts to weight each period.
+
+The best model has three-way interacting terms for % natural area (quadratic), crop shannon diversity (quadratic), and study.
+
+```{r}
+
+glm.pktime2d <- glmmTMB(pktime.scale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+sjPlot::tab_model(glm.pktime2d, transform = NULL)
+
+```
+
+### Visualization
+
+Here are how the trends look, by study. These plots show a possible caveat about these results, which is that the individual studies dominate particular subsets of the data, e.g. very low crop diversity values with varying levels of percent natural area are mainly found in Guezen and Forrest (2021).
+
+```{r}
+
+glm.flrpktime.pred.nat <- plot_predictions(
+  glm.pktime2d, 
+  condition = list(pct.natural=seq(0,100, by = 5),
+                   crop.shandiv=c(0,1,2),
+                   study=unique(all.mn$study)),
+  vcov = TRUE, type = "response", draw = FALSE) |> 
+  mutate(crop.shandiv = as.numeric(as.character(crop.shandiv)))
+
+
+ggplot(glm.flrpktime.pred.nat, 
+       aes(pct.natural, estimate, group = crop.shandiv)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = crop.shandiv),
+              alpha = 0.2) +
+  geom_line(aes(color = crop.shandiv)) +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, pktime.scale, color = crop.shandiv, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  labs(y="Peak bloom", x = "% natural area") +
+  facet_wrap(~study) +
+  theme(legend.position = "bottom")
+
+```
+
+
+```{r}
+
+glm.flrpktime.pred.div <- plot_predictions(
+  glm.pktime2d, 
+  condition = list(
+    crop.shandiv=seq(0,2, by = 0.2),
+    pct.natural=c(0,50,100),
+    study=unique(all.mn$study)),
+  vcov = TRUE, type = "response", draw = FALSE) |> 
+  mutate(pct.natural = as.numeric(as.character(pct.natural)))
+
+ggplot(glm.flrpktime.pred.div, 
+       aes(crop.shandiv, estimate, group = pct.natural)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = pct.natural),
+              alpha = 0.2) +
+    geom_line(aes(color = pct.natural)) +
+  geom_point(data = all.mn, 
+             mapping = aes(crop.shandiv, pktime.scale,
+                           color = pct.natural),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(direction = -1) + 
+  scale_fill_viridis_c(direction = -1) + 
+  egg::theme_article() + 
+  labs(y="Peak bloom", x = "Crop Shannon diversity") +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom")
+
+```
+
+## Land cover trends
+
+### Land cover floral count means
+
+Comparison between land cover mean floral counts (over the season) for crop and natural area land covers. Natural land covers are significantly higher in mean floral resources.
+
+```{r}
+
+lcflr.lm1 <- glmmTMB(flr.mn.scale ~ crop + study, 
+                     dispformula = ~study, data = lcflrcv)
+
+ggplot(lcflrcv, aes(crop, flr.mn.scale, fill = crop)) + 
+  geom_boxplot() +
+  geom_jitter(aes(shape = study), width = 0.2) +
+  egg::theme_article() +
+  labs(x = "Land cover", y = "Scaled mean flower count")
+
+lcflr.lm2 <- glmmTMB(flr.mn.scale ~ crop * study,
+                     dispformula = ~study, data = lcflrcv)
+
+anova(lcflr.lm1, lcflr.lm2)
+
+sjPlot::tab_model(lcflr.lm1)
+
+```
+
+### Land cover discontinuity
+
+There is not a significant difference in discontinuity between crop and natura land cover types.
+
+```{r}
+
+lccv.lm1 <- glmmTMB(flr.cv ~ crop + study, 
+                     dispformula = ~study, 
+                    data = lcflrcv |> filter(!is.na(flr.cv)))
+
+ggplot(lcflrcv, aes(crop, flr.cv, fill = crop)) + 
+  geom_boxplot() +
+  geom_jitter(aes(shape = study), width = 0.2) +
+  egg::theme_article() +
+  labs(x = "Land cover", y = "Scaled mean flower count")
+
+lccv.lm2 <- glmmTMB(flr.mn.scale ~ crop * study,
+                     dispformula = ~study,
+                    data = lcflrcv |> filter(!is.na(flr.cv)))
+
+anova(lccv.lm1, lccv.lm2)
+
+sjPlot::tab_model(lccv.lm1)
+
+```
+
+### Land cover peak times
+
+Bloom peak times of crops are significantly earlier.
+
+```{r}
+
+lcpk.lm1 <- glmmTMB(pktime.scale ~ crop + study, 
+                     dispformula = ~study, data = lcflrcv)
+
+ggplot(lcflrcv, aes(crop, pktime.scale, fill = crop)) + 
+  geom_boxplot() +
+  geom_jitter(aes(shape = study), width = 0.2) +
+  egg::theme_article() +
+  labs(x = "Land cover", y = "Scaled peak time")
+
+lcflr.lm2 <- glmmTMB(flr.mn.scale ~ crop * study,
+                     dispformula = ~study, data = lcflrcv)
+
+anova(lcflr.lm1, lcflr.lm2)
+
+sjPlot::tab_model(lcpk.lm1)
+
+```

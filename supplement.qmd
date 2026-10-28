@@ -1,5 +1,5 @@
 ---
-title: "Continuity - continued"
+title: "Results Supplementary Info"
 format: html
 execute: 
   message: false
@@ -13,136 +13,141 @@ execute:
 #| message: false
 
 library(tidyverse)
-
-lcflr.gf <- read.csv("data/flowerdens_gf2021_v2.csv")
-
-lcflr.iv <- read.csv("data/flowerdens_iverson.csv") |> 
-  pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
-  mutate(
-    julianDay = as.numeric(gsub("d","",julianDay))
-    ) |> 
-  mutate(date = as.character(as.Date(julianDay, origin=as.Date("2015-12-31")))) |>
-  filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")) |> 
-  mutate(
-    datePeriod =
-      recode_values(date,
-                    "2016-04-15"~1,
-                    "2016-05-15"~2,
-                    "2016-06-15"~3,
-                    "2016-07-15"~4,
-                    "2016-08-15"~5)) |>
-  mutate(crop = recode_values(Group,
-    c("Agriculture") ~ "crop",
-    c("Forest","Ditch","Wetland","Successional") ~ "natural",
-    default = "other"
-  )) |> rename(landtype = Floral_resources_landcover, flowerdens = flowers_m2)
-
-lcflr.hw <- read.csv("data/flowerdens_hw2025_v2.csv") |>
-  rename(crop=landcover.4cat, landtype=landcover.floral, datePeriod=period_3wk)
-
-lcflr <- list(gf=lcflr.gf |> select(landtype, crop, flowerdens, datePeriod),
-              iv=lcflr.iv |> select(landtype, crop, flowerdens, datePeriod),
-              hw=lcflr.hw |> select(landtype, crop, flowerdens, datePeriod)) |>
-  bind_rows(.id = "study")
-
-lcflrcv <- lcflr |>
-  group_by(study) |>
-  mutate(
-    flr.max = max(flowerdens),
-    flr.scale = flowerdens/max(flr.max)) |> ungroup() |>
-  group_by(study, landtype, crop) |>
-  mutate(
-    flrtime = flowerdens*datePeriod
-    ) |>
-  summarize(
-    flr.sum = sum(flowerdens),
-    flr.mn = mean(flowerdens), 
-    flr.sd = sd(flowerdens),
-    flr.cv = flr.sd/flr.mn, 
-    flr.stbl = 1/flr.cv, 
-    pktime = sum(flrtime)/flr.sum,
-    pktime.scale = pktime/max(datePeriod),
-    flr.mn.scale = mean(flr.scale),
-    .groups = "drop")
-
-# ----- Spatial clustering of Iverson data
- 
+library(marginaleffects)
 library(sf)
+library(glmmTMB)
 
-iv.sp <- st_read("data/spatial/iverson_pts.geojson", quiet = TRUE) |> st_transform(crs="epsg:5070")
-iv.sp.dist <- dist(st_coordinates(iv.sp))
+lcflrcv <- read.csv("data/continuitystats_landcover.csv")
+alldf <- read.csv("data/continuitystats_data.csv")
+all.mn <- read.csv("data/continuitystats_finaldata.csv")
 
-iv.hc <- hclust(iv.sp.dist, method = "single")
-
-iv.clust <- cutree(iv.hc, h = 1000)
-
-iv.sp.clust <- iv.sp |> mutate(farm = as.character(iv.clust))  |>
-  mutate(
-    site = replace_values(
-      site,
-      "Conifer_For34a Danby" ~ "Conifer_For34 Danby",
-      "MesicUpRem_For34b Arnot"~ "MesicUpRem_For34 Arnot"
-    )
-  )
-
-# st_write(iv.sp.clust, "data/spatial/iverson_pts_clust1km.geojson")
-
-# ----- buffer data
-  
-gf <- read.csv("data/cropdiv_gf2021.csv") |> 
-  mutate(site=as.character(transect)) |>
-  mutate(farm = stringr::str_split_i(site, "\\.", 1))
-hw <- read.csv("data/cropdiv_hw2025.csv") |> 
-  rename(datePeriod=period_3wk, site=SITE) |>
-  mutate(farm = site)
-iv <- read.csv("data/cropdiv5_iverson.csv") |> 
-  mutate(
-    datePeriod =
-      recode_values(date,
-                    "2016-04-15"~1,
-                    "2016-05-15"~2,
-                    "2016-06-15"~3,
-                    "2016-07-15"~4,
-                    "2016-08-15"~5)) |>
-  # separate_wider_delim(site,delim = " ", names = c(NA, "farm"), 
-  #                      too_many = "merge", cols_remove = FALSE) |>
-  # mutate(farm = farm |> str_to_upper() |>
-  #          str_replace_all("[^A-Z0-9]+", "") |> str_squish() |>
-  #          str_trunc(11,ellipsis = "")) |> 
-  left_join(iv.sp.clust |> st_drop_geometry() |> select(site, farm))
-
-alldf <- list(gf=gf,hw=hw,iv=iv) |> bind_rows(.id = "study")
-
-all.mn <- alldf |> 
-  group_by(study) |>
-  mutate(
-    # stdy.max = max(total.flowers),
-    stdy.sd = sd(total.flowers),
-    stdy.mn = mean(total.flowers),
-    # flr.1scale = total.flowers/max(stdy.max),
-    flr.zscale = (total.flowers-stdy.mn)/stdy.sd) |> 
-  ungroup() |>
-  group_by(study, site, farm, crop.rich, crop.shandiv, pct.natural) |>
-  mutate(flrtime = total.flowers*datePeriod) |>
-  summarize(flr.sum = sum(total.flowers),
-            flr.mn = mean(total.flowers),
-            flr.sd = sd(total.flowers),
-            flr.cv = flr.sd/flr.mn,
-            # flr.mn.1scale = mean(flr.1scale),
-            flr.mn.zscale = mean(flr.zscale),
-            pktime = sum(flrtime)/flr.sum,
-            pktime.scale = pktime/max(datePeriod),
-            .groups = "drop") |> 
-  group_by(study, farm) |>
-  summarize(
-    flr.mn = mean(flr.mn),
-    flr.mn.zscale = mean(flr.mn.zscale),
-    flr.cv = mean(flr.cv),
-    pktime.scale = mean(pktime.scale),
-    crop.shandiv = mean(crop.shandiv),
-    pct.natural = mean(pct.natural),
-    .groups = "drop"
-  )
+# lcflr.gf <- read.csv("data/flowerdens_gf2021_v2.csv")
+# 
+# lcflr.iv <- read.csv("data/flowerdens_iverson.csv") |> 
+#   pivot_longer(d1:d365, names_to = "julianDay", values_to = "flowers_m2") |>
+#   mutate(
+#     julianDay = as.numeric(gsub("d","",julianDay))
+#     ) |> 
+#   mutate(date = as.character(as.Date(julianDay, origin=as.Date("2015-12-31")))) |>
+#   filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15")) |> 
+#   mutate(
+#     datePeriod =
+#       recode_values(date,
+#                     "2016-04-15"~1,
+#                     "2016-05-15"~2,
+#                     "2016-06-15"~3,
+#                     "2016-07-15"~4,
+#                     "2016-08-15"~5)) |>
+#   mutate(crop = recode_values(Group,
+#     c("Agriculture") ~ "crop",
+#     c("Forest","Ditch","Wetland","Successional") ~ "natural",
+#     default = "other"
+#   )) |> rename(landtype = Floral_resources_landcover, flowerdens = flowers_m2)
+# 
+# lcflr.hw <- read.csv("data/flowerdens_hw2025_v2.csv") |>
+#   rename(crop=landcover.4cat, landtype=landcover.floral, datePeriod=period_3wk)
+# 
+# lcflr <- list(gf=lcflr.gf |> select(landtype, crop, flowerdens, datePeriod),
+#               iv=lcflr.iv |> select(landtype, crop, flowerdens, datePeriod),
+#               hw=lcflr.hw |> select(landtype, crop, flowerdens, datePeriod)) |>
+#   bind_rows(.id = "study")
+# 
+# lcflrcv <- lcflr |>
+#   group_by(study) |>
+#   mutate(
+#     flr.max = max(flowerdens),
+#     flr.scale = flowerdens/max(flr.max)) |> ungroup() |>
+#   group_by(study, landtype, crop) |>
+#   mutate(
+#     flrtime = flowerdens*datePeriod
+#     ) |>
+#   summarize(
+#     flr.sum = sum(flowerdens),
+#     flr.mn = mean(flowerdens), 
+#     flr.sd = sd(flowerdens),
+#     flr.cv = flr.sd/flr.mn, 
+#     flr.stbl = 1/flr.cv, 
+#     pktime = sum(flrtime)/flr.sum,
+#     pktime.scale = pktime/max(datePeriod),
+#     flr.mn.scale = mean(flr.scale),
+#     .groups = "drop")
+# 
+# # ----- Spatial clustering of Iverson data
+# 
+# iv.sp <- st_read("data/spatial/iverson_pts.geojson", quiet = TRUE) |> st_transform(crs="epsg:5070")
+# iv.sp.dist <- dist(st_coordinates(iv.sp))
+# 
+# iv.hc <- hclust(iv.sp.dist, method = "single")
+# 
+# iv.clust <- cutree(iv.hc, h = 1000)
+# 
+# iv.sp.clust <- iv.sp |> mutate(farm = as.character(iv.clust))  |>
+#   mutate(
+#     site = replace_values(
+#       site,
+#       "Conifer_For34a Danby" ~ "Conifer_For34 Danby",
+#       "MesicUpRem_For34b Arnot"~ "MesicUpRem_For34 Arnot"
+#     )
+#   )
+# 
+# # st_write(iv.sp.clust, "data/spatial/iverson_pts_clust1km.geojson")
+# 
+# # ----- buffer data
+#   
+# gf <- read.csv("data/cropdiv_gf2021.csv") |> 
+#   mutate(site=as.character(transect)) |>
+#   mutate(farm = stringr::str_split_i(site, "\\.", 1))
+# hw <- read.csv("data/cropdiv_hw2025.csv") |> 
+#   rename(datePeriod=period_3wk, site=SITE) |>
+#   mutate(farm = site)
+# iv <- read.csv("data/cropdiv5_iverson.csv") |> 
+#   mutate(
+#     datePeriod =
+#       recode_values(date,
+#                     "2016-04-15"~1,
+#                     "2016-05-15"~2,
+#                     "2016-06-15"~3,
+#                     "2016-07-15"~4,
+#                     "2016-08-15"~5)) |>
+#   # separate_wider_delim(site,delim = " ", names = c(NA, "farm"), 
+#   #                      too_many = "merge", cols_remove = FALSE) |>
+#   # mutate(farm = farm |> str_to_upper() |>
+#   #          str_replace_all("[^A-Z0-9]+", "") |> str_squish() |>
+#   #          str_trunc(11,ellipsis = "")) |> 
+#   left_join(iv.sp.clust |> st_drop_geometry() |> select(site, farm))
+# 
+# alldf <- list(gf=gf,hw=hw,iv=iv) |> bind_rows(.id = "study")
+# 
+# all.mn <- alldf |> 
+#   group_by(study) |>
+#   mutate(
+#     # stdy.max = max(total.flowers),
+#     stdy.sd = sd(total.flowers),
+#     stdy.mn = mean(total.flowers),
+#     # flr.1scale = total.flowers/max(stdy.max),
+#     flr.zscale = (total.flowers-stdy.mn)/stdy.sd) |> 
+#   ungroup() |>
+#   group_by(study, site, farm, crop.rich, crop.shandiv, pct.natural) |>
+#   mutate(flrtime = total.flowers*datePeriod) |>
+#   summarize(flr.sum = sum(total.flowers),
+#             flr.mn = mean(total.flowers),
+#             flr.sd = sd(total.flowers),
+#             flr.cv = flr.sd/flr.mn,
+#             # flr.mn.1scale = mean(flr.1scale),
+#             flr.mn.zscale = mean(flr.zscale),
+#             pktime = sum(flrtime)/flr.sum,
+#             pktime.scale = pktime/max(datePeriod),
+#             .groups = "drop") |> 
+#   group_by(study, farm) |>
+#   summarize(
+#     flr.mn = mean(flr.mn),
+#     flr.mn.zscale = mean(flr.mn.zscale),
+#     flr.cv = mean(flr.cv),
+#     pktime.scale = mean(pktime.scale),
+#     crop.shandiv = mean(crop.shandiv),
+#     pct.natural = mean(pct.natural),
+#     .groups = "drop"
+#   )
 
 ```
 
@@ -221,6 +226,21 @@ glm.flrmn3 <- glmmTMB(flr.mn ~ crop.shandiv *pct.natural + study,
                       family = Gamma(link = "log"),
                       data = all.mn)
 
+glm.flrmn4a <- glmmTMB(flr.mn ~ crop.shandiv + poly(pct.natural,2) * study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+glm.flrmn4b <- glmmTMB(flr.mn ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
+glm.flrmn4c <- glmmTMB(flr.mn ~ (poly(crop.shandiv,2) + poly(pct.natural,2)) * study, 
+                      dispformula = ~ study,
+                      family = Gamma(link = "log"),
+                      data = all.mn)
+
 # glm.flrmn4a <- glmmTMB(flr.mn ~ crop.shandiv * poly(pct.natural,2) + study, 
 #                       dispformula = ~ study,
 #                       family = Gamma(link = "log"),
@@ -257,6 +277,14 @@ anova(glm.flrmn1, glm.flrmn3)
 
 ```
 
+Study interactions are supported for both percent natural area and with crop shannon diversity, but doesn't change (lack of) support for a quadratic crop shannon diversity effect.
+
+```{r}
+
+anova(glm.flrmn2a, glm.flrmn4a, glm.flrmn4b, glm.flrmn4c)
+
+```
+
 ### Selected model coefficients
 
 This is a look at some of the models from the comparisons above.
@@ -276,13 +304,13 @@ sjPlot::tab_model(glm.flrmn1)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrmn1)
+glm.sim <- DHARMa::simulateResiduals(glm.flrmn1)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
 performance::check_model(glm.flrmn1)
 
@@ -303,19 +331,47 @@ sjPlot::tab_model(glm.flrmn2a)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrmn2a)
+glm.sim <- DHARMa::simulateResiduals(glm.flrmn2a)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
 performance::check_model(glm.flrmn2a)
 
 ```
 
 :::
+
+#### Quadratic % natural area model with interaction with study
+
+```{r}
+
+sjPlot::tab_model(glm.flrmn4b)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Quadratic % natural area with interaction with study model diagnostics
+
+```{r}
+
+glm.sim <- DHARMa::simulateResiduals(glm.flrmn4b)
+
+plot(glm.sim)
+
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
+
+performance::check_model(glm.flrmn2a)
+
+```
+
+:::
+
 
 ## Coefficient of variance
 
@@ -361,6 +417,15 @@ glm.flrcv3 <- glmmTMB(flr.cv ~ crop.shandiv * pct.natural + study,
                       dispformula = ~ study,
                       data = all.mn)
 
+glm.flrcv4a <- glmmTMB(flr.cv ~ crop.shandiv + poly(pct.natural,2) * study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+glm.flrcv4b <- glmmTMB(flr.cv ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+
+
 ```
 
 Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
@@ -381,6 +446,15 @@ anova(glm.flrcv1, glm.flrcv3)
 
 ```
 
+Likelihood ratio tests support an interaction between (quadratic) natural area terms and study. Interaction between study and crop shannon diversity is not supported.
+
+```{r}
+
+anova(glm.flrcv2a, glm.flrcv4a, glm.flrcv4b)
+
+
+```
+
 ### Selected model coefficients
 
 #### Linear model coefficients
@@ -398,15 +472,15 @@ sjPlot::tab_model(glm.flrcv1)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv1)
+glm.sim <- DHARMa::simulateResiduals(glm.flrcv1)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.flrmn1)
+performance::check_model(glm.flrcv1)
 
 ```
 
@@ -427,19 +501,20 @@ sjPlot::tab_model(glm.flrcv2a)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv2a)
+glm.sim <- DHARMa::simulateResiduals(glm.flrcv2a)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.flrmn2a)
+performance::check_model(glm.flrcv2a)
 
 ```
 
 :::
+
 
 #### Interaction model coefficients
 
@@ -456,15 +531,44 @@ sjPlot::tab_model(glm.flrcv3)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.flrcv3)
+glm.sim <- DHARMa::simulateResiduals(glm.flrcv3)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.flrmn2a)
+performance::check_model(glm.flrcv3)
+
+```
+
+:::
+
+#### Interaction by study model coefficients
+
+Interaction with % natural area is significant.
+
+```{r}
+
+sjPlot::tab_model(glm.flrcv4a)
+
+```
+
+:::{.callout-note collapse="true"}
+##### Interaction by study model diagnostics
+
+```{r}
+
+glm.sim <- DHARMa::simulateResiduals(glm.flrcv4a)
+
+plot(glm.sim)
+
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
+
+performance::check_model(glm.flrcv4a)
 
 ```
 
@@ -515,6 +619,32 @@ glm.pktime2b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) + pct.natural + stud
                        dispformula = ~ study,
                        data = all.mn)
 
+
+glm.pktime2bx <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * study + pct.natural, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime2c <- glmmTMB(pktime.scale ~ crop.shandiv + poly(pct.natural,2) * study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime2d <- glmmTMB(pktime.scale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+
+glm.pktime2e <- glmmTMB(pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural,2)) * study, 
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
 glm.pktime3 <- glmmTMB(pktime.scale ~ crop.shandiv * pct.natural + study, 
                        family = Gamma(link = "log"),
                        # family = beta_family(),
@@ -533,11 +663,18 @@ glm.pktime3b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * pct.natural + stud
                        dispformula = ~ study,
                        data = all.mn)
 
-glm.pktime4 <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * poly(pct.natural,2) + study,
+glm.pktime3c <- glmmTMB(pktime.scale ~ crop.shandiv * pct.natural * study,
+                        family = Gamma(link = "log"),
+                       # family = beta_family(),
+                       dispformula = ~ study,
+                       data = all.mn)
+
+glm.pktime4a <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * poly(pct.natural,2) + study,
                        family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
+
 
 ```
 
@@ -545,8 +682,10 @@ Likelihood ratio tests comparing linear model to quadratic % natural area or qua
 
 ```{r}
 
-anova(glm.pktime1, glm.pktime2a)
-anova(glm.pktime1, glm.pktime2b)
+anova(glm.pktime1, glm.pktime2a, glm.pktime2c, glm.pktime2d, glm.pktime2e)
+anova(glm.pktime1, glm.pktime2b, glm.pktime2bx, glm.pktime2e)
+
+anova(glm.pktime2bx, glm.pktime2d)
 
 ```
 
@@ -558,14 +697,16 @@ anova(glm.pktime1, glm.pktime3)
 
 ```
 
-Interacting quadratic percent natural area and crop shannon diversity is the most supported, based on likelihood ratio test, AIC, and BIC.
+Interacting quadratic percent natural area and crop shannon diversity is also supported, but not the best AIC/BIC
 
 ```{r}
 
-anova(glm.pktime3, glm.pktime3a, glm.pktime4)
-anova(glm.pktime3, glm.pktime3b, glm.pktime4)
+anova(glm.pktime3, glm.pktime3a, glm.pktime4a)
+anova(glm.pktime3, glm.pktime3b, glm.pktime4a)
 
 ```
+
+
 
 ### Selected model coefficients
 
@@ -584,13 +725,13 @@ sjPlot::tab_model(glm.pktime1)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime1)
+glm.sim <- DHARMa::simulateResiduals(glm.pktime1)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
 performance::check_model(glm.pktime1)
 
@@ -613,13 +754,13 @@ sjPlot::tab_model(glm.pktime3)
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime3)
+glm.sim <- DHARMa::simulateResiduals(glm.pktime3)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
 performance::check_model(glm.pktime3)
 
@@ -629,32 +770,35 @@ performance::check_model(glm.pktime3)
 
 #### Interaction of quadratic percent natural area and crop shannon diversity model coefficients
 
-Adding interacting quadratic terms are significant.
+Adding interacting quadratic % natural terms are significant.
 
 ```{r}
 
-sjPlot::tab_model(glm.pktime4)
+sjPlot::tab_model(glm.pktime2d)
 
 ```
 
 :::{.callout-note collapse="true"}
-##### Quadratic interaction model diagnostics
+##### Quadratic % natural and studyinteraction model diagnostics
 
 ```{r}
 
-glm.flrmn.sim <- DHARMa::simulateResiduals(glm.pktime4)
+glm.sim <- DHARMa::simulateResiduals(glm.pktime2d)
 
-plot(glm.flrmn.sim)
+plot(glm.sim)
 
-plotResiduals(glm.flrmn.sim, all.mn$pct.natural)
-plotResiduals(glm.flrmn.sim, all.mn$crop.shandiv)
-plotResiduals(glm.flrmn.sim, all.mn$study)
+plotResiduals(glm.sim, all.mn$pct.natural)
+plotResiduals(glm.sim, all.mn$crop.shandiv)
+plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.pktime4)
+performance::check_model(glm.pktime2d)
 
 ```
 
 :::
+
+
+
 
 ## Land cover floral density comparisons
 

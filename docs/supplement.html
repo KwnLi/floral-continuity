@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Continuity - continued – Floral continuity</title>
+<title>Results Supplementary Info – Floral continuity</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -112,8 +112,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Continuity</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./continuity2.html" aria-current="page"> 
-<span class="menu-text">Continuity analysis</span></a>
+    <a class="nav-link" href="./results.html"> 
+<span class="menu-text">Results</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./continuity2.qmd"> 
+<span class="menu-text">Results supplementary info</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -162,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Continuity - continued</h1>
+<h1 class="title">Results Supplementary Info</h1>
 </div>
 
 
@@ -189,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -212,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Percent natural area against mean floral resources over time. Floral resource means have been z-scaled based on their associated study’s distribution. Points are colored by location shannon diversity and shape is study.</figcaption>
 </figure>
 </div>
@@ -222,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Crop shannon diversity against mean floral resources over time. Floral resource means have been z-scaled based on their associated study’s distribution. Points are colored by location % natural area and shape is study.</figcaption>
 </figure>
 </div>
@@ -267,6 +271,24 @@ glm.flrmn1  8 5475.2 5499.2 -2729.6   5459.2
 glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pre>
 </div>
 </div>
+<p>Study interactions are supported for both percent natural area and with crop shannon diversity, but doesn’t change (lack of) support for a quadratic crop shannon diversity effect.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Data: all.mn
+Models:
+glm.flrmn2a: flr.mn ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
+glm.flrmn4a: flr.mn ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
+glm.flrmn4b: flr.mn ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+glm.flrmn4c: flr.mn ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+            Df    AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.flrmn2a  9 5470.2 5497.2 -2726.1   5452.2                              
+glm.flrmn4a 13 5451.0 5490.1 -2712.5   5425.0 27.1576      4  1.847e-05 ***
+glm.flrmn4b 15 5440.4 5485.5 -2705.2   5410.4 14.6382      2  0.0006628 ***
+glm.flrmn4c 18 5445.2 5499.3 -2704.6   5409.2  1.1548      3  0.7638567    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
 </section>
 <section id="selected-model-coefficients" class="level3">
 <h3 class="anchored" data-anchor-id="selected-model-coefficients">Selected model coefficients</h3>
@@ -290,8 +312,8 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5498414.14</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4426940.88&nbsp;–&nbsp;6829221.11</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5498414.19</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4426940.90&nbsp;–&nbsp;6829221.20</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
@@ -364,35 +386,35 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-9-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-9-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -499,35 +521,216 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-11-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-12-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-11-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-12-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="quadratic-natural-area-model-with-interaction-with-study" class="level4">
+<h4 class="anchored" data-anchor-id="quadratic-natural-area-model-with-interaction-with-study">Quadratic % natural area model with interaction with study</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Estimates</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">CI</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">9236608.69</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">7932162.70&nbsp;–&nbsp;10755571.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.38</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.24&nbsp;–&nbsp;0.61</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05&nbsp;–&nbsp;2.33</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.276</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.40</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.005</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.82</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.98&nbsp;–&nbsp;3.37</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.058</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">23.44</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">18.24&nbsp;–&nbsp;30.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.60</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.78&nbsp;–&nbsp;3.29</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.199</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.75</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.68&nbsp;–&nbsp;4.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">16.49</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.58&nbsp;–&nbsp;469.33</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.101</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.93</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.08&nbsp;–&nbsp;45.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.683</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">888.69</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">105.70&nbsp;–&nbsp;7471.72</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">124.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">12.44&nbsp;–&nbsp;1242.43</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">10.47</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">6.19&nbsp;–&nbsp;17.71</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.17&nbsp;–&nbsp;0.68</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.002</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.35</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.74&nbsp;–&nbsp;2.47</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.324</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.985</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quadratic % natural area with interaction with study model diagnostics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-14-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -546,7 +749,7 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Percent natural area against coefficient of variance of floral resources over time. Points are colored by crop shannon diversity and shape is study.</figcaption>
 </figure>
 </div>
@@ -556,7 +759,7 @@ glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pr
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Crop shannon diversity against coefficient of variance of floral resources over time. Points are colored by percent natural area and shape is study.</figcaption>
 </figure>
 </div>
@@ -599,6 +802,22 @@ glm.flrcv3: flr.cv ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
            Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)   
 glm.flrcv1  8 30.043 54.075 -7.0216  14.0432                            
 glm.flrcv3  9 23.759 50.795 -2.8797   5.7594 8.2838      1      0.004 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Likelihood ratio tests support an interaction between (quadratic) natural area terms and study. Interaction between study and crop shannon diversity is not supported.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Data: all.mn
+Models:
+glm.flrcv2a: flr.cv ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
+glm.flrcv4a: flr.cv ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
+glm.flrcv4b: flr.cv ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+            Df      AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.flrcv2a  9   5.1525 32.188  6.4238  -12.848                              
+glm.flrcv4a 13 -20.1534 18.898 23.0767  -46.153 33.3059      4  1.034e-06 ***
+glm.flrcv4b 15 -17.9243 27.135 23.9621  -47.924  1.7709      2     0.4125    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -684,7 +903,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -693,41 +912,41 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-18-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-22-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-18-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-22-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-18-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-22-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -820,7 +1039,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -829,41 +1048,41 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-20-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-20-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-24-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-20-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-24-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-20-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-24-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -963,7 +1182,7 @@ natural</td>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -972,41 +1191,211 @@ natural</td>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-22-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-26-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-22-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-26-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-22-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-26-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interaction-by-study-model-coefficients" class="level4">
+<h4 class="anchored" data-anchor-id="interaction-by-study-model-coefficients">Interaction by study model coefficients</h4>
+<p>Interaction with % natural area is significant.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr cv</th>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Estimates</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">CI</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.48</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.42&nbsp;–&nbsp;0.53</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.03</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14&nbsp;–&nbsp;0.08</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.591</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.27</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.56&nbsp;–&nbsp;1.98</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.24</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.41&nbsp;–&nbsp;2.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.004</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.42</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.29&nbsp;–&nbsp;0.56</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.54</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.41&nbsp;–&nbsp;0.66</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.83</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.92&nbsp;–&nbsp;-0.74</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.50</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.70&nbsp;–&nbsp;-0.30</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.014</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.76</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.72&nbsp;–&nbsp;-0.79</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.24&nbsp;–&nbsp;2.43</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.017</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.10</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.37&nbsp;–&nbsp;-1.84</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.27&nbsp;–&nbsp;0.98</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.66</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35&nbsp;–&nbsp;0.96</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.567 / 0.528</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Interaction by study model diagnostics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-28-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-28-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="supplement_files/figure-html/unnamed-chunk-28-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1025,7 +1414,7 @@ natural</td>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Percent natural area against scaled peak flowering time. Points are colored by location shannon diversity and shape is study.</figcaption>
 </figure>
 </div>
@@ -1035,7 +1424,7 @@ natural</td>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Crop shannon diversity against scaled peak flowering time. Points are colored by location % natural area and shape is study.</figcaption>
 </figure>
 </div>
@@ -1052,9 +1441,16 @@ natural</td>
 Models:
 glm.pktime1: pktime.scale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
 glm.pktime2a: pktime.scale ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
-             Df     AIC     BIC logLik deviance Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime1   8 -413.94 -389.90 214.97  -429.94                            
-glm.pktime2a  9 -436.12 -409.09 227.06  -454.12 24.19      1  8.729e-07 ***
+glm.pktime2c: pktime.scale ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
+glm.pktime2d: pktime.scale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+glm.pktime2e: pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
+glm.pktime2e:     study, zi=~0, disp=~study
+             Df     AIC     BIC logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.pktime1   8 -413.94 -389.90 214.97  -429.94                              
+glm.pktime2a  9 -436.12 -409.09 227.06  -454.12 24.1899      1  8.729e-07 ***
+glm.pktime2c 13 -523.79 -484.74 274.89  -549.79 95.6656      4  &lt; 2.2e-16 ***
+glm.pktime2d 15 -540.55 -495.49 285.27  -570.55 20.7589      2  3.106e-05 ***
+glm.pktime2e 18 -535.11 -481.04 285.56  -571.11  0.5649      3     0.9044    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1063,9 +1459,25 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Models:
 glm.pktime1: pktime.scale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
 glm.pktime2b: pktime.scale ~ poly(crop.shandiv, 2) + pct.natural + study, zi=~0, disp=~study
-             Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime1   8 -413.94 -389.90 214.97  -429.94                             
-glm.pktime2b  9 -441.39 -414.36 229.70  -459.39 29.459      1  5.713e-08 ***
+glm.pktime2bx: pktime.scale ~ poly(crop.shandiv, 2) * study + pct.natural, zi=~0, disp=~study
+glm.pktime2e: pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
+glm.pktime2e:     study, zi=~0, disp=~study
+              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
+glm.pktime1    8 -413.94 -389.90 214.97  -429.94                             
+glm.pktime2b   9 -441.39 -414.36 229.70  -459.39 29.459      1  5.713e-08 ***
+glm.pktime2bx 13 -446.45 -407.40 236.22  -472.45 13.054      4    0.01102 *  
+glm.pktime2e  18 -535.11 -481.04 285.56  -571.11 98.667      5  &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data: all.mn
+Models:
+glm.pktime2bx: pktime.scale ~ poly(crop.shandiv, 2) * study + pct.natural, zi=~0, disp=~study
+glm.pktime2d: pktime.scale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
+glm.pktime2bx 13 -446.45 -407.40 236.22  -472.45                             
+glm.pktime2d  15 -540.55 -495.49 285.27  -570.55 98.102      2  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1084,19 +1496,19 @@ glm.pktime3  9 -448.37 -421.34 233.19  -466.37 36.438      1  1.576e-09 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>Interacting quadratic percent natural area and crop shannon diversity is the most supported, based on likelihood ratio test, AIC, and BIC.</p>
+<p>Interacting quadratic percent natural area and crop shannon diversity is also supported, but not the best AIC/BIC</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
 glm.pktime3: pktime.scale ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
 glm.pktime3a: pktime.scale ~ crop.shandiv * poly(pct.natural, 2) + study, zi=~0, disp=~study
-glm.pktime4: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
-glm.pktime4:     study, zi=~0, disp=~study
+glm.pktime4a: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
+glm.pktime4a:     study, zi=~0, disp=~study
              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
 glm.pktime3   9 -448.37 -421.34 233.19  -466.37                             
 glm.pktime3a 11 -455.32 -422.28 238.66  -477.32 10.948      2   0.004193 ** 
-glm.pktime4  14 -480.99 -438.94 254.50  -508.99 31.671      3  6.139e-07 ***
+glm.pktime4a 14 -480.99 -438.94 254.50  -508.99 31.671      3  6.139e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1105,12 +1517,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Models:
 glm.pktime3: pktime.scale ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
 glm.pktime3b: pktime.scale ~ poly(crop.shandiv, 2) * pct.natural + study, zi=~0, disp=~study
-glm.pktime4: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
-glm.pktime4:     study, zi=~0, disp=~study
+glm.pktime4a: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
+glm.pktime4a:     study, zi=~0, disp=~study
              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
 glm.pktime3   9 -448.37 -421.34 233.19  -466.37                             
 glm.pktime3b 11 -455.49 -422.44 238.74  -477.49 11.115      2   0.003859 ** 
-glm.pktime4  14 -480.99 -438.94 254.50  -508.99 31.505      3  6.655e-07 ***
+glm.pktime4a 14 -480.99 -438.94 254.50  -508.99 31.505      3  6.655e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1196,7 +1608,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1205,41 +1617,41 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-36-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-30-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-36-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-30-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-36-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-30-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-36-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1339,7 +1751,7 @@ natural</td>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1348,41 +1760,41 @@ natural</td>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-32-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-38-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-32-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-38-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-32-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-38-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-32-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-38-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1393,7 +1805,7 @@ natural</td>
 </section>
 <section id="interaction-of-quadratic-percent-natural-area-and-crop-shannon-diversity-model-coefficients" class="level4">
 <h4 class="anchored" data-anchor-id="interaction-of-quadratic-percent-natural-area-and-crop-shannon-diversity-model-coefficients">Interaction of quadratic percent natural area and crop shannon diversity model coefficients</h4>
-<p>Adding interacting quadratic terms are significant.</p>
+<p>Adding interacting quadratic % natural terms are significant.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1416,153 +1828,155 @@ natural</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.54</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.52&nbsp;–&nbsp;0.56</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.59</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.57&nbsp;–&nbsp;0.60</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.62&nbsp;–&nbsp;1.08</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.164</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.85</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79&nbsp;–&nbsp;0.92</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.73</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.42&nbsp;–&nbsp;2.10</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.10</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.08&nbsp;–&nbsp;0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.22</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.16&nbsp;–&nbsp;0.30</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.36</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.05&nbsp;–&nbsp;1.77</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.018</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.36&nbsp;–&nbsp;0.72</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.75&nbsp;–&nbsp;0.90</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.64&nbsp;–&nbsp;0.84</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.94</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.89&nbsp;–&nbsp;0.99</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.031</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [1st degree]<br>
-× pct natural [1st<br>
-degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.02</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.00&nbsp;–&nbsp;0.42</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.013</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [2nd degree]<br>
-× pct natural [1st<br>
-degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">11.45</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.65&nbsp;–&nbsp;203.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.097</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [1st degree]<br>
-× pct natural [2nd<br>
-degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2110.76</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">121.65&nbsp;–&nbsp;36624.17</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.75&nbsp;–&nbsp;0.84</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv [2nd degree]<br>
-× pct natural [2nd<br>
-degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.08</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.72</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.025</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.27</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.10&nbsp;–&nbsp;1.47</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.26</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.15&nbsp;–&nbsp;1.37</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.45</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.68&nbsp;–&nbsp;7.10</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.91</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.06&nbsp;–&nbsp;3.41</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.030</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.23&nbsp;–&nbsp;0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
+× study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.71</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.15&nbsp;–&nbsp;7.06</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">342.05</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">195.26&nbsp;–&nbsp;599.18</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.02&nbsp;–&nbsp;0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">396.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">232.54&nbsp;–&nbsp;675.51</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.65</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.33&nbsp;–&nbsp;1.26</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.201</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.19</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.10&nbsp;–&nbsp;0.39</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.57</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31&nbsp;–&nbsp;1.04</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.068</td>
+</tr>
+<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.577</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.859</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Quadratic interaction model diagnostics
+<span class="screen-reader-only">Note</span>Quadratic % natural and studyinteraction model diagnostics
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-34-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-40-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-34-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-40-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-34-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-40-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-34-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-40-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1580,7 +1994,7 @@ degree]</td>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Mean floral resources comparison by land cover group and study.</figcaption>
 </figure>
 </div>
@@ -1590,7 +2004,7 @@ degree]</td>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Coefficient of variation in floral resources over time by land cover group and study.</figcaption>
 </figure>
 </div>
@@ -1600,7 +2014,7 @@ degree]</td>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="continuity2_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Scaled time of peak floral resources by land cover group and study.</figcaption>
 </figure>
 </div>

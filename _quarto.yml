@@ -17,8 +17,10 @@ website:
         text: Landscape projection
       - href: continuity.qmd
         text: Continuity
+      - href: results.qmd
+        text: Results
       - href: continuity2.qmd
-        text: Continuity analysis
+        text: Results supplementary info
 
 format:
   html:
