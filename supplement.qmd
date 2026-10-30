@@ -16,6 +16,7 @@ library(tidyverse)
 library(marginaleffects)
 library(sf)
 library(glmmTMB)
+library(DHARMa)
 
 lcflrcv <- read.csv("data/continuitystats_landcover.csv")
 alldf <- read.csv("data/continuitystats_data.csv")
@@ -199,46 +200,51 @@ ggplot(all.mn, aes(crop.shandiv, flr.mn.zscale, color = pct.natural, shape = stu
 
 ### Model comparisons
 
-I use a gamma family GLM because floral resource means are non-negative. I also fit a dispersion parameter that varies by study, since the plots suggest that each study's values are differently dispersed.
+I use normal distribution linear regression to fit standardized floral counts. I used a Gamma distribution GLM before for fitting the unstandardized counts, but once standardized, the final linear regression doesn't show any issues. I also fit a dispersion parameter that varies by study, since the plots suggest that each study's values are differently dispersed.
+
+Base model:
+
+```
+glm.flrmn1 <- glmmTMB(flr.mn.zscale ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+```
 
 ```{r}
-library(glmmTMB)
-library(lmerTest)
-library(DHARMa)
 
-glm.flrmn1 <- glmmTMB(flr.mn ~ crop.shandiv + pct.natural + study, 
+glm.flrmn1 <- glmmTMB(flr.mn.zscale ~ crop.shandiv + pct.natural + study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn2a <- glmmTMB(flr.mn ~ crop.shandiv + poly(pct.natural,2) + study, 
+glm.flrmn2a <- glmmTMB(flr.mn.zscale ~ crop.shandiv + poly(pct.natural,2) + study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn2b <- glmmTMB(flr.mn ~ poly(crop.shandiv,2) + pct.natural + study, 
+glm.flrmn2b <- glmmTMB(flr.mn.zscale ~ poly(crop.shandiv,2) + pct.natural + study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn3 <- glmmTMB(flr.mn ~ crop.shandiv *pct.natural + study, 
+glm.flrmn3 <- glmmTMB(flr.mn.zscale ~ crop.shandiv *pct.natural + study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn4a <- glmmTMB(flr.mn ~ crop.shandiv + poly(pct.natural,2) * study, 
+glm.flrmn4a <- glmmTMB(flr.mn.zscale ~ crop.shandiv + poly(pct.natural,2) * study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn4b <- glmmTMB(flr.mn ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+glm.flrmn4b <- glmmTMB(flr.mn.zscale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
-glm.flrmn4c <- glmmTMB(flr.mn ~ (poly(crop.shandiv,2) + poly(pct.natural,2)) * study, 
+glm.flrmn4c <- glmmTMB(flr.mn.zscale ~ (poly(crop.shandiv,2) + poly(pct.natural,2)) * study, 
                       dispformula = ~ study,
-                      family = Gamma(link = "log"),
+                      # family = Gamma(link = "log"),
                       data = all.mn)
 
 # glm.flrmn4a <- glmmTMB(flr.mn ~ crop.shandiv * poly(pct.natural,2) + study, 
@@ -277,7 +283,7 @@ anova(glm.flrmn1, glm.flrmn3)
 
 ```
 
-Study interactions are supported for both percent natural area and with crop shannon diversity, but doesn't change (lack of) support for a quadratic crop shannon diversity effect.
+Study interactions are supported for percent natural area and with crop shannon diversity, but doesn't change (lack of) support for a quadratic crop shannon diversity effect.
 
 ```{r}
 
@@ -349,7 +355,7 @@ performance::check_model(glm.flrmn2a)
 
 ```{r}
 
-sjPlot::tab_model(glm.flrmn4b)
+sjPlot::tab_model(glm.flrmn4a)
 
 ```
 
@@ -358,7 +364,7 @@ sjPlot::tab_model(glm.flrmn4b)
 
 ```{r}
 
-glm.sim <- DHARMa::simulateResiduals(glm.flrmn4b)
+glm.sim <- DHARMa::simulateResiduals(glm.flrmn4a)
 
 plot(glm.sim)
 
@@ -366,7 +372,7 @@ plotResiduals(glm.sim, all.mn$pct.natural)
 plotResiduals(glm.sim, all.mn$crop.shandiv)
 plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.flrmn2a)
+performance::check_model(glm.flrmn4a)
 
 ```
 
@@ -397,7 +403,15 @@ ggplot(all.mn, aes(crop.shandiv, flr.cv, color = pct.natural, shape = study)) +
 
 ### Model comparisons
 
-I fit gaussian distribution regression models. I also fit a dispersion parameter that varies by study.
+I fit normal distribution regression models. I also fit a dispersion parameter that varies by study.
+
+Base model code:
+
+```
+glm.flrcv1 <- glmmTMB(flr.cv ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)
+```
 
 ```{r}
 
@@ -598,79 +612,87 @@ ggplot(all.mn, aes(crop.shandiv, pktime.scale, color = pct.natural, shape = stud
 
 ### Model comparisons
 
-I use a gamma regression to model peak flowering time. I also fit a dispersion parameter that varies by study.
+I use normal distribution linear regression to model peak flowering time. I also fit a dispersion parameter that varies by study.
+
+Base model code:
+
+```
+glm.pktime1 <- glmmTMB(pktime.scale ~ crop.shandiv + pct.natural + study, 
+                       dispformula = ~ study,
+                       data = all.mn)
+```
 
 ```{r}
 
 glm.pktime1 <- glmmTMB(pktime.scale ~ crop.shandiv + pct.natural + study, 
-                       family = Gamma(link = "log"),
+                       # family = Gamma(link = "log"),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime2a <- glmmTMB(pktime.scale ~ crop.shandiv + poly(pct.natural,2) + study, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime2b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) + pct.natural + study, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 
 glm.pktime2bx <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * study + pct.natural, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime2c <- glmmTMB(pktime.scale ~ crop.shandiv + poly(pct.natural,2) * study, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime2d <- glmmTMB(pktime.scale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 
 glm.pktime2e <- glmmTMB(pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural,2)) * study, 
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime3 <- glmmTMB(pktime.scale ~ crop.shandiv * pct.natural + study, 
-                       family = Gamma(link = "log"),
+                       # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime3a <- glmmTMB(pktime.scale ~ crop.shandiv * poly(pct.natural,2) + study,
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime3b <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * pct.natural + study,
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime3c <- glmmTMB(pktime.scale ~ crop.shandiv * pct.natural * study,
-                        family = Gamma(link = "log"),
+                        # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
 
 glm.pktime4a <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * poly(pct.natural,2) + study,
-                       family = Gamma(link = "log"),
+                       # family = Gamma(link = "log"),
                        # family = beta_family(),
                        dispformula = ~ study,
                        data = all.mn)
@@ -796,41 +818,6 @@ performance::check_model(glm.pktime2d)
 ```
 
 :::
-
-
-
-
-## Land cover floral density comparisons
-
-We can also make a comparison between crop and % natural area land covers. I haven't done this yet, but based on the patterns in the following plots, it seems like the trends are that natural land covers have more floral resources on average, while having lower CV (more continuous). Crop land covers have a later peak time.
-
-```{r}
-#| fig-cap: Mean floral resources comparison by land cover group and study.
-
-ggplot(lcflrcv, aes(crop, flr.mn.scale, fill=crop)) + 
-  geom_jitter(aes(color = crop)) +
-  geom_boxplot(alpha=0.3) + facet_wrap(~study)
-
-```
-
-```{r}
-#| fig-cap: Coefficient of variation in floral resources over time by land cover group and study.
-
-ggplot(lcflrcv, aes(crop, flr.cv, fill=crop)) + 
-  geom_jitter(aes(color = crop)) +
-  geom_boxplot(alpha=0.3) + facet_wrap(~study)
-
-```
-
-
-```{r}
-#| fig-cap: Scaled time of peak floral resources by land cover group and study.
-
-ggplot(lcflrcv, aes(crop, pktime.scale, fill=crop)) + 
-  geom_jitter(aes(color = crop)) +
-  geom_boxplot(alpha=0.3) + facet_wrap(~study)
-
-```
 
 
 

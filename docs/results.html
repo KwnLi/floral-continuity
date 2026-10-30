@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="floral-resource-abundance" class="level2">
 <h2 class="anchored" data-anchor-id="floral-resource-abundance">Floral resource abundance</h2>
-<p>I fit a gamma distribution model with a dispersion formula to account for differences in data noisiness between studies.</p>
+<p>I fit a linear regression with a dispersion formula to account for differences in data noisiness between studies. I’m modeling standardized flower counts instead of raw values. I’m not using a gamma distribution model anymore because the data has negative values now.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
-<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn zscale</th>
 </tr>
 <tr class="even">
 <td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
@@ -203,105 +203,93 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">16.04</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">15.89&nbsp;–&nbsp;16.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.15</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.42&nbsp;–&nbsp;0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.272</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.96</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.42&nbsp;–&nbsp;-0.49</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.19&nbsp;–&nbsp;0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.491</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.06</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.96&nbsp;–&nbsp;0.85</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.276</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.10&nbsp;–&nbsp;4.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.799</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.05</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-5.20&nbsp;–&nbsp;-0.91</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.005</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-5.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-9.54&nbsp;–&nbsp;-0.89</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.018</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.60</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.02&nbsp;–&nbsp;1.22</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.058</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.32</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.01&nbsp;–&nbsp;0.65</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.057</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.15</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.90&nbsp;–&nbsp;3.41</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.47</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.25&nbsp;–&nbsp;1.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.199</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.01</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.52&nbsp;–&nbsp;1.51</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.10&nbsp;–&nbsp;0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.180</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.80</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.55&nbsp;–&nbsp;6.15</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.101</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.37&nbsp;–&nbsp;6.29</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.208</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.66</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.50&nbsp;–&nbsp;3.81</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.683</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.40</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.16&nbsp;–&nbsp;8.96</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.059</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">6.79</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.66&nbsp;–&nbsp;8.92</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.91</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.29&nbsp;–&nbsp;7.53</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.034</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.52&nbsp;–&nbsp;7.12</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">7.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.96&nbsp;–&nbsp;11.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.35</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.82&nbsp;–&nbsp;2.87</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.45</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.72&nbsp;–&nbsp;-0.19</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.08</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.77&nbsp;–&nbsp;-0.39</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.002</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.49</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.84&nbsp;–&nbsp;-0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.007</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.30</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.30&nbsp;–&nbsp;0.90</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.324</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.33&nbsp;–&nbsp;-0.72</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.985</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.514 / 0.471</td>
 </tr>
 </tbody>
 </table>
@@ -309,7 +297,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="visualization" class="level3">
 <h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
-<p>Here are model-estimated trends and data in their original scales, faceted by study.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -319,11 +306,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Here are model-estimated trends and data in their original scales, faceted by study.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="results_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Effect of crop diversity was not significant.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Faceted by study.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -449,27 +457,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="visualization-1" class="level3">
 <h3 class="anchored" data-anchor-id="visualization-1">Visualization</h3>
-<p>The coefficient of variation can be visualized across studies. The best continuity is achieved at intermediate natural habitat. I think this is because intermediate natural habitat landscapes balance the size of the peak bloom against the spread of blooms over time.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Below the trends and data are faceted by study.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The diversity of crops didn’t have a significant effect on continuity in the best-fit model.</p>
+<p>The best continuity is achieved at intermediate natural habitat for Iverson and Guezen &amp; Forrest studies. I think this is because intermediate natural habitat landscapes balance the size of the peak bloom against the spread of blooms over time.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -479,12 +467,42 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Faceted by study.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The diversity of crops didn’t have a significant effect on continuity in the best-fit model.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Faceted by study.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="flowering-peak" class="level2">
 <h2 class="anchored" data-anchor-id="flowering-peak">Flowering peak</h2>
 <p>I rescaled the main bloom season of each study to 0-1 to compare relative timing of bloom. Peak time is calculated as a weighted mean of the rescaled bloom survey times, using floral counts to weight each period.</p>
-<p>The best model has three-way interacting terms for % natural area (quadratic), crop shannon diversity (quadratic), and study.</p>
+<p>The <strong>(new)</strong> best model has interacting terms for % natural area (quadratic) and study. Crop shannon diversity interaction with study is also supported, but not a quadratic term.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -507,105 +525,105 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.53</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.56&nbsp;–&nbsp;-0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.59</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.58&nbsp;–&nbsp;0.61</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.16</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.24&nbsp;–&nbsp;-0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.10</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14&nbsp;–&nbsp;-0.06</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.53</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.85&nbsp;–&nbsp;-1.22</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.86</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.02&nbsp;–&nbsp;-0.69</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.67</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.02&nbsp;–&nbsp;-0.32</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.49&nbsp;–&nbsp;-0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.31</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.44&nbsp;–&nbsp;-0.18</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.16</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.23&nbsp;–&nbsp;-0.10</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.23</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.29&nbsp;–&nbsp;-0.17</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.15&nbsp;–&nbsp;-0.09</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.24</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.10&nbsp;–&nbsp;0.39</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.06&nbsp;–&nbsp;0.20</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.23</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.14&nbsp;–&nbsp;0.32</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.14</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.09&nbsp;–&nbsp;0.19</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.24</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.52&nbsp;–&nbsp;1.96</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.38&nbsp;–&nbsp;1.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.64</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.06&nbsp;–&nbsp;1.23</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.030</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.02&nbsp;–&nbsp;0.59</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.037</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.08</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.48&nbsp;–&nbsp;-0.68</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.67&nbsp;–&nbsp;-0.24</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.55</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.15&nbsp;–&nbsp;1.96</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.89</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.68&nbsp;–&nbsp;1.11</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5.98</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5.45&nbsp;–&nbsp;6.52</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.89&nbsp;–&nbsp;-3.36</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.64</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.35&nbsp;–&nbsp;-0.93</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.70</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35&nbsp;–&nbsp;1.06</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.57</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.18&nbsp;–&nbsp;0.04</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.068</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.045</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.859</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.858 / 0.843</td>
 </tr>
 </tbody>
 </table>
@@ -613,21 +631,42 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="visualization-2" class="level3">
 <h3 class="anchored" data-anchor-id="visualization-2">Visualization</h3>
-<p>Here are how the trends look, by study. These plots show a possible caveat about these results, which is that the individual studies dominate particular subsets of the data, e.g.&nbsp;very low crop diversity values with varying levels of percent natural area are mainly found in Guezen and Forrest (2021).</p>
+<p>Peak flowering decreases with naturalness in the landscape but shape of decrease differs between studies. Also, the Hemberger Williams data may not be significant. Will have to post-hoc test these.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="results_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Faceted by study. Crop shannon diversity does have a significant effect so I’m showing trends at different crop diversity levels.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="results_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Peak flowering trend by crop diversity. The Guezen &amp; Forrest study has an opposite effect of crop diversity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Faceted by study.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -643,7 +682,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="results_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -731,18 +770,18 @@ lcflr.lm2  9 -157.56 -139.83 87.780  -175.56 0.3943      2     0.8211</code></pr
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="results_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Data: filter(lcflrcv, !is.na(flr.cv))
-Models:
-lccv.lm1: flr.cv ~ crop + study, zi=~0, disp=~study
-lccv.lm2: flr.mn.scale ~ crop * study, zi=~0, disp=~study
-         Df     AIC      BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-lccv.lm1  7   80.37   93.893 -33.185    66.37                             
-lccv.lm2  9 -152.36 -134.978  85.182  -170.36 236.73      2  &lt; 2.2e-16 ***
+<pre><code>Analysis of Variance Table
+
+Response: flr.cv
+          Df  Sum Sq Mean Sq F value  Pr(&gt;F)  
+crop       1  0.7503 0.75034  3.1384 0.08295 .
+study      2  1.2476 0.62382  2.6092 0.08423 .
+Residuals 47 11.2370 0.23909                  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -761,53 +800,35 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.58</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.31&nbsp;–&nbsp;1.85</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.59</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.32&nbsp;–&nbsp;1.85</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop [natural]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.18</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.46&nbsp;–&nbsp;0.11</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.231</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.52&nbsp;–&nbsp;0.25</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.483</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.38</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.70&nbsp;–&nbsp;-0.06</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.021</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.68</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.05&nbsp;–&nbsp;-0.31</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.02</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.50&nbsp;–&nbsp;0.55</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.927</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.21</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.69&nbsp;–&nbsp;0.26</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.374</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.52&nbsp;–&nbsp;0.10</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.173</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.51&nbsp;–&nbsp;0.25</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.492</td>
 </tr>
 <tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.37</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.71&nbsp;–&nbsp;-0.03</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.034</strong></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">51</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.141 / 0.024</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.151 / 0.097</td>
 </tr>
 </tbody>
 </table>
@@ -821,7 +842,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="results_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="results_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

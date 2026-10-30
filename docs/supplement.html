@@ -157,7 +157,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#model-comparisons-2" id="toc-model-comparisons-2" class="nav-link" data-scroll-target="#model-comparisons-2">Model comparisons</a></li>
   <li><a href="#selected-model-coefficients-2" id="toc-selected-model-coefficients-2" class="nav-link" data-scroll-target="#selected-model-coefficients-2">Selected model coefficients</a></li>
   </ul></li>
-  <li><a href="#land-cover-floral-density-comparisons" id="toc-land-cover-floral-density-comparisons" class="nav-link" data-scroll-target="#land-cover-floral-density-comparisons">Land cover floral density comparisons</a></li>
   </ul>
 </nav>
     </div>
@@ -235,28 +234,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-comparisons" class="level3">
 <h3 class="anchored" data-anchor-id="model-comparisons">Model comparisons</h3>
-<p>I use a gamma family GLM because floral resource means are non-negative. I also fit a dispersion parameter that varies by study, since the plots suggest that each study’s values are differently dispersed.</p>
+<p>I use normal distribution linear regression to fit standardized floral counts. I used a Gamma distribution GLM before for fitting the unstandardized counts, but once standardized, the final linear regression doesn’t show any issues. I also fit a dispersion parameter that varies by study, since the plots suggest that each study’s values are differently dispersed.</p>
+<p>Base model:</p>
+<pre><code>glm.flrmn1 &lt;- glmmTMB(flr.mn.zscale ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)</code></pre>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
-glm.flrmn1: flr.mn ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
-glm.flrmn2a: flr.mn ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
-            Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)   
-glm.flrmn1   8 5475.2 5499.2 -2729.6   5459.2                            
-glm.flrmn2a  9 5470.2 5497.2 -2726.1   5452.2 6.9877      1   0.008207 **
+glm.flrmn1: flr.mn.zscale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
+glm.flrmn2a: flr.mn.zscale ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
+            Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
+glm.flrmn1   8 135.33 159.36 -59.665  119.330                             
+glm.flrmn2a  9 117.92 144.96 -49.963   99.925 19.405      1  1.057e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
-glm.flrmn1: flr.mn ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
-glm.flrmn2b: flr.mn ~ poly(crop.shandiv, 2) + pct.natural + study, zi=~0, disp=~study
-            Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)
-glm.flrmn1   8 5475.2 5499.2 -2729.6   5459.2                         
-glm.flrmn2b  9 5474.7 5501.8 -2728.4   5456.7 2.4522      1     0.1174</code></pre>
+glm.flrmn1: flr.mn.zscale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
+glm.flrmn2b: flr.mn.zscale ~ poly(crop.shandiv, 2) + pct.natural + study, zi=~0, disp=~study
+            Df    AIC    BIC  logLik deviance Chisq Chi Df Pr(&gt;Chisq)   
+glm.flrmn1   8 135.33 159.36 -59.665   119.33                           
+glm.flrmn2b  9 129.63 156.66 -55.815   111.63   7.7      1   0.005522 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>Likelihood ratio tests comparing linear model linear interaction model. The interaction model isn’t supported.</p>
@@ -264,27 +269,30 @@ glm.flrmn2b  9 5474.7 5501.8 -2728.4   5456.7 2.4522      1     0.1174</code></p
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
-glm.flrmn1: flr.mn ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
-glm.flrmn3: flr.mn ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
-           Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)
-glm.flrmn1  8 5475.2 5499.2 -2729.6   5459.2                         
-glm.flrmn3  9 5476.4 5503.5 -2729.2   5458.4 0.7564      1     0.3845</code></pre>
+glm.flrmn1: flr.mn.zscale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
+glm.flrmn3: flr.mn.zscale ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
+           Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)  
+glm.flrmn1  8 135.33 159.36 -59.665   119.33                           
+glm.flrmn3  9 134.31 161.34 -58.153   116.31 3.0229      1     0.0821 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>Study interactions are supported for both percent natural area and with crop shannon diversity, but doesn’t change (lack of) support for a quadratic crop shannon diversity effect.</p>
+<p>Study interactions are supported for percent natural area and with crop shannon diversity, but doesn’t change (lack of) support for a quadratic crop shannon diversity effect.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
-glm.flrmn2a: flr.mn ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
-glm.flrmn4a: flr.mn ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
-glm.flrmn4b: flr.mn ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
-glm.flrmn4c: flr.mn ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * study, zi=~0, disp=~study
-            Df    AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
-glm.flrmn2a  9 5470.2 5497.2 -2726.1   5452.2                              
-glm.flrmn4a 13 5451.0 5490.1 -2712.5   5425.0 27.1576      4  1.847e-05 ***
-glm.flrmn4b 15 5440.4 5485.5 -2705.2   5410.4 14.6382      2  0.0006628 ***
-glm.flrmn4c 18 5445.2 5499.3 -2704.6   5409.2  1.1548      3  0.7638567    
+glm.flrmn2a: flr.mn.zscale ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
+glm.flrmn4a: flr.mn.zscale ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
+glm.flrmn4b: flr.mn.zscale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
+glm.flrmn4c: flr.mn.zscale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
+glm.flrmn4c:     study, zi=~0, disp=~study
+            Df     AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.flrmn2a  9 117.925 144.96 -49.963   99.925                              
+glm.flrmn4a 13 100.992 140.04 -37.496   74.992 24.9332      4  5.189e-05 ***
+glm.flrmn4b 15  96.041 141.10 -33.020   66.041  8.9513      2    0.01138 *  
+glm.flrmn4c 18  97.758 151.83 -30.879   61.758  4.2824      3    0.23254    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -302,7 +310,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
-<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn zscale</th>
 </tr>
 <tr class="even">
 <td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
@@ -312,59 +320,59 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">5498414.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4426940.90&nbsp;–&nbsp;6829221.20</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.44</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.74&nbsp;–&nbsp;-0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.005</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.69&nbsp;–&nbsp;0.96</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.016</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.36&nbsp;–&nbsp;-0.06</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.006</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.01</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.01&nbsp;–&nbsp;1.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.01</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.29</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.96&nbsp;–&nbsp;1.74</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.087</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.30</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.03&nbsp;–&nbsp;0.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.075</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">30.05</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">23.12&nbsp;–&nbsp;39.04</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.20</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.12&nbsp;–&nbsp;0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.219</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.38</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.56&nbsp;–&nbsp;7.50</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.32</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.59&nbsp;–&nbsp;-0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.018</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.70</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35&nbsp;–&nbsp;1.40</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.317</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.56</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.92&nbsp;–&nbsp;-0.20</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.002</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.63</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.40&nbsp;–&nbsp;4.95</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.003</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.96</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.28&nbsp;–&nbsp;-0.65</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.979</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.435 / 0.407</td>
 </tr>
 </tbody>
 </table>
@@ -431,7 +439,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
-<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn zscale</th>
 </tr>
 <tr class="even">
 <td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
@@ -441,56 +449,56 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">9898648.80</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">8133212.37&nbsp;–&nbsp;12047299.83</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.04</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.25&nbsp;–&nbsp;0.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.773</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.93</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.78&nbsp;–&nbsp;1.11</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.430</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.20&nbsp;–&nbsp;0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.470</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">151.02</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">57.69&nbsp;–&nbsp;395.33</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.26</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.46&nbsp;–&nbsp;5.06</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.41&nbsp;–&nbsp;7.25</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.006</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.71</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.02&nbsp;–&nbsp;2.40</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.07</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.76&nbsp;–&nbsp;1.49</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.702</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.04</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.32&nbsp;–&nbsp;0.41</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.809</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">25.21</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">18.91&nbsp;–&nbsp;33.60</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.32&nbsp;–&nbsp;0.35</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.933</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.76</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.20&nbsp;–&nbsp;6.44</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.24</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.51&nbsp;–&nbsp;0.03</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.084</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.75</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.38&nbsp;–&nbsp;1.48</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.405</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.54</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.90&nbsp;–&nbsp;-0.19</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.003</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.62</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.91&nbsp;–&nbsp;6.86</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.23</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.54&nbsp;–&nbsp;-0.91</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
@@ -498,8 +506,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.978</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.444 / 0.412</td>
 </tr>
 </tbody>
 </table>
@@ -572,7 +580,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
-<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn zscale</th>
 </tr>
 <tr class="even">
 <td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
@@ -582,105 +590,93 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">9236608.69</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">7932162.70&nbsp;–&nbsp;10755571.13</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.15</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.42&nbsp;–&nbsp;0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.272</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.38</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.24&nbsp;–&nbsp;0.61</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.19&nbsp;–&nbsp;0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.491</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05&nbsp;–&nbsp;2.33</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.276</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.10&nbsp;–&nbsp;4.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.799</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.40</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.005</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-5.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-9.54&nbsp;–&nbsp;-0.89</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.018</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.98&nbsp;–&nbsp;3.37</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.058</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.32</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.01&nbsp;–&nbsp;0.65</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.057</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">23.44</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">18.24&nbsp;–&nbsp;30.12</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.60</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.78&nbsp;–&nbsp;3.29</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.199</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.75</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.68&nbsp;–&nbsp;4.51</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.21</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.10&nbsp;–&nbsp;0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.180</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">16.49</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.58&nbsp;–&nbsp;469.33</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.101</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.37&nbsp;–&nbsp;6.29</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.208</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.93</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.08&nbsp;–&nbsp;45.21</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.683</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.40</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.16&nbsp;–&nbsp;8.96</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.059</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">888.69</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">105.70&nbsp;–&nbsp;7471.72</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.91</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.29&nbsp;–&nbsp;7.53</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.034</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">124.34</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">12.44&nbsp;–&nbsp;1242.43</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">7.34</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.96&nbsp;–&nbsp;11.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">10.47</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">6.19&nbsp;–&nbsp;17.71</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.45</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.72&nbsp;–&nbsp;-0.19</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.34</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.17&nbsp;–&nbsp;0.68</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.002</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.49</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.84&nbsp;–&nbsp;-0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.007</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.35</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.74&nbsp;–&nbsp;2.47</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.324</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.33&nbsp;–&nbsp;-0.72</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.985</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.514 / 0.471</td>
 </tr>
 </tbody>
 </table>
@@ -768,7 +764,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </section>
 <section id="model-comparisons-1" class="level3">
 <h3 class="anchored" data-anchor-id="model-comparisons-1">Model comparisons</h3>
-<p>I fit gaussian distribution regression models. I also fit a dispersion parameter that varies by study.</p>
+<p>I fit normal distribution regression models. I also fit a dispersion parameter that varies by study.</p>
+<p>Base model code:</p>
+<pre><code>glm.flrcv1 &lt;- glmmTMB(flr.cv ~ crop.shandiv + pct.natural + study, 
+                      dispformula = ~ study,
+                      data = all.mn)</code></pre>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1433,7 +1433,11 @@ natural</td>
 </section>
 <section id="model-comparisons-2" class="level3">
 <h3 class="anchored" data-anchor-id="model-comparisons-2">Model comparisons</h3>
-<p>I use a gamma regression to model peak flowering time. I also fit a dispersion parameter that varies by study.</p>
+<p>I use normal distribution linear regression to model peak flowering time. I also fit a dispersion parameter that varies by study.</p>
+<p>Base model code:</p>
+<pre><code>glm.pktime1 &lt;- glmmTMB(pktime.scale ~ crop.shandiv + pct.natural + study, 
+                       dispformula = ~ study,
+                       data = all.mn)</code></pre>
 <p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Both quadratic terms are supported.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1445,12 +1449,12 @@ glm.pktime2c: pktime.scale ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0,
 glm.pktime2d: pktime.scale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
 glm.pktime2e: pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
 glm.pktime2e:     study, zi=~0, disp=~study
-             Df     AIC     BIC logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime1   8 -413.94 -389.90 214.97  -429.94                              
-glm.pktime2a  9 -436.12 -409.09 227.06  -454.12 24.1899      1  8.729e-07 ***
-glm.pktime2c 13 -523.79 -484.74 274.89  -549.79 95.6656      4  &lt; 2.2e-16 ***
-glm.pktime2d 15 -540.55 -495.49 285.27  -570.55 20.7589      2  3.106e-05 ***
-glm.pktime2e 18 -535.11 -481.04 285.56  -571.11  0.5649      3     0.9044    
+             Df     AIC     BIC logLik deviance    Chisq Chi Df Pr(&gt;Chisq)    
+glm.pktime1   8 -384.73 -360.69 200.36  -400.73                               
+glm.pktime2a  9 -409.40 -382.37 213.70  -427.40  26.6763      1  2.406e-07 ***
+glm.pktime2c 13 -502.21 -463.15 264.10  -528.21 100.8036      4  &lt; 2.2e-16 ***
+glm.pktime2d 15 -522.97 -477.91 276.49  -552.97  24.7643      2  4.193e-06 ***
+glm.pktime2e 18 -517.95 -463.88 276.98  -553.95   0.9792      3     0.8063    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1462,11 +1466,11 @@ glm.pktime2b: pktime.scale ~ poly(crop.shandiv, 2) + pct.natural + study, zi=~0,
 glm.pktime2bx: pktime.scale ~ poly(crop.shandiv, 2) * study + pct.natural, zi=~0, disp=~study
 glm.pktime2e: pktime.scale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
 glm.pktime2e:     study, zi=~0, disp=~study
-              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime1    8 -413.94 -389.90 214.97  -429.94                             
-glm.pktime2b   9 -441.39 -414.36 229.70  -459.39 29.459      1  5.713e-08 ***
-glm.pktime2bx 13 -446.45 -407.40 236.22  -472.45 13.054      4    0.01102 *  
-glm.pktime2e  18 -535.11 -481.04 285.56  -571.11 98.667      5  &lt; 2.2e-16 ***
+              Df     AIC     BIC logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.pktime1    8 -384.73 -360.69 200.36  -400.73                              
+glm.pktime2b   9 -415.24 -388.20 216.62  -433.24  32.514      1  1.183e-08 ***
+glm.pktime2bx 13 -418.90 -379.85 222.45  -444.90  11.664      4    0.02003 *  
+glm.pktime2e  18 -517.95 -463.88 276.98  -553.95 109.045      5  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1476,8 +1480,8 @@ Models:
 glm.pktime2bx: pktime.scale ~ poly(crop.shandiv, 2) * study + pct.natural, zi=~0, disp=~study
 glm.pktime2d: pktime.scale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
               Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime2bx 13 -446.45 -407.40 236.22  -472.45                             
-glm.pktime2d  15 -540.55 -495.49 285.27  -570.55 98.102      2  &lt; 2.2e-16 ***
+glm.pktime2bx 13 -418.90 -379.85 222.45  -444.90                             
+glm.pktime2d  15 -522.97 -477.91 276.49  -552.97 108.07      2  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1490,8 +1494,8 @@ Models:
 glm.pktime1: pktime.scale ~ crop.shandiv + pct.natural + study, zi=~0, disp=~study
 glm.pktime3: pktime.scale ~ crop.shandiv * pct.natural + study, zi=~0, disp=~study
             Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime1  8 -413.94 -389.90 214.97  -429.94                             
-glm.pktime3  9 -448.37 -421.34 233.19  -466.37 36.438      1  1.576e-09 ***
+glm.pktime1  8 -384.73 -360.69 200.36  -400.73                             
+glm.pktime3  9 -414.77 -387.74 216.39  -432.77 32.045      1  1.506e-08 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1506,9 +1510,9 @@ glm.pktime3a: pktime.scale ~ crop.shandiv * poly(pct.natural, 2) + study, zi=~0,
 glm.pktime4a: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
 glm.pktime4a:     study, zi=~0, disp=~study
              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime3   9 -448.37 -421.34 233.19  -466.37                             
-glm.pktime3a 11 -455.32 -422.28 238.66  -477.32 10.948      2   0.004193 ** 
-glm.pktime4a 14 -480.99 -438.94 254.50  -508.99 31.671      3  6.139e-07 ***
+glm.pktime3   9 -414.77 -387.74 216.39  -432.77                             
+glm.pktime3a 11 -433.98 -400.94 227.99  -455.98 23.212      2  9.112e-06 ***
+glm.pktime4a 14 -460.58 -418.53 244.29  -488.58 32.601      3  3.909e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1520,9 +1524,9 @@ glm.pktime3b: pktime.scale ~ poly(crop.shandiv, 2) * pct.natural + study, zi=~0,
 glm.pktime4a: pktime.scale ~ poly(crop.shandiv, 2) * poly(pct.natural, 2) + , zi=~0, disp=~study
 glm.pktime4a:     study, zi=~0, disp=~study
              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime3   9 -448.37 -421.34 233.19  -466.37                             
-glm.pktime3b 11 -455.49 -422.44 238.74  -477.49 11.115      2   0.003859 ** 
-glm.pktime4a 14 -480.99 -438.94 254.50  -508.99 31.505      3  6.655e-07 ***
+glm.pktime3   9 -414.77 -387.74 216.39  -432.77                             
+glm.pktime3b 11 -429.14 -396.09 225.57  -451.14 18.366      2  0.0001028 ***
+glm.pktime4a 14 -460.58 -418.53 244.29  -488.58 37.447      3  3.701e-08 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1549,59 +1553,59 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.77</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.72&nbsp;–&nbsp;0.82</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.71</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.68&nbsp;–&nbsp;0.75</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.01</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.96&nbsp;–&nbsp;1.06</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.791</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.01</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.04&nbsp;–&nbsp;0.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.699</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.99</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.99&nbsp;–&nbsp;0.99</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00&nbsp;–&nbsp;-0.00</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.76</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.70&nbsp;–&nbsp;0.83</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.18&nbsp;–&nbsp;-0.10</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.84</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79&nbsp;–&nbsp;0.90</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.11&nbsp;–&nbsp;-0.04</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">96.73</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">53.66&nbsp;–&nbsp;174.39</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.37&nbsp;–&nbsp;-2.76</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.26</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.13&nbsp;–&nbsp;0.54</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.68</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.32&nbsp;–&nbsp;1.04</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.12</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.53&nbsp;–&nbsp;2.34</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.766</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.25</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14&nbsp;–&nbsp;0.65</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.212</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.618</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.652 / 0.635</td>
 </tr>
 </tbody>
 </table>
@@ -1685,66 +1689,66 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.69</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.65&nbsp;–&nbsp;0.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.66</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.63&nbsp;–&nbsp;0.70</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.18</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.10&nbsp;–&nbsp;1.25</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.08</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.04&nbsp;–&nbsp;0.12</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.00</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.00&nbsp;–&nbsp;1.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00&nbsp;–&nbsp;-0.00</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.73</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.67&nbsp;–&nbsp;0.80</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.17</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.21&nbsp;–&nbsp;-0.12</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.82</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.78&nbsp;–&nbsp;0.87</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.12&nbsp;–&nbsp;-0.05</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × pct<br>
 natural</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.00</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.00&nbsp;–&nbsp;1.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00&nbsp;–&nbsp;-0.00</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">113.37</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">65.25&nbsp;–&nbsp;196.99</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.31&nbsp;–&nbsp;-2.74</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.18</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.09&nbsp;–&nbsp;0.38</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.83</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.45&nbsp;–&nbsp;1.20</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.50</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79&nbsp;–&nbsp;2.87</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.218</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.41&nbsp;–&nbsp;0.27</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.688</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.619</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.712 / 0.696</td>
 </tr>
 </tbody>
 </table>
@@ -1829,104 +1833,104 @@ natural</td>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.59</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.57&nbsp;–&nbsp;0.60</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.58&nbsp;–&nbsp;0.61</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.85</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79&nbsp;–&nbsp;0.92</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.10</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.14&nbsp;–&nbsp;-0.06</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.22</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.16&nbsp;–&nbsp;0.30</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.86</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.02&nbsp;–&nbsp;-0.69</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.51</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.36&nbsp;–&nbsp;0.72</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.49&nbsp;–&nbsp;-0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.73</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.64&nbsp;–&nbsp;0.84</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.16</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.23&nbsp;–&nbsp;-0.10</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.79</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.75&nbsp;–&nbsp;0.84</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.12</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.15&nbsp;–&nbsp;-0.09</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.27</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.10&nbsp;–&nbsp;1.47</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.06&nbsp;–&nbsp;0.20</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop shandiv × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.26</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.15&nbsp;–&nbsp;1.37</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.14</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.09&nbsp;–&nbsp;0.19</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.45</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.68&nbsp;–&nbsp;7.10</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.73</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.38&nbsp;–&nbsp;1.07</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.91</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.06&nbsp;–&nbsp;3.41</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.030</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.02&nbsp;–&nbsp;0.59</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.037</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [1st degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.34</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.23&nbsp;–&nbsp;0.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.46</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.67&nbsp;–&nbsp;-0.24</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">pct natural [2nd degree]<br>
 × study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">4.71</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.15&nbsp;–&nbsp;7.06</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.89</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.68&nbsp;–&nbsp;1.11</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">396.34</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">232.54&nbsp;–&nbsp;675.51</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.89&nbsp;–&nbsp;-3.36</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.19</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.10&nbsp;–&nbsp;0.39</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.70</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.35&nbsp;–&nbsp;1.06</td>
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.57</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31&nbsp;–&nbsp;1.04</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.068</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.31</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.62</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.045</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">149</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> Nagelkerke</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.859</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.858 / 0.843</td>
 </tr>
 </tbody>
 </table>
@@ -1984,44 +1988,10 @@ natural</td>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="land-cover-floral-density-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="land-cover-floral-density-comparisons">Land cover floral density comparisons</h2>
-<p>We can also make a comparison between crop and % natural area land covers. I haven’t done this yet, but based on the patterns in the following plots, it seems like the trends are that natural land covers have more floral resources on average, while having lower CV (more continuous). Crop land covers have a later peak time.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Mean floral resources comparison by land cover group and study.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Coefficient of variation in floral resources over time by land cover group and study.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Scaled time of peak floral resources by land cover group and study.</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
