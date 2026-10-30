@@ -175,8 +175,8 @@ ggplot(glm.flrmn.pred.div,
              mapping = aes(crop.shandiv, flr.mn.zscale, color = pct.natural, 
                            group = study),
              inherit.aes = FALSE) + 
-  scale_color_viridis_c(direction = -1) + 
-  scale_fill_viridis_c(direction = -1) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
   egg::theme_article() +
   facet_wrap(~study, scales = "free_y") +
   theme(legend.position = "bottom") +
@@ -314,8 +314,8 @@ ggplot(glm.flrcv.pred.div,
              mapping = aes(crop.shandiv, flr.cv, color = pct.natural, 
                            group = study),
              inherit.aes = FALSE) + 
-  scale_color_viridis_c(direction = -1) + 
-  scale_fill_viridis_c(direction = -1) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
   egg::theme_article() +
   facet_wrap(~study, scales = "free_y") +
   theme(legend.position = "bottom") +
@@ -461,8 +461,8 @@ ggplot(glm.flrpktime.pred.div,
              mapping = aes(crop.shandiv, pktime.scale,
                            color = pct.natural),
              inherit.aes = FALSE) + 
-  scale_color_viridis_c(direction = -1) + 
-  scale_fill_viridis_c(direction = -1) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
   egg::theme_article() + 
   labs(y="Peak bloom", x = "Crop Shannon diversity") +
   facet_wrap(~study, scales = "free_y") +
