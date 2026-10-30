@@ -200,7 +200,7 @@ ggplot(all.mn, aes(crop.shandiv, flr.mn.zscale, color = pct.natural, shape = stu
 
 ### Model comparisons
 
-I use normal distribution linear regression to fit standardized floral counts. I used a Gamma distribution GLM before for fitting the unstandardized counts, but once standardized, the final linear regression doesn't show any issues. I also fit a dispersion parameter that varies by study, since the plots suggest that each study's values are differently dispersed.
+I use normal distribution linear regression to fit standardized floral counts. I had used a Gamma distribution GLM before, for fitting the unstandardized counts. But once the data was z-score standardized, the linear regression doesn't show any issues, once fully specified. I also fit a dispersion parameter that varies by study, since the plots suggest that each study's values are differently dispersed.
 
 Base model:
 
@@ -266,7 +266,7 @@ glm.flrmn4c <- glmmTMB(flr.mn.zscale ~ (poly(crop.shandiv,2) + poly(pct.natural,
 
 ```
 
-Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
+Likelihood ratio tests comparing linear trend to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
 
 ```{r}
 
@@ -700,14 +700,19 @@ glm.pktime4a <- glmmTMB(pktime.scale ~ poly(crop.shandiv,2) * poly(pct.natural,2
 
 ```
 
-Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Both quadratic terms are supported.
+Likelihood ratio tests comparing linear model to quadratic % natural area, and then adding quadratic crop shannon diversity. A quadratic term for natural area is supported, with interactions between the two main variables and study. However, adding a quadratic term for crop diversity (`glm.pktime2e`) isn't supported.
 
 ```{r}
 
 anova(glm.pktime1, glm.pktime2a, glm.pktime2c, glm.pktime2d, glm.pktime2e)
-anova(glm.pktime1, glm.pktime2b, glm.pktime2bx, glm.pktime2e)
 
-anova(glm.pktime2bx, glm.pktime2d)
+```
+
+Testing an alternative pathway where a quadratic term for crop diversity is added first. It don't think there's a good reason to do it this way, since crop diversity isn't significant in the base model where both main variables are fit with linear effects, while natural area is significant there. In any case, this leads to `glm.pktime2e` which isn't supported by the previous set of comparisons
+
+```{r}
+
+anova(glm.pktime1, glm.pktime2b, glm.pktime2bx, glm.pktime2e)
 
 ```
 
@@ -727,7 +732,6 @@ anova(glm.pktime3, glm.pktime3a, glm.pktime4a)
 anova(glm.pktime3, glm.pktime3b, glm.pktime4a)
 
 ```
-
 
 
 ### Selected model coefficients

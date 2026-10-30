@@ -95,17 +95,16 @@ Here are model-estimated trends and data in their original scales, faceted by st
 
 ```{r}
 
-glm.flrmn.pred.nat <- plot_predictions(
-  glm.flrmn4a, 
-  condition = list(pct.natural=seq(0,100, by = 5),
-                   # crop.shandiv=c(0,1,2),
-                   study=unique(all.mn$study)),
-  vcov = TRUE, type = "response", draw = FALSE) |> 
-  mutate(crop.shandiv = as.numeric(as.character(crop.shandiv)))
-
+glm.flrmn.pred.nat <- avg_predictions(
+  glm.flrmn4a,
+  newdata = datagrid(
+    pct.natural=seq(0,100, by = 5),
+    study = unique(all.mn$study)),
+  by = c("pct.natural", "study")
+)
 
 ggplot(glm.flrmn.pred.nat, 
-       aes(pct.natural, estimate, group = crop.shandiv)) +
+       aes(pct.natural, estimate)) +
   geom_ribbon(aes(ymin = conf.low,
                   ymax = conf.high),
               alpha = 0.2) +
@@ -157,20 +156,22 @@ Faceted by study.
 
 ```{r}
 
-glm.flrmn.pred.div <- plot_predictions(
-  glm.flrmn4a, 
-  condition = list(crop.shandiv=seq(0,2, by =0.2),
-                   # pct.natural=c(0,50,100),
-                   study=unique(all.mn$study)),
-  vcov = TRUE, type = "response", draw = FALSE) |> 
-  mutate(pct.natural = as.numeric(as.character(pct.natural)))
+glm.flrmn.pred.div <- avg_predictions(
+  glm.flrmn4a,
+  newdata = datagrid(
+    crop.shandiv = seq(0, 2, by=0.2),
+    pct.natural=c(0,50,100),
+    study = unique(all.mn$study)),
+  by = c("crop.shandiv", "pct.natural", "study")
+)
 
 ggplot(glm.flrmn.pred.div, 
        aes(crop.shandiv, estimate, group = pct.natural)) +
   geom_ribbon(aes(ymin = conf.low,
-                  ymax = conf.high),
+                  ymax = conf.high,
+                  fill = pct.natural),
               alpha = 0.2) +
-  geom_line() +
+  geom_line(aes(color = pct.natural)) +
   geom_point(data = all.mn, 
              mapping = aes(crop.shandiv, flr.mn.zscale, color = pct.natural, 
                            group = study),
@@ -299,17 +300,20 @@ Faceted by study.
 
 glm.flrcv.pred.div <- avg_predictions(
   glm.flrcv4a,
-  newdata = datagrid(crop.shandiv = seq(0, 1.7, by=0.1),
-                     study = unique(all.mn$study)),
-  by = c("crop.shandiv", "study")
+  newdata = datagrid(
+    crop.shandiv = seq(0, 1.7, by=0.1),
+    pct.natural=c(0,50,100),
+    study = unique(all.mn$study)),
+  by = c("crop.shandiv", "pct.natural", "study")
 )
 
 ggplot(glm.flrcv.pred.div, 
-       aes(crop.shandiv, estimate)) +
+       aes(crop.shandiv, estimate, group = pct.natural)) +
   geom_ribbon(aes(ymin = conf.low,
-                  ymax = conf.high),
+                  ymax = conf.high,
+                  fill = pct.natural),
               alpha = 0.2) +
-  geom_line() +
+  geom_line(aes(color = pct.natural)) +
   geom_point(data = all.mn, 
              mapping = aes(crop.shandiv, flr.cv, color = pct.natural, 
                            group = study),
