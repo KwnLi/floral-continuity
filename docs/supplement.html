@@ -234,12 +234,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-comparisons" class="level3">
 <h3 class="anchored" data-anchor-id="model-comparisons">Model comparisons</h3>
-<p>I use normal distribution linear regression to fit standardized floral counts. I used a Gamma distribution GLM before for fitting the unstandardized counts, but once standardized, the final linear regression doesn’t show any issues. I also fit a dispersion parameter that varies by study, since the plots suggest that each study’s values are differently dispersed.</p>
+<p>I use normal distribution linear regression to fit standardized floral counts. I had used a Gamma distribution GLM before, for fitting the unstandardized counts. But once the data was z-score standardized, the linear regression doesn’t show any issues, once fully specified. I also fit a dispersion parameter that varies by study, since the plots suggest that each study’s values are differently dispersed.</p>
 <p>Base model:</p>
 <pre><code>glm.flrmn1 &lt;- glmmTMB(flr.mn.zscale ~ crop.shandiv + pct.natural + study, 
                       dispformula = ~ study,
                       data = all.mn)</code></pre>
-<p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
+<p>Likelihood ratio tests comparing linear trend to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
@@ -286,13 +286,12 @@ Models:
 glm.flrmn2a: flr.mn.zscale ~ crop.shandiv + poly(pct.natural, 2) + study, zi=~0, disp=~study
 glm.flrmn4a: flr.mn.zscale ~ crop.shandiv + poly(pct.natural, 2) * study, zi=~0, disp=~study
 glm.flrmn4b: flr.mn.zscale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
-glm.flrmn4c: flr.mn.zscale ~ (poly(crop.shandiv, 2) + poly(pct.natural, 2)) * , zi=~0, disp=~study
-glm.flrmn4c:     study, zi=~0, disp=~study
-            Df     AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
-glm.flrmn2a  9 117.925 144.96 -49.963   99.925                              
-glm.flrmn4a 13 100.992 140.04 -37.496   74.992 24.9332      4  5.189e-05 ***
-glm.flrmn4b 15  96.041 141.10 -33.020   66.041  8.9513      2    0.01138 *  
-glm.flrmn4c 18  97.758 151.83 -30.879   61.758  4.2824      3    0.23254    
+glm.flrmn4ax: flr.mn.zscale ~ crop.shandiv * poly(pct.natural, 2) * study, zi=~0, disp=~study
+             Df     AIC    BIC  logLik deviance   Chisq Chi Df Pr(&gt;Chisq)    
+glm.flrmn2a   9 117.925 144.96 -49.963   99.925                              
+glm.flrmn4a  13 100.992 140.04 -37.496   74.992 24.9332      4  5.189e-05 ***
+glm.flrmn4b  15  96.041 141.10 -33.020   66.041  8.9513      2    0.01138 *  
+glm.flrmn4ax 21 101.259 164.34 -29.629   59.259  6.7819      6    0.34149    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1438,7 +1437,7 @@ natural</td>
 <pre><code>glm.pktime1 &lt;- glmmTMB(pktime.scale ~ crop.shandiv + pct.natural + study, 
                        dispformula = ~ study,
                        data = all.mn)</code></pre>
-<p>Likelihood ratio tests comparing linear model to quadratic % natural area or quadratic crop shannon diversity. Both quadratic terms are supported.</p>
+<p>Likelihood ratio tests comparing linear model to quadratic % natural area, and then adding quadratic crop shannon diversity. A quadratic term for natural area is supported, with interactions between the two main variables and study. However, adding a quadratic term for crop diversity (<code>glm.pktime2e</code>) isn’t supported.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
@@ -1458,6 +1457,9 @@ glm.pktime2e 18 -517.95 -463.88 276.98  -553.95   0.9792      3     0.8063
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
+</div>
+<p>Testing an alternative pathway where a quadratic term for crop diversity is added first. It don’t think there’s a good reason to do it this way, since crop diversity isn’t significant in the base model where both main variables are fit with linear effects, while natural area is significant there. In any case, this leads to <code>glm.pktime2e</code> which isn’t supported by the previous set of comparisons</p>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: all.mn
 Models:
@@ -1471,17 +1473,6 @@ glm.pktime1    8 -384.73 -360.69 200.36  -400.73
 glm.pktime2b   9 -415.24 -388.20 216.62  -433.24  32.514      1  1.183e-08 ***
 glm.pktime2bx 13 -418.90 -379.85 222.45  -444.90  11.664      4    0.02003 *  
 glm.pktime2e  18 -517.95 -463.88 276.98  -553.95 109.045      5  &lt; 2.2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Data: all.mn
-Models:
-glm.pktime2bx: pktime.scale ~ poly(crop.shandiv, 2) * study + pct.natural, zi=~0, disp=~study
-glm.pktime2d: pktime.scale ~ (crop.shandiv + poly(pct.natural, 2)) * study, zi=~0, disp=~study
-              Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
-glm.pktime2bx 13 -418.90 -379.85 222.45  -444.90                             
-glm.pktime2d  15 -522.97 -477.91 276.49  -552.97 108.07      2  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1627,35 +1618,35 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-36-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-37-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-36-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-37-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-36-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-37-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-36-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-37-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1770,35 +1761,35 @@ natural</td>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-38-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-39-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-38-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-39-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-38-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-39-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-38-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-39-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1952,35 +1943,35 @@ natural</td>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-40-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-40-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-40-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="supplement_files/figure-html/unnamed-chunk-40-5.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="supplement_files/figure-html/unnamed-chunk-41-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

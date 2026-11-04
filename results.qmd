@@ -44,23 +44,33 @@ apply.z <- function(x, stdy, z.params = z.params.data){
 
 I fit a linear regression with a dispersion formula to account for differences in data noisiness between studies. I'm modeling standardized flower counts instead of raw values. I'm not using a gamma distribution model anymore because the data has negative values now.
 
+### Without interaction
+
 ```{r}
 
-# glm.flrmn4b <- glmmTMB(flr.mn ~ (crop.shandiv + poly(pct.natural,2)) * study, 
-#                       dispformula = ~ study,
-#                       family = Gamma(link = "log"),
-#                       data = all.mn)
 
-glm.flrmn4a <- glmmTMB(flr.mn.zscale ~ crop.shandiv + poly(pct.natural,2) * study, 
+glm.flrmn4a <- glmmTMB(flr.mn.zscale ~ crop.shandiv + poly(pct.natural,2) * study,
                       dispformula = ~ study,
                       data = all.mn)
 
+glm.flrmn4b <- glmmTMB(flr.mn.zscale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
+                      dispformula = ~ study,
+                      data = all.mn)
 
 sjPlot::tab_model(glm.flrmn4a, transform = NULL)
 
 ```
 
+#### With interaction
+
+```{r}
+sjPlot::tab_model(glm.flrmn4b, transform = NULL)
+
+```
+
 ### Visualization
+
+#### Without interaction
 
 ```{r}
 
@@ -158,6 +168,131 @@ Faceted by study.
 
 glm.flrmn.pred.div <- avg_predictions(
   glm.flrmn4a,
+  newdata = datagrid(
+    crop.shandiv = seq(0, 2, by=0.2),
+    pct.natural=c(0,50,100),
+    study = unique(all.mn$study)),
+  by = c("crop.shandiv", "pct.natural", "study")
+)
+
+ggplot(glm.flrmn.pred.div, 
+       aes(crop.shandiv, estimate, group = pct.natural)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = pct.natural),
+              alpha = 0.2) +
+  geom_line(aes(color = pct.natural)) +
+  geom_point(data = all.mn, 
+             mapping = aes(crop.shandiv, flr.mn.zscale, color = pct.natural, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom") +
+  labs(y="Total flowers", x = "Crop Shannon diversity")
+
+```
+
+#### With interaction
+
+```{r}
+
+
+glm.flrmn.avgpred.nat <- avg_predictions(
+  glm.flrmn4b,
+  newdata = datagrid(pct.natural = seq(0, 100, by=5), study = unique(all.mn$study)),
+  by = c("pct.natural", "study")
+)
+
+ggplot(glm.flrmn.avgpred.nat, 
+       aes(pct.natural, estimate)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = study),
+              alpha = 0.2) +
+  geom_line(aes(linetype = study, color = study)) +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, flr.mn.zscale,
+                           color = study, 
+                           group = study, shape = study),
+             inherit.aes = FALSE) + 
+  # scale_shape_manual(values = c(12,8,1)) +
+  scale_fill_viridis_d(option = "viridis", direction = -1) +
+  scale_color_viridis_d(option = "viridis", direction = -1) +
+  egg::theme_article() +
+  labs(y="Total flowers (z-score)", x = "% natural area")
+
+```
+
+Here are model-estimated trends and data in their original scales, faceted by study.
+
+```{r}
+
+glm.flrmn.pred.nat <- avg_predictions(
+  glm.flrmn4b,
+  newdata = datagrid(
+    pct.natural=seq(0,100, by = 5),
+    study = unique(all.mn$study)),
+  by = c("pct.natural", "study")
+)
+
+ggplot(glm.flrmn.pred.nat, 
+       aes(pct.natural, estimate)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high),
+              alpha = 0.2) +
+  geom_line() +
+  geom_point(data = all.mn, 
+             mapping = aes(pct.natural, flr.mn.zscale, color = crop.shandiv, 
+                           group = study),
+             inherit.aes = FALSE) + 
+  scale_color_viridis_c(option = "turbo", direction = -1) + 
+  scale_fill_viridis_c(option = "turbo", direction = -1) + 
+  egg::theme_article() +
+  labs(y="Total flowers", x = "% natural area") +
+  facet_wrap(~study, scales = "free_y") +
+  theme(legend.position = "bottom")
+
+```
+
+Effect of crop diversity was not significant.
+
+```{r}
+
+glm.flrmn.avgpred.div <- avg_predictions(
+  glm.flrmn4b,
+  newdata = datagrid(crop.shandiv = seq(0, 2, by=0.2), study = unique(all.mn$study)),
+  by = c("crop.shandiv", "study")
+)
+
+ggplot(glm.flrmn.avgpred.div, 
+       aes(crop.shandiv, estimate)) +
+  geom_ribbon(aes(ymin = conf.low,
+                  ymax = conf.high,
+                  fill = study),
+              alpha = 0.2) +
+  geom_line(aes(linetype = study, color = study)) +
+  geom_point(data = all.mn, 
+             mapping = aes(crop.shandiv, flr.mn.zscale,
+                           color = study, 
+                           group = study, shape = study),
+             inherit.aes = FALSE) + 
+  # scale_shape_manual(values = c(12,8,1)) +
+  scale_fill_viridis_d(option = "viridis", direction = -1) +
+  scale_color_viridis_d(option = "viridis", direction = -1) +
+  egg::theme_article() +
+  labs(y="Total flowers (z-score)", x = "Crop Shannon diversity")
+
+```
+
+Faceted by study.
+
+```{r}
+
+glm.flrmn.pred.div <- avg_predictions(
+  glm.flrmn4b,
   newdata = datagrid(
     crop.shandiv = seq(0, 2, by=0.2),
     pct.natural=c(0,50,100),

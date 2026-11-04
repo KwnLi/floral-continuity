@@ -237,6 +237,11 @@ glm.flrmn4a <- glmmTMB(flr.mn.zscale ~ crop.shandiv + poly(pct.natural,2) * stud
                       # family = Gamma(link = "log"),
                       data = all.mn)
 
+glm.flrmn4ax <- glmmTMB(flr.mn.zscale ~ crop.shandiv * poly(pct.natural,2) * study, 
+                      dispformula = ~ study,
+                      # family = Gamma(link = "log"),
+                      data = all.mn)
+
 glm.flrmn4b <- glmmTMB(flr.mn.zscale ~ (crop.shandiv + poly(pct.natural,2)) * study, 
                       dispformula = ~ study,
                       # family = Gamma(link = "log"),
@@ -287,7 +292,7 @@ Study interactions are supported for percent natural area and with crop shannon 
 
 ```{r}
 
-anova(glm.flrmn2a, glm.flrmn4a, glm.flrmn4b, glm.flrmn4c)
+anova(glm.flrmn2a, glm.flrmn4a, glm.flrmn4b, glm.flrmn4ax)
 
 ```
 
