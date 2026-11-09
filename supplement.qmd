@@ -271,7 +271,7 @@ glm.flrmn4c <- glmmTMB(flr.mn.zscale ~ (poly(crop.shandiv,2) + poly(pct.natural,
 
 ```
 
-Likelihood ratio tests comparing linear trend to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is not.
+Likelihood ratio tests comparing linear trend to quadratic % natural area or quadratic crop shannon diversity. Quadratic natural area term is supported, while quadratic crop shannon diversity is notv strongly supported (p=0.045).
 
 ```{r}
 
@@ -288,7 +288,7 @@ anova(glm.flrmn1, glm.flrmn3)
 
 ```
 
-Study interactions are supported for percent natural area and with crop shannon diversity, but doesn't change (lack of) support for a quadratic crop shannon diversity effect.
+Study interactions are supported for percent natural area and with crop shannon diversity, but not a three-way interaction between natural area, crop, and study.
 
 ```{r}
 
@@ -296,7 +296,7 @@ anova(glm.flrmn2a, glm.flrmn4a, glm.flrmn4b, glm.flrmn4ax)
 
 ```
 
-### Selected model coefficients
+### Model coefficients for some models
 
 This is a look at some of the models from the comparisons above.
 
@@ -360,7 +360,7 @@ performance::check_model(glm.flrmn2a)
 
 ```{r}
 
-sjPlot::tab_model(glm.flrmn4a)
+sjPlot::tab_model(glm.flrmn4b)
 
 ```
 
@@ -369,7 +369,7 @@ sjPlot::tab_model(glm.flrmn4a)
 
 ```{r}
 
-glm.sim <- DHARMa::simulateResiduals(glm.flrmn4a)
+glm.sim <- DHARMa::simulateResiduals(glm.flrmn4b)
 
 plot(glm.sim)
 
@@ -377,7 +377,7 @@ plotResiduals(glm.sim, all.mn$pct.natural)
 plotResiduals(glm.sim, all.mn$crop.shandiv)
 plotResiduals(glm.sim, all.mn$study)
 
-performance::check_model(glm.flrmn4a)
+performance::check_model(glm.flrmn4b)
 
 ```
 

@@ -1,0 +1,45 @@
+---
+title: "Land cover"
+format: html
+execute: 
+  message: false
+  warning: false
+  echo: false
+---
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(marginaleffects)
+library(sf)
+
+lc.gf <- read.csv("data/lcareas_gf2021.csv")
+lc.hw <- read.csv("data/lcareas_hw2025.csv")
+lc.iv <- read.csv("data/lcareas_iverson.csv")
+
+# iv.sp.clust <- st_read("data/spatial/iverson_pts_clust1km.geojson")
+
+lcflrcv <- read.csv("data/continuitystats_landcover.csv") |>
+  filter(crop != "other")
+
+```
+
+```{r}
+
+# lc.gf.long <- lc.gf %>% pivot_longer(Blackberry:Canola,
+#                                      names_to = "landtype", values_to = "area") |>
+#   mutate(site=as.character(transect)) |>
+#   mutate(farm = stringr::str_split_i(site, "\\.", 1),
+#          landtype = tolower(gsub("\\.","-",landtype))) |>
+#   group_by(farm, landtype) %>% 
+#   summarize(area = mean(area), total = mean(total), .groups = "drop") %>%
+#   mutate(pc.cov = 100*(area/total)) %>%
+#   left_join(lcflrcv %>% 
+#               filter(study == "gf") %>% 
+#               select(landtype, crop), 
+#             by = "landtype")
+
+# ggplot(lc.gf.long, aes(farm, pc.cov, fill = lc)) + geom_col(position = "stack")
+
+```

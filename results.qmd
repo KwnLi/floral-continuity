@@ -341,13 +341,13 @@ The best continuity is achieved at intermediate natural habitat for Iverson and 
 ```{r}
 
 
-glm.flrcv2a.pred <- avg_predictions(
+glm.flrcv.pred <- avg_predictions(
   glm.flrcv4a,
   newdata = datagrid(pct.natural = seq(0, 100, by=5), study = unique(all.mn$study)),
   by = c("pct.natural", "study")
 )
 
-ggplot(glm.flrcv2a.pred, 
+ggplot(glm.flrcv.pred, 
        aes(pct.natural, estimate)) +
   geom_ribbon(aes(ymin = conf.low,
                   ymax = conf.high,

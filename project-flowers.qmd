@@ -9,8 +9,8 @@ execute:
 ```{r}
 library(tidyverse)
 
-lc.gf <- read.csv("data/lcareas_gf2021.csv")
-lc.hw <- read.csv("data/lcareas_hw2025.csv")
+flowerbuf.gf <- read.csv("data/flowerbuf_gf2021.csv")
+flowerbuf.hw <- read.csv("data/flowerbuf_hw2025.csv")
 lc.iv <- read.csv("data/lcareas_iverson.csv")
 
 flr.gf <- read.csv("data/florlc_gf2021.csv")
@@ -40,15 +40,9 @@ Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 
-buf.hw <- lc.hw |> filter(buffer == 750)
+buf.hw <- flowerbuf.hw |> filter(buffer == 750)
 
-cropbuf.hw <- buf.hw |>
-  pivot_longer(cols = CROPLA:RICE, names_to = "raster.name", values_to = "area") |>
-  left_join(lcflr.hw, by = "raster.name", relationship = "many-to-many") |>
-  filter(!is.na(period_3wk) & !is.na(area)) |>
-  mutate(total.flowers = area*flowerdens)
-
-croparea.hw <- cropbuf.hw |>
+croparea.hw <- buf.hw |>
   group_by(period_3wk, SITE, landcover.4cat) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
   pivot_wider(id_cols = c(period_3wk, SITE), 
@@ -74,7 +68,7 @@ ggplot(croparea.hw, aes(period_3wk, total.flowers)) +
 
 ```{r}
 
-croprich.hw <- cropbuf.hw |> rowwise() |>
+croprich.hw <- buf.hw |> rowwise() |>
   mutate(crop = landcover.4cat=="crop" & area > 0) |>
   group_by(period_3wk, SITE) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), 
@@ -97,7 +91,7 @@ ggplot(croparearich.hw, aes(period_3wk, total.flowers)) +
 ```{r}
 
 cropdiv.hw <- croparea.hw |> select(SITE, area_crop) |> distinct() |>
-  right_join(cropbuf.hw, by = "SITE") |> filter(landcover.4cat == "crop") |> 
+  right_join(buf.hw, by = "SITE") |> filter(landcover.4cat == "crop") |> 
   mutate(P_i = area/area_crop, P_i2 = P_i * log(P_i)) |>
   group_by(period_3wk, SITE) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
@@ -141,16 +135,9 @@ Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 
-buf.gf <- lc.gf |> filter(buffer == 750)
+buf.gf <- flowerbuf.gf |> filter(buffer == 750)
 
-cropbuf.gf <- buf.gf |>
-  pivot_longer(cols = Blackberry:Canola, names_to = "landtype", values_to = "area") |> 
-  mutate(landtype = gsub("\\.","-", tolower(landtype))) |>
-  left_join(lcflr.gf, by = "landtype", relationship = "many-to-many") |>
-  filter(!is.na(datePeriod) & !is.na(area)) |>
-  mutate(total.flowers = area*flowerdens)
-
-croparea.gf <- cropbuf.gf |>
+croparea.gf <- buf.gf |>
   group_by(datePeriod, transect, crop) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
   pivot_wider(id_cols = c(datePeriod, transect), 
@@ -177,7 +164,7 @@ ggplot(croparea.gf, aes(datePeriod, total.flowers)) +
 
 ```{r}
 
-croprich.gf <- cropbuf.gf |> rowwise() |>
+croprich.gf <- buf.gf |> rowwise() |>
   mutate(crop = crop=="crop" & area > 0) |>
   group_by(datePeriod, transect) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), 
@@ -201,7 +188,7 @@ ggplot(croparearich.gf, aes(datePeriod, total.flowers)) +
 ```{r}
 
 cropdiv.gf <- croparea.gf |> select(transect, area_crop) |> distinct() |>
-  right_join(cropbuf.gf, by = "transect") |> filter(crop == "crop") |> 
+  right_join(buf.gf, by = "transect") |> filter(crop == "crop") |> 
   mutate(P_i = area/area_crop, P_i2 = P_i * log(P_i)) |>
   group_by(datePeriod, transect) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
@@ -280,9 +267,7 @@ Panels represent quartiles of percent habitat within 750 m buffer.
 
 ```{r}
 
-buf.iv <- lc.iv |> filter(buffer == "buf750")
-
-cropbuf.iv <- buf.iv |>
+buf.iv <- lc.iv |> filter(buffer == "buf750") |>
   pivot_longer(cols = Alfalfa:Plums,
                names_to = "Floral_resources_landcover",
                values_to = "area") |> 
@@ -300,7 +285,7 @@ cropbuf.iv <- buf.iv |>
   filter(date >= "2016-03-01" & date <= "2016-09-30")
 
 
-croparea.iv <- cropbuf.iv |>
+croparea.iv <- buf.iv |>
   group_by(site, Group, date) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
   pivot_wider(id_cols = c(date, site), 
@@ -330,7 +315,7 @@ ggplot(croparea.iv, aes(date, total.flowers)) +
 
 ```{r}
 
-croprich.iv <- cropbuf.iv |> rowwise() |>
+croprich.iv <- buf.iv |> rowwise() |>
   mutate(crop = Group=="Agriculture" & area > 0) |>
   group_by(date, site) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
@@ -354,7 +339,7 @@ ggplot(croparearich.iv, aes(date, total.flowers)) +
 ```{r}
 
 cropdiv.iv <- croparea.iv |> select(site, area_Agriculture) |> distinct() |>
-  right_join(cropbuf.iv, by = "site") |> filter(Group == "Agriculture") |> 
+  right_join(buf.iv, by = "site") |> filter(Group == "Agriculture") |> 
   mutate(P_i = area/area_Agriculture, P_i2 = P_i * log(P_i)) |>
   group_by(date, site) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
@@ -371,7 +356,7 @@ ggplot(cropdiv.iv, aes(date, total.flowers)) +
 
 ```{r}
 
-cropbuf.iv_5 <- buf.iv |>
+buf.iv_5 <-lc.iv |> filter(buffer == "buf750") |>
   pivot_longer(cols = Alfalfa:Plums,
                names_to = "Floral_resources_landcover",
                values_to = "area") |> 
@@ -389,7 +374,7 @@ cropbuf.iv_5 <- buf.iv |>
   filter(date %in% c("2016-04-15","2016-05-15","2016-06-15","2016-07-15","2016-08-15"))
 
 
-croparea.iv_5 <- cropbuf.iv_5 |>
+croparea.iv_5 <- buf.iv_5 |>
   group_by(site, Group, date) |>
   summarize(area = sum(area), total.flowers = sum(total.flowers), .groups = "drop") |>
   pivot_wider(id_cols = c(date, site), 
@@ -419,7 +404,7 @@ ggplot(croparea.iv_5, aes(date, total.flowers)) +
 
 ```{r}
 
-croprich.iv_5 <- cropbuf.iv_5 |> rowwise() |>
+croprich.iv_5 <- buf.iv_5 |> rowwise() |>
   mutate(crop = Group=="Agriculture" & area > 0) |>
   group_by(date, site) |>
   summarize(total.flowers = sum(total.flowers), crop.rich = sum(crop), .groups = "drop")
@@ -443,7 +428,7 @@ ggplot(croparearich.iv_5, aes(date, total.flowers)) +
 ```{r}
 
 cropdiv.iv_5 <- croparea.iv_5 |> select(site, area_Agriculture) |> distinct() |>
-  right_join(cropbuf.iv, by = "site") |> filter(Group == "Agriculture") |> 
+  right_join(buf.iv, by = "site") |> filter(Group == "Agriculture") |> 
   mutate(P_i = area/area_Agriculture, P_i2 = P_i * log(P_i)) |>
   group_by(date, site) |>
   summarize(crop.shandiv = - sum(P_i2, na.rm = TRUE), .groups = "drop") |>
