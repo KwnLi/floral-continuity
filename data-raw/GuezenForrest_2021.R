@@ -69,7 +69,7 @@ lcflr.gf <- lcflr.gf.site |>
 
 write.csv(lcflr.gf, "data/flowerdens_gf2021_v2.csv", row.names = FALSE)
 
-d# ------ spatial
+# ------ spatial
 spfiles <- list.files(file.path(msdir,"Guezen_Forrest_shapefiles_2021"),pattern="*.shp", full.names = TRUE)
 
 lcfiles <- spfiles[!grepl("Transect",spfiles)]
@@ -78,13 +78,20 @@ guezenpoly <- lapply(lcfiles, \(x){
   lcsf <- sf::st_read(x) |>
     mutate(id = as.numeric(id),
            landType = as.character(landType)) |>
-    select(id, landType)
+    select(id, landType) |>
+    tidyr::fill(landType) |>
+    st_buffer(0)
   lcsf[sf::st_geometry_type(lcsf) %in% c("POLYGON", "MULTIPOLYGON"),]
+  lcsf <- lcsf |> mutate(area = st_area(lcsf))
 }) |> dplyr::bind_rows() |> sf::st_make_valid() |>
   sf::st_cast("MULTIPOLYGON")
 
 # 1. Drop exact duplicate geometries first (common cause of "invisible" stacked polygons)
 guezenpoly <- guezenpoly[!duplicated(sf::st_geometry(guezenpoly)), ]
+
+sf::st_write(guezenpoly, "data/spatial/gf2021_raw.geojson")
+
+flat_guezenpoly <- sf::st_intersection(guezenpoly) %>% filter(st_is(., c("POLYGON", "MULTIPOLYGON")))
 
 # 2. Union all polygon boundaries into one noded line network, then polygonize
 #    into atomic, non-overlapping faces

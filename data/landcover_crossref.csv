@@ -1,0 +1,65 @@
+study,landtype,cat
+gf,asparagus,crop
+gf,bean,crop
+gf,cucumber,crop
+gf,melon,crop
+gf,potato,crop
+gf,raspberry,crop
+gf,squash,crop
+gf,strawberry,crop
+gf,sunflower,crop
+gf,watermelon,crop
+gf,corn,crop
+gf,soybean,crop
+gf,apple,tree crop
+gf,forage,grazing
+gf,forest,natural
+gf,semi-natural,semi-natural
+hw,alfalfa,crop
+hw,Fallow,crop
+hw,Onion,crop
+hw,Tomato-m,crop
+hw,Wheat,crop
+hw,bean,crop
+hw,sunflower,crop
+hw,vineyard,crop
+hw,Prunus orchard understory,tree crop
+hw,Walnut understory,tree crop
+hw,Bare,natural
+hw,Chaparral,natural
+hw,Grass,natural
+hw,Mixedoak,natural
+hw,Oak,natural
+hw,Riparian,natural
+iv,Alfalfa,crop
+iv,Corn,crop
+iv,Grass_hay,crop
+iv,Insect_pollinated_crop,crop
+iv,Non_resource_crop,crop
+iv,Non_resource_crop_wintercover,crop
+iv,Peaches,crop
+iv,Perennial,crop
+iv,Plums,crop
+iv,Soybeans,crop
+iv,Strawberries,crop
+iv,Apples,tree crop
+iv,Apricots,tree crop
+iv,Cherries,tree crop
+iv,Pasture,grazing
+iv,Developed_low_intensity,urban
+iv,Developed_med_intensity,urban
+iv,Lawn,urban
+iv,No_resource,no resource
+iv,Old_field,semi-natural
+iv,Shrubland,semi-natural
+iv,Urban tree,urban
+iv,Water,water
+iv,NA,no resource
+iv,Ditch,semi-natural
+iv,Dry_oak_forest,natural
+iv,Floodplain,natural
+iv,Mesic_upland_forest,natural
+iv,Conifer_mixed_forest,natural
+iv,Swamp,natural
+iv,Wet_emergent,natural
+iv,Wet_shrub,natural

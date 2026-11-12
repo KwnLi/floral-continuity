@@ -13,33 +13,147 @@ execute:
 library(tidyverse)
 library(marginaleffects)
 library(sf)
+library(rcartocolor)
 
-lc.gf <- read.csv("data/lcareas_gf2021.csv")
-lc.hw <- read.csv("data/lcareas_hw2025.csv")
-lc.iv <- read.csv("data/lcareas_iverson.csv")
+lc.gf <- read.csv("data/lcareas_gf2021.csv") |> filter(buffer == 750)
+lc.hw <- read.csv("data/lcareas_hw2025.csv") |> filter(buffer == 750)
+lc.iv <- read.csv("data/lcareas_iverson.csv") |> filter(buffer == "buf750")
 
-# iv.sp.clust <- st_read("data/spatial/iverson_pts_clust1km.geojson")
+iv.sp.clust <- st_read("data/spatial/iverson_pts_clust1km.geojson", quiet = TRUE) |> st_drop_geometry() |>
+  mutate(site = replace_values(
+    site,
+    "MesicUpRem_For34b Arnot" ~ "MesicUpRem_For34 Arnot",
+    "Conifer_For34a Danby" ~ "Conifer_For34 Danby"
+  ))
 
-lcflrcv <- read.csv("data/continuitystats_landcover.csv") |>
-  filter(crop != "other")
+lcflrcv <- read.csv("data/landcover_crossref.csv") |> 
+  mutate(landcover = tolower(landtype),
+         landcover = gsub("-m","",landcover),
+         landcover = gsub("-|_"," ",landcover),
+         landcover = replace_values(landcover, 
+                                    "soybeans" ~ "soybean",
+                                    "apple" ~ "apples",
+                                    NA ~ "no resource")) %>%
+  mutate(cat = 
+           factor(cat, levels = c("crop", "tree crop", "grazing", "urban", "water", "no resource", "semi-natural", "natural"))) %>%
+  arrange(cat, landcover) %>%
+  mutate(landcover = fct_inorder(landcover) |> fct_expand("not measured", after = 6))
+
+# set plot colors
+
+# table(distinct(select(lcflrcv, cat, landcover)) |> pull(cat))
+
+landcovercolors <- c(
+  carto_pal(12, "Bold")[1:11],   # crop 1-11
+  carto_pal(11, "Vivid")[1:10],    # crop 12-21
+  carto_pal(6, "Pastel")[1:5],   # crop 22-26
+  carto_pal(5, "Burg"),      # tree crop
+  carto_pal(2, "Emrld"),     # grazing
+  carto_pal(4, "BrwnYl"), # urban
+  "#d1eeea",            # water
+  "#A5AA99","#666666",  # no resource/not measured
+  carto_pal(4, "Earth"),    # semi-natural
+  carto_pal(11, "BrwnYl"), # natural 1-11
+  carto_pal(3, "ArmyRose")            # natural 12-14
+) |>
+  setNames(levels(lcflrcv$landcover))
+
+hwkey <- read.csv("data/spatial/hw2025_lc_key.csv")
+
+all.mn <- read.csv("data/continuitystats_finaldata.csv")
 
 ```
 
+## Guezen and Forrest 2021
+
 ```{r}
+#| fig-height: 6
+#| fig-width: 8
 
-# lc.gf.long <- lc.gf %>% pivot_longer(Blackberry:Canola,
-#                                      names_to = "landtype", values_to = "area") |>
-#   mutate(site=as.character(transect)) |>
-#   mutate(farm = stringr::str_split_i(site, "\\.", 1),
-#          landtype = tolower(gsub("\\.","-",landtype))) |>
-#   group_by(farm, landtype) %>% 
-#   summarize(area = mean(area), total = mean(total), .groups = "drop") %>%
-#   mutate(pc.cov = 100*(area/total)) %>%
-#   left_join(lcflrcv %>% 
-#               filter(study == "gf") %>% 
-#               select(landtype, crop), 
-#             by = "landtype")
+lc.gf.long <- lc.gf %>% 
+  pivot_longer(Blackberry:Canola, names_to = "landtype", values_to = "area") |>
+  mutate(site=as.character(transect)) |>
+  mutate(farm = stringr::str_split_i(site, "\\.", 1),
+         landtype = tolower(gsub("\\.","-",landtype)),
+         landtype = replace_values(landtype, "cucurbita" ~ "squash")) |>
+  group_by(farm, landtype) %>%
+  summarize(area = mean(area), total = mean(total), .groups = "drop") %>%
+  mutate(pc.cov = 100*(area/total)) %>%
+  left_join(lcflrcv %>%
+              filter(study == "gf"),
+            by = "landtype") %>%
+  left_join(all.mn |> filter(study=="gf"), by = c("farm")) %>%
+  mutate(landcover = replace_when(landcover, is.na(cat) ~ factor("not measured")))
 
-# ggplot(lc.gf.long, aes(farm, pc.cov, fill = lc)) + geom_col(position = "stack")
+ggplot(lc.gf.long, aes(reorder(farm, pct.natural), area)) +
+  geom_col(position = "stack", aes(fill = landcover)) +
+  scale_fill_manual(values = landcovercolors) +
+  theme(legend.position = "bottom",
+        legend.title = element_blank())
+  # geom_point(data = all.mn |> filter(study=="gf"), mapping = aes(reorder(farm, pct.natural), pct.natural))
+
+```
+
+## Hemberger and Williams 2025
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8
+
+lc.hw.long <- lc.hw %>% 
+  pivot_longer(CROPLA:RICE, names_to = "landtype", values_to = "area") |>
+  rename(farm=SITE) %>% group_by(farm) %>%
+  mutate(total = sum(area, na.rm=TRUE)) %>% ungroup() %>%
+  group_by(farm, landtype) %>%
+  summarize(area = mean(area), total = mean(total), .groups = "drop") %>%
+  mutate(pc.cov = 100*(area/total)) %>%
+  left_join(hwkey |> filter(!is.na(raster.code)) |>
+              distinct(raster.name, .keep_all=TRUE), by = c("landtype" = "raster.name")) %>% select(-landcover) %>%
+  left_join(lcflrcv %>% filter(study == "hw"),
+            by = c("landcover.floral"="landtype")) %>%
+  left_join(all.mn |> filter(study=="hw"), by = c("farm")) %>%
+  filter(pc.cov!=0 & !is.na(pc.cov)) %>%
+  mutate(landcover = replace_when(landcover, is.na(cat) ~ factor("not measured")))
+
+ggplot(lc.hw.long, aes(reorder(farm, pct.natural), area)) +
+  geom_col(position = "stack", aes(fill = landcover)) +
+  scale_fill_manual(values = landcovercolors) +
+  theme(legend.position = "bottom",
+        legend.title = element_blank(),
+        axis.text.x = element_blank())
+  # geom_point(data = all.mn |> filter(study=="hw"), mapping = aes(reorder(farm, pct.natural), pct.natural))
+
+```
+
+## Iverson et al.
+
+```{r}
+#| fig-height: 8
+#| fig-width: 8
+
+lc.iv.long <- lc.iv %>% 
+  pivot_longer(Alfalfa:Plums, names_to = "landtype", values_to = "area") |>
+  group_by(site) %>%
+  mutate(total = sum(area, na.rm=TRUE)) %>% ungroup() %>%
+  left_join(iv.sp.clust, by = "site") %>% rename(farm = group) %>%
+  mutate(farm = as.character(farm)) |>
+  group_by(farm, landtype) %>%
+  summarize(area = mean(area), total = mean(total), .groups = "drop") %>%
+  mutate(pc.cov = 100*(area/total),
+         landtype = replace_values(landtype, "Urban.tree" ~ "Urban tree")) %>%
+  left_join(lcflrcv %>%
+              filter(study == "iv"),
+            by = "landtype") %>%
+  left_join(all.mn |> filter(study=="iv"), by = c("farm")) %>%
+  filter(pc.cov!=0 & !is.na(pc.cov))
+
+ggplot(lc.iv.long, aes(reorder(farm, pct.natural), area)) +
+  geom_col(position = "stack", aes(fill = landcover)) +
+  scale_fill_manual(values = landcovercolors) +
+  theme(legend.position = "bottom",
+        legend.title = element_blank(),
+        axis.text.x = element_blank()) +
+  guides(fill = guide_legend(nrow = 9))
+  # geom_point(data = all.mn |> filter(study=="iv"), mapping = aes(reorder(farm, pct.natural), pct.natural))
 
 ```

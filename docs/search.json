@@ -161,6 +161,20 @@
     "text": "Mallinger et al. 2016\n\nggplot(florlc.raw$florlc_maletal2016, \n       aes(period, abundance)) + \n  geom_point(aes(color = Flower.species)) + geom_smooth(aes(period, abundance), inherit.aes = FALSE) + \n  facet_wrap(~landcover) + theme(legend.position = \"none\") + \n  scale_y_continuous(limits = c(0,100))"
   },
   {
+    "objectID": "land-cover.html#hemberger-and-williams-2025",
+    "href": "land-cover.html#hemberger-and-williams-2025",
+    "title": "Land cover",
+    "section": "Hemberger and Williams 2025",
+    "text": "Hemberger and Williams 2025"
+  },
+  {
+    "objectID": "land-cover.html#iverson-et-al.",
+    "href": "land-cover.html#iverson-et-al.",
+    "title": "Land cover",
+    "section": "Iverson et al.",
+    "text": "Iverson et al."
+  },
+  {
     "objectID": "results.html",
     "href": "results.html",
     "title": "Results",

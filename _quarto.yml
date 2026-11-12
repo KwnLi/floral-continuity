@@ -19,6 +19,8 @@ website:
         text: Continuity
       - href: results.qmd
         text: Results
+      - href: land-cover.qmd
+        text: Land cover
       - href: supplement.qmd
         text: Results supplementary info
 
