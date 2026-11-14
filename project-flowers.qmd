@@ -482,9 +482,11 @@ ggplot(cropdiv.iv.sum, aes(crop.rich, crop.shandiv, color = farm, pch = farm)) +
 ```{r}
 #| include: false
 
-write.csv(cropdiv.gf, "data/cropdiv_gf2021.csv", row.names = FALSE)
-write.csv(cropdiv.hw, "data/cropdiv_hw2025.csv", row.names = FALSE)
-write.csv(cropdiv.iv, "data/cropdiv_iverson.csv", row.names = FALSE)
-write.csv(cropdiv.iv_5, "data/cropdiv5_iverson.csv", row.names = FALSE)
+# used to be where this
+
+# write.csv(cropdiv.gf, "data/cropdiv_gf2021.csv", row.names = FALSE)
+# write.csv(cropdiv.hw, "data/cropdiv_hw2025.csv", row.names = FALSE)
+# write.csv(cropdiv.iv, "data/cropdiv_iverson.csv", row.names = FALSE)
+# write.csv(cropdiv.iv_5, "data/cropdiv5_iverson.csv", row.names = FALSE)
 
 ```

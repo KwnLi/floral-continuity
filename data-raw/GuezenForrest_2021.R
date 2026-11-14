@@ -3,6 +3,114 @@ library(tidyverse)
 
 msdir <- "data-raw/GuezenForrest_2021"
 
+# ---- spatial ----
+spfiles <- list.files(file.path(msdir,"Guezen_Forrest_shapefiles_2021"),pattern="*.shp", full.names = TRUE)
+
+lcfiles <- spfiles[!grepl("Transect",spfiles)]
+
+guezenpoly <- lapply(lcfiles, \(x){
+  lcsf <- sf::st_read(x) |>
+    mutate(id = as.numeric(id),
+           landType = as.character(landType)) |>
+    select(id, landType) |>
+    tidyr::fill(landType) |>
+    st_buffer(0)
+  lcsf[sf::st_geometry_type(lcsf) %in% c("POLYGON", "MULTIPOLYGON"),]
+  lcsf <- lcsf |> mutate(area = st_area(lcsf))
+}) |> dplyr::bind_rows() |> sf::st_make_valid() |>
+  sf::st_cast("MULTIPOLYGON")
+
+# 1. Drop exact duplicate geometries first (common cause of "invisible" stacked polygons)
+guezenpoly <- guezenpoly[!duplicated(sf::st_geometry(guezenpoly)), ]
+
+# sf::st_write(guezenpoly, "data/spatial/gf2021_raw.geojson")
+
+flat_guezenpoly <- sf::st_intersection(guezenpoly) %>%
+  filter(!st_is_empty(geometry))
+
+# 2. Loop through the rows of the flattened polygon and check for overlaps. If overlapping, refer to landtype class of the smaller original polygon
+
+check_poly <- list()
+for(i in rownames(flat_guezenpoly)){
+  polyrow.i <- flat_guezenpoly[i,]
+  if(st_geometry_type(polyrow.i) %in%
+     c("LINESTRING","POINT","MULTILINESTRING","MULTIPOINT")){   # ignore points and linestrings
+    next
+  }
+  polyrow.i <- st_collection_extract(polyrow.i, type = "POLYGON")  # keep only polygons
+  if(nrow(polyrow.i)==0){
+    next
+  }
+  if(polyrow.i$n.overlaps[[1]] > 1){
+    refs.i <- polyrow.i$origins[[1]]
+    refs.areas <- sapply(refs.i, \(x) guezenpoly[x,"area"][[1]])
+    refs.lu <- sapply(refs.i, \(x) guezenpoly[x,"landType"][[1]])
+    polyrow.i$landType[[1]] <- refs.lu[which.min(refs.areas)]
+  }
+  check_poly[[i]] <- polyrow.i
+}
+
+clean_guezenpoly <- do.call(rbind, check_poly) |> st_make_valid() |>
+  group_by(landType) |> summarize(.groups = "drop") |>
+  sf::st_cast("MULTIPOLYGON")
+
+sf::st_write(clean_guezenpoly, "data/spatial/gf2021_lcclean.geojson")
+
+# # 2. Union all polygon boundaries into one noded line network, then polygonize
+# #    into atomic, non-overlapping faces
+# lines <- guezenpoly |>
+#   sf::st_geometry() |>
+#   sf::st_boundary() |>
+#   sf::st_union()
+#
+# faces <- sf::st_polygonize(lines) |>
+#   sf::st_collection_extract("POLYGON") |>
+#   sf::st_sf(geometry = _) |>
+#   sf::st_make_valid()
+#
+# faces$face_id <- seq_len(nrow(faces))
+#
+# # 3. One safe interior point per face (st_centroid can fall outside concave shapes)
+# face_pts <- sf::st_point_on_surface(faces)
+#
+# # 4. Rank original polygons by priority — smallest area wins here;
+# #    swap in a landType-based rank if that's a better rule for your data
+# ordered <- guezenpoly[order(sf::st_area(guezenpoly)), ]
+# ordered$priority_rank <- seq_len(nrow(ordered))
+#
+# # 5. For each face, find every original polygon it falls inside and keep the
+# #    highest-priority one
+# hits <- sf::st_intersects(face_pts, ordered)
+#
+# best <- vapply(hits, function(idx) {
+#   if (length(idx) == 0) return(NA_integer_)
+#   idx[which.min(ordered$priority_rank[idx])]
+# }, integer(1))
+#
+# faces$id       <- ordered$id[best]
+# faces$landType <- ordered$landType[best]
+# faces <- faces[!is.na(faces$id), ]
+#
+# # 6. Re-dissolve adjacent faces sharing the same attributes back into single polygons
+# final <- faces |>
+#   dplyr::group_by(id, landType) |>
+#   dplyr::summarise(geometry = sf::st_union(geometry), .groups = "drop") |>
+#   sf::st_make_valid() |>
+#   sf::st_collection_extract("POLYGON") |>
+#   sf::st_cast("MULTIPOLYGON")
+
+
+
+# transect points
+
+guezen_pts <- guezen.data |> dplyr::select(site, transect, long, lat) |> dplyr::distinct() |>
+  sf::st_as_sf(coords = c("long","lat"), crs = "epsg:4326") |>
+  sf::st_transform(crs = sf::st_crs(guezenpoly))
+
+sf::st_write(guezen_pts, "data/spatial/gf2021_pts.geojson")
+
+# ---- flower density data ----
+
 guezen.data <- read.csv(paste0(msdir,"/Full_dataset.csv"), check.names = FALSE) |>
   dplyr::mutate(pointID = dplyr::row_number())
 # guezenreadme <- read.csv(paste0(msdir,"/ReadMe_for_CSV_files.csv"))
@@ -15,7 +123,7 @@ date.check <- guezen.fr |>
             by = c("datePeriod", "site", "transect"))
 all.equal(as.character(date.check$date.x), date.check$date.y)  # some NAs where transects not present in guezen.data
 
-write.csv(guezen.fr, "data/florlc_gf2021.csv", row.names = FALSE)
+# write.csv(guezen.fr, "data/florlc_gf2021.csv", row.names = FALSE)
 
 # Data is available for flower density within quadrats. Each row is a separate
 # species count, maybe for same quadrat. Quadrats are organized within transects
@@ -59,7 +167,7 @@ lcflr.gf0 <- guezen.fr |> group_by(date, datePeriod, site, landtype, transect, q
 lcflr.gf.site <- lcflr.gf0 |>
   complete(datePeriod, nesting(site, transect, landtype), fill = list(count_mn = 0))
 
-write.csv(lcflr.gf.site, "data/flowerdens_site_gf2021.csv", row.names = FALSE)
+# write.csv(lcflr.gf.site, "data/flowerdens_site_gf2021.csv", row.names = FALSE)
 
 lcflr.gf <- lcflr.gf.site |>
   group_by(datePeriod, landtype) |>
@@ -69,84 +177,13 @@ lcflr.gf <- lcflr.gf.site |>
 
 write.csv(lcflr.gf, "data/flowerdens_gf2021_v2.csv", row.names = FALSE)
 
-# ------ spatial
-spfiles <- list.files(file.path(msdir,"Guezen_Forrest_shapefiles_2021"),pattern="*.shp", full.names = TRUE)
+# fill in missing land covers with median values, like in publication
 
-lcfiles <- spfiles[!grepl("Transect",spfiles)]
+final <- sf::st_read("data/spatial/gf2021_lcclean.geojson")
 
-guezenpoly <- lapply(lcfiles, \(x){
-  lcsf <- sf::st_read(x) |>
-    mutate(id = as.numeric(id),
-           landType = as.character(landType)) |>
-    select(id, landType) |>
-    tidyr::fill(landType) |>
-    st_buffer(0)
-  lcsf[sf::st_geometry_type(lcsf) %in% c("POLYGON", "MULTIPOLYGON"),]
-  lcsf <- lcsf |> mutate(area = st_area(lcsf))
-}) |> dplyr::bind_rows() |> sf::st_make_valid() |>
-  sf::st_cast("MULTIPOLYGON")
+final$landType
 
-# 1. Drop exact duplicate geometries first (common cause of "invisible" stacked polygons)
-guezenpoly <- guezenpoly[!duplicated(sf::st_geometry(guezenpoly)), ]
-
-sf::st_write(guezenpoly, "data/spatial/gf2021_raw.geojson")
-
-flat_guezenpoly <- sf::st_intersection(guezenpoly) %>% filter(st_is(., c("POLYGON", "MULTIPOLYGON")))
-
-# 2. Union all polygon boundaries into one noded line network, then polygonize
-#    into atomic, non-overlapping faces
-lines <- guezenpoly |>
-  sf::st_geometry() |>
-  sf::st_boundary() |>
-  sf::st_union()
-
-faces <- sf::st_polygonize(lines) |>
-  sf::st_collection_extract("POLYGON") |>
-  sf::st_sf(geometry = _) |>
-  sf::st_make_valid()
-
-faces$face_id <- seq_len(nrow(faces))
-
-# 3. One safe interior point per face (st_centroid can fall outside concave shapes)
-face_pts <- sf::st_point_on_surface(faces)
-
-# 4. Rank original polygons by priority — smallest area wins here;
-#    swap in a landType-based rank if that's a better rule for your data
-ordered <- guezenpoly[order(sf::st_area(guezenpoly)), ]
-ordered$priority_rank <- seq_len(nrow(ordered))
-
-# 5. For each face, find every original polygon it falls inside and keep the
-#    highest-priority one
-hits <- sf::st_intersects(face_pts, ordered)
-
-best <- vapply(hits, function(idx) {
-  if (length(idx) == 0) return(NA_integer_)
-  idx[which.min(ordered$priority_rank[idx])]
-}, integer(1))
-
-faces$id       <- ordered$id[best]
-faces$landType <- ordered$landType[best]
-faces <- faces[!is.na(faces$id), ]
-
-# 6. Re-dissolve adjacent faces sharing the same attributes back into single polygons
-final <- faces |>
-  dplyr::group_by(id, landType) |>
-  dplyr::summarise(geometry = sf::st_union(geometry), .groups = "drop") |>
-  sf::st_make_valid() |>
-  sf::st_collection_extract("POLYGON") |>
-  sf::st_cast("MULTIPOLYGON")
-
-sf::st_write(final, "data/spatial/gf2021_lcclean.geojson")
-
-# transect points
-
-guezen_pts <- guezen.data |> dplyr::select(site, transect, long, lat) |> dplyr::distinct() |>
-  sf::st_as_sf(coords = c("long","lat"), crs = "epsg:4326") |>
-  sf::st_transform(crs = sf::st_crs(guezenpoly))
-
-sf::st_write(guezen_pts, "data/spatial/gf2021_pts.geojson")
-
-# make buffers
+# ---- make buffers ----
 guezen_pts <- sf::st_read("data/spatial/gf2021_pts.geojson")
 final <- sf::st_read("data/spatial/gf2021_lcclean.geojson")
 

@@ -2,7 +2,7 @@ library(tidyverse)
 library(marginaleffects)
 library(sf)
 
-# ----- Calculate stats on land cover types -----
+# ---- Calculate stats on land cover types ----
 
 lcflr.gf <- read.csv("data/flowerdens_gf2021_v2.csv")
 
@@ -57,7 +57,7 @@ lcflrcv <- lcflr |>
 
 write.csv(lcflrcv, "data/continuitystats_landcover.csv", row.names = FALSE)
 
-# ----- Spatial clustering of Iverson data
+# ---- Spatial clustering of Iverson data ----
 
 iv.sp <- st_read("data/spatial/iverson_pts.geojson", quiet = TRUE) |> st_transform(crs="epsg:5070")
 iv.sp.dist <- dist(st_coordinates(iv.sp))
@@ -77,7 +77,7 @@ iv.sp.clust <- iv.sp |> mutate(farm = as.character(iv.clust))  |>
 
 # st_write(iv.sp.clust, "data/spatial/iverson_pts_clust1km.geojson")
 
-# ----- buffer data
+# ---- continuity stats data ----
 
 gf <- read.csv("data/cropdiv_gf2021.csv") |>
   mutate(site=as.character(transect)) |>

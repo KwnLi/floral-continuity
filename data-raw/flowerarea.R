@@ -19,10 +19,24 @@ flowerbuf.hw <- lc.hw |>
 
 #----- Guezen & Forrest -----
 
+lcflr.gf.med <- lcflr.gf |> filter(crop == "crop") |> group_by(datePeriod, crop) |>
+  summarize(landtype="median", flowerdens = median(flowerdens), .groups = "drop")
+
+gflc <- tolower(names(lc.gf|>select(Blackberry:Canola)))
+gflc.unmeasured <- gflc[!(gflc %in% c(lcflr.gf$landtype,"cucurbita","unknown"))]
+
+lcflr.unmeasured <- lapply(gflc.unmeasured, \(x){
+  assign.median <- lcflr.gf.med
+  assign.median$landtype <- x
+  assign.median
+}) |> bind_rows()
+
+lcflr.gf.combine <- bind_rows(lcflr.gf, lcflr.unmeasured)
+
 flowerbuf.gf <- lc.gf |>
   pivot_longer(cols = Blackberry:Canola, names_to = "landtype", values_to = "area") |>
   mutate(landtype = gsub("\\.","-", tolower(landtype)) |> replace_values("cucurbita" ~ "squash")) |>
-  left_join(lcflr.gf, by = "landtype", relationship = "many-to-many") |>
+  left_join(lcflr.gf.combine, by = "landtype", relationship = "many-to-many") |>
   filter(!is.na(datePeriod) & !is.na(area)) |>
   mutate(total.flowers = area*flowerdens)
 
