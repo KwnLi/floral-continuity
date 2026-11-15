@@ -79,13 +79,13 @@ iv.sp.clust <- iv.sp |> mutate(farm = as.character(iv.clust))  |>
 
 # ---- continuity stats data ----
 
-gf <- read.csv("data/cropdiv_gf2021.csv") |>
+gf <- read.csv("data/bufferstats_gf2021.csv") |>
   mutate(site=as.character(transect)) |>
   mutate(farm = stringr::str_split_i(site, "\\.", 1))
-hw <- read.csv("data/cropdiv_hw2025.csv") |>
+hw <- read.csv("data/bufferstats_hw2025.csv") |>
   rename(datePeriod=period_3wk, site=SITE) |>
   mutate(farm = site)
-iv <- read.csv("data/cropdiv5_iverson.csv") |>
+iv <- read.csv("data/bufferstats5_iverson.csv") |>
   mutate(
     datePeriod =
       recode_values(date,

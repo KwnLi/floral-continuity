@@ -9,9 +9,9 @@ execute:
 ```{r}
 library(tidyverse)
 
-hw <- read.csv("data/cropdiv_hw2025.csv")
-gf <- read.csv("data/cropdiv_gf2021.csv")
-iv <- read.csv("data/cropdiv_iverson.csv") |> 
+hw <- read.csv("data/bufferstats_hw2025.csv")
+gf <- read.csv("data/bufferstats_gf2021.csv")
+iv <- readRDS("data/bufferstats_iverson.rds") |> 
   mutate(julianDay = as.numeric(format(as.Date(date), "%j")))
   # mutate(date = as.Date(julianDay, origin=as.Date("2015-12-31")))
 
