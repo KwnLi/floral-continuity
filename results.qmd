@@ -626,7 +626,7 @@ lcflr.lm1 <- glmmTMB(flr.mn.scale ~ crop + study,
 
 ggplot(lcflrcv, aes(crop, flr.mn.scale, fill = crop)) + 
   geom_boxplot() +
-  # geom_jitter(aes(shape = study), width = 0.2) +
+  geom_jitter(aes(shape = study), width = 0.2) +
   egg::theme_article() +
   labs(x = "Land cover", y = "Scaled mean flower count") +
   theme(legend.position = "none")
@@ -647,47 +647,49 @@ There is not a significant difference in discontinuity between crop and natura l
 
 ```{r}
 
-lccv.lm1 <- lm(flr.cv ~ crop + study, 
-                     dispformula = ~study, 
-                    data = lcflrcv |> filter(!is.na(flr.cv)))
+lcflrcv.dat <- lcflrcv |> filter(!is.na(flr.cv))
 
-ggplot(lcflrcv |> filter(!is.na(flr.cv)), aes(crop, flr.cv, fill = crop)) + 
+lccv.lm1 <- glmmTMB(flr.cv ~ crop + study, 
+                     dispformula = ~study, 
+                    data = lcflrcv.dat)
+
+ggplot(lcflrcv.dat, aes(crop, flr.cv, fill = crop)) + 
   geom_boxplot() +
   geom_jitter(aes(shape = study), width = 0.2) +
   egg::theme_article() +
   labs(x = "Land cover", y = "Discontinuity (cv)") +
   theme(legend.position = "none")
 
-lccv.lm2 <- lm(flr.mn.scale ~ crop * study,
+lccv.lm2 <- glmmTMB(flr.mn.scale ~ crop * study,
                      dispformula = ~study,
-                    data = lcflrcv |> filter(!is.na(flr.cv)))
+                    data = lcflrcv.dat)
 
 anova(lccv.lm1, lccv.lm2)
 
-sjPlot::tab_model(lccv.lm1)
+sjPlot::tab_model(lccv.lm2)
 
 ```
 
 ### Land cover peak times
 
-Bloom peak times of crops are significantly earlier.
+Bloom peak times of natural land covers are significantly earlier.
 
 ```{r}
 
 lcpk.lm1 <- glmmTMB(pktime.scale ~ crop + study, 
-                     dispformula = ~study, data = lcflrcv)
+                     dispformula = ~study, data = lcflrcv.dat)
 
-ggplot(lcflrcv |> filter(!is.na(flr.cv)), aes(crop, pktime.scale, fill = crop)) + 
+ggplot(lcflrcv.dat, aes(crop, pktime.scale, fill = crop)) + 
   geom_boxplot() +
   geom_jitter(aes(shape = study), width = 0.2) +
   egg::theme_article() +
   labs(x = "Land cover", y = "Peak flowering time (scaled)") +
   theme(legend.position = "none")
 
-lcflr.lm2 <- glmmTMB(flr.mn.scale ~ crop * study,
-                     dispformula = ~study, data = lcflrcv)
+lcpk.lm2 <- glmmTMB(pktime.scale ~ crop * study,
+                     dispformula = ~study, data = lcflrcv.dat)
 
-anova(lcflr.lm1, lcflr.lm2)
+anova(lcpk.lm1, lcpk.lm2)
 
 sjPlot::tab_model(lcpk.lm1)
 

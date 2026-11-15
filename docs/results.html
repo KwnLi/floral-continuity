@@ -957,22 +957,28 @@ lcflr.lm2  9 -157.56 -139.83 87.780  -175.56 0.3943      2     0.8211</code></pr
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Analysis of Variance Table
-
-Response: flr.cv
-          Df  Sum Sq Mean Sq F value  Pr(&gt;F)  
-crop       1  0.7503 0.75034  3.1384 0.08295 .
-study      2  1.2476 0.62382  2.6092 0.08423 .
-Residuals 47 11.2370 0.23909                  
+<pre><code>Data: lcflrcv.dat
+Models:
+lccv.lm1: flr.cv ~ crop + study, zi=~0, disp=~study
+lccv.lm2: flr.mn.scale ~ crop * study, zi=~0, disp=~study
+         Df     AIC      BIC  logLik deviance  Chisq Chi Df Pr(&gt;Chisq)    
+lccv.lm1  7   80.37   93.893 -33.185    66.37                             
+lccv.lm2  9 -152.36 -134.978  85.182  -170.36 236.73      2  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</th>
-<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr cv</th>
+<th colspan="3" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">flr mn scale</th>
 </tr>
 <tr class="even">
 <td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictors</td>
@@ -982,35 +988,67 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.59</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">1.32&nbsp;–&nbsp;1.85</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.05</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01&nbsp;–&nbsp;0.08</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.009</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop [natural]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.21</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.52&nbsp;–&nbsp;0.10</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.173</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.00</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.10&nbsp;–&nbsp;0.09</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.937</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.13</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.51&nbsp;–&nbsp;0.25</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.492</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.01</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.05&nbsp;–&nbsp;0.06</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.795</td>
 </tr>
 <tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.37</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.71&nbsp;–&nbsp;-0.03</td>
-<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.034</strong></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.06&nbsp;–&nbsp;0.02</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.233</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop [natural] × study<br>
+[hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.03</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.09&nbsp;–&nbsp;0.15</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.589</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">crop [natural] × study<br>
+[iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.03</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.07&nbsp;–&nbsp;0.13</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.538</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-2.75</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-3.12&nbsp;–&nbsp;-2.37</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>&lt;0.001</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [hw]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.01</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.53&nbsp;–&nbsp;0.52</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.985</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">study [iv]</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.76</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-1.23&nbsp;–&nbsp;-0.29</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><strong>0.002</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
 <td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">51</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.151 / 0.097</td>
+<td colspan="3" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.103 / -0.068</td>
 </tr>
 </tbody>
 </table>
@@ -1019,7 +1057,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </section>
 <section id="land-cover-peak-times" class="level3">
 <h3 class="anchored" data-anchor-id="land-cover-peak-times">Land cover peak times</h3>
-<p>Bloom peak times of crops are significantly earlier.</p>
+<p>Bloom peak times of natural land covers are significantly earlier.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -1029,13 +1067,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Data: lcflrcv
+<pre><code>Data: lcflrcv.dat
 Models:
-lcflr.lm1: flr.mn.scale ~ crop + study, zi=~0, disp=~study
-lcflr.lm2: flr.mn.scale ~ crop * study, zi=~0, disp=~study
-          Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)
-lcflr.lm1  7 -161.16 -147.37 87.583  -175.16                         
-lcflr.lm2  9 -157.56 -139.83 87.780  -175.56 0.3943      2     0.8211</code></pre>
+lcpk.lm1: pktime.scale ~ crop + study, zi=~0, disp=~study
+lcpk.lm2: pktime.scale ~ crop * study, zi=~0, disp=~study
+         Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(&gt;Chisq)
+lcpk.lm1  7 -16.858 -3.3357 15.429  -30.858                         
+lcpk.lm2  9 -13.308  4.0788 15.654  -31.308 0.4492      2     0.7989</code></pre>
 </div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
